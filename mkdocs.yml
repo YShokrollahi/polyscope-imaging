@@ -1,0 +1,4 @@
+site_name: Polyscope Doc
+theme: 
+  name: readthedocs
+docs_dir: docs
