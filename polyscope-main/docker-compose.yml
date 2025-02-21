@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  polyscope:
+    build: .
+    container_name: polyscope-container
+    ports:
+      - "80:80"
+      - "3306:3306"
+    volumes:
+      - polyscope-sync:/var/www/html:nocopy
+      - ../map/polyzoomer:/var/www/polyzoomer
+      - ../map/customer:/var/www/customers
+      - ../map/media:/media
+      - ../map/user_db:/var/lib/mysql
+    depends_on:
+      - unison
+
+  unison:
+    image: eugenmayer/unison
+    container_name: unison-container
+    volumes:
+      - polyscope-sync:/unison
+    environment:
+      - UNISON_DIR=/unison
+    command: '-repeat watch -auto -batch'
+
+volumes:
+  polyscope-sync:
+    external: true

@@ -1,0 +1,12 @@
+#!/bin/bash
+#BSUB -J "APPNAME FILENAME"
+#BSUB -P DMPYXYAAB
+#BSUB -o APPNAME_FULLPATH.output.%J
+#BSUB -e APPNAME_FULLPATH.errors.%J
+#BSUB -R "span[hosts=1]"
+#BSUB -n 4
+#BSUB -B
+#BSUB -W 8:00 
+#BSUB -u EMAIL
+module load R/3.0.3 imageMagick/6.8.6-9
+COMMAND

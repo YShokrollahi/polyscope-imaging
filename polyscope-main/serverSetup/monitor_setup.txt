@@ -1,0 +1,28 @@
+http://xtiming.sourceforge.net/cgi-bin/xtiming.pl
+
+CHeck the timings
+
+input: separate sync, composite sync, sync on green, analog signal.
+screensize: 15 9
+gamma: 2.200000
+dpms: RGB, active off, suspend, standby
+timing: 720x400@70 Hz (VGA 640x400, IBM)
+timing: 720x400@88 Hz (XGA2)
+timing: 640x480@60 Hz (VGA)
+timing: 640x480@67 Hz (Mac II, Apple)
+timing: 640x480@75 Hz (VESA)
+timing: 800x600@60 Hz (VESA)
+timing: 1024x768@87 Hz Interlaced (8514A)
+timing: 1024x768@75 Hz (VESA)
+timing: 1280x1024@75 (VESA)
+ctiming: 800x600@60
+ctiming: 1024x768@60
+ctiming: 1280x1024@60
+ctiming: 1440x1440@60
+ctiming: 1680x1680@60
+ctiming: 256x256@60
+dtiming: 800x480@60
+dtiming: 1920x1080@74
+monitorid: Faytech Moit
+monitorrange: 15-72, 50-74
+

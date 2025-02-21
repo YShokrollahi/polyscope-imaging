@@ -1,0 +1,16 @@
+# job id ; job guid ; status id; status ; orig filename ; targetfilename ; md5 ; email;
+#
+# Polyzoomer Sample Job File 
+# Author: Sebastian Schmittner (stp.schmittner@gmail.com)
+# Date: 2015.01.30
+# LastAuthor: Sebastian Schmittner (stp.schmittner@gmail.com)
+# LastDate: 2015.01.30
+# Version: 0.0.0
+# 
+# 1:   checksum -> pending -> 
+# 2:   upload -> uploading -> uploaded -> putToOwnFolder -> 
+# 3:   estimateSize -> 
+# 4:   readyForQueue -> inQueue ->
+# 5:   processing ->
+# 6:   finished -> emailSent -> readyToBeRemoved
+###############################################################################

@@ -1,0 +1,46 @@
+FROM ubuntu:20.04
+
+# Maintainer and metadata arguments
+LABEL maintainer="Dr. Jamie Alnasir <jamie.alnasir@icr.ac.uk>"
+LABEL description="Development environment for Polyscope LAMP stack based on Ubuntu 20.04"
+
+# Avoid prompts from apt
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Update and install necessary packages
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y software-properties-common apt-transport-https ca-certificates wget git vim zip unzip apache2 libapache2-mod-php mariadb-server mariadb-client php php-cli php-curl php-json php-mbstring nodejs npm composer && \
+    a2enmod rewrite
+
+# Add non-root user for development
+RUN useradd -m developer && \
+    chown -R developer:developer /var/www && \
+    chmod -R 755 /var/www
+
+# Copy configuration files and source code
+COPY ./apache-conf/*.conf /etc/apache2/sites-available/
+COPY ./apache-conf/php.ini /etc/php/7.4/apache2/
+COPY --chown=developer:developer . /var/www/
+
+# Set working directory
+WORKDIR /var/www
+
+# Expose ports for web server and database
+EXPOSE 80 3306
+
+# Volume for live code editing
+VOLUME ["/var/www", "/var/log/apache2", "/var/lib/mysql"]
+
+# Use an entrypoint script to customize setup tasks
+COPY --chown=developer:developer run-lamp.sh /usr/sbin/run-lamp-dev.sh
+RUN chmod +x /usr/sbin/run-lamp-dev.sh
+
+# Switch to non-root user
+USER developer
+
+# Set environment variables for development
+ENV PATH="$PATH:/var/www/vendor/bin"
+
+# Default command
+CMD ["/usr/sbin/run-lamp-dev.sh"]

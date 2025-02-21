@@ -1,0 +1,485 @@
+/* main.css
+   Author: Sebastian Schmittner
+   Date: 2014.04.04
+   LastAuthor: Sebastian Schmittner
+   LastDate: 2015.04.21 15:38:33 (+02:00)
+   Version: 0.1.8
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+}
+
+html {
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  
+  overflow: hidden;
+  height: 100%;
+}
+
+#topMenu {
+  background: linear-gradient(to right, #007bff, #6699ff);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+#topMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#topMenu ul li {
+  margin: 0 10px;
+}
+
+#topMenu ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+#topMenu ul li a:hover, #topMenu ul li a:focus {
+  background-color: #5588ff;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+#topMenu ul li:nth-child(5) {
+  margin-left: auto;
+}
+
+
+body {
+  font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  background-color: #ffffff;
+  color: #000000;
+  height: 100%;
+  overflow: hidden;
+  margin: 10px;
+}
+h1 {
+  font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 4em;
+  margin: 0px;
+}
+h3 {
+  font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 100;
+}
+p {
+  font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: normal;
+}
+blockquote {
+  font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: normal;
+}
+pre {
+  font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #000000;
+}
+a:visited {
+  color: #000000;
+}
+a:focus {
+  color: #000000;
+}
+a:hover {
+  color: #0000ff;
+}
+a:active {
+  color: #0000ff;
+}
+
+.header {
+  border-bottom: 1px solid;
+  width:100%;
+  display:inline-block;
+  text-align:center
+}
+
+.highlight {
+  background-color: #AAAAFF;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}
+
+.footer {
+  border-top: 1px solid;
+  position: absolute;
+  height: 50px;
+  right: 10px;
+  left: 10px;
+  bottom: 10px;
+}
+
+.element {
+  width: 200px;
+  /*height: 200px;*/
+  margin: auto;
+  /*border-style: solid;
+  border-color: white;
+  border-width: 1px;*/
+}
+
+#cpumemory {
+/*   border-style: solid;
+  border-color: #888888;
+  border-width: 1px; */
+  height: 200px;
+}
+
+#cpumemory.loadLow {
+	background-image: url(images/semaphore_green.png);
+}
+
+#cpumemory.loadMedium {
+	background-image: url(images/semaphore_yellow.png);
+}
+
+#cpumemory.loadHigh {
+	background-image: url(images/semaphore_red.png);
+}
+
+.container {
+  display: table-cell;
+  vertical-align: middle;
+  
+  top: 18%;
+  top: calc(5em + 50px);
+}
+
+.content {
+  width: 100%;
+  height: 80%;
+  display: table;
+  top: -40px;
+  
+  bottom: 12%;
+  bottom: calc(1em + 50px);
+}
+
+.content-row {
+  display: table-row;
+}
+
+.fileList {
+	padding-left: 30px;
+}
+
+.dir-list {
+  margin: 10px;
+  border:1px solid #888888; 
+  /*width: 610px; */
+  /*height: 290px; */
+  overflow: auto;
+  list-style-position: inside;
+
+  position: fixed;
+  left: 17em;
+  right: 0px;
+
+  top: 18%;
+  bottom: 9%;
+  
+  top: calc(5em + 50px);
+  bottom: calc(50px + 1em);
+}
+
+.dir-list ul {
+	padding-left: 0px;
+	-webkit-padding-start: 0px;
+	margin-left: 60px;
+}
+
+.dir-list li {
+	margin-left: 0px;
+}
+
+.dir-list .subDirectory {
+	margin-left: 40px;
+}
+
+.dir-list .directoryClass {
+	/*background: url(images/folder.png) no-repeat 0px -5px;*/
+	list-style-image: url(images/folder.png);
+	list-style-type: outside;
+	position: relative;
+}
+
+.directoryRoot {
+	list-style-image: url(images/folder.png);
+	position: relative;
+}
+
+.dir-list .extClass {
+	list-style-image: url(images/pz2.png);
+	position: relative;
+}
+
+.toBeCentered {
+	/*position: absolute;*/
+}
+
+a.toBeCentered {
+	/*margin-top: 15px;*/
+	margin-left: 10px;
+	position: relative;
+	bottom: 18px;
+}
+
+input.toBeCentered {
+	margin-top: 19px;
+	height: 31px;
+	position: relative;
+	bottom: 9px;
+}
+
+ul {
+	margin-left: 40px;
+}
+
+.dev-list {
+  margin: 10px;
+  position: fixed;
+  border:1px solid;
+  width: 15em;
+  overflow: auto;
+  list-style-position: inside;
+  border-color: #888888;
+  
+  top: 18%;
+  bottom: 18%;
+  
+  top: calc(5em + 50px);
+  bottom: calc(5em + 50px);
+}
+
+.dev-list ul {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.dev-list .devListEntry {
+	/*list-style-image: url(images/device.gif);*/
+	background-image: url(images/device.gif);
+	background-repeat: no-repeat;
+	height: 48px;
+	padding-top: 1em;
+	padding-left: 52px;
+}
+
+.polyzoombutton {
+  border:4px solid #FFFF00; 
+  background-color: #AA8800;
+  width: 15em;
+  height: 3.5em;
+  position: fixed;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  
+  bottom: 9%;
+  bottom: calc(1em + 50px);
+  margin: 10px;
+  
+  	background: -webkit-repeating-linear-gradient(
+		45deg,
+		#FF0,
+		#FF0 10px,
+		#EE8 10px,
+		#FF8 20px
+	);
+	background: -o-repeating-linear-gradient(
+		45deg,
+		#FF0,
+		#FF0 10px,
+		#EE8 10px,
+		#FF8 20px
+	);
+	background: -moz-repeating-linear-gradient(
+		45deg,
+		#FF0,
+		#FF0 10px,
+		#EE8 10px,
+		#FF8 20px
+	);
+	background: repeating-linear-gradient(
+		45deg,
+		#FF0,
+		#FF0 10px,
+		#EE8 10px,
+		#FF8 20px
+	);
+}
+
+.scanselector {
+  border:2px solid #FFFFFF; 
+  width: 150px;
+  height: 270px;
+  overflow: auto;
+}
+
+.polyzoomcontent {
+	/*border: 2px solid #fff;*/
+	display: table-cell;
+	vertical-align: middle;
+	width: 750px;
+	/*height: 300px;*/
+	margin: auto;
+}
+
+.polyzoomelement {
+  border-color: #888888;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: auto;
+  left: 10px;
+  right: 10px;
+
+  top: 18%;
+  bottom: 12%;
+
+  top: calc(5em + 50px);
+  bottom: calc(1em + 50px);
+
+  position: absolute;
+}
+
+.projectEntry {
+	width: auto;
+	height: auto;
+	display: table;
+}
+
+.checkSquare {
+	width: 50px;
+	height: auto;
+	display: table-cell;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.clickme {
+	display: table-cell;
+}
+
+.navbuttonleft {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.navbuttonright {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+#blocker {
+  z-index: 2;
+  opacity: 0.4;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+span[class=emailmissing] {
+	color: #FF0000;
+}
+
+span[class=emailok] {
+	color: #00FF00;
+}
+
+.filelistelement {
+	vertical-align: middle;
+}
+
+.ui-autocomplete {
+    background: #4a4a4a;
+    border-radius: 0px;
+	z-index: 10000;
+}
+
+.ui-menu .ui-menu-item {
+    background:black;
+    height:28px;
+	font-size:20px;
+	z-index: 10000;
+}
+
+#autocompleteButton.autocomplete_off {
+	background-image: url(images/autocomplete_off.png);
+	height: 64px;
+	width: 64px;
+	display: inline-block;
+}
+
+#autocompleteButton.autocomplete_on {
+	background-image: url(images/autocomplete_on.png);
+	height: 64px;
+	width: 64px;
+	display: inline-block;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.emailbox {
+	display:none; 
+}
+
+.realInput {
+	height:70px;
+	width: 100%;
+	display:inline-block;
+	border: solid 1px #000;
+}
+
+.proposalInput {
+	height:70px;
+	width: 100%;
+	display:inline-block;
+}

@@ -1,0 +1,90 @@
+<!--
+*   Author: Sebastian Schmittner
+*   Date:
+*   LastAuthor: Sebastian Schmittner
+*   LastDate: 2015.11.09 
+*   Version: 0.1.2
+*   Version Key: NONE
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" 
+      type="image/png" 
+      href="/LogoPolyzoomer1.0fav.png">
+
+    <meta charset='utf-8'>
+
+    <title>ImageOmics Polyscope</title>
+
+    <link rel='stylesheet' 
+          type='text/css'
+          media='screen'
+          href='http://polyzoomer.icr.ac.uk/pz_scripts/genomics/multizoom/css/style.css'/>
+
+	<link rel='stylesheet' type='text/css' media='screen' href='http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/css/jquery-ui.min.css'/>
+	<link rel='stylesheet' type='text/css' media='screen' href='http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/css/jquery-ui.structure.min.css'/>
+	<link rel='stylesheet' type='text/css' media='screen' href='http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/css/jquery-ui.theme.min.css'/>
+	
+    <script type="text/javascript" src="http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/jquery.js"></script>
+    <script type="text/javascript" src="http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/sgbeal-colorpicker-20070712.jquery.js"></script>
+    <script type="text/javascript" src="http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/raphael.js" ></script>
+    <script type="text/javascript" src="http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/OpenSeadragon.js"></script>
+	<script type="text/javascript" src="http://polyzoomer.icr.ac.uk/pz_scripts/userpage/templates/scrollWidth.js"></script>
+	
+    <!-- andreas.heindl@icr.ac.uk -->
+
+<script>
+    var viewer = null;
+    var Seadragon;
+    Seadragon = OpenSeadragon;
+    OpenSeadragon.Utils = OpenSeadragon;
+	
+function SyncImage(viewer, viewerToSyncWith) {
+	console.log('Syncing');
+	viewer.viewport.panTo(viewerToSyncWith.viewport.getCenter());
+	viewer.viewport.zoomTo(viewerToSyncWith.viewport.getZoom());
+}
+
+var hFuncHandler=function myHandler(SourceViewer) {
+    
+	var viewersToSync = [];
+	
+	for (var key in ViewerHash) {
+		if (ViewerHash.hasOwnProperty(key)) {
+			if(key != SourceViewer.id) {
+				if(ViewerHash[key].id == SourceViewer.id) {
+					viewersToSync.push(key);
+				}
+			}
+		}
+	}
+	
+	console.log('Hashes for SourceViewer: ', viewersToSync);
+    
+	for(var viewer = 0; viewer < viewersToSync.length; ++viewer) {
+		TargetViewer = window[viewersToSync[viewer]];   
+		
+		if (!TargetViewer.isOpen()) {
+			console.log('TargetViewer is not open');
+		}
+
+		console.log('Starting live sync...', SourceViewer.id, ' with ', TargetViewer.id);
+		SyncImage(TargetViewer,SourceViewer)      
+		console.log('done');
+	}
+}
+  
+function LiveSync(SourceViewer) {
+  console.log('Attaching live sync handler to ',SourceViewer.id);
+  SourceViewer.addHandler("animation",hFuncHandler);
+}
+
+function UnLiveSync(SourceViewer) {
+  console.log('Removing handler from ',SourceViewer.id);
+  SourceViewer.removeHandler("animation",hFuncHandler)
+}
+
+function SyncThemAll()
+{

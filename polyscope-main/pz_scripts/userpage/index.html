@@ -1,0 +1,53 @@
+<!--
+*   Author: Sebastian Schmittner
+*   Date: 2014.10.14 10:24:00
+*   LastAuthor: Sebastian Schmittner
+*   LastDate: 2015.07.27 11:21:51 (+02:00)
+*   Version: 0.03.22
+*   Version Key: VERSIONKEY
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link type="text/css" rel="stylesheet" href="./jquery-ui.css"/>
+	<link type="text/css" rel="stylesheet" href="./css/main.css"/>
+	<link type="text/css" rel="stylesheet" href="./css/style.css"/>
+
+	<script type="text/javascript" src="./jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="./jquery-ui.js"></script>
+	<script type="text/javascript" src="./jquery.ui.touch-punch.js"></script>
+
+	<script type="text/javascript" src="./js/underscore.js"></script>
+	<script type="text/javascript" src="./js/serveraccess.js"></script>
+	<script type="text/javascript" src="./js/raster.js"></script>
+        <script type="text/javascript" src="./js/fileManager.js"></script>
+        <script type="text/javascript" src="./js/jquery.ui-contextmenu.js"></script>
+        <script type="text/javascript" src="./js/scrollWidth.js"></script>
+
+        <title>Polyscope</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+jQuery('body').load('./index_med1.html', function() {
+	jQuery.getScript('./js/userpage.js')
+                .done(function(){
+                    onLoad();
+                })
+                .fail(function(){
+                    onLoad();
+                });
+        
+});
+
+</script>
+
+</body>
+
+</html>
+

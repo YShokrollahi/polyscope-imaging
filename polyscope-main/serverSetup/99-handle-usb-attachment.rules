@@ -1,0 +1,8 @@
+
+SUBSYSTEMS=="usb", SUBSYSTEM=="block", ACTION=="add", ENV{ID_FS_LABEL}!="", RUN+="/bin/mkdir /media/$env{ID_FS_LABEL}"
+SUBSYSTEMS=="usb", SUBSYSTEM=="block", ACTION=="add", ENV{ID_FS_LABEL}!="", RUN+="/usr/bin/pmount -u 000 %k /media/$env{ID_FS_LABEL}"
+SUBSYSTEMS=="usb", SUBSYSTEM=="block", ACTION=="remove", ENV{ID_FS_LABEL}!="", RUN+="/usr/bin/pumount /media/$env{ID_FS_LABEL}", RUN+="/bin/umount /media/$env{ID_FS_LABEL}", RUN+="/bin/rmdir /media/$env{ID_FS_LABEL}", RUN+"/bin/mkdir /media"
+
+SUBSYSTEMS=="usb", SUBSYSTEM=="block", ACTION=="add", ENV{ID_FS_LABEL}=="", RUN+="/bin/mkdir /media/$env{ID_FS_UUID}"
+SUBSYSTEMS=="usb", SUBSYSTEM=="block", ACTION=="add", ENV{ID_FS_LABEL}=="", RUN+="/usr/bin/pmount -u 000 %k /media/$env{ID_FS_UUID}"
+SUBSYSTEMS=="usb", SUBSYSTEM=="block", ACTION=="remove", ENV{ID_FS_LABEL}=="", RUN+="/usr/bin/pumount /media/$env{ID_FS_UUID}", RUN+="/bin/umount /media/$env{ID_FS_UUID}", RUN+="/bin/rmdir /media/$env{ID_FS_UUID}", RUN+="/bin/mkdir /media"

@@ -1,0 +1,142 @@
+Ubuntu:
+
+sudo apt-get install apache2			# server
+sudo apt-get install php5			# php5
+sudo apt-get install libapache2-mod-php5	# php5/apache
+sudo apt-get install php5-json			# javascript encoding in php
+sudo /etc/init.d/apache2 restart
+
+sudo apt-get install pmount
+
+
+// montage
+sudo apt-get install imagemagick
+
+// vips
+sudo apt-get install git
+
+sudo apt-get install gettext pkg-config swig gtk-doc-tools automake gobject-introspection make
+sudo apt-get install glib-2.0
+sudo apt-get install gmodule-2.0 libxml-2.0 gobject-2.0
+
+// from http://www.vips.ecs.soton.ac.uk/index.php?title=Build_on_Ubuntu
+
+sudo apt-get install build-essential  libxml2-dev libfftw3-dev  \
+ gettext libgtk2.0-dev python-dev liblcms1-dev liboil-dev \
+ libmagickwand-dev libopenexr-dev libcfitsio3-dev gobject-introspection flex bison
+ 
+ sudo apt-get install automake libtool swig gtk-doc-tools libglib2.0-dev git
+ 
+export VIPSHOME=/usr/local
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIPSHOME/lib
+export PATH=$PATH:$VIPSHOME/bin
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$VIPSHOME/lib/pkgconfig
+export MANPATH=$MANPATH:$VIPSHOME/man
+export PYTHONPATH=$VIPSHOME/lib/python2.7/site-packages
+
+./configure
+make
+sudo make install
+
+#wget http://pear.php.net/go-pear.phar
+#php go-pear.phar
+
+#sudo apt-get install php-pear
+#pear install Mail-1.2.0
+
+sudo apt-get install php-pear
+
+sudo pear install mail
+
+sudo pear install Net_SMTP
+
+sudo pear install Auth_SASL
+
+sudo pear install mail_mime
+
+
+// real imagemagick (https://answers.launchpad.net/ubuntu/+source/imagemagick/+question/168550)
+sudo apt-get update
+sudo apt-get install devscripts
+mkdir -p source/imagemagick
+cd source/imagemagick
+apt-get source imagemagick
+sudo apt-get build-dep imagemagick
+cd imagemagick-6.6.0.4
+
+# edit configuration options in rules file at debian/rules, adding:
+# --with-quantum-depth=8
+# --disable-openmp
+
+# update the installation script for Q8 instead of Q16
+perl -pi -e 's/modules-Q16/modules-Q8/g' debian/libmagickcore3-extra.install
+perl -pi -e 's/modules-Q16/modules-Q8/g' debian/libmagickcore3.install
+
+dch -l local 'imagemagick-6.6.0.4-q8'
+debuild -us -uc
+sudo apt-get remove imagemagick
+sudo dpkg -i ../*.deb
+
+#cd libtiff
+#./configure
+#export CFLAGS=-fPIC
+#./configure --prefix=$HOME/tiff/
+
+// install the sc
+sudo apt-get install subversion
+sudo apt-get install cvs
+
+// make(ers)
+sudo apt-get install autoconf automake libtool pkg-config cmake
+sudo apt-get install liblcms2-dev  libtiff-dev libpng-dev libz-dev
+sudo apt-get install libjpeg-dev liblzma-dev liblz-dev zlib1g-dev
+
+// install OpenJPEG
+svn checkout http://openjpeg.googlecode.com/svn/trunk/ openjpeg-read-only
+cd openjpeg-read-only
+
+cmake .
+make
+  
+sudo make install 
+make clean
+
+cd ..
+
+// install libtiff (NICE LINK: http://drgutman.org/compiling-libtiff-on-ubuntu/)
+export CVSROOT=:pserver:cvsanon@cvs.maptools.org:/cvs/maptools/cvsroot
+cvs login
+cvs checkout libtiff
+cvs checkout libtiff-lzw-compression-kit
+
+cd libtiff
+./configure --prefix=/usr/local
+
+make
+sudo make install
+
+sudo ldconfig
+
+cd ..
+
+// openslide
+sudo apt-get install libsqlite3-dev
+
+git clone https://github.com/openslide/openslide.git
+
+cd openslide
+
+autoreconf -i
+
+CPPFLAGS=-I/usr/local LDFLAGS=-L/usr/local ./configure
+ 
+make
+sudo make install
+
+cd ..
+
+// install vips
+cd vips
+
+
+

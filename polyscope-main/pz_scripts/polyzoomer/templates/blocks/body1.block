@@ -1,0 +1,33 @@
+}
+
+var currentMousePos = { x: -1, y: -1 };
+$(document).mousemove(function(event) {
+	currentMousePos.x = event.pageX;
+    currentMousePos.y = event.pageY;
+});
+	
+function rgbStringToHex(color) {
+
+	var colorArray = color.split("(")[1].split(")")[0];
+	colorArray = colorArray.split(",");
+	var b = colorArray.map(function(x){             //For each array element
+		x = parseInt(x).toString(16);      //Convert to a base16 string
+		return (x.length==1) ? "0"+x : x;  //Add zero if we get only one character
+	})
+	
+	return "#"+b.join("");
+}
+
+</script>
+</head>
+
+<body onload="SyncThemAll()">
+
+<div class="header">
+	<h1>Polyscope</h1>
+
+</div>
+<div class="container">
+<table border="1">
+ <tr>
+

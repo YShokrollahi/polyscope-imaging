@@ -1,0 +1,26 @@
+Loading required package: EBImage
+Loading required package: methods
+Loading required package: abind
+Warning message:
+In dyn.load(file, DLLpath = DLLpath, ...) :
+  Failed to initialize GTK+. Most of the functionality of EBImage will work, but not the GTK+ widgets for interactive use. If you want to use the GTK+ dependent functionality, please make sure you have an X-Server available for this process.
+Loading required package: class
+Otsu threshold
+Read 1632 items
+Start:  Da101
+Almost white. No classicfication applied.
+Da101  finished
+Start:  Da102
+Start segmentation.
+thresholding
+Exclude white pixel
+Otsu threshold
+Otsu threshold
+Otsu threshold
+
+Warning messages:
+1: In dir.create(pathToOutputFolderTempFiles) :
+  cannot create dir '/Users/polyzoomer/CRImage/code/../result/12971/tempFiles', reason 'No such file or directory'
+2: In drawtext(smallImage, cbind(as.numeric(blockSlice[, 3]), as.numeric(blockSlice[,  :
+  drawtext doesn't work on Mac OS due to ImageMagick/Mac OS fonts incompatibility
+Execution halted
