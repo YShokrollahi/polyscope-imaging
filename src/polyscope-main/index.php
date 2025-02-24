@@ -58,7 +58,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
 
 		</ul>
 	</div>
-	<div class='header'><h1>Polyscope_testt</h1></div>
+	<div class='header'><h1>Polyscope</h1></div>
 	<div class='header'><h2>Yuan lab @ MD Anderson</h2></div>
 </div>
 
@@ -1635,11 +1635,64 @@ $(document).ready(function() {
 
 
 
+
+</script>
+
+
+<script>
+// Add logging to ProjectStatus function
+var originalProjectStatus = ProjectStatus;
+ProjectStatus = function() {
+    console.log("ProjectStatus called - current user: '<?php echo $username; ?>'");
+    var request = serverRequest("getProjectStatus.php", null, 
+        function() { 
+            console.log("ProjectStatus response received");
+            getProjectStatus(request);
+        }, null);
+}
+
+// Add logging to getProjectStatus function
+var originalGetProjectStatus = getProjectStatus;
+getProjectStatus = function(request) {
+    console.log("getProjectStatus called", request);
+    
+    if (request.readyState === 4) {
+        if (request.status === 200) {
+            try {
+                var response = JSON.parse(request.responseText);
+                console.log("Parsed response:", response);
+                
+                if (response.debug) {
+                    console.log("Debug info:", response.debug);
+                    console.log("Username:", response.debug.username);
+                    console.log("Total jobs found:", response.debug.jobsFoundTotal);
+                    console.log("Jobs after filter:", response.debug.jobsAfterFilter);
+                    
+                    if (response.debug.allJobs) {
+                        console.log("All jobs before filtering:", response.debug.allJobs);
+                    }
+                }
+            } catch (e) {
+                console.error("Error parsing response:", e);
+            }
+        } else {
+            console.error("Request failed with status:", request.status);
+        }
+    }
+    
+    // Call the original function
+    originalGetProjectStatus(request);
+}
+
 // Override addProjects to automatically set email to username@mdanderson.org
 var originalAddProjects = addProjects;
 addProjects = function(items, isDir) {
+    console.log("addProjects called with items:", items, "isDir:", isDir);
+    
     var currentUsername = '<?php echo htmlspecialchars($username); ?>';
     var fixedEmail = currentUsername + '@mdanderson.org';
+    
+    console.log("Setting fixed email:", fixedEmail);
     
     var itemsToSubmit = new Array();
     
@@ -1648,6 +1701,8 @@ addProjects = function(items, isDir) {
         
         var realPath = unpackPath(items[i]);
         var id = cleanString(realPath);
+        
+        console.log("Processing item:", realPath, "ID:", id);
         
         var projectEntity = new Object();
         projectEntity.name = realPath;
@@ -1660,26 +1715,48 @@ addProjects = function(items, isDir) {
         projectEntity.creationTimeOut = 5;
         projectsToCommit[id] = projectEntity;
         
+        console.log("Created project entity:", projectEntity);
+        
         itemsToSubmit.push(realPath);
     }
     
+    console.log("Submitting items:", itemsToSubmit);
     uploadProjects(itemsToSubmit, isDir);
+};
+
+// Add logging to uploadProjects
+var originalUploadProjects = uploadProjects;
+uploadProjects = function(filesToCopy, isDir) {
+    console.log("uploadProjects called with files:", filesToCopy, "isDir:", isDir);
+    
+    var request = serverRequest("issueUploadProject.php", 
+        "path=" + JSON.stringify(filesToCopy) + "&isDir=" + JSON.stringify(isDir), 
+        function() { 
+            console.log("uploadProjects response received", request);
+            handleUploadProject(request, filesToCopy);
+        }, null);
 };
 
 // Override handleClickedEmails to automatically submit the email
 function handleClickedEmails() {
+    console.log("handleClickedEmails called");
+    
     var currentUsername = '<?php echo htmlspecialchars($username); ?>';
     var emailAdr = currentUsername + '@mdanderson.org';
+    
+    console.log("Auto-setting email to:", emailAdr);
     
     $("#keyboardcontainer").hide("slow");
     $("#emailbox").hide("slow");
     $("#blocker").hide("slow");
     
     var projectsForEmails = getSelections('selectedEmail');
+    console.log("Selected projects for emails:", projectsForEmails);
     
     for(var i = 0; i < projectsForEmails.length; ++i) {
         var projectName = projectsForEmails[i];
         
+        console.log("Setting email for project:", projectName);
         projectsToCommit[projectName].email = emailAdr;
         updateEmailMissingWarning(projectName);
         
@@ -1687,31 +1764,31 @@ function handleClickedEmails() {
     }
 }
 
-// Modify the click handler on polyzoom items to automatically set the email
-$('#polyzoomall').off('click', '.ext-polyzoom-*').on('click', '.ext-polyzoom-*', function() {
-    var className = $(this).attr('class').split(' ').find(c => c.startsWith('ext-polyzoom-'));
-    var classExtension = className.replace('ext-polyzoom-', '');
+// Add logging to updateEmailMissingWarning
+var originalUpdateEmailMissingWarning = updateEmailMissingWarning;
+updateEmailMissingWarning = function(project) {
+    console.log("updateEmailMissingWarning called for project:", project);
     
-    var currentUsername = '<?php echo htmlspecialchars($username); ?>';
-    var emailAdr = currentUsername + '@mdanderson.org';
+    var name = cleanString(project);
+    console.log("Cleaned project name:", name);
     
-    if(projectsToCommit[classExtension] && !projectsToCommit[classExtension].timedout) {
-        // Automatically set the email without showing the keyboard
-        if(typeof projectsToCommit[classExtension].timer !== 'undefined') {
-            clearTimeout(projectsToCommit[classExtension].timer); 
-        }
+    if (projectsToCommit[name]) {
+        console.log("Project email:", projectsToCommit[name].email);
         
-        projectsToCommit[classExtension].email = emailAdr;
-        updateEmailMissingWarning(classExtension);
-        updateEmail(emailAdr, projectsToCommit[classExtension].guid);
+        if(isEmailEmpty(project)) {
+            console.log("Email is empty, showing warning");
+            $(".ext-polyzoom-" + name).find("span#email").removeClass("emailok").addClass("emailmissing").text("Please enter your email!");
+        } else {
+            console.log("Email is set, showing OK message");
+            $(".ext-polyzoom-" + name).find("span#email").removeClass("emailmissing").addClass("emailok").text("Email Ok!");
+        }
+    } else {
+        console.log("Project not found in projectsToCommit:", name);
     }
-});
+};
 
-
-
-
+console.log("Email auto-setting script loaded. Current username: '<?php echo $username; ?>'");
 </script>
-
 <script type="text/javascript" src="keyboard.js"></script>
 
 </body>
