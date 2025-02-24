@@ -58,7 +58,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
 
 		</ul>
 	</div>
-	<div class='header'><h1>Polyscope</h1></div>
+	<div class='header'><h1>Polyscope_testt</h1></div>
 	<div class='header'><h2>Yuan lab @ MD Anderson</h2></div>
 </div>
 
@@ -1632,7 +1632,86 @@ $(document).ready(function() {
         };
     }
 });
+
+
+
+// Override addProjects to automatically set email to username@mdanderson.org
+var originalAddProjects = addProjects;
+addProjects = function(items, isDir) {
+    var currentUsername = '<?php echo htmlspecialchars($username); ?>';
+    var fixedEmail = currentUsername + '@mdanderson.org';
+    
+    var itemsToSubmit = new Array();
+    
+    for (var i = 0; i < items.length; ++i) {
+        ++startedUploads;
+        
+        var realPath = unpackPath(items[i]);
+        var id = cleanString(realPath);
+        
+        var projectEntity = new Object();
+        projectEntity.name = realPath;
+        projectEntity.email = fixedEmail; // Auto-set email to username@mdanderson.org
+        projectEntity.timedout = false;
+        projectEntity.timer = undefined;
+        projectEntity.zoomDone = false;
+        projectEntity.isDir = isDir;
+        projectEntity.valid = false;
+        projectEntity.creationTimeOut = 5;
+        projectsToCommit[id] = projectEntity;
+        
+        itemsToSubmit.push(realPath);
+    }
+    
+    uploadProjects(itemsToSubmit, isDir);
+};
+
+// Override handleClickedEmails to automatically submit the email
+function handleClickedEmails() {
+    var currentUsername = '<?php echo htmlspecialchars($username); ?>';
+    var emailAdr = currentUsername + '@mdanderson.org';
+    
+    $("#keyboardcontainer").hide("slow");
+    $("#emailbox").hide("slow");
+    $("#blocker").hide("slow");
+    
+    var projectsForEmails = getSelections('selectedEmail');
+    
+    for(var i = 0; i < projectsForEmails.length; ++i) {
+        var projectName = projectsForEmails[i];
+        
+        projectsToCommit[projectName].email = emailAdr;
+        updateEmailMissingWarning(projectName);
+        
+        updateEmail(emailAdr, projectsToCommit[projectName].guid);
+    }
+}
+
+// Modify the click handler on polyzoom items to automatically set the email
+$('#polyzoomall').off('click', '.ext-polyzoom-*').on('click', '.ext-polyzoom-*', function() {
+    var className = $(this).attr('class').split(' ').find(c => c.startsWith('ext-polyzoom-'));
+    var classExtension = className.replace('ext-polyzoom-', '');
+    
+    var currentUsername = '<?php echo htmlspecialchars($username); ?>';
+    var emailAdr = currentUsername + '@mdanderson.org';
+    
+    if(projectsToCommit[classExtension] && !projectsToCommit[classExtension].timedout) {
+        // Automatically set the email without showing the keyboard
+        if(typeof projectsToCommit[classExtension].timer !== 'undefined') {
+            clearTimeout(projectsToCommit[classExtension].timer); 
+        }
+        
+        projectsToCommit[classExtension].email = emailAdr;
+        updateEmailMissingWarning(classExtension);
+        updateEmail(emailAdr, projectsToCommit[classExtension].guid);
+    }
+});
+
+
+
+
 </script>
+
 <script type="text/javascript" src="keyboard.js"></script>
 
 </body>
