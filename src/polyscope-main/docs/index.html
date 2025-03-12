@@ -12,7 +12,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Welcome to Polyscope Documentation";
+        var mkdocs_page_name = "Home";
         var mkdocs_page_input_path = "index.md";
         var mkdocs_page_url = null;
       </script>
@@ -40,37 +40,39 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Welcome to Polyscope Documentation</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#what">What?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#what">What?</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#why">Why?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#why">Why?</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#who">Who?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#who">Who?</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how">How?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how">How?</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#limitations">Limitations</a>
+    <li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#disclaimer">Disclaimer</a>
+    <li class="toctree-l2"><a class="reference internal" href="#disclaimer">Disclaimer</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#acknowledgement">Acknowledgement</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#pages">Pages</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#index-page">Index Page</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#user-page">User Page</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#polyzoomer-page">Polyzoomer Page</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#acknowledgement">Acknowledgement</a>
     </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="pages/">Pages</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="tutorial_basics/">Tutorial 1 (Basics)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="tutorial_polyzoomer/">Tutorial 2 (Annotating)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="tutorial_multizoomer/">Tutorial 3 (Multizoomer)</a>
                 </li>
               </ul>
       </div>
@@ -87,7 +89,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Welcome to Polyscope Documentation</li>
+      <li class="breadcrumb-item active">Home</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -96,84 +98,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-polyscope-documentation">Welcome to Polyscope Documentation</h1>
-<h2 id="introduction">Introduction</h2>
-<h3 id="what">What?</h3>
-<p>PolyScope is a web application for image sharing and annotation collection for digital pathology. Our aim is to connect our target users, pathologists, to data scientists, who are developing machine learning (ML) models for cancer diagnosis. In PolyScope, large whole-slide images can be explored in a web browser with fast response and a simplistic user interface. It supports single-cell annotations and tissue segmentation that we can collect to train ML models or visualize to validate the prediction of these models. </p>
-<h3 id="why">Why?</h3>
-<p>PolyScope supports a wide range of image formats. Sharing a view of a slide can be as easy as sharing a URL link. By using PolyScope, you have the chance to work with its developers, a team of data scientists and pathologists, and collaborate with them first-hand to form collobration and publish findings together, as opposed to developers of other software whom might not have the expertise in cancer research. </p>
-<p>Compared with existing software such as QuPath, PolyScope doesn't require installation or local storage at the users end. PolyScope can be accessed from almost all modern web browsers, including mobile devices. </p>
-<h3 id="who">Who?</h3>
-<p>PolyScope was originally developed by researchers in Dr. Yinyin Yuan's lab at <a href="https://www.icr.ac.uk/">The Institute of Cancer Research, London</a>. After Dr. Yuan moved to The University of Texas MD Anderson Cancer Center, we continue adding to its features at <a href="https://www.mdanderson.org/research/departments-labs-institutes/labs/yuan-laboratory.html">Yuan Lab</a>. This version is built upon the public <a href="https://github.com/polyscope/polyscope">PolyScope repository</a> where Sebastian Schmittner was the main contributor. Current developers include: <a href="https://www.linkedin.com/in/simon-castillo-95b08b3a/">Simon Castillo</a>, <a href="https://www.linkedin.com/in/yshokrollahi/">Yasin Shokrollahi</a>, <a href="https://www.linkedin.com/in/zhuoheliu/">Zhuohe Liu</a>, etc., with users from both within MD Anderson and outside collaborators.</p>
-<p>To report bugs, request features, or ask questions, please contact developers through their MD Anderson emails or create an issue in the <a href="https://github.com/MDA-Yuan-Lab/polyscope/issues">PolyScope repository</a>.</p>
-<h3 id="how">How?</h3>
-<p>PolyScope home page is at <a href="#">placeholder</a>. To view a demonstrative slide, please check <a href="#">placeholder</a>. To create an account, please see <a href="#">placeholder</a>. You may also view the YouTube tutorial <a href="#">placeholder</a>.</p>
-<h3 id="limitations">Limitations</h3>
+                <h1 id="introduction">Introduction</h1>
+<h2 id="what">What?</h2>
+<p>Polyscope is a web application for image sharing and annotation collection for digital pathology. Our aim is to connect our target users, pathologists, to data scientists, who are developing machine learning (ML) models for cancer diagnosis. In Polyscope, large whole-slide images can be explored in a web browser with fast response and a simplistic user interface. It supports single-cell annotations and tissue segmentation that we can collect to train ML models or visualize to validate the prediction of these models. </p>
+<h2 id="why">Why?</h2>
+<p>Polyscope supports a wide range of image formats. Sharing a view of a slide can be as easy as sharing a URL link. By using Polyscope, you have the chance to work with its developers, a team of data scientists and pathologists, and collaborate with them first-hand to form collobration and publish findings together, as opposed to developers of other software whom might not have the expertise in cancer research. </p>
+<p>Compared with existing software such as <a href="https://qupath.github.io/">QuPath</a>, Polyscope doesn't require installation or local storage at the users end. Polyscope can be accessed from almost all modern web browsers, including mobile devices. </p>
+<h2 id="who">Who?</h2>
+<p>Polyscope was originally developed by researchers in Dr. Yinyin Yuan's lab at <a href="https://www.icr.ac.uk/">The Institute of Cancer Research, London</a>. After Dr. Yuan moved to <a href="https://www.mdanderson.org/">The University of Texas MD Anderson Cancer Center</a>, we continue adding to its features at <a href="https://www.mdanderson.org/research/departments-labs-institutes/labs/yuan-laboratory.html">Yuan Lab</a>. The current Polyscope version (<a href="https://github.com/idso-fa1-pathology/polyscope">GitHub Repository</a>) is built upon the published version (<a href="https://github.com/polyscope/polyscope">GitHub repository</a>) where <a href="https://www.linkedin.com/in/sebastian-schmittner-96b040a6/">Sebastian Schmittner</a> was the main contributor. Current developers include <a href="https://www.linkedin.com/in/simon-castillo-95b08b3a/">Simon Castillo</a>, <a href="https://www.linkedin.com/in/yshokrollahi/">Yasin Shokrollahi</a>, <a href="https://www.linkedin.com/in/zhuoheliu/">Zhuohe Liu</a>, etc. We are expanding Polyscope users from both within MD Anderson and outside collaborators, and we are happy to hear your feedback and requests.</p>
+<p>You have the following options to report bugs, request features, or ask questions: </p>
+<ul>
+<li>
+<p>Send an email to the official support email address <a href="mailto:polyscope_admin@mdanderson.org">polyscope_admin@mdanderson.org</a>. </p>
+</li>
+<li>
+<p>Create an issue on the <a href="https://github.com/idso-fa1-pathology/polyscope/issues">GitHub issue page</a>.</p>
+</li>
+<li>
+<p>Reach out to individual developers directly through their MD Anderson emails. </p>
+</li>
+</ul>
+<h2 id="how">How?</h2>
+<p>Polyscope home page is at <a href="https://polyscope.mdanderson.org/">https://polyscope.mdanderson.org/</a>. To view a demonstrative slide, please check <a href="#">placeholder</a>. You are viewing view the documentation at <a href="https://polyscope.mdanderson.org/doc/">https://polyscope.mdanderson.org/doc/</a>. </p>
+<h2 id="limitations">Limitations</h2>
 <p>We are working to add the support for non-composite multiplex immunofluorescence (mIF) images. </p>
-<h3 id="disclaimer">Disclaimer</h3>
-<p>We are working with MD Anderson to ensure the safety and security of the data. User access are managed. However, as patient data are involved, we recommend checking with your institutions policy and compliance before uploading data to PolyScope. Deidentification is strongly recommended and please also consider if material transfer agreement (MTA) is needed. All data are stored in secure MD Anderson servers. </p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>We are working with MD Anderson to ensure the safety and security of the data. User access are managed. However, as patient data are involved, we recommend checking with your institutions policy and compliance before uploading data to Polyscope. Deidentification is strongly recommended and please also consider if material transfer agreement (MTA) is needed. All data are stored in secure MD Anderson servers. </p>
 <p>We are a non-profit organization. Despite that we are actively maintaining the software, we cannot guarantee the availability of the service. In addition, we will try to acknowledge all the issue reported and feature requested, but we cannot guarantee the timeline of the development. For urgent issues, please contact the developers directly. We are not responsible for any loss of data or any other damages caused by the use of this software.</p>
 <p>This application is not approved for clinical use or primary diagnosis. </p>
 <p>We are currently working to potentially open-source the application and accept external contributions. For now, please contact the developers if you want to contribute to the source code. </p>
-<h3 id="acknowledgement">Acknowledgement</h3>
+<h2 id="acknowledgement">Acknowledgement</h2>
 <p>We thank Dr. Yinyin Yuan for her leadership and support. We gratefully acknowledge the support from MD Anderson Cancer Center, especially Gaston Benavides from the Oncology Care &amp; Research Information Systems department and John Wood from the Enterprise Development &amp; Integration department. We thank <a href="mailto:nick.trahearn@icr.ac.uk">Nick Trahearn</a> from ICR who helped on transition the software from ICR to MD Anderson. </p>
-<h2 id="pages">Pages</h2>
-<p>PolyScope has three main pages: (1) <strong>index page</strong>, which enables user to select files to be preprocessed; (2) <strong>user page</strong>: this page let user manage their imported slides and generate 'Polyzoomer' slide views; (3) <strong>Polyzoomer page</strong>: this is the page to create annotations and view statistics for each slide or combination of slide views. </p>
-<h3 id="index-page">Index Page</h3>
-<p>The index page consists of three views: (1) <strong>summary</strong>, (2) <strong>file browser</strong>, and (3) <strong>job status</strong>.</p>
-<p>When login to the index page, you will first see the <strong>summary view</strong>. The clock indicates periodic page refresh, the traffic light indicates CPU workload, and the pie chart indicates available storage. The view will display briefly and then turns to the file browser view. Use the red arrow on the bottom right to switch from summary view to file browser view, and the arrow on the bottom left to switch from file browser view to summary view.</p>
-<p><img alt="Summary view" src="img/summary-view.png" title="Summary view" /></p>
-<p><strong>File browser</strong> is where you select files to be imported and preprocessed. To select files, first click on the list on the left to select a drive, after which the files within will be listed on the treeview to the right. Select one or mulitple files using the checkboxes, and click the yellow 'Polyzoomer' button on the lower left to submit the files for batch processing. </p>
-<p><img alt="File browser" src="img/file-browser.png" title="File browser" /></p>
-<p><strong>Job status</strong> view displays the queue of files to be processed. If you see red 'Please enter your email' label next to the job, click it to type in your username (i.e. email) in the popup onscreen keyboard. After hitting 'Return' or press 'Enter' key, you will see the green 'Email Ok!' label, indicating the email is accepted. You will see the job status evolve from checksum, pending, upload, uploading, uploaded, inQueue, processing, finished, emailSent, all the way to readyToBeRemoved. Normally, preprocessing of a file takes somewhere around 1 to 10 minumtes. After the job is finished, it will be removed from the list. Processed files can then be viewed in the <strong>user page</strong>.</p>
-<p><img alt="Job status" src="img/job-status.png" title="Job status" /></p>
-<h3 id="user-page">User Page</h3>
-<p>From the <strong>index page</strong>, click 'Customers' in the navigation bar to go to the user page. You have access only to your own user directory under <code>.../customers/&lt;your_email&gt;</code> where <code>&lt;your_email&gt;</code> is your email address/username where <code>@</code> and <code>.</code> is replaced by <code>-</code>. For example, for <code>jsmith1@mdanderson.org</code>, the user page is located at <code>.../customers/jsmith1-mdanderson-org</code>.</p>
-<p><img alt="User page" src="img/user-page.png" title="User page" /></p>
-<p>Use the buttons to the left to organize the imported files. From top to bottom: (1) delete selected file(s); (2) create new folders; (3) sort file list. To move file(s) to a folder, either drag the selected files to the destination folder, or use context menu to 'copy' or 'cut' and then 'paste'. </p>
-<p><img alt="User page while creating multizoom" src="img/multizoom.png" title="User page while creating multizoom" /></p>
-<p>A 'Polyzoomer' view may contain one slide/file, or more than one, which is called 'multizoomer'. In a 'multizoomer' view, the display areas of each file are synchronized across user's pan and zoom actions. To create a multizoomer view, drag one or more files to the right side of the user page. When all files are added, click the 'multizoom' button on the left to create the view. This will be added to the list of files on the left. Double click on the thumbnail of a 'Polyzoomer' or 'multizoomer' to open them in the <strong>Polyzoomer page</strong>.</p>
-<p>Note that changes (annotation edits) to the underlying polyzoomer files will propogate to the dependent multizoomer views. </p>
-<h3 id="polyzoomer-page">Polyzoomer Page</h3>
-<p>The main goal of the <strong>Polyzoomer page</strong> is to let users view and annotate slides. Before you start, make sure you choose a set of annotation shapes and colors to be used for each semenatic class to ensure consistency. Once an annotation is created, it cannot be edited (shape or color) unless it is deleted and recreated.</p>
-<p><img alt="Polyzoomer page" src="img/polyzoomer.png" title="Polyzoomer page" /></p>
-<p><strong>View Controls</strong></p>
-<ul>
-<li>Click <code>+</code> or <code>-</code>, press <code>-</code> or <code>=</code> keys, or use mouse scroll to zoom. Double left click to zoom in. </li>
-<li>Press arrow keys or <code>wasd</code> keys or drag with left mouse button to pan.</li>
-<li>Click the house icon to reset the view. </li>
-<li>Click 'toggle full page' to display the current slide in full screen.</li>
-<li>Click <code>⮣</code> or <code>⮢</code> icons to rotate the slide 90 degrees clockwise or counterclockwise, respectively.</li>
-</ul>
-<p><strong>Annotation Controls</strong></p>
-<ul>
-<li>Click <code>□</code> icon and drag on the slide using left mouse button to add a rectangle annotation.</li>
-<li>Click <code>○</code> icon and drag on the slide using left mouse button to add an ellipse annotation.</li>
-<li>Click <code>⟋</code> icon and drag on the slide using left mouse button to add a line segment annotation.</li>
-<li>Click <code>⭩</code> icon and drag on the slide using left mouse button to add an arrow annotation from tail to head.</li>
-<li>Click <code>T</code> icon to add a text annotation. In the popup window, type in the text after the prompt 'Please enter the annotation text'. Click 'OK' to add the annotation.</li>
-<li>Click the pen icon and drag on the slide using left mouse button to draw a freehand annotation.</li>
-<li>Click <code>.</code> icon and left click on the slide to add a point annotation.</li>
-<li>Click the 'select color' icon and click on the popup color swatches to change the annotation color. </li>
-</ul>
-<p>Note that once an annotation is created, it cannot be edited (shape or color) unless it is deleted and recreated. To delete an annotation, double click on it and click 'Yes' in the popup message box. Annotations are automatically saved and you can safely close the browser window whenever you want.</p>
-<p><strong>Download Annotations</strong></p>
-<p>Click the 'Download Annotations' green button on top of the page to download the annotations in .txt format. In the txt, we save the following properties of each annotation, as ordered by column: </p>
-<ul>
-<li>Annotation state: 0 = deleted, 1 = active. </li>
-<li>Ordered index: started from one. </li>
-<li>Shape type: 0 = line segment, 1 = arrow, 2 = rectangle, 3 = ellipse, 4 = freehand, 5 = text, 6 = point.</li>
-<li>Coordinates: An array of (x, y) values, normalized to 0 to 1 according to the area of the slide. For text annotation, the text is saved at the end of the coordinate array. </li>
-<li>Ccolor: in hex such as #ffffff. </li>
-<li>Created date and time: in the format of d/m/yyyy/HH:mm:ss in local time zone.</li>
-</ul>
-<p><strong>Statistics</strong></p>
-<p>At the bottom of the page, you can view a real-time summary of created annotations. The statistics include counts of each annotation types. </p>
-<p><strong>Link Sharing</strong></p>
-<p>You can bookmark and share the URL of the current slide view with others for collaboration. An exemplar Polyzoomer/Multizoomer link might look like this: <code>.../customers/jsmith1-mdanderson-org/Path000001_202402061731/page/test001/index.html</code>. </p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="pages/" class="btn btn-neutral float-right" title="Pages">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -196,6 +157,8 @@
     
     
     
+      <span><a href="pages/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
   </span>
 </div>
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -214,5 +177,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-02-21 16:07:40.044471+00:00
+Build Date UTC : 2025-03-05 18:01:35.193013+00:00
 -->

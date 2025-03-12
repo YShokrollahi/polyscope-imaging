@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Tutorial 3 (Multizoomer) - Polyscope Doc</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tutorial 3 (Multizoomer)";
+        var mkdocs_page_input_path = "tutorial_multizoomer.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Polyscope Doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pages/">Pages</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tutorial_basics/">Tutorial 1 (Basics)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tutorial_polyzoomer/">Tutorial 2 (Annotating)</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Tutorial 3 (Multizoomer)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-multizoomer">Creating a Multizoomer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#multizoomer-interaction">Multizoomer Interaction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sharing-a-multizoomer">Sharing a Multizoomer</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Polyscope Doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Tutorial 3 (Multizoomer)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tutorial-3-create-and-view-a-multizoomer">Tutorial 3: Create and View a Multizoomer</h1>
+<p>This tutorial covers the creation and viewing of a Multizoomer, synchronized viewing of multiple slide views. For more detailed information, refer to the <a href="../pages/">Documentation</a>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Multizoomer is a powerful tool that enables synchronized viewing of multiple images. It is particularly useful for:</p>
+<ul>
+<li>Displaying slide annotations from multiple sources.</li>
+<li>Viewing multiple imaging channels simultaneously.</li>
+<li>Comparing different imaging modalities of adjacent tissue.</li>
+<li>Visualizing AI model outputs alongside original images.</li>
+</ul>
+<p>A Multizoomer is composed of multiple Polyzoomers. Importantly, it does not duplicate the underlying Polyzoomers; this means that any annotation changes propagate bidirectionally, ensuring data consistency. However, if a Polyzoomer is deleted, a blank view will appear in its place within the Multizoomer.</p>
+<h2 id="creating-a-multizoomer">Creating a Multizoomer</h2>
+<p>To create a Multizoomer, follow these steps:</p>
+<ol>
+<li>Drag individual Polyzoomers onto the right side of the interface to configure the Multizoomer layout.</li>
+<li>It is recommended to use a maximum of <strong>two columns</strong> for better organization.</li>
+<li>While the system supports an unlimited number of views, keeping it to around <strong>six views</strong> ensures clarity and usability.</li>
+<li>Click the <strong>Create Multizoomer</strong> button to finalize the layout. This action will navigate to the newly created Multizoomer page.</li>
+<li>Click the <strong>α (alpha)</strong> button to designate one Polyzoomer as the reference Polyzoomer. The reference Polyzoomer controls synchronized actions across all views (explained in the next section).</li>
+</ol>
+<h2 id="multizoomer-interaction">Multizoomer Interaction</h2>
+<p>Once a Multizoomer is created, interactions are synchronized based on the reference Polyzoomer:</p>
+<ul>
+<li><strong>Pan and zoom movements</strong> applied to the reference Polyzoomer will be mirrored across all other Polyzoomers in the Multizoomer.</li>
+<li><strong>Other operations</strong> will function as they do on an individual Polyzoomer.</li>
+</ul>
+<h2 id="sharing-a-multizoomer">Sharing a Multizoomer</h2>
+<p>Sharing a Multizoomer is straightforward:</p>
+<ul>
+<li>The URL of the Multizoomer page serves as the shareable link. Example: <code>https://polyscope.mdanderson.org/customers/jsmith1-mdanderson-org/multizooms/Path000009_202502041751/page/INDEX/</code></li>
+<li>The link is publicly accessible, so it is advisable to keep it confidential.</li>
+<li>It can be accessed both inside and outside MD Anderson without requiring a VPN.</li>
+<li>Since a Multizoomer depends on its source Polyzoomers, consider creating multiple Polyzoomers from a single slide if you need to share them with different individuals independently.</li>
+</ul>
+<p>By following these steps, you can efficiently create, interact with, and share Multizoomers for various imaging and annotation tasks.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tutorial_polyzoomer/" class="btn btn-neutral float-left" title="Tutorial 2 (Annotating)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tutorial_polyzoomer/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
