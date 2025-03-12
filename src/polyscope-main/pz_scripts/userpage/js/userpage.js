@@ -33,7 +33,7 @@ function generateSingleZoomEntry(project, index) {
     var element =
             '<td class="sampleSource">' +
             '<div class="analysis">' +
-            '<img class="itemImage" title="' + project.name +
+            '<img class="itemImage" title="' + baseName(project.dzi[0]) +
             '" src="' + project.image +
             '" indexPath="' + project.index +
             '" data-pathname="' + project.name +
@@ -52,7 +52,7 @@ function generateMultiZoomEntry(project, index) {
     var element =
             '<td class="sampleSource">' +
             '<div class="multizoom">' +
-            '<img class="itemImage" title="' + project.name +
+            '<img class="itemImage" title="' + (project.dziName || project.name) +
             '" src="' + project.thumbnail +
             '" indexPath="' + project.index +
             '" data-pathname="' + project.name +
@@ -582,7 +582,6 @@ jQuery('div.button.deleteZooms').click(function () {
 });
 
 function deleteZooms(zoomIndexes) {
-
     var elementCount = zoomIndexes.length;
 
     if (elementCount === 0) {
@@ -611,62 +610,52 @@ function deleteZooms(zoomIndexes) {
             window.alert("Error: Cannot find selected items.");
             return;
         } else {
-            deleteString = folderCount + ' folder';
-
-            if (folderCount > 1) {
-                deleteString = deleteString + 's';
-            }
+            deleteString = folderCount + ' folder' + (folderCount > 1 ? 's' : '');
         }
     } else {
         if (folderCount === 0) {
-            deleteString = zoomCount + ' zoom';
-
-            if (zoomCount > 1) {
-                deleteString = deleteString + 's';
-            }
+            deleteString = zoomCount + ' zoom' + (zoomCount > 1 ? 's' : '');
         } else {
-            deleteString = folderCount + ' folder'
-
-            if (folderCount > 1) {
-                deleteString = deleteString + 's';
-            }
-
-            deleteString = deleteString + ' and ' + zoomCount + ' zoom';
-
-            if (zoomCount > 1) {
-                deleteString = deleteString + 's';
-            }
+            deleteString = folderCount + ' folder' + (folderCount > 1 ? 's' : '') + 
+                           ' and ' + zoomCount + ' zoom' + (zoomCount > 1 ? 's' : '');
         }
     }
 
-
-    var message = 'Warning: You are going to delete ' + deleteString + '!\nAre you sure you want to continue? (1/2)';
+    var message = 'Warning: You are going to delete ' + deleteString + '!\nAre you sure you want to continue?';
 
     var result = showWarning(message);
 
     if (result === true) {
+        // Just one more confirmation for safety
+        var secondMessage = 'Are you absolutely sure you want to delete these items?';
+        var secondResult = showWarning(secondMessage);
+        
+        if (secondResult === true) {
+            // Call our new simplified deletion endpoint
+            var paths = getIndexFiles(zooms);
+            var fsPaths = fileManager.fullItemsPath(items);
+            
+            var request = serverRequest("directRemoveZooms.php", "files=" + JSON.stringify(paths),
+                function () {
+                    switch (request.readyState) {
+                        case 4:
+                            if (request.status === 200) {
+                                var result = JSON.parse(request.responseText);
+                                
+                                window.alert(result["message"]);
+                                
+                                if (result["value"] != null && result["value"] == zooms.length) {
+                                    fileManager.deleteItems(fsPaths, '');
+                                }
 
-        var message = 'Warning: The selected ' + deleteString.replace(/^(1 ([^0-9]*))?1 /g, '$2') + ' will be removed immediately!\nAre you sure? (2/2)';
-
-        var result = showWarning(message);
-
-        if (result === true) {
-
-            var userCode = window.prompt("Please enter your user code:", "000000");
-
-            if (userCode !== null) {
-
-                requestRemoveZooms(userCode, zoomIndexes, zooms);
-            }
-            else {
-                window.alert("User code invalid, deletion aborted.");
-            }
+                                ServerRefresh();
+                                ServerRefreshMulti();
+                            }
+                            request = null;
+                    }
+                }, null);
         }
-        else {
-            window.alert("Deletion aborted.");
-        }
-    }
-    else {
+    } else {
         window.alert("Deletion aborted.");
     }
 }
