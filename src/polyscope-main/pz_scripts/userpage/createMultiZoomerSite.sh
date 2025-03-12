@@ -61,8 +61,8 @@ if [ $DO_WEBSITE -eq "1" ]; then
 	echo "" > _tmpbody2  #create tmp hashtable html file
 
 	mkdir "./INDEX"
-	PATHTOINDEX="./INDEX/index.php"
-	echo "./INDEX/index.php" >> "./indexes"
+	PATHTOINDEX="./INDEX/index.html"
+	echo "./INDEX/index.html" >> "./indexes"
 
 	cat ./blocks/header.block > ${PATHTOINDEX} #create index file
 	#replace tags

@@ -16,8 +16,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 $logged_in_user = $_SESSION['username'];
 
-// This file is now just a fallback and shouldn't be directly accessed
-// The main functionality has been moved to the parent file
+// This file is now just a fallback
+header('Location: /index.php');
+exit;
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,11 +80,5 @@ $logged_in_user = $_SESSION['username'];
  </div> -->
 </div>
 </div>
-<script>
-// Notify parent that content is loaded
-if (typeof onLoad === 'function') {
-    onLoad();
-}
-</script>
 </body>
 </html>

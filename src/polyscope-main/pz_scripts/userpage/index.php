@@ -57,7 +57,6 @@ if ($logged_in_user !== $requested_user) {
     </style>
 </head>
 <body>
-    <!-- Include the content from index_med1.php directly -->
     <div id='main' class='main'>
         <div id='header' class='header'>
             <div id="topMenu">
@@ -82,15 +81,12 @@ if ($logged_in_user !== $requested_user) {
                     <div id='createZoom' class='button' style='height:48px;width:48px;' title='Create multizoom'></div>
                     <div id='applyTemplate' class='button' style='height:48px;width:48px;display:none;' title='Apply multizoom template'></div>
                     <div id='sendCode' class='button' style='height:48px;width:48px;' title='Resend usercode'></div>
-                    <!-- <div id='startAnalysis' class='button' style='height:48px;width:48px;' title='Analysis Apps'></div> !-->
-                    <!-- <div id='zoomJobs' class='button' style='height:48px;width:48px;' title='Job Information'></div> !-->
                     <div id='imageSizeSlider' class='verticalSlider'></div>
                 </div>
                 <div id='samplelist' class='samplelist'>
                     <table id='sampleTable'><tbody></tbody></table>
                     <table id='multizooms' style='display:none;'><tbody></tbody></table>
                 </div>
-                <!-- <div id='status' class='status'></div> !-->
             </div>
             <!-- right pane !-->
             <div id='rightpane' class='rightpane'>
@@ -98,20 +94,22 @@ if ($logged_in_user !== $requested_user) {
                     <div id='raster' class='raster'></div>
                 </div>
             </div>
-            <!-- <div id='currentPath' class='currentPath'>
-             </div> -->
         </div>
     </div>
 
     <script type="text/javascript">
         $(document).ready(function() {
+            // Make user data available to JavaScript
+            window.loggedInUser = "<?php echo htmlspecialchars($logged_in_user); ?>";
+            
+            // Load and execute userpage.js
             $.getScript('./js/userpage.js')
-                .done(function(){
+                .done(function() {
                     if (typeof onLoad === 'function') {
                         onLoad();
                     }
                 })
-                .fail(function(){
+                .fail(function() {
                     console.error("Failed to load userpage.js");
                 });
         });
