@@ -1544,7 +1544,7 @@ $(document).ready(function() {
                 .attr({
                     type: 'file',
                     multiple: true,
-                    accept: '.jpg,.jpeg,.png,.gif,.tiff,.tif,.bmp,.webp,.pdf'
+                    accept: '.jpg,.jpeg,.png,.gif,.tiff,.tif,.bmp,.webp,.pdf,.svs,.ndpi,.czi,.scn,.dcm'
                 })
                 .css('display', 'none');
             
