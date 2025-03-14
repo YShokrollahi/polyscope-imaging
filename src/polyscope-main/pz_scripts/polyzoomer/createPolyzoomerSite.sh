@@ -238,8 +238,8 @@ echo "${PATHTOINDEX}"
   echo "<script type=\"text/javascript\">var annotationsPath = '${ANNOTATIONS_LINK}';</script>" >> "${PATHTOINDEX}"
 
   # Link the JavaScript file
-  echo "<script type=\"text/javascript\" src=\"../annotationCounter.js\"></script>" >> "${PATHTOINDEX}"
-
+  # echo "<script type=\"text/javascript\" src=\"../annotationCounter.js\"></script>" >> "${PATHTOINDEX}"
+  echo "<script type=\"text/javascript\" src=\"../enhancedAnnotationManager.js\"></script>" >> "${PATHTOINDEX}"
   echo "</body>" >> "${PATHTOINDEX}"
   done
 
