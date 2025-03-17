@@ -1,11 +1,16 @@
 /**
- * Enhanced Annotation Manager for Polyscope
+ * Enhanced Annotation Manager for Polyscope - Fixed Version
  * 
  * This script extends the existing annotation functionality with:
  * 1. A better annotation panel showing all annotations
  * 2. The ability to select annotations from the panel
  * 3. The ability to delete selected annotations
  * 4. Highlighting selected annotations in the viewer
+ * 
+ * Fixed issues:
+ * - Resolved undefined annotation error in deleteSelectedAnnotation
+ * - Improved annotation deletion reliability
+ * - Ensured annotation file is properly updated upon deletion
  */
 
 (function() {
@@ -548,6 +553,9 @@
         /**
          * Process annotations from the server
          */
+        /**
+         * Process annotations from the server with improved inactive annotation handling
+         */
         processAnnotations: function(data) {
             this.annotations = [];
             var counts = {};
@@ -557,7 +565,89 @@
                 counts[type] = 0;
             }
             
-            // Process each annotation
+            // Identify inactive annotations first to ensure thorough cleanup
+            var inactiveIds = [];
+            if (Array.isArray(data)) {
+                for (var i = 0; i < data.length; i++) {
+                    var line = data[i];
+                    if (!line || line.trim() === '') continue;
+                    
+                    try {
+                        var parts = line.split(',');
+                        if (parts.length < 4) continue;
+                        
+                        var active = parseInt(parts[0]);
+                        var id = parseInt(parts[1]);
+                        
+                        if (active !== 1) {
+                            inactiveIds.push(id);
+                        }
+                    } catch (e) {
+                        console.error("Error parsing annotation line:", e);
+                    }
+                }
+            }
+            
+            // First pass: Remove all inactive annotations from DOM completely
+            if (inactiveIds.length > 0) {
+                console.log("Found " + inactiveIds.length + " inactive annotations to clean up");
+                
+                for (var j = 0; j < inactiveIds.length; j++) {
+                    var inactiveId = inactiveIds[j];
+                    
+                    // Try to use original plugin's removal method first
+                    var originalPluginUsed = false;
+                    
+                    if (this.polyzoomAnnotation && typeof this.polyzoomAnnotation.removeAnnotation === 'function') {
+                        try {
+                            this.polyzoomAnnotation.removeAnnotation(inactiveId);
+                            originalPluginUsed = true;
+                        } catch (e) {
+                            console.error("Error using original removeAnnotation for inactive annotation:", e);
+                            originalPluginUsed = false;
+                        }
+                    }
+                    
+                    // If original plugin method failed, do manual cleanup
+                    if (!originalPluginUsed) {
+                        // Remove from DOM with comprehensive selector
+                        $('svg g[id="' + inactiveId + '"], svg line[id="' + inactiveId + '"], ' + 
+                          'svg rect[id="' + inactiveId + '"], svg ellipse[id="' + inactiveId + '"], ' + 
+                          'svg path[id="' + inactiveId + '"], svg circle[id="' + inactiveId + '"], ' + 
+                          'svg text[id="' + inactiveId + '"]').remove();
+                        
+                        // Also clean up from polyzoomAnnotation if it exists
+                        if (this.polyzoomAnnotation && this.polyzoomAnnotation.annotationList) {
+                            for (var k = 0; k < this.polyzoomAnnotation.annotationList.length; k++) {
+                                if (this.polyzoomAnnotation.annotationList[k]) {
+                                    this.polyzoomAnnotation.annotationList[k] = this.polyzoomAnnotation.annotationList[k].filter(function(a) {
+                                        return (a.guid !== inactiveId && a.id !== inactiveId);
+                                    });
+                                }
+                            }
+                            
+                            // Also clean from annotation table if it exists
+                            if (this.polyzoomAnnotation.annotationTable) {
+                                delete this.polyzoomAnnotation.annotationTable[inactiveId];
+                            }
+                            
+                            // Reset current annotation if it's the inactive one
+                            if (this.polyzoomAnnotation.currentAnnotation && 
+                                (this.polyzoomAnnotation.currentAnnotation.guid === inactiveId || 
+                                 this.polyzoomAnnotation.currentAnnotation.id === inactiveId)) {
+                                this.polyzoomAnnotation.currentAnnotation = null;
+                            }
+                        }
+                    }
+                }
+                
+                // Force a redraw after cleaning
+                if (this.viewer && this.viewer.world) {
+                    this.viewer.world.draw();
+                }
+            }
+            
+            // Second pass: Process active annotations
             if (Array.isArray(data)) {
                 for (var i = 0; i < data.length; i++) {
                     var line = data[i];
@@ -572,8 +662,10 @@
                         var id = parseInt(parts[1]);
                         var type = parseInt(parts[2]);
                         
-                        // Skip inactive annotations
-                        if (active !== 1) continue;
+                        // Skip inactive annotations - we've already cleaned them up
+                        if (active !== 1) {
+                            continue;
+                        }
                         
                         // Get coordinates and other data
                         var contentStart = line.indexOf('[');
@@ -607,6 +699,11 @@
             
             // Update the panel
             this.updateAnnotationPanel(counts);
+            
+            // Force a redraw to ensure annotations are properly displayed
+            if (this.viewer && this.viewer.world) {
+                this.viewer.world.draw();
+            }
         },
 
         /**
@@ -845,6 +942,7 @@
 
         /**
          * Delete the selected annotation
+         * FIX: Added proper error checking and fallback methods
          */
         deleteSelectedAnnotation: function() {
             var self = this;
@@ -854,92 +952,217 @@
             
             // Find the annotation
             var annotation = null;
+            var annotationIndex = -1;
             for (var i = 0; i < this.annotations.length; i++) {
                 if (this.annotations[i].id === id) {
                     annotation = this.annotations[i];
+                    annotationIndex = i;
                     break;
                 }
             }
             
-            if (!annotation) return;
+            if (!annotation) {
+                console.error("Annotation not found for deletion:", id);
+                return;
+            }
             
             // Confirm deletion
             if (!confirm("Are you sure you want to delete this " + this.annotationTypes[annotation.type] + " annotation?")) {
                 return;
             }
             
-            // Check if we can use the existing removeAnnotation method
+            console.log("Using direct annotation removal approach");
+            
+            // Prepare the update data - change active flag from 1 to 0
+            var rawText = annotation.raw;
+            var updatedText = rawText.replace(/^1,/, "0,");
+            
+            // Get first 10 characters of each for the update
+            var from = rawText.substring(0, 10);
+            var to = updatedText.substring(0, 10);
+            
+            // IMPORTANT: Use the original polyzoomer plugin's removal method if available
+            var originalPluginUsed = false;
+            
             if (this.polyzoomAnnotation && typeof this.polyzoomAnnotation.removeAnnotation === 'function') {
-                // Use existing method
-                this.polyzoomAnnotation.removeAnnotation(id);
-                
-                // Update our local list and UI
-                this.annotations = this.annotations.filter(function(a) {
-                    return a.id !== id;
-                });
-                
-                // Reset selection
-                this.selectedAnnotationId = null;
-                
-                // Reload annotations to refresh counts
-                this.loadAnnotations();
-                
-                // Disable delete button
-                $('.delete-annotation-btn').prop('disabled', true);
-            } else {
-                // Use our own implementation
-                // Prepare the update data
-                var rawText = annotation.raw;
-                var updatedText = rawText.replace(/^1,/, "0,"); // Change active flag from 1 to 0
-                
-                // Get first 10 characters of each for the update
-                var from = rawText.substring(0, 10);
-                var to = updatedText.substring(0, 10);
-                
-                // Make the update request
-                $.ajax({
-                    url: '../updateAnnotationFile.php', // Use relative path with ../ to go up one directory
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        path: JSON.stringify(this.annotationPath),
-                        from: JSON.stringify(from),
-                        to: JSON.stringify(to)
-                    },
-                    success: function(data) {
-                        // Remove from UI
-                        $('svg g[id="' + id + '"], svg line[id="' + id + '"], svg rect[id="' + id + '"], svg ellipse[id="' + id + '"], svg path[id="' + id + '"], svg circle[id="' + id + '"]').remove();
-                        
-                        // Reset selection
-                        self.selectedAnnotationId = null;
-                        
-                        // Disable delete button
-                        $('.delete-annotation-btn').prop('disabled', true);
-                        
-                        // Show success message
-                        alert("Annotation deleted successfully");
-                        
-                        // Reload annotations immediately to update counts
-                        setTimeout(function() {
-                            self.refreshAnnotations();
-                        }, 500);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("Error deleting annotation:", error);
-                        alert("Error deleting annotation: " + error);
-                    }
-                });
+                try {
+                    // This is the key fix: use the original plugin's effective removal method
+                    this.polyzoomAnnotation.removeAnnotation(id);
+                    originalPluginUsed = true;
+                    console.log("Used original polyzoomer removeAnnotation method");
+                } catch (e) {
+                    console.error("Error using original removeAnnotation method:", e);
+                    originalPluginUsed = false;
+                }
             }
+            
+            // If original plugin method failed, do manual cleanup
+            if (!originalPluginUsed) {
+                // Remove from DOM
+                var svgElements = $('svg g[id="' + id + '"], svg line[id="' + id + '"], svg rect[id="' + id + '"], svg ellipse[id="' + id + '"], svg path[id="' + id + '"], svg text[id="' + id + '"], svg circle[id="' + id + '"]');
+                console.log("Found " + svgElements.length + " DOM elements to remove");
+                svgElements.remove();
+                
+                // Clean all underlying plugin references
+                if (this.polyzoomAnnotation) {
+                    try {
+                        // Clean the current annotation set
+                        if (this.polyzoomAnnotation.currentSet !== undefined && 
+                            this.polyzoomAnnotation.annotationList && 
+                            this.polyzoomAnnotation.annotationList[this.polyzoomAnnotation.currentSet]) {
+                            
+                            var list = this.polyzoomAnnotation.annotationList[this.polyzoomAnnotation.currentSet];
+                            for (var i = list.length - 1; i >= 0; i--) {
+                                if ((list[i].guid && list[i].guid == id) || 
+                                    (list[i].id && list[i].id == id)) {
+                                    list.splice(i, 1);
+                                }
+                            }
+                        }
+                        
+                        // Clean all annotation sets
+                        if (this.polyzoomAnnotation.annotationList) {
+                            for (var setIndex = 0; setIndex < this.polyzoomAnnotation.annotationList.length; setIndex++) {
+                                if (this.polyzoomAnnotation.annotationList[setIndex]) {
+                                    var list = this.polyzoomAnnotation.annotationList[setIndex];
+                                    for (var i = list.length - 1; i >= 0; i--) {
+                                        if ((list[i].guid && list[i].guid == id) || 
+                                            (list[i].id && list[i].id == id)) {
+                                            list.splice(i, 1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        // Clean up annotation table if exists
+                        if (this.polyzoomAnnotation.annotationTable) {
+                            delete this.polyzoomAnnotation.annotationTable[id];
+                        }
+                        
+                        // Reset current annotation if it's the selected one
+                        if (this.polyzoomAnnotation.currentAnnotation && 
+                            (this.polyzoomAnnotation.currentAnnotation.guid === id || 
+                             this.polyzoomAnnotation.currentAnnotation.id === id)) {
+                            this.polyzoomAnnotation.currentAnnotation = null;
+                        }
+                    } catch (e) {
+                        console.error("Error cleaning polyzoomAnnotation references:", e);
+                    }
+                }
+            }
+            
+            // Update our local list
+            this.annotations = this.annotations.filter(function(a) {
+                return a.id !== id;
+            });
+            
+            // Mark inactive in the file
+            $.ajax({
+                url: '../updateAnnotationFile.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    path: JSON.stringify(this.annotationPath),
+                    from: JSON.stringify(from),
+                    to: JSON.stringify(to)
+                },
+                success: function(data) {
+                    console.log("Annotation deletion success:", data);
+                    
+                    // Force multiple viewer refresh methods to ensure complete redraw
+                    if (self.viewer) {
+                        // Resize overlay
+                        if (self.polyzoomAnnotation && self.polyzoomAnnotation.overlay) {
+                            try {
+                                self.polyzoomAnnotation.overlay.resize();
+                            } catch (e) {
+                                console.error("Error resizing overlay:", e);
+                            }
+                        }
+                        
+                        // Force viewer redraw - try multiple methods
+                        try {
+                            if (self.viewer.drawer) {
+                                self.viewer.drawer.update();
+                            }
+                            if (self.viewer.world) {
+                                self.viewer.world.draw();
+                            }
+                            if (self.viewer.forceRedraw) {
+                                self.viewer.forceRedraw();
+                            }
+                        } catch (e) {
+                            console.error("Error forcing viewer redraw:", e);
+                        }
+                    }
+                    
+                    // Reset selection
+                    self.selectedAnnotationId = null;
+                    
+                    // Disable delete button
+                    $('.delete-annotation-btn').prop('disabled', true);
+                    
+                    // Show success message
+                    alert("Annotation deleted successfully");
+                    
+                    // Reload annotations to refresh counts
+                    setTimeout(function() {
+                        self.refreshAnnotations();
+                    }, 500);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error deleting annotation:", error);
+                    
+                    // Reset selection
+                    self.selectedAnnotationId = null;
+                    
+                    // Disable delete button
+                    $('.delete-annotation-btn').prop('disabled', true);
+                    
+                    alert("Error deleting annotation: " + error);
+                }
+            });
+        },
+        
+        /**
+         * Safely convert an annotation object to string format
+         * This is a fallback method in case the original annotationToString fails
+         */
+        createAnnotationString: function(annotation) {
+            if (!annotation) return "";
+            
+            // Format: active,id,type,[content],color,zoom,date
+            var isActive = annotation.active ? 1 : 0;
+            var now = new Date();
+            var formattedDate = now.getDate() + '/' + 
+                               (now.getMonth() + 1) + '/' + 
+                               (now.getFullYear()) + '/' + 
+                                now.getHours() + ':' + 
+                                now.getMinutes() + ':' + 
+                                now.getSeconds();
+            
+            var result = isActive + ',' + 
+                         annotation.id.toString() + ',' + 
+                         annotation.type.toString() + ',' + 
+                         '[' + annotation.content + '],' + 
+                         annotation.color + ',' + 
+                         '1.0,' + // Default zoom value
+                         formattedDate;
+            
+            return result;
         }
-    };
-
-    // Wait a bit for the page to fully load before creating an instance
-    setTimeout(function() {
-        console.log("Initializing Enhanced Annotation Manager...");
-        try {
-            var enhancedAnnotationManager = new PolyzoomerEnhanced.AnnotationManager();
-        } catch(e) {
-            console.error("Error initializing Enhanced Annotation Manager:", e);
-        }
-    }, 2000); // 2 second delay
-})();
+        };
+        
+        // Wait a bit for the page to fully load before creating an instance
+        setTimeout(function() {
+            console.log("Initializing Enhanced Annotation Manager...");
+            try {
+                var enhancedAnnotationManager = new PolyzoomerEnhanced.AnnotationManager();
+                // Make it accessible globally for debugging
+                window.enhancedAnnotationManager = enhancedAnnotationManager;
+            } catch(e) {
+                console.error("Error initializing Enhanced Annotation Manager:", e);
+            }
+        }, 2000); // 2 second delay
+        })();
