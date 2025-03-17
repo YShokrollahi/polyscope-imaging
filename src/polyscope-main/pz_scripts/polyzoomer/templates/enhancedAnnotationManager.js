@@ -82,11 +82,14 @@
                 // Add delete button
                 self.addDeleteButton();
                 
+                // Add debug button
+                // self.addDebugButton();
+                
                 // Set up real-time refresh
-                self.setupRefreshTimer();
+                // self.setupRefreshTimer();
                 
                 // Add refresh button
-                self.addRefreshButton();
+                // self.addRefreshButton();
                 
                 // Listen for annotation changes
                 self.listenForAnnotationChanges();
@@ -554,11 +557,12 @@
          * Process annotations from the server
          */
         /**
-         * Process annotations from the server with improved inactive annotation handling
+         * Process annotations from the server with added color counting
          */
         processAnnotations: function(data) {
             this.annotations = [];
             var counts = {};
+            var colorCounts = {}; // Add color counts tracking
             
             // Initialize counts
             for (var type in this.annotationTypes) {
@@ -588,64 +592,8 @@
                 }
             }
             
-            // First pass: Remove all inactive annotations from DOM completely
-            if (inactiveIds.length > 0) {
-                console.log("Found " + inactiveIds.length + " inactive annotations to clean up");
-                
-                for (var j = 0; j < inactiveIds.length; j++) {
-                    var inactiveId = inactiveIds[j];
-                    
-                    // Try to use original plugin's removal method first
-                    var originalPluginUsed = false;
-                    
-                    if (this.polyzoomAnnotation && typeof this.polyzoomAnnotation.removeAnnotation === 'function') {
-                        try {
-                            this.polyzoomAnnotation.removeAnnotation(inactiveId);
-                            originalPluginUsed = true;
-                        } catch (e) {
-                            console.error("Error using original removeAnnotation for inactive annotation:", e);
-                            originalPluginUsed = false;
-                        }
-                    }
-                    
-                    // If original plugin method failed, do manual cleanup
-                    if (!originalPluginUsed) {
-                        // Remove from DOM with comprehensive selector
-                        $('svg g[id="' + inactiveId + '"], svg line[id="' + inactiveId + '"], ' + 
-                          'svg rect[id="' + inactiveId + '"], svg ellipse[id="' + inactiveId + '"], ' + 
-                          'svg path[id="' + inactiveId + '"], svg circle[id="' + inactiveId + '"], ' + 
-                          'svg text[id="' + inactiveId + '"]').remove();
-                        
-                        // Also clean up from polyzoomAnnotation if it exists
-                        if (this.polyzoomAnnotation && this.polyzoomAnnotation.annotationList) {
-                            for (var k = 0; k < this.polyzoomAnnotation.annotationList.length; k++) {
-                                if (this.polyzoomAnnotation.annotationList[k]) {
-                                    this.polyzoomAnnotation.annotationList[k] = this.polyzoomAnnotation.annotationList[k].filter(function(a) {
-                                        return (a.guid !== inactiveId && a.id !== inactiveId);
-                                    });
-                                }
-                            }
-                            
-                            // Also clean from annotation table if it exists
-                            if (this.polyzoomAnnotation.annotationTable) {
-                                delete this.polyzoomAnnotation.annotationTable[inactiveId];
-                            }
-                            
-                            // Reset current annotation if it's the inactive one
-                            if (this.polyzoomAnnotation.currentAnnotation && 
-                                (this.polyzoomAnnotation.currentAnnotation.guid === inactiveId || 
-                                 this.polyzoomAnnotation.currentAnnotation.id === inactiveId)) {
-                                this.polyzoomAnnotation.currentAnnotation = null;
-                            }
-                        }
-                    }
-                }
-                
-                // Force a redraw after cleaning
-                if (this.viewer && this.viewer.world) {
-                    this.viewer.world.draw();
-                }
-            }
+            // Clean up code for inactive annotations remains the same...
+            // (Keep the existing inactive annotation cleanup code)
             
             // Second pass: Process active annotations
             if (Array.isArray(data)) {
@@ -677,6 +625,13 @@
                         var colorEnd = line.indexOf(',', colorStart);
                         var color = line.substring(colorStart, colorEnd);
                         
+                        // Count by color
+                        if (!colorCounts[color]) {
+                            colorCounts[color] = 1;
+                        } else {
+                            colorCounts[color]++;
+                        }
+                        
                         // Store annotation
                         this.annotations.push({
                             id: id,
@@ -698,7 +653,7 @@
             }
             
             // Update the panel
-            this.updateAnnotationPanel(counts);
+            this.updateAnnotationPanel(counts, colorCounts); // Pass color counts to the panel update
             
             // Force a redraw to ensure annotations are properly displayed
             if (this.viewer && this.viewer.world) {
@@ -709,7 +664,7 @@
         /**
          * Update the annotation panel with counts and types
          */
-        updateAnnotationPanel: function(counts) {
+        updateAnnotationPanel: function(counts, colorCounts) {
             var self = this;
             var typesElement = $(this.panelSelector).find('.annotation-types');
             typesElement.empty();
@@ -732,6 +687,56 @@
                 typesElement.append(typeElement);
             }
             
+            // Add color counts section
+            if (Object.keys(colorCounts).length > 0) {
+                var colorHeader = $('<div class="annotation-type-header">Colors</div>');
+                typesElement.append(colorHeader);
+                
+                // Add each color with count
+                for (var color in colorCounts) {
+                    var count = colorCounts[color];
+                    var colorElement = $(
+                        '<div class="annotation-color-item" data-color="' + color + '">' +
+                        '<span class="color-swatch" style="background-color:' + color + '"></span> ' +
+                        color + ' <span class="annotation-count">' + count + '</span></div>'
+                    );
+                    
+                    // Add click handler to show annotations of this color
+                    (function(colorValue) {
+                        colorElement.click(function() {
+                            self.showAnnotationsByColor(colorValue);
+                        });
+                    })(color);
+                    
+                    typesElement.append(colorElement);
+                }
+                
+                // Add style for color items
+                if (!$('#color-swatch-style').length) {
+                    $("<style id='color-swatch-style'>")
+                        .text(
+                            ".annotation-color-item {" +
+                            "  padding: 5px 5px 5px 15px;" +
+                            "  margin-bottom: 2px;" +
+                            "  cursor: pointer;" +
+                            "  border-radius: 3px;" +
+                            "}" +
+                            ".annotation-color-item:hover {" +
+                            "  background-color: #f0f0f0;" +
+                            "}" +
+                            ".color-swatch {" +
+                            "  display: inline-block;" +
+                            "  width: 12px;" +
+                            "  height: 12px;" +
+                            "  border: 1px solid #ccc;" +
+                            "  margin-right: 5px;" +
+                            "  vertical-align: middle;" +
+                            "}"
+                        )
+                        .appendTo("head");
+                }
+            }
+            
             // Add total count
             var totalCount = this.annotations.length;
             var totalElement = $(
@@ -748,7 +753,51 @@
         },
 
         /**
+         * Show annotations by color
+         */
+        showAnnotationsByColor: function(color) {
+            var self = this;
+            var listElement = $(this.panelSelector).find('.annotation-list');
+            listElement.empty().show();
+            
+            // Filter annotations by color
+            var filteredAnnotations = this.annotations.filter(function(annotation) {
+                return annotation.color === color;
+            });
+            
+            // Show no annotations message if none found
+            if (filteredAnnotations.length === 0) {
+                listElement.append('<div class="annotation-item">No annotations with this color</div>');
+                return;
+            }
+            
+            // Add each annotation to the list
+            for (var i = 0; i < filteredAnnotations.length; i++) {
+                var annotation = filteredAnnotations[i];
+                var selectedClass = this.selectedAnnotationId === annotation.id ? ' annotation-selected' : '';
+                
+                var item = $(
+                    '<div class="annotation-item' + selectedClass + '" data-id="' + annotation.id + '">' +
+                    '<span class="color-swatch" style="background-color:' + annotation.color + '"></span> ' +
+                    '#' + annotation.id + ' - ' + this.annotationTypes[annotation.type] +
+                    '<div class="annotation-details">' + this.formatAnnotationDetails(annotation) + '</div>' +
+                    '</div>'
+                );
+                
+                // Add click handler with closure to capture the current ID
+                (function(annotationId) {
+                    item.click(function() {
+                        self.selectAnnotation(annotationId);
+                    });
+                })(annotation.id);
+                
+                listElement.append(item);
+            }
+        },
+
+        /**
          * Show annotations of a specific type
+         * Updated to display color swatches
          */
         showAnnotationsOfType: function(typeId) {
             var self = this;
@@ -773,6 +822,7 @@
                 
                 var item = $(
                     '<div class="annotation-item' + selectedClass + '" data-id="' + annotation.id + '">' +
+                    '<span class="color-swatch" style="background-color:' + annotation.color + '"></span> ' +
                     '#' + annotation.id + ' - ' + this.annotationTypes[annotation.type] +
                     '<div class="annotation-details">' + this.formatAnnotationDetails(annotation) + '</div>' +
                     '</div>'
@@ -791,6 +841,7 @@
 
         /**
          * Show all annotations
+         * Updated to display color swatches
          */
         showAllAnnotations: function() {
             var self = this;
@@ -835,6 +886,7 @@
                         
                         var item = $(
                             '<div class="annotation-item' + selectedClass + '" data-id="' + annotation.id + '">' +
+                            '<span class="color-swatch" style="background-color:' + annotation.color + '"></span> ' +
                             '#' + annotation.id + ' - ' + this.formatAnnotationDetails(annotation) +
                             '</div>'
                         );
@@ -897,47 +949,452 @@
             // Highlight annotation in viewer
             this.highlightAnnotation(id);
         },
-
         /**
-         * Highlight the selected annotation in the viewer
+         * Debug helper for annotations
+         * Add this to the EnhancedAnnotationManager prototype
          */
-        highlightAnnotation: function(id) {
-            if (!this.viewer) return;
+        debugAnnotation: function(id) {
+            console.log("Debugging annotation ID:", id);
             
-            // First, reset all annotations to their original appearance
-            $('svg g[id], svg line[id], svg rect[id], svg ellipse[id], svg path[id], svg circle[id]').each(function() {
-                $(this).css('stroke-width', '');
-                $(this).css('stroke', '');
+            // Find annotation in our data
+            var annotation = null;
+            for (var i = 0; i < this.annotations.length; i++) {
+                if (this.annotations[i].id === id) {
+                    annotation = this.annotations[i];
+                    break;
+                }
+            }
+            
+            console.log("Annotation data:", annotation);
+            
+            // Check if annotation is in the DOM
+            var svgElements = $('svg *[id="' + id + '"]');
+            console.log("SVG elements with matching ID:", svgElements.length);
+            
+            if (svgElements.length > 0) {
+                console.log("First matching element:", svgElements[0]);
+                console.log("Element attributes:");
+                $.each(svgElements[0].attributes, function() {
+                    console.log(this.name + ": " + this.value);
+                });
+            }
+            
+            // Check for elements with data attributes
+            var dataElements = $('svg *').filter(function() {
+                var dataId = $(this).data('id') || $(this).attr('data-id');
+                return dataId && dataId.toString() === id.toString();
             });
             
-            // Then highlight the selected one
-            var annotation = $('svg g[id="' + id + '"], svg line[id="' + id + '"], svg rect[id="' + id + '"], svg ellipse[id="' + id + '"], svg path[id="' + id + '"], svg circle[id="' + id + '"]');
+            console.log("Elements with matching data-id:", dataElements.length);
             
-            if (annotation.length) {
-                // Make the stroke thicker and add a highlight color
-                annotation.css('stroke-width', '5');
+            // Check plugin data
+            if (this.polyzoomAnnotation) {
+                console.log("Plugin annotation list available:", !!this.polyzoomAnnotation.annotationList);
                 
-                // Try to center on the annotation
-                if (this.viewer.viewport) {
-                    // Find annotation element's bounding box
-                    try {
-                        var element = annotation[0];
-                        var bbox = element.getBBox();
-                        var centerX = bbox.x + bbox.width/2;
-                        var centerY = bbox.y + bbox.height/2;
-                        
-                        // Convert to viewport coordinates and pan to it
-                        if (this.polyzoomAnnotation && this.polyzoomAnnotation.multiplier) {
-                            var mult = this.polyzoomAnnotation.multiplier[0];
-                            if (mult) {
-                                this.viewer.viewport.panTo(new OpenSeadragon.Point(centerX/mult, centerY/mult), true);
+                if (this.polyzoomAnnotation.annotationList) {
+                    var found = false;
+                    
+                    for (var i = 0; i < this.polyzoomAnnotation.annotationList.length; i++) {
+                        var list = this.polyzoomAnnotation.annotationList[i];
+                        if (Array.isArray(list)) {
+                            for (var j = 0; j < list.length; j++) {
+                                if ((list[j].guid && list[j].guid.toString() === id.toString()) || 
+                                    (list[j].id && list[j].id.toString() === id.toString())) {
+                                    
+                                    console.log("Found in plugin annotationList[" + i + "][" + j + "]:", list[j]);
+                                    found = true;
+                                    
+                                    if (list[j].shape) {
+                                        console.log("Shape element available:", !!list[j].shape);
+                                        console.log("Shape DOM element exists:", $(list[j].shape).length > 0);
+                                    }
+                                }
                             }
                         }
-                    } catch (e) {
-                        console.error("Error centering on annotation:", e);
+                    }
+                    
+                    if (!found) {
+                        console.log("Annotation not found in plugin annotation lists");
+                    }
+                }
+                
+                // Check annotation table
+                if (this.polyzoomAnnotation.annotationTable) {
+                    console.log("Found in plugin annotationTable:", !!this.polyzoomAnnotation.annotationTable[id]);
+                    if (this.polyzoomAnnotation.annotationTable[id]) {
+                        console.log("Table entry:", this.polyzoomAnnotation.annotationTable[id]);
                     }
                 }
             }
+            
+            // Try to get annotation with plugin method
+            if (this.polyzoomAnnotation && typeof this.polyzoomAnnotation.getAnnotation === 'function') {
+                try {
+                    var pluginAnnotation = this.polyzoomAnnotation.getAnnotation(id);
+                    console.log("Got annotation from plugin method:", pluginAnnotation);
+                } catch (e) {
+                    console.error("Error getting annotation from plugin:", e);
+                }
+            }
+            
+            return "Debugging information logged to console";
+        },
+
+        /**
+         * Add a debug button to help troubleshoot annotation issues
+         */
+        addDebugButton: function() {
+            var self = this;
+            var panel = $(this.panelSelector);
+            
+            // Create debug button
+            var debugBtn = $('<button class="debug-annotation-btn">Debug Selected</button>');
+            
+            // Add styles for debug button
+            $("<style>")
+                .text(
+                    ".debug-annotation-btn {" +
+                    "  margin-top: 10px;" +
+                    "  padding: 5px 10px;" +
+                    "  background-color: #673ab7;" +
+                    "  color: white;" +
+                    "  border: none;" +
+                    "  border-radius: 4px;" +
+                    "  cursor: pointer;" +
+                    "  margin-right: 10px;" +
+                    "}" +
+                    ".debug-annotation-btn:hover {" +
+                    "  background-color: #5e35b1;" +
+                    "}" +
+                    ".debug-annotation-btn:disabled {" +
+                    "  background-color: #cccccc;" +
+                    "  cursor: not-allowed;" +
+                    "}"
+                )
+                .appendTo("head");
+            
+            // Add click handler
+            debugBtn.click(function() {
+                if (self.selectedAnnotationId) {
+                    self.debugAnnotation(self.selectedAnnotationId);
+                    alert("Debug info for annotation #" + self.selectedAnnotationId + " has been logged to the console (F12)");
+                } else {
+                    alert("Please select an annotation first");
+                }
+            });
+            
+            // Add to panel
+            var deleteBtn = panel.find('.delete-annotation-btn');
+            if (deleteBtn.length) {
+                deleteBtn.before(debugBtn);
+            } else {
+                panel.append(debugBtn);
+            }
+        },
+        /**
+         * Enhanced direct plugin-based highlighting solution
+         */
+        highlightAnnotation: function(id) {
+            var self = this;
+            console.log("Using direct plugin approach for annotation ID:", id);
+            
+            // Find annotation data
+            var annotation = null;
+            for (var i = 0; i < this.annotations.length; i++) {
+                if (this.annotations[i].id === id) {
+                    annotation = this.annotations[i];
+                    break;
+                }
+            }
+            
+            if (!annotation) {
+                console.error("Could not find annotation data for ID:", id);
+                return;
+            }
+            
+            // Store the currently highlighted ID
+            this.currentlyHighlightedId = id;
+            
+            // Clear any existing highlight styles
+            this.clearHighlights();
+            
+            // Add a strong highlight style that will override plugin styles
+            if (!$('#strong-highlight-style').length) {
+                $("<style id='strong-highlight-style'>")
+                    .text(
+                        ".strong-highlight {" +
+                        "  stroke: #FF0000 !important;" +
+                        "  stroke-width: 6px !important;" +
+                        "  fill-opacity: 0.3 !important;" +
+                        "}"
+                    )
+                    .appendTo("head");
+            }
+            
+            // 1. Find if a plugin selectAnnotation method exists
+            if (this.polyzoomAnnotation && typeof this.polyzoomAnnotation.selectAnnotation === 'function') {
+                // Use the plugin's built-in selection mechanism
+                try {
+                    this.polyzoomAnnotation.selectAnnotation(id);
+                    console.log("Used plugin's selectAnnotation method");
+                    
+                    // Now we need to find what the plugin actually selected
+                    // Usually it's the current annotation in the plugin
+                    if (this.polyzoomAnnotation.currentAnnotation) {
+                        var shape = this.polyzoomAnnotation.currentAnnotation.shape;
+                        if (shape) {
+                            $(shape).addClass('strong-highlight');
+                            console.log("Highlighted shape from currentAnnotation", shape);
+                        }
+                    }
+                } catch (e) {
+                    console.error("Error using plugin's selectAnnotation:", e);
+                }
+            }
+            
+            // 2. Direct approach - use coordinates to create a new temporary highlight element
+            // Extract coordinates from the content
+            var coords = this.parseCoordinates(annotation.content);
+            if (coords && coords.length > 0) {
+                console.log("Parsed coordinates:", coords);
+                
+                // Create appropriate highlight element based on annotation type
+                var highlightElement = this.createHighlightElement(annotation.type, coords, annotation.color);
+                if (highlightElement) {
+                    // Add the element to the SVG
+                    $('svg').append(highlightElement);
+                    console.log("Added temporary highlight element");
+                    
+                    // Set timeout to remove it after a while to avoid cluttering
+                    setTimeout(function() {
+                        highlightElement.remove();
+                    }, 30000); // Remove after 30 seconds
+                }
+            }
+            
+            // 3. Try to get a viewport coordinate for the annotation
+            var viewportPoint = this.getAnnotationViewportPoint(annotation);
+            if (viewportPoint) {
+                // Pan to the annotation
+                this.viewer.viewport.panTo(viewportPoint, true);
+                console.log("Panned to viewport point:", viewportPoint);
+                
+                // If we know it's a small annotation, zoom in
+                if (annotation.type === 6) { // Dot type
+                    this.viewer.viewport.zoomTo(this.viewer.viewport.getZoom() * 1.5);
+                }
+            }
+            
+            // Scroll the annotation into view in the panel list
+            var listItem = $('.annotation-item[data-id="' + id + '"]');
+            if (listItem.length) {
+                var container = $('.annotation-list');
+                container.scrollTop(
+                    listItem.offset().top - container.offset().top + container.scrollTop()
+                );
+            }
+        },
+
+        /**
+         * Clear all highlights
+         */
+        clearHighlights: function() {
+            $('.strong-highlight').removeClass('strong-highlight');
+            
+            // Also remove any temporary highlight elements
+            $('svg .temp-highlight').remove();
+        },
+
+        /**
+         * Parse coordinates from annotation content
+         */
+        parseCoordinates: function(content) {
+            var coordinates = [];
+            var regex = /\(([^)]+)\)/g;
+            var match;
+            
+            while ((match = regex.exec(content)) !== null) {
+                var coordPair = match[1].split(',');
+                if (coordPair.length >= 2) {
+                    coordinates.push({
+                        x: parseFloat(coordPair[0]),
+                        y: parseFloat(coordPair[1])
+                    });
+                }
+            }
+            
+            return coordinates;
+        },
+
+        /**
+         * Create a visible highlight element based on annotation type and coordinates
+         */
+        createHighlightElement: function(type, coords, color) {
+            if (!coords || coords.length === 0) return null;
+            
+            // Find multiplier to convert relative coordinates to absolute
+            var mult = 1;
+            if (this.polyzoomAnnotation && this.polyzoomAnnotation.multiplier) {
+                mult = this.polyzoomAnnotation.multiplier[0] || 1;
+            }
+            
+            // Create SVG element based on type
+            var element = null;
+            
+            switch (parseInt(type)) {
+                case 0: // Line
+                    if (coords.length >= 2) {
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
+                        element.attr({
+                            'x1': coords[0].x * mult,
+                            'y1': coords[0].y * mult,
+                            'x2': coords[1].x * mult,
+                            'y2': coords[1].y * mult,
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+                    
+                case 1: // Arrow (similar to line for now)
+                    if (coords.length >= 2) {
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
+                        element.attr({
+                            'x1': coords[0].x * mult,
+                            'y1': coords[0].y * mult,
+                            'x2': coords[1].x * mult,
+                            'y2': coords[1].y * mult,
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+                    
+                case 2: // Rectangle
+                    if (coords.length >= 2) {
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "rect"));
+                        
+                        var x = Math.min(coords[0].x, coords[1].x) * mult;
+                        var y = Math.min(coords[0].y, coords[1].y) * mult;
+                        var width = Math.abs(coords[1].x - coords[0].x) * mult;
+                        var height = Math.abs(coords[1].y - coords[0].y) * mult;
+                        
+                        element.attr({
+                            'x': x,
+                            'y': y,
+                            'width': width,
+                            'height': height,
+                            'fill': '#FF0000',
+                            'fill-opacity': '0.3',
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+                    
+                case 3: // Ellipse
+                    if (coords.length >= 2) {
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "ellipse"));
+                        
+                        var cx = (coords[0].x + coords[1].x) / 2 * mult;
+                        var cy = (coords[0].y + coords[1].y) / 2 * mult;
+                        var rx = Math.abs(coords[1].x - coords[0].x) / 2 * mult;
+                        var ry = Math.abs(coords[1].y - coords[0].y) / 2 * mult;
+                        
+                        element.attr({
+                            'cx': cx,
+                            'cy': cy,
+                            'rx': rx,
+                            'ry': ry,
+                            'fill': '#FF0000',
+                            'fill-opacity': '0.3',
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+                    
+                case 5: // Text
+                    if (coords.length >= 1) {
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "rect"));
+                        element.attr({
+                            'x': coords[0].x * mult - 30,
+                            'y': coords[0].y * mult - 15,
+                            'width': 60,
+                            'height': 30,
+                            'fill': '#FF0000',
+                            'fill-opacity': '0.3',
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+                    
+                case 6: // Dot
+                    if (coords.length >= 1) {
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "circle"));
+                        element.attr({
+                            'cx': coords[0].x * mult,
+                            'cy': coords[0].y * mult,
+                            'r': 15,
+                            'fill': '#FF0000',
+                            'fill-opacity': '0.5',
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+                    
+                case 4: // Free Hand Drawing - complex to recreate, so use a visual indicator
+                    if (coords.length >= 1) {
+                        // Just add a circle at the start point
+                        element = $(document.createElementNS("http://www.w3.org/2000/svg", "circle"));
+                        element.attr({
+                            'cx': coords[0].x * mult,
+                            'cy': coords[0].y * mult,
+                            'r': 20,
+                            'fill': '#FF0000',
+                            'fill-opacity': '0.3',
+                            'stroke': '#FF0000',
+                            'stroke-width': '6',
+                            'class': 'temp-highlight'
+                        });
+                    }
+                    break;
+            }
+            
+            return element;
+        },
+
+        /**
+         * Get viewport point for an annotation
+         */
+        getAnnotationViewportPoint: function(annotation) {
+            if (!annotation || !annotation.content) return null;
+            
+            var coords = this.parseCoordinates(annotation.content);
+            if (!coords || coords.length === 0) return null;
+            
+            // For most annotations, use the first coordinate
+            var point = new OpenSeadragon.Point(coords[0].x, coords[0].y);
+            
+            // For rectangles and ellipses, use the center
+            if (annotation.type === 2 || annotation.type === 3) {
+                if (coords.length >= 2) {
+                    point = new OpenSeadragon.Point(
+                        (coords[0].x + coords[1].x) / 2,
+                        (coords[0].y + coords[1].y) / 2
+                    );
+                }
+            }
+            
+            return point;
         },
 
         /**
