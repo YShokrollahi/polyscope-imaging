@@ -80,7 +80,7 @@ if [ $DO_FILES -eq "1" ]; then
         mv -n "${i%.dzi}_files" "${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}/"
 		BAREFILE=$(basename "${i}")
 		touch "./${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
-		chmod -R g+rwxs  "./${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
+		chmod -R 777  "./${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
 		
     # Construct the path to annotations.txt
     ANNOTATIONS_PATH="./${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
