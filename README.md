@@ -1,5 +1,5 @@
 
-# Polyscope without SSL certificate(Still under developmentsss)
+# Polyscope new version
 
 This repository contains instructions for pulling and running the Polyscope Docker image on different VM machines...
 
