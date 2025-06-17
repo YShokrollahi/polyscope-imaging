@@ -369,7 +369,12 @@ $isAdmin = ($username === 'yshokrollahi');
                     <div class="upload-icon">📤</div>
                     <h3>Drop files here to upload</h3>
                     <p>Or click to browse files</p>
-                    <p class="file-details">Supported: .svs, .ndpi, .czi, .scn, .jpg, .png, .tiff, .dcm</p>
+                    <p class="file-details">Supported formats:</p>
+                    <p class="file-details">
+                        <strong>Pathology:</strong> .svs, .ndpi, .czi, .scn, .mrxs, .vsi, .vms<br>
+                        <strong>Images:</strong> .jpg, .jpeg, .png, .tiff, .tif, .bmp, .gif, .webp<br>
+                        <strong>Medical:</strong> .dcm, .nii, .nrrd | <strong>Other:</strong> .jp2, .pdf
+                    </p>
                 </div>
                 
                 <!-- File List -->
@@ -470,71 +475,132 @@ $isAdmin = ($username === 'yshokrollahi');
         }
         
         // Main function to process selected files using your existing system
-        async processSelectedFiles() {
-            if (this.fileManager.selectedFiles.size === 0) {
-                this.fileManager.showError('No files selected for processing');
-                return;
-            }
-            
-            // Check if selected files are suitable for DZI processing
-            const selectedFiles = Array.from(this.fileManager.selectedFiles);
-            const pathologyFiles = selectedFiles.filter(path => {
-                const ext = path.toLowerCase().split('.').pop();
-                return ['svs', 'ndpi', 'czi', 'scn', 'mrxs', 'vsi', 'vms', 'tiff', 'tif'].includes(ext);
-            });
-            
-            if (pathologyFiles.length === 0) {
-                this.fileManager.showError('Please select pathology slide files (.svs, .ndpi, .czi, .scn, etc.) for DZI processing');
-                return;
-            }
-            
-            if (pathologyFiles.length !== selectedFiles.length) {
-                const proceed = confirm('Some selected files are not pathology slides. Only ' + pathologyFiles.length + ' suitable files will be processed. Continue?');
-                if (!proceed) return;
-            }
-            
-            try {
-                this.fileManager.showLoading('Starting DZI processing for ' + pathologyFiles.length + ' file(s)...');
-                
-                // Convert selected file paths to full system paths
-                const filesToProcess = pathologyFiles.map(relativePath => {
-                    return '/media/Users/' + PolyscopeConfig.user.username + '/' + relativePath;
-                });
-                
-                console.log('Processing files for DZI:', filesToProcess);
-                
-                // Call your existing issueUploadProject.php
-                const response = await fetch('/issueUploadProject.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'path=' + JSON.stringify(filesToProcess) + '&isDir=false'
-                });
-                
-                const result = await response.json();
-                console.log('DZI processing response:', result);
-                
-                if (result && result.typ) {
-                    if (result.typ === 'single') {
-                        this.handleSingleJobResult(result);
-                    } else if (result.typ === 'multiple') {
-                        this.handleMultipleJobsResult(result);
-                    }
-                    
-                    this.fileManager.showSuccess('DZI processing started! ' + pathologyFiles.length + ' job(s) added to queue.');
-                    this.showProcessingDialog();
-                } else {
-                    this.fileManager.showError('Failed to start DZI processing');
-                }
-                
-            } catch (error) {
-                this.fileManager.showError('Error starting DZI processing: ' + error.message);
-                console.error('DZI processing error:', error);
-            } finally {
-                this.fileManager.hideLoading();
-            }
-        }
+		// Replace the processSelectedFiles method in your DZIProcessor class with this enhanced debug version
+
+		async processSelectedFiles() {
+			if (this.fileManager.selectedFiles.size === 0) {
+				this.fileManager.showError('No files selected for processing');
+				return;
+			}
+			
+			// Expanded list of supported formats for DZI conversion
+			const selectedFiles = Array.from(this.fileManager.selectedFiles);
+			const supportedFiles = selectedFiles.filter(path => {
+				const ext = path.toLowerCase().split('.').pop();
+				return [
+					// Pathology slide formats
+					'svs', 'ndpi', 'czi', 'scn', 'mrxs', 'vsi', 'vms',
+					// Standard image formats
+					'tiff', 'tif', 'jpg', 'jpeg', 'png', 'bmp', 'gif', 'webp',
+					// Medical imaging formats
+					'dcm', 'dicom', 'nii', 'nrrd',
+					// Other supported formats
+					'jp2', 'j2k', 'jpx', 'jpm'
+				].includes(ext);
+			});
+			
+			if (supportedFiles.length === 0) {
+				this.fileManager.showError('Please select image files for DZI processing.\n\nSupported formats:\n• Pathology slides: .svs, .ndpi, .czi, .scn, .mrxs, .vsi, .vms\n• Images: .jpg, .jpeg, .png, .tiff, .tif, .bmp, .gif, .webp\n• Medical: .dcm, .nii, .nrrd\n• Other: .jp2, .j2k');
+				return;
+			}
+			
+			if (supportedFiles.length !== selectedFiles.length) {
+				const unsupportedCount = selectedFiles.length - supportedFiles.length;
+				const proceed = confirm('Some selected files (' + unsupportedCount + ') are not supported for DZI processing.\n\nOnly ' + supportedFiles.length + ' supported image files will be processed.\n\nContinue?');
+				if (!proceed) return;
+			}
+			
+			try {
+				this.fileManager.showLoading('Starting DZI processing for ' + supportedFiles.length + ' file(s)...');
+				
+				// Convert selected file paths to full system paths
+				const filesToProcess = supportedFiles.map(relativePath => {
+					return '/media/Users/' + PolyscopeConfig.user.username + '/' + relativePath;
+				});
+				
+				console.log('Processing files for DZI:', filesToProcess);
+				
+				// Enhanced debug: Create request payload
+				const requestPayload = 'path=' + JSON.stringify(filesToProcess) + '&isDir=false';
+				console.log('Request payload:', requestPayload);
+				
+				// Call your existing issueUploadProject.php with enhanced error handling
+				const response = await fetch('/issueUploadProject.php', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					body: requestPayload
+				});
+				
+				console.log('Response status:', response.status);
+				console.log('Response headers:', response.headers);
+				
+				if (!response.ok) {
+					console.error('Server returned error status:', response.status, response.statusText);
+					throw new Error('Server returned error: ' + response.status + ' ' + response.statusText);
+				}
+				
+				// Get response as text first to see raw content
+				const responseText = await response.text();
+				console.log('Raw DZI response:', responseText);
+				console.log('Response length:', responseText.length);
+				
+				// Check if response is empty
+				if (!responseText || responseText.trim() === '') {
+					console.error('Empty response from server');
+					throw new Error('Server returned empty response');
+				}
+				
+				let result;
+				try {
+					result = JSON.parse(responseText);
+					console.log('Parsed DZI response:', result);
+				} catch (parseError) {
+					console.error('DZI response is not valid JSON:', responseText);
+					console.error('Parse error:', parseError);
+					
+					// If response contains HTML, it might be an error page
+					if (responseText.includes('<html>') || responseText.includes('<!DOCTYPE')) {
+						console.error('Response appears to be HTML (likely an error page)');
+						throw new Error('Server returned HTML instead of JSON (check server logs for PHP errors)');
+					}
+					
+					throw new Error('Invalid JSON response from processing server');
+				}
+				
+				// Check if we got an error response
+				if (result && result.error) {
+					console.error('Server returned error:', result.error);
+					throw new Error('Server error: ' + result.error);
+				}
+				
+				// Check if we got debug info
+				if (result && result.debug) {
+					console.log('Debug info from server:', result.debug);
+				}
+				
+				if (result && result.typ) {
+					if (result.typ === 'single') {
+						this.handleSingleJobResult(result);
+					} else if (result.typ === 'multiple') {
+						this.handleMultipleJobsResult(result);
+					}
+					
+					this.fileManager.showSuccess('DZI processing started!\n\n' + supportedFiles.length + ' file(s) added to queue.\n\nSupported formats processed:\n• Pathology slides\n• Standard images (JPG, PNG, TIFF, etc.)\n• Medical imaging files');
+					this.showProcessingDialog();
+				} else {
+					console.error('Invalid response structure:', result);
+					throw new Error('Invalid response structure from processing server');
+				}
+				
+			} catch (error) {
+				console.error('DZI processing error details:', error);
+				this.fileManager.showError('Error starting DZI processing: ' + error.message);
+			} finally {
+				this.fileManager.hideLoading();
+			}
+		}		
         
         handleSingleJobResult(result) {
             this.activeJobs.set(result.guid, {
@@ -1045,14 +1111,19 @@ class EnhancedPolyscopeFileManager {
                 return '🔬';
             }
             
-            // Image formats
-            if (['jpg', 'jpeg', 'png', 'tiff', 'tif', 'bmp'].indexOf(ext) !== -1) {
+            // Standard image formats
+            if (['jpg', 'jpeg', 'png', 'tiff', 'tif', 'bmp', 'gif', 'webp'].indexOf(ext) !== -1) {
                 return '🖼️';
             }
             
             // Medical formats
-            if (['dcm', 'nii', 'nrrd'].indexOf(ext) !== -1) {
+            if (['dcm', 'dicom', 'nii', 'nrrd'].indexOf(ext) !== -1) {
                 return '🏥';
+            }
+            
+            // Advanced image formats
+            if (['jp2', 'j2k', 'jpx', 'jpm'].indexOf(ext) !== -1) {
+                return '🎨';
             }
             
             // Documents
@@ -1095,20 +1166,30 @@ class EnhancedPolyscopeFileManager {
                 item.querySelector('.file-checkbox').checked = isSelected;
             });
             
-            // Update toolbar text and check if any pathology slides are selected
+            // Check for DZI-compatible files (expanded list)
             const selectedFiles = Array.from(this.selectedFiles);
-            const pathologyFiles = selectedFiles.filter(path => {
+            const dziCompatibleFiles = selectedFiles.filter(path => {
                 const ext = path.toLowerCase().split('.').pop();
-                return ['svs', 'ndpi', 'czi', 'scn', 'mrxs', 'vsi', 'vms', 'tiff', 'tif'].includes(ext);
+                return [
+                    // Pathology slide formats
+                    'svs', 'ndpi', 'czi', 'scn', 'mrxs', 'vsi', 'vms',
+                    // Standard image formats
+                    'tiff', 'tif', 'jpg', 'jpeg', 'png', 'bmp', 'gif', 'webp',
+                    // Medical imaging formats
+                    'dcm', 'dicom', 'nii', 'nrrd',
+                    // Other supported formats
+                    'jp2', 'j2k', 'jpx', 'jpm'
+                ].includes(ext);
             });
             
+            // Update toolbar text
             if (selectedCount > 0) {
                 deleteBtn.textContent = '🗑️ Delete (' + selectedCount + ')';
-                if (pathologyFiles.length > 0) {
-                    processBtn.textContent = '⚙️ Process to DZI (' + pathologyFiles.length + ')';
+                if (dziCompatibleFiles.length > 0) {
+                    processBtn.textContent = '⚙️ Process to DZI (' + dziCompatibleFiles.length + ')';
                     processBtn.disabled = false;
                 } else {
-                    processBtn.textContent = '⚙️ Process to DZI (no slides)';
+                    processBtn.textContent = '⚙️ Process to DZI (no images)';
                     processBtn.disabled = true;
                 }
             } else {
@@ -1200,11 +1281,23 @@ class EnhancedPolyscopeFileManager {
             }
         }
         
-        showUploadDialog() {
+		showUploadDialog() {
             const input = document.createElement('input');
             input.type = 'file';
             input.multiple = true;
-            input.accept = '.svs,.ndpi,.czi,.scn,.mrxs,.vsi,.vms,.jpg,.jpeg,.png,.tiff,.tif,.bmp,.dcm,.nii,.nrrd,.pdf';
+            // Expanded accept list to include all DZI-compatible formats
+            input.accept = [
+                // Pathology slide formats
+                '.svs', '.ndpi', '.czi', '.scn', '.mrxs', '.vsi', '.vms',
+                // Standard image formats
+                '.jpg', '.jpeg', '.png', '.tiff', '.tif', '.bmp', '.gif', '.webp',
+                // Medical imaging formats
+                '.dcm', '.dicom', '.nii', '.nrrd',
+                // Advanced image formats
+                '.jp2', '.j2k', '.jpx', '.jpm',
+                // Documents
+                '.pdf'
+            ].join(',');
             
             const self = this;
             input.addEventListener('change', function(e) {
