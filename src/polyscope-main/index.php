@@ -586,9 +586,12 @@ $isAdmin = ($username === 'yshokrollahi');
                 clearInterval(this.statusCheckInterval);
             }
             
+            // Only start monitoring if we have active jobs
             this.statusCheckInterval = setInterval(() => {
-                this.checkJobStatus();
-            }, 3000); // Check every 3 seconds like your old system
+                if (this.activeJobs.size > 0) {
+                    this.checkJobStatus();
+                }
+            }, 5000); // Check every 5 seconds (less frequent to reduce errors)
         }
         
         async checkJobStatus() {
@@ -597,15 +600,38 @@ $isAdmin = ($username === 'yshokrollahi');
                     method: 'POST'
                 });
                 
-                const statusData = await response.json();
+                // Check if response is ok
+                if (!response.ok) {
+                    console.warn('Job status check failed - server returned:', response.status);
+                    return; // Silently fail instead of showing errors
+                }
+                
+                // Check if response has content
+                const responseText = await response.text();
+                if (!responseText || responseText.trim() === '') {
+                    console.warn('Job status check returned empty response');
+                    return;
+                }
+                
+                // Try to parse JSON
+                let statusData;
+                try {
+                    statusData = JSON.parse(responseText);
+                } catch (parseError) {
+                    console.warn('Job status response is not valid JSON:', responseText.substring(0, 100));
+                    return;
+                }
                 
                 if (statusData && statusData.valid && statusData.jobs) {
                     this.updateJobStatuses(statusData.jobs);
                     this.updateProcessingView();
+                } else {
+                    console.warn('Job status response missing expected data:', statusData);
                 }
                 
             } catch (error) {
-                console.error('Error checking job status:', error);
+                // Only log to console, don't spam user with errors
+                console.warn('Job status check failed:', error.message);
             }
         }
         
@@ -648,27 +674,38 @@ $isAdmin = ($username === 'yshokrollahi');
             const jobsList = document.getElementById('jobsList');
             if (!jobsList) return;
             
-            // Add back to file manager button if not exists
-            let backButton = document.querySelector('#processingView .back-to-files');
-            if (!backButton) {
-                backButton = document.createElement('button');
-                backButton.className = 'btn btn-secondary back-to-files';
+            // Add back to file manager button and manual refresh if not exists
+            let controlsDiv = document.querySelector('#processingView .processing-controls');
+            if (!controlsDiv) {
+                controlsDiv = document.createElement('div');
+                controlsDiv.className = 'processing-controls';
+                controlsDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 1rem; border-bottom: 1px solid var(--border-color);';
+                
+                const backButton = document.createElement('button');
+                backButton.className = 'btn btn-secondary';
                 backButton.innerHTML = '← Back to File Manager';
                 backButton.onclick = () => this.showFileManagerView();
                 
-                const header = document.querySelector('#processingView h2');
-                if (header) {
-                    header.appendChild(backButton);
-                    header.style.display = 'flex';
-                    header.style.justifyContent = 'space-between';
-                    header.style.alignItems = 'center';
-                }
+                const refreshButton = document.createElement('button');
+                refreshButton.className = 'btn btn-outline';
+                refreshButton.innerHTML = '🔄 Refresh Status';
+                refreshButton.onclick = () => this.checkJobStatus();
+                
+                const titleDiv = document.createElement('div');
+                titleDiv.innerHTML = '<h2 style="margin: 0;">DZI Processing Queue</h2>';
+                
+                controlsDiv.appendChild(backButton);
+                controlsDiv.appendChild(titleDiv);
+                controlsDiv.appendChild(refreshButton);
+                
+                const processingView = document.getElementById('processingView');
+                processingView.insertBefore(controlsDiv, jobsList);
             }
             
             jobsList.innerHTML = '';
             
             if (this.activeJobs.size === 0) {
-                jobsList.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--text-muted);"><p>No active DZI processing jobs</p><p>Select files in the file manager and click "Process to DZI" to start processing</p></div>';
+                jobsList.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--text-muted);"><p>No active DZI processing jobs</p><p>Select pathology slide files in the file manager and click "Process to DZI" to start processing</p></div>';
                 return;
             }
             
@@ -679,6 +716,12 @@ $isAdmin = ($username === 'yshokrollahi');
                 const jobItem = this.createJobItem(job);
                 jobsList.appendChild(jobItem);
             });
+            
+            // Add note about job monitoring
+            const noteDiv = document.createElement('div');
+            noteDiv.style.cssText = 'margin-top: 1rem; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--border-radius); font-size: 0.875rem; color: var(--text-secondary);';
+            noteDiv.innerHTML = '<strong>Note:</strong> Job status updates may be limited. Use the "Refresh Status" button to manually check progress, or monitor jobs through your existing system.';
+            jobsList.appendChild(noteDiv);
         }
         
         createJobItem(job) {
@@ -854,18 +897,22 @@ $isAdmin = ($username === 'yshokrollahi');
     }
 
     // Enhanced File Manager with DZI Processing
-    class EnhancedPolyscopeFileManager {
+// Enhanced File Manager with DZI Processing - FIXED VERSION
+class EnhancedPolyscopeFileManager {
         constructor() {
             this.currentPath = '';
             this.selectedFiles = new Set();
             this.isUploading = false;
+            this.dziProcessor = null; // Initialize as null first
             
             this.initializeEventListeners();
             this.loadDirectory('');
             
-            // Initialize DZI processor
-            this.dziProcessor = new DZIProcessor(this);
-            window.dziProcessor = this.dziProcessor; // Make globally accessible for onclick handlers
+            // Initialize DZI processor AFTER the file manager is ready
+            setTimeout(() => {
+                this.dziProcessor = new DZIProcessor(this);
+                window.dziProcessor = this.dziProcessor; // Make globally accessible for onclick handlers
+            }, 100);
         }
         
         initializeEventListeners() {
@@ -1250,9 +1297,13 @@ $isAdmin = ($username === 'yshokrollahi');
             }
         }
         
-        // DZI Processing - delegate to DZI processor
+        // DZI Processing - delegate to DZI processor with safety check
         async processSelectedFiles() {
-            await this.dziProcessor.processSelectedFiles();
+            if (this.dziProcessor) {
+                await this.dziProcessor.processSelectedFiles();
+            } else {
+                this.showError('DZI processor not ready yet. Please try again in a moment.');
+            }
         }
         
         refreshCurrentDirectory() {
@@ -1330,7 +1381,7 @@ $isAdmin = ($username === 'yshokrollahi');
             div.textContent = text;
             return div.innerHTML;
         }
-    }
+    }	
 
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
