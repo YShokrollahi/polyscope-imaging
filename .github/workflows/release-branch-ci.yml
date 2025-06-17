@@ -3,7 +3,7 @@ name: Build and Push Docker Image for Release Branch
 on:
   push:
     branches:
-      - release/v1.0.1
+      - release/v1.0.2
 
 permissions:
   contents: read
