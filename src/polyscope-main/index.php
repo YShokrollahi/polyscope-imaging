@@ -58,7 +58,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
 
 		</ul>
 	</div>
-	<div class='header'><h1>Polyscope</h1></div>
+	<div class='header'><h1>Polyscope / release Jun 17th</h1></div>
 	<div class='header'><h2>Yuan lab @ MD Anderson</h2></div>
 </div>
 
