@@ -41,9 +41,94 @@ class TaskSupervisor {
 	
 	public function __construct( $taskFile ) {
 		$this->taskFileName = $taskFile;
-		$this->taskFileHandler = new TaskFileManipulator( $this->taskFileName );
-		$this->doneTaskHandler = new TaskFileManipulator( jobDoneFile() );
-		$this->config = $this->loadConfig();
+		
+		// Enhanced error handling for task file handler
+		try {
+			error_log("TaskSupervisor: Creating TaskFileManipulator for: " . $taskFile);
+			$this->taskFileHandler = new TaskFileManipulator( $this->taskFileName );
+			
+			if ($this->taskFileHandler === null) {
+				throw new Exception("TaskFileManipulator constructor returned null");
+			}
+			
+			error_log("TaskSupervisor: TaskFileManipulator created successfully");
+			
+		} catch (Exception $e) {
+			error_log("TaskSupervisor: Failed to create TaskFileManipulator: " . $e->getMessage());
+			
+			// Try to create/fix the job file
+			if (!file_exists($taskFile)) {
+				error_log("TaskSupervisor: Creating missing job file: " . $taskFile);
+				touch($taskFile);
+				chmod($taskFile, 0666);
+			} else {
+				// Check if file is readable/writable
+				if (!is_readable($taskFile)) {
+					error_log("TaskSupervisor: Job file not readable: " . $taskFile);
+					chmod($taskFile, 0666);
+				}
+				if (!is_writable($taskFile)) {
+					error_log("TaskSupervisor: Job file not writable: " . $taskFile);
+					chmod($taskFile, 0666);
+				}
+			}
+			
+			// Try again
+			try {
+				$this->taskFileHandler = new TaskFileManipulator( $this->taskFileName );
+				if ($this->taskFileHandler === null) {
+					throw new Exception("TaskFileManipulator still null after retry");
+				}
+			} catch (Exception $e2) {
+				error_log("TaskSupervisor: Second attempt failed: " . $e2->getMessage());
+				throw new Exception("Cannot create TaskFileManipulator for: " . $taskFile);
+			}
+		}
+		
+		// Enhanced error handling for done task handler
+		try {
+			error_log("TaskSupervisor: Creating done task handler for: " . jobDoneFile());
+			$this->doneTaskHandler = new TaskFileManipulator( jobDoneFile() );
+			
+			if ($this->doneTaskHandler === null) {
+				throw new Exception("Done TaskFileManipulator constructor returned null");
+			}
+			
+		} catch (Exception $e) {
+			error_log("TaskSupervisor: Failed to create done TaskFileManipulator: " . $e->getMessage());
+			
+			// Try to create the done file
+			$doneFile = jobDoneFile();
+			if (!file_exists($doneFile)) {
+				error_log("TaskSupervisor: Creating missing done file: " . $doneFile);
+				touch($doneFile);
+				chmod($doneFile, 0666);
+			}
+			
+			// Try again
+			try {
+				$this->doneTaskHandler = new TaskFileManipulator( $doneFile );
+				if ($this->doneTaskHandler === null) {
+					throw new Exception("Done TaskFileManipulator still null after retry");
+				}
+			} catch (Exception $e2) {
+				error_log("TaskSupervisor: Second attempt for done handler failed: " . $e2->getMessage());
+				throw new Exception("Cannot create done TaskFileManipulator");
+			}
+		}
+		
+		// Load config
+		try {
+			$this->config = $this->loadConfig();
+			error_log("TaskSupervisor: Config loaded successfully");
+		} catch (Exception $e) {
+			error_log("TaskSupervisor: Config loading failed: " . $e->getMessage());
+			// Provide default config
+			$this->config = array('upload' => 2, 'polyzoom' => 4);
+			error_log("TaskSupervisor: Using default config");
+		}
+		
+		error_log("TaskSupervisor: Constructor completed successfully");
 	}
 	
 	public function __destruct() {

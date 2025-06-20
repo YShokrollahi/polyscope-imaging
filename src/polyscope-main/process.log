@@ -1,0 +1,46 @@
+[2025-06-20 05:02:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_EE29FFA5-D38C-414B-8E8A-3AD13E680E51_1750392152/Path000008_202506200502
+[2025-06-20 05:02:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 05:02:41] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_50D5088D-4B62-4A58-940D-BFBAA00BF782_1750392161/Path000009_202506200502
+[2025-06-20 05:02:41] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 05:02:50] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_D00E88E1-BB86-4A3F-BCE4-85B07F410E7A_1750392170/Path000010_202506200502
+[2025-06-20 05:02:50] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 05:11:01] ULTRA-OPT: Available RAM: 245.85 GB
+[2025-06-20 05:11:01] ULTRA-OPT: CPU Cores: 16
+[2025-06-20 05:11:01] ULTRA-OPT: Creating RAM disk of size: 11G
+[2025-06-20 05:11:01] ULTRA-OPT: RAM disk mounted: sudo mount -t tmpfs -o size=11G,noatime,nodiratime tmpfs /dev/shm/polyscope_ultra_C5A04B1B-03C1-44DE-BDB3-BB4A126EF699
+[2025-06-20 05:11:01] ULTRA-OPT: File size: 3.96 MB
+[2025-06-20 05:11:01] ULTRA-OPT: Selected processing location: RAM_DISK
+[2025-06-20 05:11:02] ULTRA-OPT: Processing path: /dev/shm/polyscope_ultra_C5A04B1B-03C1-44DE-BDB3-BB4A126EF699/Path000011_202506200511
+[2025-06-20 05:11:02] ULTRA-OPT: Processing scripts copied in parallel
+[2025-06-20 05:13:32] ULTRA-OPT: Available RAM: 245.88 GB
+[2025-06-20 05:13:32] ULTRA-OPT: CPU Cores: 16
+[2025-06-20 05:13:32] ULTRA-OPT: Creating RAM disk of size: 11G
+[2025-06-20 05:13:32] ULTRA-OPT: RAM disk mounted: sudo mount -t tmpfs -o size=11G,noatime,nodiratime tmpfs /dev/shm/polyscope_ultra_3084C9C6-7C3B-4172-AE26-A1464ED3C69A
+[2025-06-20 05:13:32] ULTRA-OPT: File size: 112.57 MB
+[2025-06-20 05:13:32] ULTRA-OPT: Selected processing location: RAM_DISK
+[2025-06-20 05:13:32] ULTRA-OPT: Processing path: /dev/shm/polyscope_ultra_3084C9C6-7C3B-4172-AE26-A1464ED3C69A/Path000012_202506200513
+[2025-06-20 05:13:32] Copying to processing location failed: /var/www/uploads/37145201_MS004544S1.png -> /dev/shm/polyscope_ultra_3084C9C6-7C3B-4172-AE26-A1464ED3C69A/Path000012_202506200513/MS004544S1.png
+[2025-06-20 05:21:31] ULTRA-OPT: Available RAM: 245.79 GB
+[2025-06-20 05:21:31] ULTRA-OPT: CPU Cores: 16
+[2025-06-20 05:21:31] ULTRA-OPT: Creating RAM disk of size: 11G
+[2025-06-20 05:21:31] ULTRA-OPT: RAM disk mounted: sudo mount -t tmpfs -o size=11G,noatime,nodiratime tmpfs /dev/shm/polyscope_ultra_11D2A232-9486-4D73-9D29-BE4BB41542BA
+[2025-06-20 05:21:31] ULTRA-OPT: File size: 12.36 KB
+[2025-06-20 05:21:31] ULTRA-OPT: Selected processing location: RAM_DISK
+[2025-06-20 05:21:31] ULTRA-OPT: Processing path: /dev/shm/polyscope_ultra_11D2A232-9486-4D73-9D29-BE4BB41542BA/Path000013_202506200521
+[2025-06-20 05:21:31] Copying to processing location failed: /var/www/uploads/01347805_images.jpg -> /dev/shm/polyscope_ultra_11D2A232-9486-4D73-9D29-BE4BB41542BA/Path000013_202506200521/images.jpg
+[2025-06-20 05:26:01] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_C53741F8-0996-4B2A-91EB-BE778687C6AB_1750393561/Path000014_202506200526
+[2025-06-20 05:26:01] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 05:29:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_08D037F2-7F11-4669-B5EA-ACF5A10FE52C_1750393772/Path000015_202506200529
+[2025-06-20 05:29:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 05:34:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_D77CCAB2-DD0D-4918-B298-BC009C207E9A_1750394072/Path000016_202506200534
+[2025-06-20 05:34:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 05:58:01] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_35449272-C2F7-44C9-9155-89DCBFB15DC8_1750395481/Path000017_202506200558
+[2025-06-20 05:58:01] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 06:00:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_BA86EDE5-348D-4292-8CB4-5F3CA2636132_1750395632/Path000018_202506200600
+[2025-06-20 06:00:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 14:59:02] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_5CF02FA6-6176-4D3C-B268-F17C8A0481B7_1750427942/Path000019_202506201459
+[2025-06-20 14:59:02] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 15:05:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_8D295B00-1732-4D0F-8EB7-26F52D60282D_1750428332/Path000020_202506201505
+[2025-06-20 15:05:33] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 15:20:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_350A546E-EDAF-4E01-AE88-733C6F52F51D_1750429232/Path000021_202506201520
+[2025-06-20 15:20:32] OPTIMIZATION: Copying file to local storage for processing

@@ -132,16 +132,20 @@ function lockedFileRead( $filename, $length, $mode, $waitIfLocked = true ) {
 	$returnValue = createReturnValue(0, "ok", "");
 	$data = "";
 	
+	// FIX: Always initialize data key to prevent "Undefined index: data" error
+	$returnValue["data"] = "";
+	
 	if(filesize($filename) == 0) {
-		return $returnValue;
+		return $returnValue;  // Now safe - data key is already set
 	}
 	
 	$file = fopen( $filename, $mode );
 
-  $fp = fopen('/var/www/jamie-debug.log', 'w');
-  fwrite($fp, $filename);
-  fwrite($fp, $length);
-  fclose($fp);
+	// Debug logging - remove this after fixing
+	$fp = fopen('/var/www/jamie-debug.log', 'w');
+	fwrite($fp, $filename);
+	fwrite($fp, $length);
+	fclose($fp);
 	
 	if ( flock($file, LOCK_SH, $waitIfLocked) ) {
 
@@ -167,7 +171,7 @@ function lockedFileRead( $filename, $length, $mode, $waitIfLocked = true ) {
 	flock( $file, LOCK_UN );
 	fclose( $file );
 	
-	$returnValue["data"] = $data;
+	$returnValue["data"] = $data;  // Update with actual data
 
 	return $returnValue;
 }
