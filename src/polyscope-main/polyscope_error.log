@@ -1,0 +1,14 @@
+[Wed Jun 18 15:19:10.832450 2025] [:error] [pid 1222229] [client 127.0.0.1:60938] === MINIMAL DZI TEST START ===
+[Wed Jun 18 15:19:10.838823 2025] [:error] [pid 1222229] [client 127.0.0.1:60938] POST: Array\n(\n    [path] => ["\\/media\\/Users\\/admin_22\\/modpathol_Hero-c406775143eb40737edb1d9f60c1b1e8.jpg"]\n    [isDir] => false\n)\n
+[Wed Jun 18 15:19:10.841973 2025] [:error] [pid 1222229] [client 127.0.0.1:60938] Sending test response: {"typ":"test","message":"Endpoint is working!","timestamp":1750259950,"post_data":{"path":"[\\"\\\\\\/media\\\\\\/Users\\\\\\/admin_22\\\\\\/modpathol_Hero-c406775143eb40737edb1d9f60c1b1e8.jpg\\"]","isDir":"false"},"test":"success"}
+[Wed Jun 18 22:19:23.260716 2025] [log_config:warn] [pid 87518] (116)Stale file handle: [client 127.0.0.1:50730] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 03:36:27.388379 2025] [log_config:warn] [pid 111861] (116)Stale file handle: [client 127.0.0.1:46676] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 14:36:09.677138 2025] [log_config:warn] [pid 100097] (116)Stale file handle: [client 127.0.0.1:34608] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 14:41:04.990278 2025] [log_config:warn] [pid 134960] (116)Stale file handle: [client 127.0.0.1:51400] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 14:44:37.218045 2025] [log_config:warn] [pid 113640] (116)Stale file handle: [client 127.0.0.1:58954] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 15:11:21.895805 2025] [log_config:warn] [pid 3845874] (116)Stale file handle: [client 127.0.0.1:56660] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 15:11:31.910069 2025] [log_config:warn] [pid 99627] (116)Stale file handle: [client 127.0.0.1:44278] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 15:24:38.769259 2025] [log_config:warn] [pid 112070] (116)Stale file handle: [client 127.0.0.1:45810] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 15:25:34.837129 2025] [log_config:warn] [pid 187637] (116)Stale file handle: [client 127.0.0.1:58226] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 15:29:39.101584 2025] [log_config:warn] [pid 187424] (116)Stale file handle: [client 127.0.0.1:52406] AH00646: Error writing to /var/www/polyscope_access.log
+[Thu Jun 19 15:33:59.384990 2025] [log_config:warn] [pid 192044] (116)Stale file handle: [client 127.0.0.1:34412] AH00646: Error writing to /var/www/polyscope_access.log
