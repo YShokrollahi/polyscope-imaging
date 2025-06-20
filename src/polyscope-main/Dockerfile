@@ -159,6 +159,7 @@ COPY ./images /var/www/images
 COPY ./jobs /var/www/jobs
 COPY ./plugins /var/www/plugins
 COPY ./pz_scripts /var/www/pz_scripts
+COPY ./assets /var/www/assets    
 COPY *.html /var/www/
 COPY *.php /var/www/
 COPY *.js /var/www/
