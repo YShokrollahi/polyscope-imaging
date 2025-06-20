@@ -12,3 +12,8 @@
 [Thu Jun 19 15:25:34.837129 2025] [log_config:warn] [pid 187637] (116)Stale file handle: [client 127.0.0.1:58226] AH00646: Error writing to /var/www/polyscope_access.log
 [Thu Jun 19 15:29:39.101584 2025] [log_config:warn] [pid 187424] (116)Stale file handle: [client 127.0.0.1:52406] AH00646: Error writing to /var/www/polyscope_access.log
 [Thu Jun 19 15:33:59.384990 2025] [log_config:warn] [pid 192044] (116)Stale file handle: [client 127.0.0.1:34412] AH00646: Error writing to /var/www/polyscope_access.log
+[Fri Jun 20 18:50:56.459202 2025] [:error] [pid 281] [client 10.119.26.215:60821] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[Fri Jun 20 18:50:56.512576 2025] [:error] [pid 281] [client 10.119.26.215:60821] PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/auth/config.php on line 27
+[Fri Jun 20 18:50:56.516627 2025] [:error] [pid 281] [client 10.119.26.215:60821] Connection failed: No such file or directory
+[Fri Jun 20 18:50:58.613517 2025] [:error] [pid 281] [client 10.119.26.215:60821] PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/auth/config.php on line 27
+[Fri Jun 20 18:50:58.621881 2025] [:error] [pid 281] [client 10.119.26.215:60821] Connection failed: No such file or directory
