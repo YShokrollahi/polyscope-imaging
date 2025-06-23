@@ -44,3 +44,22 @@
 [2025-06-20 15:05:33] OPTIMIZATION: Copying file to local storage for processing
 [2025-06-20 15:20:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_350A546E-EDAF-4E01-AE88-733C6F52F51D_1750429232/Path000021_202506201520
 [2025-06-20 15:20:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_335930EF-6487-443F-B739-80EA317971BD_1750448852/Path000022_202506202047
+[2025-06-20 20:47:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_335930EF-6487-443F-B739-80EA317971BD_1750448852/Path000023_202506202047
+[2025-06-20 20:47:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:32] Copying to local failed: /var/www/uploads/01314509_Adenoid_cystic_Carcinoma_image_1.jpg -> /tmp/polyscope_processing_335930EF-6487-443F-B739-80EA317971BD_1750448852/Path000023_202506202047/Adenoid_cystic_Carcinoma_image_1.jpg
+[2025-06-20 20:47:32] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_266DA987-C32F-4C18-9C49-CD41F282E834_1750448852/Path000024_202506202047
+[2025-06-20 20:47:32] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:42] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_266DA987-C32F-4C18-9C49-CD41F282E834_1750448862/Path000025_202506202047
+[2025-06-20 20:47:42] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:42] Copying to local failed: /var/www/uploads/94669971_Adenoid_cystic_Carcinoma_image_1.jpg -> /tmp/polyscope_processing_266DA987-C32F-4C18-9C49-CD41F282E834_1750448862/Path000025_202506202047/Adenoid_cystic_Carcinoma_image_1.jpg
+[2025-06-20 20:47:42] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_A7FECB6C-8568-45BD-915D-D0798CEED9A3_1750448862/Path000026_202506202047
+[2025-06-20 20:47:42] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:43] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_A7FECB6C-8568-45BD-915D-D0798CEED9A3_1750448863/Path000027_202506202047
+[2025-06-20 20:47:43] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-20 20:47:43] Copying to local failed: /var/www/uploads/11551161_Adenoid_cystic_Carcinoma_image_1.jpg -> /tmp/polyscope_processing_A7FECB6C-8568-45BD-915D-D0798CEED9A3_1750448863/Path000027_202506202047/Adenoid_cystic_Carcinoma_image_1.jpg
+[2025-06-20 20:48:01] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_503D8404-9754-45A6-8FC5-B0F36BAF82AA_1750448881/Path000028_202506202048
+[2025-06-20 20:48:01] OPTIMIZATION: Copying file to local storage for processing
+[2025-06-21 17:51:02] OPTIMIZATION: Creating local processing directory: /tmp/polyscope_processing_47B99E58-DBDC-4013-A740-58A734A7CF1C_1750524662/Path000029_202506211751
+[2025-06-21 17:51:02] OPTIMIZATION: Copying file to local storage for processing
