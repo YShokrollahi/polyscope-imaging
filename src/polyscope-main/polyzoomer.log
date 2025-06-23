@@ -172,3 +172,764 @@ Please find your results under the following link.
 [2025-06-21 17:51:16] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
 Please find your results under the following link.
 /customers/yshokrollahi-mdanderson-org/Path000029_202506211751/page/./UNKNOWNPAT0001/index.html
+[2025-06-23 18:41:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' EA377537-2057-44AC-92E4-5278E71CB8BE
+[2025-06-23 18:41:01]  Changed from [;EA377537-2057-44AC-92E4-5278E71CB8BE;1;checksum;] to [;EA377537-2057-44AC-92E4-5278E71CB8BE;1;pending;]
+[2025-06-23 18:41:01] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:41:01] [EXECUTE] [RESULT] 0
+[2025-06-23 18:41:02] EA377537-2057-44AC-92E4-5278E71CB8BE changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 18:41:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/54255506_Adenoid_cystic_Carcinoma_image_1.jpg' 'EA377537-2057-44AC-92E4-5278E71CB8BE' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 18:41:02] EA377537-2057-44AC-92E4-5278E71CB8BE changes from [2;upload] to [2;uploading]
+[2025-06-23 18:41:02] EA377537-2057-44AC-92E4-5278E71CB8BE changes from [2;uploading] to [2;uploaded]
+[2025-06-23 18:41:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:41:02] [EXECUTE] [RESULT] 0
+[2025-06-23 18:41:31] EA377537-2057-44AC-92E4-5278E71CB8BE changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 18:41:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/54255506_Adenoid_cystic_Carcinoma_image_1.jpg' EA377537-2057-44AC-92E4-5278E71CB8BE /var/www/jobs/jobs.log
+[2025-06-23 18:41:36] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to transfer DZI to hot storage","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 253","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 211","                    [function] => transferToHotStorage","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_EA377537-2057-44AC-92E4-5278E71CB8BE_1750700493\/Path000030_202506231841","                            [1] => \/data\/polyzoomer\/Path000030_202506231841","                            [2] => EA377537-2057-44AC-92E4-5278E71CB8BE","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 47","                    [function] => polyzoomTiered","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_EA377537-2057-44AC-92E4-5278E71CB8BE_1750700493\/Path000030_202506231841","                            [1] => Adenoid_cystic_Carcinoma_image_1.jpg","                            [2] => \/data\/polyzoomer\/Path000030_202506231841","                            [3] => EA377537-2057-44AC-92E4-5278E71CB8BE","                        )","","                )","","            [2] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 29","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/54255506_Adenoid_cystic_Carcinoma_image_1.jpg","                            [1] => EA377537-2057-44AC-92E4-5278E71CB8BE","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 18:41:36] [EXECUTE] [RESULT] 0
+[2025-06-23 18:45:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' D7E2D255-4961-4F44-9F6D-E77E118AA7E4
+[2025-06-23 18:45:32]  Changed from [;D7E2D255-4961-4F44-9F6D-E77E118AA7E4;1;checksum;] to [;D7E2D255-4961-4F44-9F6D-E77E118AA7E4;1;pending;]
+[2025-06-23 18:45:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:45:32] [EXECUTE] [RESULT] 0
+[2025-06-23 18:45:33] D7E2D255-4961-4F44-9F6D-E77E118AA7E4 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 18:45:33] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/45570500_MS008S1_MU.png' 'D7E2D255-4961-4F44-9F6D-E77E118AA7E4' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 18:45:34] D7E2D255-4961-4F44-9F6D-E77E118AA7E4 changes from [2;upload] to [2;uploading]
+[2025-06-23 18:45:35] D7E2D255-4961-4F44-9F6D-E77E118AA7E4 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 18:45:35] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:45:35] [EXECUTE] [RESULT] 0
+[2025-06-23 18:46:01] D7E2D255-4961-4F44-9F6D-E77E118AA7E4 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 18:46:03] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/45570500_MS008S1_MU.png' D7E2D255-4961-4F44-9F6D-E77E118AA7E4 /var/www/jobs/jobs.log
+[2025-06-23 18:46:24] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:46:24] [EXECUTE] [RESULT] 0
+[2025-06-23 18:47:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' A059985C-5BEF-434E-82A0-52DE670A2520
+[2025-06-23 18:47:32]  Changed from [;A059985C-5BEF-434E-82A0-52DE670A2520;1;checksum;] to [;A059985C-5BEF-434E-82A0-52DE670A2520;1;pending;]
+[2025-06-23 18:47:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:47:33] [EXECUTE] [RESULT] 0
+[2025-06-23 18:47:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 80B52F98-E269-482E-8FB0-CC821071A5B7
+[2025-06-23 18:47:33]  Changed from [;80B52F98-E269-482E-8FB0-CC821071A5B7;1;checksum;] to [;80B52F98-E269-482E-8FB0-CC821071A5B7;1;pending;]
+[2025-06-23 18:47:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:47:33] [EXECUTE] [RESULT] 0
+[2025-06-23 18:47:33] A059985C-5BEF-434E-82A0-52DE670A2520 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 18:47:34] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/00603691_MS011S1_MU.png' 'A059985C-5BEF-434E-82A0-52DE670A2520' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-23 18:47:36] A059985C-5BEF-434E-82A0-52DE670A2520 changes from [2;upload] to [2;uploading]
+[2025-06-23 18:47:38] A059985C-5BEF-434E-82A0-52DE670A2520 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 18:47:38] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:47:38] [EXECUTE] [RESULT] 0
+[2025-06-23 18:47:38] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 80B52F98-E269-482E-8FB0-CC821071A5B7
+[2025-06-23 18:47:39]  Changed from [;80B52F98-E269-482E-8FB0-CC821071A5B7;1;checksum;] to [;80B52F98-E269-482E-8FB0-CC821071A5B7;1;pending;]
+[2025-06-23 18:47:39] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:47:39] [EXECUTE] [RESULT] 0
+[2025-06-23 18:48:02] A059985C-5BEF-434E-82A0-52DE670A2520 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 18:48:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/00603691_MS011S1_MU.png' A059985C-5BEF-434E-82A0-52DE670A2520 /var/www/jobs/jobs.log
+[2025-06-23 18:48:02] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 18:48:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/22101391_MS014S1_MU.png' '80B52F98-E269-482E-8FB0-CC821071A5B7' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-23 18:48:02] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [2;upload] to [2;uploading]
+[2025-06-23 18:48:03] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 18:48:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:48:04] [EXECUTE] [RESULT] 0
+[2025-06-23 18:48:19] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to transfer DZI to hot storage","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 253","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 211","                    [function] => transferToHotStorage","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_A059985C-5BEF-434E-82A0-52DE670A2520_1750700882\/Path000032_202506231848","                            [1] => \/data\/polyzoomer\/Path000032_202506231848","                            [2] => A059985C-5BEF-434E-82A0-52DE670A2520","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 47","                    [function] => polyzoomTiered","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_A059985C-5BEF-434E-82A0-52DE670A2520_1750700882\/Path000032_202506231848","                            [1] => MS011S1_MU.png","                            [2] => \/data\/polyzoomer\/Path000032_202506231848","                            [3] => A059985C-5BEF-434E-82A0-52DE670A2520","                        )","","                )","","            [2] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 29","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/00603691_MS011S1_MU.png","                            [1] => A059985C-5BEF-434E-82A0-52DE670A2520","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 18:48:19] [EXECUTE] [RESULT] 0
+[2025-06-23 18:48:20] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 18:48:20] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/22101391_MS014S1_MU.png' '80B52F98-E269-482E-8FB0-CC821071A5B7' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-23 18:48:20] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [2;upload] to [2;uploading]
+[2025-06-23 18:48:20] File is already there!
+[2025-06-23 18:48:21] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 18:48:21] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:48:21] [EXECUTE] [RESULT] 0
+[2025-06-23 18:48:32] 80B52F98-E269-482E-8FB0-CC821071A5B7 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 18:48:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/22101391_MS014S1_MU.png' 80B52F98-E269-482E-8FB0-CC821071A5B7 /var/www/jobs/jobs.log
+[2025-06-23 18:48:46] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:48:46] [EXECUTE] [RESULT] 0
+[2025-06-23 18:53:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS010S1_OME.ome.tiff' 0507DC72-8FE4-4D89-A580-73E2326B877D
+[2025-06-23 18:53:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS010S1_OME.ome.tiff' 0507DC72-8FE4-4D89-A580-73E2326B877D
+[2025-06-23 18:53:07]  Changed from [;0507DC72-8FE4-4D89-A580-73E2326B877D;1;checksum;] to [;0507DC72-8FE4-4D89-A580-73E2326B877D;1;pending;]
+[2025-06-23 18:53:08] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:53:08] [EXECUTE] [RESULT] 0
+[2025-06-23 18:53:12]  Changed from [;0507DC72-8FE4-4D89-A580-73E2326B877D;1;checksum;] to [;0507DC72-8FE4-4D89-A580-73E2326B877D;1;pending;]
+[2025-06-23 18:53:12] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:53:12] [EXECUTE] [RESULT] 0
+[2025-06-23 18:53:32] 0507DC72-8FE4-4D89-A580-73E2326B877D changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 18:53:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS010S1_OME.ome.tiff' '/var/www/uploads/24627939_MS010S1_OME.ome.tiff' '0507DC72-8FE4-4D89-A580-73E2326B877D' '51c808a84ae92d642d088fdb3dbb7ae0'
+[2025-06-23 18:53:32] Job should be uploaded [0507DC72-8FE4-4D89-A580-73E2326B877D]
+[2025-06-23 18:53:37] 0507DC72-8FE4-4D89-A580-73E2326B877D changes from [2;upload] to [2;uploading]
+[2025-06-23 18:53:50] 0507DC72-8FE4-4D89-A580-73E2326B877D changes from [2;uploading] to [2;uploaded]
+[2025-06-23 18:53:50] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:53:50] [EXECUTE] [RESULT] 0
+[2025-06-23 18:54:01] 0507DC72-8FE4-4D89-A580-73E2326B877D changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 18:54:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/24627939_MS010S1_OME.ome.tiff' 0507DC72-8FE4-4D89-A580-73E2326B877D /var/www/jobs/jobs.log
+[2025-06-23 18:54:55] [EXECUTE] [OUTPUT] []
+[2025-06-23 18:54:55] [EXECUTE] [RESULT] 0
+[2025-06-23 19:03:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' E974223B-2C63-4B84-8CA7-AD31DAD8E1DD
+[2025-06-23 19:03:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' E974223B-2C63-4B84-8CA7-AD31DAD8E1DD
+[2025-06-23 19:03:32]  Changed from [;E974223B-2C63-4B84-8CA7-AD31DAD8E1DD;1;checksum;] to [;E974223B-2C63-4B84-8CA7-AD31DAD8E1DD;1;pending;]
+[2025-06-23 19:03:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:03:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:03:33]  Changed from [;E974223B-2C63-4B84-8CA7-AD31DAD8E1DD;1;checksum;] to [;E974223B-2C63-4B84-8CA7-AD31DAD8E1DD;1;pending;]
+[2025-06-23 19:03:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:03:33] [EXECUTE] [RESULT] 0
+[2025-06-23 19:04:01] E974223B-2C63-4B84-8CA7-AD31DAD8E1DD changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:04:01] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/76224949_MS004S1.png' 'E974223B-2C63-4B84-8CA7-AD31DAD8E1DD' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 19:04:02] E974223B-2C63-4B84-8CA7-AD31DAD8E1DD changes from [2;upload] to [2;uploading]
+[2025-06-23 19:04:03] E974223B-2C63-4B84-8CA7-AD31DAD8E1DD changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:04:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:04:03] [EXECUTE] [RESULT] 0
+[2025-06-23 19:04:31] E974223B-2C63-4B84-8CA7-AD31DAD8E1DD changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:04:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/76224949_MS004S1.png' E974223B-2C63-4B84-8CA7-AD31DAD8E1DD /var/www/jobs/jobs.log
+[2025-06-23 19:04:40] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to transfer DZI to hot storage","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 253","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 211","                    [function] => transferToHotStorage","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_E974223B-2C63-4B84-8CA7-AD31DAD8E1DD_1750701872\/Path000035_202506231904","                            [1] => \/data\/polyzoomer\/Path000035_202506231904","                            [2] => E974223B-2C63-4B84-8CA7-AD31DAD8E1DD","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 47","                    [function] => polyzoomTiered","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_E974223B-2C63-4B84-8CA7-AD31DAD8E1DD_1750701872\/Path000035_202506231904","                            [1] => MS004S1.png","                            [2] => \/data\/polyzoomer\/Path000035_202506231904","                            [3] => E974223B-2C63-4B84-8CA7-AD31DAD8E1DD","                        )","","                )","","            [2] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 29","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/76224949_MS004S1.png","                            [1] => E974223B-2C63-4B84-8CA7-AD31DAD8E1DD","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 19:04:40] [EXECUTE] [RESULT] 0
+[2025-06-23 19:05:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5
+[2025-06-23 19:05:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5
+[2025-06-23 19:05:32]  Changed from [;7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5;1;checksum;] to [;7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5;1;pending;]
+[2025-06-23 19:05:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:05:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:05:32]  Changed from [;7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5;1;checksum;] to [;7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5;1;pending;]
+[2025-06-23 19:05:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:05:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:06:02] 7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:06:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/56022185_Adenoid_cystic_Carcinoma_image_1.jpg' '7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 19:06:02] 7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:06:02] 7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:06:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:06:02] [EXECUTE] [RESULT] 0
+[2025-06-23 19:06:03] 7399C446-E13F-49E3-8A2C-CBFA8CDCCDA5 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:11:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 7BAB7084-7B9A-4D9C-BF73-1D33967CDA80
+[2025-06-23 19:11:02]  Changed from [;7BAB7084-7B9A-4D9C-BF73-1D33967CDA80;1;checksum;] to [;7BAB7084-7B9A-4D9C-BF73-1D33967CDA80;1;pending;]
+[2025-06-23 19:11:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:11:02] [EXECUTE] [RESULT] 0
+[2025-06-23 19:11:02] 7BAB7084-7B9A-4D9C-BF73-1D33967CDA80 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:11:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/94711356_MS008S1_MU.png' '7BAB7084-7B9A-4D9C-BF73-1D33967CDA80' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 19:11:03] 7BAB7084-7B9A-4D9C-BF73-1D33967CDA80 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:11:04] 7BAB7084-7B9A-4D9C-BF73-1D33967CDA80 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:11:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:11:04] [EXECUTE] [RESULT] 0
+[2025-06-23 19:11:31] 7BAB7084-7B9A-4D9C-BF73-1D33967CDA80 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:15:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 9B004AE8-4BB9-4DC5-998B-5D09ADDFE834
+[2025-06-23 19:15:03]  Changed from [;9B004AE8-4BB9-4DC5-998B-5D09ADDFE834;1;checksum;] to [;9B004AE8-4BB9-4DC5-998B-5D09ADDFE834;1;pending;]
+[2025-06-23 19:15:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:15:03] [EXECUTE] [RESULT] 0
+[2025-06-23 19:15:03] 9B004AE8-4BB9-4DC5-998B-5D09ADDFE834 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:15:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/95158734_MS008S1_MU.png' '9B004AE8-4BB9-4DC5-998B-5D09ADDFE834' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 19:15:04] 9B004AE8-4BB9-4DC5-998B-5D09ADDFE834 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:15:05] 9B004AE8-4BB9-4DC5-998B-5D09ADDFE834 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:15:06] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:15:06] [EXECUTE] [RESULT] 0
+[2025-06-23 19:15:32] 9B004AE8-4BB9-4DC5-998B-5D09ADDFE834 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:17:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 7CA03E11-786B-47E0-8DF6-FF36F700DEA5
+[2025-06-23 19:17:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 7CA03E11-786B-47E0-8DF6-FF36F700DEA5
+[2025-06-23 19:17:32]  Changed from [;7CA03E11-786B-47E0-8DF6-FF36F700DEA5;1;checksum;] to [;7CA03E11-786B-47E0-8DF6-FF36F700DEA5;1;pending;]
+[2025-06-23 19:17:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:17:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:17:33]  Changed from [;7CA03E11-786B-47E0-8DF6-FF36F700DEA5;1;checksum;] to [;7CA03E11-786B-47E0-8DF6-FF36F700DEA5;1;pending;]
+[2025-06-23 19:17:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:17:33] [EXECUTE] [RESULT] 0
+[2025-06-23 19:18:02] 7CA03E11-786B-47E0-8DF6-FF36F700DEA5 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:18:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/77523934_Adenoid_cystic_Carcinoma_image_1.jpg' '7CA03E11-786B-47E0-8DF6-FF36F700DEA5' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 19:18:02] Job should be uploaded [7CA03E11-786B-47E0-8DF6-FF36F700DEA5]
+[2025-06-23 19:18:02] 7CA03E11-786B-47E0-8DF6-FF36F700DEA5 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:18:03] 7CA03E11-786B-47E0-8DF6-FF36F700DEA5 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:18:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:18:03] [EXECUTE] [RESULT] 0
+[2025-06-23 19:18:32] 7CA03E11-786B-47E0-8DF6-FF36F700DEA5 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:18:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/77523934_Adenoid_cystic_Carcinoma_image_1.jpg' 7CA03E11-786B-47E0-8DF6-FF36F700DEA5 /var/www/jobs/jobs.log
+[2025-06-23 19:18:33] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to copy file to local processing directory","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 109","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 46","                    [function] => prepareLocalPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/77523934_Adenoid_cystic_Carcinoma_image_1.jpg","                            [1] => 7CA03E11-786B-47E0-8DF6-FF36F700DEA5","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 29","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/77523934_Adenoid_cystic_Carcinoma_image_1.jpg","                            [1] => 7CA03E11-786B-47E0-8DF6-FF36F700DEA5","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 19:18:33] [EXECUTE] [RESULT] 0
+[2025-06-23 19:26:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' C647A455-4AD8-4185-B123-C54DCEB2D7C8
+[2025-06-23 19:26:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' C647A455-4AD8-4185-B123-C54DCEB2D7C8
+[2025-06-23 19:26:02]  Changed from [;C647A455-4AD8-4185-B123-C54DCEB2D7C8;1;checksum;] to [;C647A455-4AD8-4185-B123-C54DCEB2D7C8;1;pending;]
+[2025-06-23 19:26:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:26:02] [EXECUTE] [RESULT] 0
+[2025-06-23 19:26:02]  Changed from [;C647A455-4AD8-4185-B123-C54DCEB2D7C8;1;checksum;] to [;C647A455-4AD8-4185-B123-C54DCEB2D7C8;1;pending;]
+[2025-06-23 19:26:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:26:02] [EXECUTE] [RESULT] 0
+[2025-06-23 19:26:31] C647A455-4AD8-4185-B123-C54DCEB2D7C8 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:26:31] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/43276466_MS004S1.png' 'C647A455-4AD8-4185-B123-C54DCEB2D7C8' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 19:26:32] C647A455-4AD8-4185-B123-C54DCEB2D7C8 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:26:32] C647A455-4AD8-4185-B123-C54DCEB2D7C8 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:26:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:26:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:27:02] C647A455-4AD8-4185-B123-C54DCEB2D7C8 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:27:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/43276466_MS004S1.png' C647A455-4AD8-4185-B123-C54DCEB2D7C8 /var/www/jobs/jobs.log
+[2025-06-23 19:27:16] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:27:16] [EXECUTE] [RESULT] 0
+[2025-06-23 19:28:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 82C714FF-320E-4B4C-B8C1-C262644F6008
+[2025-06-23 19:28:32]  Changed from [;82C714FF-320E-4B4C-B8C1-C262644F6008;1;checksum;] to [;82C714FF-320E-4B4C-B8C1-C262644F6008;1;pending;]
+[2025-06-23 19:28:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:28:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:28:32] 82C714FF-320E-4B4C-B8C1-C262644F6008 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:28:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/34773259_MS004S1.png' '82C714FF-320E-4B4C-B8C1-C262644F6008' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 19:28:33] 82C714FF-320E-4B4C-B8C1-C262644F6008 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:28:34] 82C714FF-320E-4B4C-B8C1-C262644F6008 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:28:34] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:28:34] [EXECUTE] [RESULT] 0
+[2025-06-23 19:29:01] 82C714FF-320E-4B4C-B8C1-C262644F6008 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:29:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/34773259_MS004S1.png' 82C714FF-320E-4B4C-B8C1-C262644F6008 /var/www/jobs/jobs.log
+[2025-06-23 19:29:15] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:29:15] [EXECUTE] [RESULT] 0
+[2025-06-23 19:43:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79
+[2025-06-23 19:43:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79
+[2025-06-23 19:43:32]  Changed from [;00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79;1;checksum;] to [;00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79;1;pending;]
+[2025-06-23 19:43:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:43:32] [EXECUTE] [RESULT] 0
+[2025-06-23 19:43:33]  Changed from [;00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79;1;checksum;] to [;00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79;1;pending;]
+[2025-06-23 19:43:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:43:33] [EXECUTE] [RESULT] 0
+[2025-06-23 19:44:01] 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:44:01] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/80967819_MS014S1_MU.png' '00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-23 19:44:02] 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79 changes from [2;upload] to [2;uploading]
+[2025-06-23 19:44:03] 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:44:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:44:03] [EXECUTE] [RESULT] 0
+[2025-06-23 19:44:32] 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:44:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/80967819_MS014S1_MU.png' 00F76326-6CEF-4BE6-8DF5-B31A7F8B5B79 /var/www/jobs/jobs.log
+[2025-06-23 19:44:47] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:44:47] [EXECUTE] [RESULT] 0
+[2025-06-23 19:50:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' E8C9764D-9186-4092-89AB-EF44E532950C
+[2025-06-23 19:50:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' E8C9764D-9186-4092-89AB-EF44E532950C
+[2025-06-23 19:50:02]  Changed from [;E8C9764D-9186-4092-89AB-EF44E532950C;1;checksum;] to [;E8C9764D-9186-4092-89AB-EF44E532950C;1;pending;]
+[2025-06-23 19:50:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:50:02] [EXECUTE] [RESULT] 0
+[2025-06-23 19:50:02]  Changed from [;E8C9764D-9186-4092-89AB-EF44E532950C;1;checksum;] to [;E8C9764D-9186-4092-89AB-EF44E532950C;1;pending;]
+[2025-06-23 19:50:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:50:02] [EXECUTE] [RESULT] 0
+[2025-06-23 19:50:31] E8C9764D-9186-4092-89AB-EF44E532950C changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 19:50:31] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/64860060_MS008S1_MU.png' 'E8C9764D-9186-4092-89AB-EF44E532950C' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 19:50:31] Job should be uploaded [E8C9764D-9186-4092-89AB-EF44E532950C]
+[2025-06-23 19:50:32] E8C9764D-9186-4092-89AB-EF44E532950C changes from [2;upload] to [2;uploading]
+[2025-06-23 19:50:33] E8C9764D-9186-4092-89AB-EF44E532950C changes from [2;uploading] to [2;uploaded]
+[2025-06-23 19:50:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 19:50:34] [EXECUTE] [RESULT] 0
+[2025-06-23 19:51:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/64860060_MS008S1_MU.png' E8C9764D-9186-4092-89AB-EF44E532950C /var/www/jobs/jobs.log
+[2025-06-23 19:51:02] E8C9764D-9186-4092-89AB-EF44E532950C changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 19:51:16] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to transfer DZI to hot storage","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 253","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 211","                    [function] => transferToHotStorage","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_E8C9764D-9186-4092-89AB-EF44E532950C_1750704662\/Path000040_202506231951","                            [1] => \/data\/polyzoomer\/Path000040_202506231951","                            [2] => E8C9764D-9186-4092-89AB-EF44E532950C","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 47","                    [function] => polyzoomTiered","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_E8C9764D-9186-4092-89AB-EF44E532950C_1750704662\/Path000040_202506231951","                            [1] => MS008S1_MU.png","                            [2] => \/data\/polyzoomer\/Path000040_202506231951","                            [3] => E8C9764D-9186-4092-89AB-EF44E532950C","                        )","","                )","","            [2] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 29","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/64860060_MS008S1_MU.png","                            [1] => E8C9764D-9186-4092-89AB-EF44E532950C","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 19:51:16] [EXECUTE] [RESULT] 0
+[2025-06-23 20:03:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 2B8EB7B9-C42A-462D-9063-805F6C500794
+[2025-06-23 20:03:01]  Changed from [;2B8EB7B9-C42A-462D-9063-805F6C500794;1;checksum;] to [;2B8EB7B9-C42A-462D-9063-805F6C500794;1;pending;]
+[2025-06-23 20:03:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:03:02] [EXECUTE] [RESULT] 0
+[2025-06-23 20:03:02] 2B8EB7B9-C42A-462D-9063-805F6C500794 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 20:03:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/10901378_Adenoid_cystic_Carcinoma_image_1.jpg' '2B8EB7B9-C42A-462D-9063-805F6C500794' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 20:03:02] 2B8EB7B9-C42A-462D-9063-805F6C500794 changes from [2;upload] to [2;uploading]
+[2025-06-23 20:03:02] 2B8EB7B9-C42A-462D-9063-805F6C500794 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 20:03:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:03:02] [EXECUTE] [RESULT] 0
+[2025-06-23 20:03:31] 2B8EB7B9-C42A-462D-9063-805F6C500794 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 20:03:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/10901378_Adenoid_cystic_Carcinoma_image_1.jpg' 2B8EB7B9-C42A-462D-9063-805F6C500794 /var/www/jobs/jobs.log
+[2025-06-23 20:03:41] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:03:41] [EXECUTE] [RESULT] 0
+[2025-06-23 20:09:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 6B45EF06-B499-48E5-A39A-054F0E94B943
+[2025-06-23 20:09:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 6B45EF06-B499-48E5-A39A-054F0E94B943
+[2025-06-23 20:09:32]  Changed from [;6B45EF06-B499-48E5-A39A-054F0E94B943;1;checksum;] to [;6B45EF06-B499-48E5-A39A-054F0E94B943;1;pending;]
+[2025-06-23 20:09:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:09:32] [EXECUTE] [RESULT] 0
+[2025-06-23 20:09:33]  Changed from [;6B45EF06-B499-48E5-A39A-054F0E94B943;1;checksum;] to [;6B45EF06-B499-48E5-A39A-054F0E94B943;1;pending;]
+[2025-06-23 20:09:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:09:33] [EXECUTE] [RESULT] 0
+[2025-06-23 20:10:02] 6B45EF06-B499-48E5-A39A-054F0E94B943 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 20:10:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/24631500_Adenoid_cystic_Carcinoma_image_1.jpg' '6B45EF06-B499-48E5-A39A-054F0E94B943' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 20:10:02] 6B45EF06-B499-48E5-A39A-054F0E94B943 changes from [2;upload] to [2;uploading]
+[2025-06-23 20:10:02] 6B45EF06-B499-48E5-A39A-054F0E94B943 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 20:10:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:10:02] [EXECUTE] [RESULT] 0
+[2025-06-23 20:10:02] 6B45EF06-B499-48E5-A39A-054F0E94B943 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 20:10:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/24631500_Adenoid_cystic_Carcinoma_image_1.jpg' 6B45EF06-B499-48E5-A39A-054F0E94B943 /var/www/jobs/jobs.log
+[2025-06-23 20:10:33] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to transfer DZI to hot storage","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 320","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 278","                    [function] => transferToHotStorage","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_6B45EF06-B499-48E5-A39A-054F0E94B943_1750705832\/Path000042_202506232010","                            [1] => \/data\/polyzoomer\/Path000042_202506232010","                            [2] => 6B45EF06-B499-48E5-A39A-054F0E94B943","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 48","                    [function] => polyzoomTiered","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_6B45EF06-B499-48E5-A39A-054F0E94B943_1750705832\/Path000042_202506232010","                            [1] => Adenoid_cystic_Carcinoma_image_1.jpg","                            [2] => \/data\/polyzoomer\/Path000042_202506232010","                            [3] => 6B45EF06-B499-48E5-A39A-054F0E94B943","                        )","","                )","","            [2] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 30","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/24631500_Adenoid_cystic_Carcinoma_image_1.jpg","                            [1] => 6B45EF06-B499-48E5-A39A-054F0E94B943","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 20:10:33] [EXECUTE] [RESULT] 0
+[2025-06-23 20:27:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB
+[2025-06-23 20:27:32]  Changed from [;95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB;1;checksum;] to [;95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB;1;pending;]
+[2025-06-23 20:27:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:27:32] [EXECUTE] [RESULT] 0
+[2025-06-23 20:27:33] 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 20:27:33] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/62099515_Adenoid_cystic_Carcinoma_image_1.jpg' '95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 20:27:33] 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB changes from [2;upload] to [2;uploading]
+[2025-06-23 20:27:34] 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB changes from [2;uploading] to [2;uploaded]
+[2025-06-23 20:27:34] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:27:34] [EXECUTE] [RESULT] 0
+[2025-06-23 20:28:01] 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 20:28:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/62099515_Adenoid_cystic_Carcinoma_image_1.jpg' 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB /var/www/jobs/jobs.log
+[2025-06-23 20:28:04] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to transfer DZI to hot storage","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 250","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 209","                    [function] => transferToHotStorage","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB_1750706882\/Path000043_202506232028","                            [1] => \/data\/polyzoomer\/Path000043_202506232028","                            [2] => 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 47","                    [function] => polyzoomTiered","                    [args] => Array","                        (","                            [0] => \/tmp\/polyscope_processing_95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB_1750706882\/Path000043_202506232028","                            [1] => Adenoid_cystic_Carcinoma_image_1.jpg","                            [2] => \/data\/polyzoomer\/Path000043_202506232028","                            [3] => 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB","                        )","","                )","","            [2] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 29","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/62099515_Adenoid_cystic_Carcinoma_image_1.jpg","                            [1] => 95836CBC-DA55-4ACC-BAFB-3FB9E2F45FFB","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 20:28:04] [EXECUTE] [RESULT] 0
+[2025-06-23 20:29:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4
+[2025-06-23 20:29:31]  Changed from [;BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4;1;checksum;] to [;BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4;1;pending;]
+[2025-06-23 20:29:31] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:29:31] [EXECUTE] [RESULT] 0
+[2025-06-23 20:29:32] BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 20:29:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/55649374_Adenoid_cystic_Carcinoma_image_1.jpg' 'BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 20:29:32] BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4 changes from [2;upload] to [2;uploading]
+[2025-06-23 20:29:33] BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 20:29:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 20:29:33] [EXECUTE] [RESULT] 0
+[2025-06-23 20:30:01] BA3FF7FB-70E0-46FE-AC5D-4A33C48BC1C4 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:26:13] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:26:13] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:13] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:13] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/multizooms/"
+[2025-06-23 21:26:14] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:14] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:14] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-23 21:26:18] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-23 21:26:21] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:21] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:21] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000037_202506231927/page/indexes
+[2025-06-23 21:26:21] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:26:21] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:21] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000037_202506231927" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:26:21] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:21] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:22] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:23] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000037_202506231927/page/indexes
+[2025-06-23 21:26:23] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:26:23] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:23] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000037_202506231927]
+[2025-06-23 21:26:24] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:24] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:24] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:24] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000037_202506231927/page/indexes
+[2025-06-23 21:26:24] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:26:24] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:24] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000037_202506231927]
+[2025-06-23 21:26:24] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:24] [USERCODE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer USER-Key is: '6SCSQ6'
+This key is required for deleting zooms on your userpage. Please keep it secret.
+[2025-06-23 21:26:26] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000037_202506231927/page/./MS004/index.html
+[2025-06-23 21:26:26] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000038_202506231929/page/indexes
+[2025-06-23 21:26:26] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:26:26] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:26] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000038_202506231929" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:26:26] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:26] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:26] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:26] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000037_202506231927/page/./MS004/index.html
+[2025-06-23 21:26:27] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000038_202506231929/page/indexes
+[2025-06-23 21:26:27] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:26:27] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:27] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000038_202506231929]
+[2025-06-23 21:26:27] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000037_202506231927/page/./MS004/index.html
+[2025-06-23 21:26:27] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:27] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000038_202506231929/page/indexes
+[2025-06-23 21:26:27] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:26:27] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:28] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000038_202506231929]
+[2025-06-23 21:26:28] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:28] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000038_202506231929/page/./MS004/index.html
+[2025-06-23 21:26:28] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000039_202506231944/page/indexes
+[2025-06-23 21:26:28] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-23 21:26:28] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000039_202506231944/page/indexes
+[2025-06-23 21:26:28] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-23 21:26:28] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:28] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000039_202506231944" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:26:28] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:29] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:29] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:28] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:29] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000038_202506231929/page/./MS004/index.html
+[2025-06-23 21:26:29] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000039_202506231944]
+[2025-06-23 21:26:30] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000039_202506231944/page/indexes
+[2025-06-23 21:26:30] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-23 21:26:30] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:30] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000039_202506231944]
+[2025-06-23 21:26:30] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:30] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:30] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000038_202506231929/page/./MS004/index.html
+[2025-06-23 21:26:30] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000039_202506231944/page/indexes
+[2025-06-23 21:26:30] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-23 21:26:30] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:30] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000039_202506231944]
+[2025-06-23 21:26:31] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:31] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000039_202506231944/page/./MS014/index.html
+[2025-06-23 21:26:31] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506232003/page/indexes
+[2025-06-23 21:26:31] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-23 21:26:31] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:31] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000041_202506232003" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:26:31] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:31] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 206543C1-1F9A-4958-A0A1-923A2EF69959
+[2025-06-23 21:26:31] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 206543C1-1F9A-4958-A0A1-923A2EF69959
+[2025-06-23 21:26:32]  Changed from [;206543C1-1F9A-4958-A0A1-923A2EF69959;1;checksum;] to [;206543C1-1F9A-4958-A0A1-923A2EF69959;1;pending;]
+[2025-06-23 21:26:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:32] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:32] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000039_202506231944/page/./MS014/index.html
+[2025-06-23 21:26:32]  Changed from [;206543C1-1F9A-4958-A0A1-923A2EF69959;1;checksum;] to [;206543C1-1F9A-4958-A0A1-923A2EF69959;1;pending;]
+[2025-06-23 21:26:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:26:32] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:32] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506232003/page/indexes
+[2025-06-23 21:26:32] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-23 21:26:32] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000039_202506231944/page/./MS014/index.html
+[2025-06-23 21:26:32] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506232003/page/indexes
+[2025-06-23 21:26:32] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-23 21:26:32] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:32] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000041_202506232003]
+[2025-06-23 21:26:32] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:33] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000039_202506231944/page/./MS014/index.html
+[2025-06-23 21:26:33] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506232003/page/indexes
+[2025-06-23 21:26:33] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-23 21:26:33] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:33] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000041_202506232003]
+[2025-06-23 21:26:32] [EXECUTE] [RESULT] 0
+[2025-06-23 21:26:33] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000041_202506232003]
+[2025-06-23 21:26:33] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:33] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506232003/page/./UNKNOWNPAT0001/index.html
+[2025-06-23 21:26:34] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506232003/page/./UNKNOWNPAT0001/index.html
+[2025-06-23 21:26:34] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:26:36] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506232003/page/./UNKNOWNPAT0001/index.html
+[2025-06-23 21:26:37] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506232003/page/./UNKNOWNPAT0001/index.html
+[2025-06-23 21:27:01] 206543C1-1F9A-4958-A0A1-923A2EF69959 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:27:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/09988641_Adenoid_cystic_Carcinoma_image_1.jpg' '206543C1-1F9A-4958-A0A1-923A2EF69959' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 21:27:02] 206543C1-1F9A-4958-A0A1-923A2EF69959 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:27:02] 206543C1-1F9A-4958-A0A1-923A2EF69959 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:27:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:27:02] [EXECUTE] [RESULT] 0
+[2025-06-23 21:27:31] 206543C1-1F9A-4958-A0A1-923A2EF69959 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:27:33] 206543C1-1F9A-4958-A0A1-923A2EF69959 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:30:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' AFD7C46C-DBA5-4E5A-87DA-BE53400AD962
+[2025-06-23 21:30:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' AFD7C46C-DBA5-4E5A-87DA-BE53400AD962
+[2025-06-23 21:30:32]  Changed from [;AFD7C46C-DBA5-4E5A-87DA-BE53400AD962;1;checksum;] to [;AFD7C46C-DBA5-4E5A-87DA-BE53400AD962;1;pending;]
+[2025-06-23 21:30:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:30:32] [EXECUTE] [RESULT] 0
+[2025-06-23 21:30:33]  Changed from [;AFD7C46C-DBA5-4E5A-87DA-BE53400AD962;1;checksum;] to [;AFD7C46C-DBA5-4E5A-87DA-BE53400AD962;1;pending;]
+[2025-06-23 21:30:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:30:33] [EXECUTE] [RESULT] 0
+[2025-06-23 21:31:02] AFD7C46C-DBA5-4E5A-87DA-BE53400AD962 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:31:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/10283626_MS008S1_MU.png' 'AFD7C46C-DBA5-4E5A-87DA-BE53400AD962' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 21:31:02] AFD7C46C-DBA5-4E5A-87DA-BE53400AD962 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:31:03] AFD7C46C-DBA5-4E5A-87DA-BE53400AD962 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:31:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:31:03] [EXECUTE] [RESULT] 0
+[2025-06-23 21:31:32] AFD7C46C-DBA5-4E5A-87DA-BE53400AD962 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:35:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D
+[2025-06-23 21:35:01]  Changed from [;A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D;1;checksum;] to [;A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D;1;pending;]
+[2025-06-23 21:35:01] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:35:01] [EXECUTE] [RESULT] 0
+[2025-06-23 21:35:02] A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:35:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/60982762_MS008S1_MU.png' 'A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 21:35:03] A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D changes from [2;upload] to [2;uploading]
+[2025-06-23 21:35:04] A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:35:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:35:04] [EXECUTE] [RESULT] 0
+[2025-06-23 21:35:31] A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:35:31] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/60982762_MS008S1_MU.png' A3F6EB5C-601C-46C2-92DA-2C45A6E43A3D /var/www/jobs/jobs.log
+[2025-06-23 21:35:52] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:35:52] [EXECUTE] [RESULT] 0
+[2025-06-23 21:35:56] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000044_202506232135/page/indexes
+[2025-06-23 21:35:56] [EXECUTE] [OUTPUT] [".\/MS008\/index.html"]
+[2025-06-23 21:35:56] [EXECUTE] [RESULT] 0
+[2025-06-23 21:35:56] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000044_202506232135" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:35:56] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:35:56] [EXECUTE] [RESULT] 0
+[2025-06-23 21:35:56] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:35:59] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000044_202506232135/page/./MS008/index.html
+[2025-06-23 21:37:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 478A390C-93EA-4760-9050-29B0AD4238C5
+[2025-06-23 21:37:31]  Changed from [;478A390C-93EA-4760-9050-29B0AD4238C5;1;checksum;] to [;478A390C-93EA-4760-9050-29B0AD4238C5;1;pending;]
+[2025-06-23 21:37:31] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:37:31] [EXECUTE] [RESULT] 0
+[2025-06-23 21:37:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' A042A15D-1BD0-4DD4-936C-594D0AB90F01
+[2025-06-23 21:37:32] 478A390C-93EA-4760-9050-29B0AD4238C5 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:37:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/09479096_MS004S1.png' '478A390C-93EA-4760-9050-29B0AD4238C5' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 21:37:32]  Changed from [;A042A15D-1BD0-4DD4-936C-594D0AB90F01;1;checksum;] to [;A042A15D-1BD0-4DD4-936C-594D0AB90F01;1;pending;]
+[2025-06-23 21:37:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:37:32] [EXECUTE] [RESULT] 0
+[2025-06-23 21:37:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 75B5A734-C38A-4290-8168-D98479697A77
+[2025-06-23 21:37:32] 478A390C-93EA-4760-9050-29B0AD4238C5 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:37:33]  Changed from [;75B5A734-C38A-4290-8168-D98479697A77;1;checksum;] to [;75B5A734-C38A-4290-8168-D98479697A77;1;pending;]
+[2025-06-23 21:37:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:37:33] [EXECUTE] [RESULT] 0
+[2025-06-23 21:37:33] 478A390C-93EA-4760-9050-29B0AD4238C5 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:37:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:37:33] [EXECUTE] [RESULT] 0
+[2025-06-23 21:37:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' A042A15D-1BD0-4DD4-936C-594D0AB90F01
+[2025-06-23 21:37:34]  Changed from [;A042A15D-1BD0-4DD4-936C-594D0AB90F01;1;checksum;] to [;A042A15D-1BD0-4DD4-936C-594D0AB90F01;1;pending;]
+[2025-06-23 21:37:34] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:37:34] [EXECUTE] [RESULT] 0
+[2025-06-23 21:37:34] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 75B5A734-C38A-4290-8168-D98479697A77
+[2025-06-23 21:37:35]  Changed from [;75B5A734-C38A-4290-8168-D98479697A77;1;checksum;] to [;75B5A734-C38A-4290-8168-D98479697A77;1;pending;]
+[2025-06-23 21:37:35] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:37:35] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:01] 478A390C-93EA-4760-9050-29B0AD4238C5 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:38:01] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:38:01] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/19836008_MS011S1_MU.png' 'A042A15D-1BD0-4DD4-936C-594D0AB90F01' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-23 21:38:01] 478A390C-93EA-4760-9050-29B0AD4238C5 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:38:02] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:38:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/19836008_MS011S1_MU.png' 'A042A15D-1BD0-4DD4-936C-594D0AB90F01' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-23 21:38:02] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:38:02] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:38:03] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:38:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:03] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:03] 75B5A734-C38A-4290-8168-D98479697A77 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:38:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/64496295_MS014S1_MU.png' '75B5A734-C38A-4290-8168-D98479697A77' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-23 21:38:03] File is already there!
+[2025-06-23 21:38:04] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:38:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:04] 75B5A734-C38A-4290-8168-D98479697A77 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:38:04] 75B5A734-C38A-4290-8168-D98479697A77 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:38:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:05] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:04] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:05] 75B5A734-C38A-4290-8168-D98479697A77 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 21:38:05] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/64496295_MS014S1_MU.png' '75B5A734-C38A-4290-8168-D98479697A77' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-23 21:38:05] 75B5A734-C38A-4290-8168-D98479697A77 changes from [2;upload] to [2;uploading]
+[2025-06-23 21:38:06] File is already there!
+[2025-06-23 21:38:06] 75B5A734-C38A-4290-8168-D98479697A77 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 21:38:06] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:06] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:31] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/09479096_MS004S1.png' 478A390C-93EA-4760-9050-29B0AD4238C5 /var/www/jobs/jobs.log
+[2025-06-23 21:38:31] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/09479096_MS004S1.png' 478A390C-93EA-4760-9050-29B0AD4238C5 /var/www/jobs/jobs.log
+[2025-06-23 21:38:43] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:43] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:43] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:38:43] 75B5A734-C38A-4290-8168-D98479697A77 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:38:44] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000046_202506232138/page/indexes
+[2025-06-23 21:38:44] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 21:38:44] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:44] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000046_202506232138" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:38:44] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:44] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:44] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:38:47] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000046_202506232138/page/./MS004/index.html
+[2025-06-23 21:38:59] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:38:59] [EXECUTE] [RESULT] 0
+[2025-06-23 21:38:59] A042A15D-1BD0-4DD4-936C-594D0AB90F01 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:38:59] 75B5A734-C38A-4290-8168-D98479697A77 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 21:39:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/19836008_MS011S1_MU.png' A042A15D-1BD0-4DD4-936C-594D0AB90F01 /var/www/jobs/jobs.log
+[2025-06-23 21:39:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/64496295_MS014S1_MU.png' 75B5A734-C38A-4290-8168-D98479697A77 /var/www/jobs/jobs.log
+[2025-06-23 21:39:27] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:39:27] [EXECUTE] [RESULT] 0
+[2025-06-23 21:39:27] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/64496295_MS014S1_MU.png' 75B5A734-C38A-4290-8168-D98479697A77 /var/www/jobs/jobs.log
+[2025-06-23 21:39:27] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to copy file to local processing directory","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 107","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 45","                    [function] => prepareLocalPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/64496295_MS014S1_MU.png","                            [1] => 75B5A734-C38A-4290-8168-D98479697A77","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 28","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/64496295_MS014S1_MU.png","                            [1] => 75B5A734-C38A-4290-8168-D98479697A77","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 21:39:27] [EXECUTE] [RESULT] 0
+[2025-06-23 21:39:29] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000047_202506232139/page/indexes
+[2025-06-23 21:39:29] [EXECUTE] [OUTPUT] [".\/MS011\/index.html"]
+[2025-06-23 21:39:29] [EXECUTE] [RESULT] 0
+[2025-06-23 21:39:29] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000047_202506232139" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 21:39:29] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:39:29] [EXECUTE] [RESULT] 0
+[2025-06-23 21:39:29] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 21:39:32] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000047_202506232139/page/./MS011/index.html
+[2025-06-23 21:39:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 21:39:32] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' BEC34AFA-C9A0-4033-B177-5EBC7051FAB2
+[2025-06-23 22:03:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' BEC34AFA-C9A0-4033-B177-5EBC7051FAB2
+[2025-06-23 22:03:31]  Changed from [;BEC34AFA-C9A0-4033-B177-5EBC7051FAB2;1;checksum;] to [;BEC34AFA-C9A0-4033-B177-5EBC7051FAB2;1;pending;]
+[2025-06-23 22:03:31] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:31] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' 75EDFDF4-9610-4D8D-8036-51C99A76100D
+[2025-06-23 22:03:32]  Changed from [;BEC34AFA-C9A0-4033-B177-5EBC7051FAB2;1;checksum;] to [;BEC34AFA-C9A0-4033-B177-5EBC7051FAB2;1;pending;]
+[2025-06-23 22:03:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:32] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' 75EDFDF4-9610-4D8D-8036-51C99A76100D
+[2025-06-23 22:03:32]  Changed from [;75EDFDF4-9610-4D8D-8036-51C99A76100D;1;checksum;] to [;75EDFDF4-9610-4D8D-8036-51C99A76100D;1;pending;]
+[2025-06-23 22:03:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:32] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 3083F4BF-DC7A-499D-94A9-52228C5349C6
+[2025-06-23 22:03:33]  Changed from [;3083F4BF-DC7A-499D-94A9-52228C5349C6;1;checksum;] to [;3083F4BF-DC7A-499D-94A9-52228C5349C6;1;pending;]
+[2025-06-23 22:03:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:33] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 18A10D98-5D2D-4167-9EDA-D2A94E4564E1
+[2025-06-23 22:03:33]  Changed from [;75EDFDF4-9610-4D8D-8036-51C99A76100D;1;checksum;] to [;75EDFDF4-9610-4D8D-8036-51C99A76100D;1;pending;]
+[2025-06-23 22:03:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:33] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 3083F4BF-DC7A-499D-94A9-52228C5349C6
+[2025-06-23 22:03:33]  Changed from [;18A10D98-5D2D-4167-9EDA-D2A94E4564E1;1;checksum;] to [;18A10D98-5D2D-4167-9EDA-D2A94E4564E1;1;pending;]
+[2025-06-23 22:03:33] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:33] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 6498BD6C-D1B4-4BF1-91F2-B4517F51C238
+[2025-06-23 22:03:33]  Changed from [;6498BD6C-D1B4-4BF1-91F2-B4517F51C238;1;checksum;] to [;6498BD6C-D1B4-4BF1-91F2-B4517F51C238;1;pending;]
+[2025-06-23 22:03:34] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:34] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:34]  Changed from [;3083F4BF-DC7A-499D-94A9-52228C5349C6;1;checksum;] to [;3083F4BF-DC7A-499D-94A9-52228C5349C6;1;pending;]
+[2025-06-23 22:03:34] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:34] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:34] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 18A10D98-5D2D-4167-9EDA-D2A94E4564E1
+[2025-06-23 22:03:35]  Changed from [;18A10D98-5D2D-4167-9EDA-D2A94E4564E1;1;checksum;] to [;18A10D98-5D2D-4167-9EDA-D2A94E4564E1;1;pending;]
+[2025-06-23 22:03:35] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:35] [EXECUTE] [RESULT] 0
+[2025-06-23 22:03:35] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 6498BD6C-D1B4-4BF1-91F2-B4517F51C238
+[2025-06-23 22:03:36]  Changed from [;6498BD6C-D1B4-4BF1-91F2-B4517F51C238;1;checksum;] to [;6498BD6C-D1B4-4BF1-91F2-B4517F51C238;1;pending;]
+[2025-06-23 22:03:36] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:03:36] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:01] BEC34AFA-C9A0-4033-B177-5EBC7051FAB2 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:01] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/20593396_MS014S1_MU.png' 'BEC34AFA-C9A0-4033-B177-5EBC7051FAB2' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-23 22:04:02] BEC34AFA-C9A0-4033-B177-5EBC7051FAB2 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:02] Job should be uploaded [BEC34AFA-C9A0-4033-B177-5EBC7051FAB2]
+[2025-06-23 22:04:02] BEC34AFA-C9A0-4033-B177-5EBC7051FAB2 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:02] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:03] MD5 different - is [1ba8dfe719c99dd1b2b13fd7ab5fa9a8] should [1ba8dfe719c99dd1b2b13fd7ab5fa9a8]
+[2025-06-23 22:04:03] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/45194283_MS011S1_MU.png' '75EDFDF4-9610-4D8D-8036-51C99A76100D' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-23 22:04:03] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/45194283_MS011S1_MU.png' '75EDFDF4-9610-4D8D-8036-51C99A76100D' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-23 22:04:03] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:04] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:04] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:05] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:05] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:05] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/64658465_MS008S1_MU.png' '3083F4BF-DC7A-499D-94A9-52228C5349C6' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 22:04:05] File is already there!
+[2025-06-23 22:04:05] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:05] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:05] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:05] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:06] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:06] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/64658465_MS008S1_MU.png' '3083F4BF-DC7A-499D-94A9-52228C5349C6' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-23 22:04:06] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:06] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:06] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:06] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:06] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/80949420_MS004S1.png' '18A10D98-5D2D-4167-9EDA-D2A94E4564E1' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 22:04:07] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:07] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:07] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:07] File is already there!
+[2025-06-23 22:04:07] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:07] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:07] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:07] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:07] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:08] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:08] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/80949420_MS004S1.png' '18A10D98-5D2D-4167-9EDA-D2A94E4564E1' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 22:04:08] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:08] File is already there!
+[2025-06-23 22:04:09] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:09] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:09] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:31] BEC34AFA-C9A0-4033-B177-5EBC7051FAB2 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:31] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/20593396_MS014S1_MU.png' BEC34AFA-C9A0-4033-B177-5EBC7051FAB2 /var/www/jobs/jobs.log
+[2025-06-23 22:04:31] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:31] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:31] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:32] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/14385821_Adenoid_cystic_Carcinoma_image_1.jpg' '6498BD6C-D1B4-4BF1-91F2-B4517F51C238' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 22:04:32] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:32] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:32] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:45] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:45] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:45] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000050_202506232204/page/indexes
+[2025-06-23 22:04:45] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-23 22:04:45] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:45] 75EDFDF4-9610-4D8D-8036-51C99A76100D changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:45] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000050_202506232204" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 22:04:45] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:45] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:46] 3083F4BF-DC7A-499D-94A9-52228C5349C6 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:46] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 22:04:46] 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:04:46] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:04:46] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/14385821_Adenoid_cystic_Carcinoma_image_1.jpg' '6498BD6C-D1B4-4BF1-91F2-B4517F51C238' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-23 22:04:47] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [2;upload] to [2;uploading]
+[2025-06-23 22:04:47] File is already there!
+[2025-06-23 22:04:47] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [2;uploading] to [2;uploaded]
+[2025-06-23 22:04:47] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:04:47] [EXECUTE] [RESULT] 0
+[2025-06-23 22:04:48] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000050_202506232204/page/./MS014/index.html
+[2025-06-23 22:05:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/45194283_MS011S1_MU.png' 75EDFDF4-9610-4D8D-8036-51C99A76100D /var/www/jobs/jobs.log
+[2025-06-23 22:05:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/64658465_MS008S1_MU.png' 3083F4BF-DC7A-499D-94A9-52228C5349C6 /var/www/jobs/jobs.log
+[2025-06-23 22:05:22] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:05:22] [EXECUTE] [RESULT] 0
+[2025-06-23 22:05:22] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/80949420_MS004S1.png' 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 /var/www/jobs/jobs.log
+[2025-06-23 22:05:25] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000052_202506232205/page/indexes
+[2025-06-23 22:05:25] [EXECUTE] [OUTPUT] [".\/MS008\/index.html"]
+[2025-06-23 22:05:25] [EXECUTE] [RESULT] 0
+[2025-06-23 22:05:25] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000052_202506232205" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 22:05:25] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:05:25] [EXECUTE] [RESULT] 0
+[2025-06-23 22:05:26] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 22:05:28] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000052_202506232205/page/./MS008/index.html
+[2025-06-23 22:05:35] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:05:35] [EXECUTE] [RESULT] 0
+[2025-06-23 22:05:35] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:05:35] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000053_202506232205/page/indexes
+[2025-06-23 22:05:35] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 22:05:35] [EXECUTE] [RESULT] 0
+[2025-06-23 22:05:35] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000053_202506232205" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 22:05:35] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:05:35] [EXECUTE] [RESULT] 0
+[2025-06-23 22:05:36] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 22:05:38] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000053_202506232205/page/./MS004/index.html
+[2025-06-23 22:06:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/14385821_Adenoid_cystic_Carcinoma_image_1.jpg' 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 /var/www/jobs/jobs.log
+[2025-06-23 22:06:04] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:06:04] [EXECUTE] [RESULT] 0
+[2025-06-23 22:06:06] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000054_202506232206/page/indexes
+[2025-06-23 22:06:06] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-23 22:06:06] [EXECUTE] [RESULT] 0
+[2025-06-23 22:06:06] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000054_202506232206" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 22:06:06] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:06:06] [EXECUTE] [RESULT] 0
+[2025-06-23 22:06:06] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 22:06:08] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:06:08] [EXECUTE] [RESULT] 0
+[2025-06-23 22:06:08] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/64658465_MS008S1_MU.png' 3083F4BF-DC7A-499D-94A9-52228C5349C6 /var/www/jobs/jobs.log
+[2025-06-23 22:06:08] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to copy file to local processing directory","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 107","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 45","                    [function] => prepareLocalPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/64658465_MS008S1_MU.png","                            [1] => 3083F4BF-DC7A-499D-94A9-52228C5349C6","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 28","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/64658465_MS008S1_MU.png","                            [1] => 3083F4BF-DC7A-499D-94A9-52228C5349C6","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 22:06:08] [EXECUTE] [RESULT] 0
+[2025-06-23 22:06:08] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/80949420_MS004S1.png' 18A10D98-5D2D-4167-9EDA-D2A94E4564E1 /var/www/jobs/jobs.log
+[2025-06-23 22:06:08] [EXECUTE] [OUTPUT] ["Exception Object","(","    [message:protected] => Failed to copy file to local processing directory","    [string:Exception:private] =>","    [code:protected] => 0","    [file:protected] => \/var\/www\/issueDoPolyzoom.php","    [line:protected] => 107","    [trace:Exception:private] => Array","        (","            [0] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 45","                    [function] => prepareLocalPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/80949420_MS004S1.png","                            [1] => 18A10D98-5D2D-4167-9EDA-D2A94E4564E1","                        )","","                )","","            [1] => Array","                (","                    [file] => \/var\/www\/issueDoPolyzoom.php","                    [line] => 28","                    [function] => doPolyzoom","                    [args] => Array","                        (","                            [0] => \/var\/www\/uploads\/80949420_MS004S1.png","                            [1] => 18A10D98-5D2D-4167-9EDA-D2A94E4564E1","                            [2] => \/var\/www\/jobs\/jobs.log","                        )","","                )","","        )","","    [previous:Exception:private] =>",")"]
+[2025-06-23 22:06:08] [EXECUTE] [RESULT] 0
+[2025-06-23 22:06:08] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000054_202506232206/page/./UNKNOWNPAT0001/index.html
+[2025-06-23 22:06:08] 6498BD6C-D1B4-4BF1-91F2-B4517F51C238 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 22:10:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS015S1_OME.ome.tiff' D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5
+[2025-06-23 22:10:02]  Changed from [;D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5;1;checksum;] to [;D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5;1;pending;]
+[2025-06-23 22:10:02] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:10:02] [EXECUTE] [RESULT] 0
+[2025-06-23 22:10:31] D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5 changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 22:10:31] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS015S1_OME.ome.tiff' '/var/www/uploads/37208787_MS015S1_OME.ome.tiff' 'D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5' ''
+[2025-06-23 22:10:32] Job should be uploaded [D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5]
+[2025-06-23 22:10:32] D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5 changes from [;2;upload;] to [;6;readyToBeRemoved;]
+[2025-06-23 22:10:32] [HARDWARE]: File and/or drive was removed [/media/Users/yshokrollahi/MS015S1_OME.ome.tiff] [D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5]
+[2025-06-23 22:10:32] File and/or drive was removed before the upload could be initiated!
+[2025-06-23 22:10:46] MD5 is not the same, it is assumed that the content has changed!
+[2025-06-23 22:10:47] [EXECUTE] [OUTPUT] []
+[2025-06-23 22:10:47] [EXECUTE] [RESULT] 255
+[2025-06-23 22:11:01] Last job file status: [Array]
+[2025-06-23 22:11:01] [JOB]: Removed Array
+(
+    [id] => 0
+    [status] => ok
+    [comment] => 
+    [bytesWritten] => 3033
+    [deletedData] => D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5
+)
+

@@ -1,170 +1,285 @@
 <?php
 /*
-	Desc: Polyzoomer Globals
-	Author:	Sebastian Schmittner (stp.schmittner@gmail.com)
-	Date: 2015.01.30 15:05:01 (+01:00)
-	Last Author: Sebastian Schmittner
-	Last Date: 2015.09.04 14:40:01 (+02:00)
-	Version: 0.1.3
+ Desc: Polyzoomer Globals - ENHANCED with Tiered Storage
+ Author: Sebastian Schmittner (stp.schmittner@gmail.com)
+ Date: 2015.01.30 15:05:01 (+01:00)
+ Last Author: Enhanced for Tiered Storage
+ Last Date: 2025.06.23
+ Version: 0.2.0 - TIERED STORAGE SUPPORT
 */
 
 function rootPath() {
-	return '/var/www/';
+    return '/var/www/';
 }
 
 function dataGrave() {
-	return '/dev/mapper/zoom1-logical_zoom1';
+    return '/dev/mapper/zoom1-logical_zoom1';
 }
 
 function logFolder() {
-	return '/var/www/';
+    return '/var/www/';
 }
 
 function tempFolder() {
-	return '/tmp/';
+    return '/tmp/';
 }
 
 function tempPrefix() {
-	return 'pzTemp_';
+    return 'pzTemp_';
 }
 
 function uploadFolder() {
-	return rootPath() . 'uploads/';
+    return rootPath() . 'uploads/';
 }
 
 function jobFolder() {
-	return rootPath() . 'jobs/';
+    return rootPath() . 'jobs/';
 }
 
 function taskFolder() {
-	return jobFolder() . 'tasks/';
+    return jobFolder() . 'tasks/';
 }
 
 function taskFile( $guid ) {
-	return taskFolder() . $guid . '.task';
+    return taskFolder() . $guid . '.task';
 }
 
 function jobCounter() {
-	return rootPath() . 'jobCounter.log';
+    return rootPath() . 'jobCounter.log';
 }
 
 function logFile() {
-	return logFolder() . 'polyzoomer.log';
+    return logFolder() . 'polyzoomer.log';
 }
 
 function uploadLog() {
-	return uploadFolder() . 'upload.log';
+    return uploadFolder() . 'upload.log';
 }
 
 function jobFile() {
-	return jobFolder() . 'jobs.log';
+    return jobFolder() . 'jobs.log';
 }
 
 function jobDoneFile() {
-	return jobFile() . '.done'; 
+    return jobFile() . '.done';
 }
 
 function jobFileG( $guid ) {
-	return jobFolder() . $guid . '.job';
-} 
+    return jobFolder() . $guid . '.job';
+}
 
 function customersPath() {
-		return rootPath() . 'customers/';
+    return rootPath() . 'customers/';
 }
 
 function userPath( $cleanEmail ) {
-	return customersPath() . $cleanEmail . '/'; 
+    return customersPath() . $cleanEmail . '/';
 }
 
 function cacheFile( $cleanEmail ) {
-	return userPath( $cleanEmail ) . 'cache.lst';
+    return userPath( $cleanEmail ) . 'cache.lst';
 }
 
 function multiCacheFile( $cleanEmail ) {
-	return userPath( $cleanEmail ) . 'multizooms/multi_cache.lst';
+    return userPath( $cleanEmail ) . 'multizooms/multi_cache.lst';
 }
 
+// =============================================================================
+// TIERED STORAGE FUNCTIONS - NEW
+// =============================================================================
+
+/**
+ * Hot storage path (local SSD/NVMe) - for recent files < 30 days
+ */
+function polyzoomerHotPath() {
+    return rootPath() . 'polyzoomer/';
+}
+
+/**
+ * Cold storage path (research drive) - for archived files > 30 days
+ */
+function polyzoomerColdPath() {
+    return rootPath() . 'polyzoomer_cold/';
+}
+
+/**
+ * Tiered storage configuration
+ */
+function tieringConfig() {
+    return array(
+        'archive_age_days' => 0.00347,
+        'check_interval_hours' => 24,
+        'hot_path' => polyzoomerHotPath(),
+        'cold_path' => polyzoomerColdPath(),
+        'log_file' => logFolder() . 'tiered_storage.log'
+    );
+}
+
+/**
+ * Smart polyzoomer path resolver - checks hot storage first, then cold
+ * Returns array with 'path' and 'location' ('hot' or 'cold')
+ */
+function resolvePolyzoomerPath($pathName) {
+    $hotPath = polyzoomerHotPath() . $pathName;
+    $coldPath = polyzoomerColdPath() . $pathName;
+    
+    if (file_exists($hotPath)) {
+        return array(
+            'path' => $hotPath,
+            'location' => 'hot',
+            'web_path' => '/polyzoomer/' . $pathName
+        );
+    } elseif (file_exists($coldPath)) {
+        return array(
+            'path' => $coldPath,
+            'location' => 'cold',
+            'web_path' => '/polyzoomer_cold/' . $pathName
+        );
+    } else {
+        return array(
+            'path' => null,
+            'location' => 'missing',
+            'web_path' => null
+        );
+    }
+}
+
+/**
+ * Get all polyzoomer directories from both hot and cold storage
+ */
+function getAllPolyzoomerPaths() {
+    $paths = array();
+    
+    // Get from hot storage
+    $hotBase = polyzoomerHotPath();
+    if (is_dir($hotBase)) {
+        $hotDirs = scandir($hotBase);
+        foreach ($hotDirs as $dir) {
+            if ($dir !== '.' && $dir !== '..' && is_dir($hotBase . $dir)) {
+                $paths[] = array(
+                    'name' => $dir,
+                    'location' => 'hot',
+                    'path' => $hotBase . $dir,
+                    'mtime' => filemtime($hotBase . $dir)
+                );
+            }
+        }
+    }
+    
+    // Get from cold storage
+    $coldBase = polyzoomerColdPath();
+    if (is_dir($coldBase)) {
+        $coldDirs = scandir($coldBase);
+        foreach ($coldDirs as $dir) {
+            if ($dir !== '.' && $dir !== '..' && is_dir($coldBase . $dir)) {
+                $paths[] = array(
+                    'name' => $dir,
+                    'location' => 'cold',
+                    'path' => $coldBase . $dir,
+                    'mtime' => filemtime($coldBase . $dir)
+                );
+            }
+        }
+    }
+    
+    return $paths;
+}
+
+/**
+ * Log tiered storage operations
+ */
+function logTieredStorage($message) {
+    $config = tieringConfig();
+    $timestamp = date('Y-m-d H:i:s');
+    $logEntry = "[{$timestamp}] TIERED_STORAGE: {$message}\n";
+    file_put_contents($config['log_file'], $logEntry, FILE_APPEND | LOCK_EX);
+}
+
+// =============================================================================
+// ORIGINAL FUNCTIONS (unchanged)
+// =============================================================================
+
 function userKeySize() {
-	return 6;
+    return 6;
 }
 
 function userKeySet() {
-	return 'A-Z0-9';
+    return 'A-Z0-9';
 }
 
 function polyzoomerEmail() {
-	return 'polyzoomer@mdanderson.org';
+    return 'polyzoomer@mdanderson.org';
 }
 
 function analysisFolder() {
-	return rootPath() . 'analyses/';
+    return rootPath() . 'analyses/';
 }
 
 function analysisInPath() {
-	return analysisFolder() . 'analysis_in/';
+    return analysisFolder() . 'analysis_in/';
 }
 
 function analysisIn( $guid ) {
-	return analysisInPath() . $guid . '/';
+    return analysisInPath() . $guid . '/';
 }
 
 function analysisOutPath() {
-	return analysisFolder() . 'analysis_out/';
+    return analysisFolder() . 'analysis_out/';
 }
 
 function analysisOut( $guid ) {
-	return analysisOutPath() . $guid . '/';
+    return analysisOutPath() . $guid . '/';
 }
 
 function analysisJobsPath() {
-	return analysisFolder() . 'analysis_jobs/';
+    return analysisFolder() . 'analysis_jobs/';
 }
+
 function analysisJobFile( $guid ) {
-	return analysisJobsPath() . $guid . '.job';
+    return analysisJobsPath() . $guid . '.job';
 }
 
 function analysisJobLog( $guid ) {
-	return analysisJobsPath() . $guid . '.log';
+    return analysisJobsPath() . $guid . '.log';
 }
 
 function analysisJobMasterFile() {
-	return analysisJobsPath() . 'jobs.log';
+    return analysisJobsPath() . 'jobs.log';
 }
 
 function jobContainerPath() {
-	return rootPath() . 'jobcontainers/';
+    return rootPath() . 'jobcontainers/';
 }
 
 function jobContainer( $guid ) {
-	return jobContainerPath() . $guid . '/';
+    return jobContainerPath() . $guid . '/';
 }
 
 function maximumLogfileSizeInBytes() {
-	return 10 * 1024 * 1024; // 10MB
-} 
+    return 10 * 1024 * 1024; // 10MB
+}
 
 function testPath() {
-	return rootPath() . 'tests/';
+    return rootPath() . 'tests/';
 }
 
 function testSamplePath() {
-	return testPath() . 'sample/';
+    return testPath() . 'sample/';
 }
 
 function testTempPath() {
-	return testPath() . 'temp/';
+    return testPath() . 'temp/';
 }
 
 function mediaDirectory() {
-	return '/media/';
+    return '/media/';
 }
 
 function mediaExcludes() {
-	return array('.', '..');
+    return array('.', '..');
 }
 
 function ufsUploadFolder() {
     return '///new///';
 }
-
 ?>
