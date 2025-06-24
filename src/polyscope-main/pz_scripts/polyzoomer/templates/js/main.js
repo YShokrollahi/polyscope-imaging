@@ -96,8 +96,8 @@ function exportImage() {
 
 function exportAnnotations() {
     const link = document.createElement('a');
-    link.href = './_UNKNOWNCHANNEL0001/MS004_UNKNOWNCHANNEL0001_MS004S1.pngdeepzoom_files/annotations.txt';
-    link.download = 'Annotations_MS004_UNKNOWNCHANNEL0001.txt';
+    link.href = '_ANNOTATIONS_LINK_';
+    link.download = 'Annotations__PATIENT_ID__CHANNEL_ID_.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -165,13 +165,13 @@ function applyImageFilters() {
     const filterString = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
     
     // Apply to all OpenSeadragon canvas elements
-    const canvases = document.querySelectorAll('#MS004_UNKNOWNCHANNEL0001 canvas');
+    const canvases = document.querySelectorAll('#_CONTENTID_ canvas');
     canvases.forEach(canvas => {
         canvas.style.filter = filterString;
     });
     
     // Also apply to any tile images that might load later
-    const tileImages = document.querySelectorAll('#MS004_UNKNOWNCHANNEL0001 img');
+    const tileImages = document.querySelectorAll('#_CONTENTID_ img');
     tileImages.forEach(img => {
         img.style.filter = filterString;
     });
@@ -335,19 +335,19 @@ function hideAllChannels() {
 
 // OpenSeadragon initialization
 function initializeViewer() {
-    var MS004_UNKNOWNCHANNEL0001 = OpenSeadragon({
-        id: "MS004_UNKNOWNCHANNEL0001",
+    var _VIEWER_VARNAME_ = OpenSeadragon({
+        id: "_CONTENTID_",
         prefixUrl: "../images/",
-        tileSources: "./_UNKNOWNCHANNEL0001/MS004_UNKNOWNCHANNEL0001_MS004S1.pngdeepzoom.dzi",
+        tileSources: "_REL_PATH_TO_DZI_",
         preserveViewport: true,
         showRotationControl: true,
         showNavigator: true
     });
 
-    MS004_UNKNOWNCHANNEL0001.Annotations();
-    MS004_UNKNOWNCHANNEL0001.DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
+    _VIEWER_VARNAME_.Annotations();
+    _VIEWER_VARNAME_.DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
 
-    var tileSource = "./_UNKNOWNCHANNEL0001/MS004_UNKNOWNCHANNEL0001_MS004S1.pngdeepzoom.dzi";
+    var tileSource = "_REL_PATH_TO_DZI_";
     var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
     var isNdpi = (tileSource.indexOf(".ndpideepzoom.dzi") != -1); 
 
@@ -358,7 +358,7 @@ function initializeViewer() {
     }
 
     if(isSvs || isNdpi){
-        MS004_UNKNOWNCHANNEL0001.scalebar({
+        _VIEWER_VARNAME_.scalebar({
             minWidth: "75px",
             pixelsPerMeter: ppm,
             barThickness: 2
@@ -366,16 +366,16 @@ function initializeViewer() {
     }
 
     var handleResize = function() {
-        var height = jQuery('#MS004_UNKNOWNCHANNEL0001').height();
+        var height = jQuery('#_CONTENTID_').height();
         var couldHeight = jQuery('td.OSD').height() * 0.9;
 
         if(height == 0) {
-            jQuery('#MS004_UNKNOWNCHANNEL0001').height(couldHeight + 'px');
+            jQuery('#_CONTENTID_').height(couldHeight + 'px');
         };
     };
 
     // Store viewer globally
-    window.MS004_UNKNOWNCHANNEL0001 = MS004_UNKNOWNCHANNEL0001;
+    window._VIEWER_VARNAME_ = _VIEWER_VARNAME_;
 }
 
 // Initialize ViewerHash
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Fix annotation path for enhanced annotation manager
     if (typeof window.annotationsPath === 'undefined') {
-        window.annotationsPath = './_UNKNOWNCHANNEL0001/MS004_UNKNOWNCHANNEL0001_MS004S1.pngdeepzoom_files/annotations.txt';
+        window.annotationsPath = '_ANNOTATIONS_LINK_';
     }
     
     // Add debugging function for channels
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('=== CHANNEL DEBUG INFO ===');
         
         // Check viewer
-        var viewer = window.viewer || window.MS004_UNKNOWNCHANNEL0001;
+        var viewer = window.viewer || window._VIEWER_VARNAME_;
         console.log('Viewer found:', !!viewer);
         if (viewer) {
             console.log('Viewer ID:', viewer.id);
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Check DOM elements
-        var viewerDiv = document.getElementById('MS004_UNKNOWNCHANNEL0001');
+        var viewerDiv = document.getElementById('_CONTENTID_');
         console.log('Viewer div found:', !!viewerDiv);
         if (viewerDiv) {
             var canvases = viewerDiv.querySelectorAll('canvas');
