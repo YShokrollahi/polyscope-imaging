@@ -107,7 +107,7 @@ function polyzoomerColdPath() {
  */
 function tieringConfig() {
     return array(
-        'archive_age_days' => 0.00347,
+        'archive_age_days' => 30,
         'check_interval_hours' => 24,
         'hot_path' => polyzoomerHotPath(),
         'cold_path' => polyzoomerColdPath(),
