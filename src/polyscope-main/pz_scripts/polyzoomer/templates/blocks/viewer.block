@@ -1,47 +1,84 @@
-<td>
-_VIEWERNAME_
-<div id="_CONTENTID_" class="openseadragon"></div>
+<!-- OpenSeadragon Viewer -->
+        <div id="_CONTENTID_" class="openseadragon"></div>
 
-		<script type="text/javascript">
-		// Example
-		var _VIEWER_VARNAME_ = OpenSeadragon({
-			id:              "_CONTENTID_",
-			prefixUrl:       "_REL_PATH_TO_VIEWERIMAGES_",
-			tileSources:     "_REL_PATH_TO_DZI_",
-			preserveViewport: true,
-			showRotationControl: true,
-			showNavigator: true
-		});
-	
-	_VIEWER_VARNAME_.Annotations();
-	_VIEWER_VARNAME_.DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
+<!-- OpenSeadragon Initialization Script -->
+<script type="text/javascript">
+var _VIEWER_VARNAME_ = OpenSeadragon({
+    id:              "_CONTENTID_",
+    prefixUrl:       "_REL_PATH_TO_VIEWERIMAGES_",
+    tileSources:     "_REL_PATH_TO_DZI_",
+    preserveViewport: true,
+    showRotationControl: true,
+    showNavigator: true
+});
 
-        var tileSource = "_REL_PATH_TO_DZI_";
-        var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
-        var isNdpi = (tileSource.indexOf(".ndpideepzoom.dzi") != -1); 
+_VIEWER_VARNAME_.Annotations();
+_VIEWER_VARNAME_.DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
 
-        var ppm = 1000000 / 0.46;
+var tileSource = "_REL_PATH_TO_DZI_";
+var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
+var isNdpi = (tileSource.indexOf(".ndpideepzoom.dzi") != -1); 
 
-        if(isSvs){
-            ppm = 1000000 / 0.50;
+var ppm = 1000000 / 0.46;
+
+if(isSvs){
+    ppm = 1000000 / 0.50;
+}
+
+if(isSvs || isNdpi){
+    _VIEWER_VARNAME_.scalebar({
+        minWidth: "75px",
+        pixelsPerMeter: ppm,
+        barThickness: 2
+    });
+}
+
+var handleResize = function() {
+    var height = jQuery('#_VIEWER_VARNAME_').height();
+    var couldHeight = jQuery('td.OSD').height() * 0.9;
+
+    if(height == 0) {
+        jQuery('#_VIEWER_VARNAME_').height(couldHeight + 'px');
+    };
+};
+
+function toggleSection(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('i:last-child');
+    
+    if (content.classList.contains('expanded')) {
+        content.classList.remove('expanded');
+        header.classList.remove('active');
+        if (icon) {
+            icon.style.transform = 'rotate(0deg)';
         }
-
-        if(isSvs || isNdpi){
-            _VIEWER_VARNAME_.scalebar({
-                minWidth: "75px",
-                pixelsPerMeter: ppm,
-                barThickness: 2
-            });
+    } else {
+        content.classList.add('expanded');
+        header.classList.add('active');
+        if (icon) {
+            icon.style.transform = 'rotate(180deg)';
         }
+    }
+}
 
-	var handleResize = function() {
-		var height = jQuery('#_VIEWER_VARNAME_').height();
-		var couldHeight = jQuery('td.OSD').height() * 0.9;
+function toggleFullscreen() {
+    console.log('Toggle fullscreen');
+}
 
-		if(height == 0) {
-			jQuery('#_VIEWER_VARNAME_').height(couldHeight + 'px');
-		};
-	};
+function exportImage() {
+    console.log('Export image');
+}
 
-	</script>
-</td>
+function takeScreenshot() {
+    console.log('Take screenshot');
+}
+
+function goBack() {
+    window.history.back();
+}
+</script>
+    </div>
+</div>
+
+<script type=text/javascript>
+var ViewerHash = new Object();
