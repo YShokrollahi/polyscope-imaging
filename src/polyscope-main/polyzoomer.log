@@ -933,3 +933,655 @@ Please find your results under the following link.
     [deletedData] => D2304D33-3BE1-411D-8E8E-ADCF78BD6DC5
 )
 
+[2025-06-23 23:18:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 803FC050-4167-4F16-BBFD-D796FF90111F
+[2025-06-23 23:18:03]  Changed from [;803FC050-4167-4F16-BBFD-D796FF90111F;1;checksum;] to [;803FC050-4167-4F16-BBFD-D796FF90111F;1;pending;]
+[2025-06-23 23:18:03] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:18:03] [EXECUTE] [RESULT] 0
+[2025-06-23 23:18:32] 803FC050-4167-4F16-BBFD-D796FF90111F changes from [;1;pending;] to [;2;upload;]
+[2025-06-23 23:18:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/42728311_MS004S1.png' '803FC050-4167-4F16-BBFD-D796FF90111F' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-23 23:18:33] 803FC050-4167-4F16-BBFD-D796FF90111F changes from [2;upload] to [2;uploading]
+[2025-06-23 23:21:01] 803FC050-4167-4F16-BBFD-D796FF90111F changes from [2;uploading] to [2;uploaded]
+[2025-06-23 23:21:01] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:21:01] [EXECUTE] [RESULT] 0
+[2025-06-23 23:21:31] 803FC050-4167-4F16-BBFD-D796FF90111F changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-23 23:22:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/42728311_MS004S1.png' 803FC050-4167-4F16-BBFD-D796FF90111F /var/www/jobs/jobs.log
+[2025-06-23 23:22:18] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:18] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:20] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 23:22:20] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:20] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:20] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/multizooms/"
+[2025-06-23 23:22:20] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:20] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:20] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-23 23:22:25] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-23 23:22:30] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-23 23:22:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:32] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:32] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000030_202506232322/page/indexes
+[2025-06-23 23:22:32] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 23:22:32] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:32] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000030_202506232322" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-23 23:22:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:32] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:32] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:32] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000030_202506232322/page/indexes
+[2025-06-23 23:22:32] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 23:22:32] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:32] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000030_202506232322]
+[2025-06-23 23:22:32] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 23:22:32] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:33] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 23:22:35] [USERCODE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer USER-Key is: 'XDNK1M'
+This key is required for deleting zooms on your userpage. Please keep it secret.
+[2025-06-23 23:22:35] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000030_202506232322/page/indexes
+[2025-06-23 23:22:35] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 23:22:35] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:35] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000030_202506232322]
+[2025-06-23 23:22:35] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 23:22:35] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000030_202506232322/page/./MS004/index.html
+[2025-06-23 23:22:36] [EXECUTE] [OUTPUT] []
+[2025-06-23 23:22:36] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:36] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000030_202506232322/page/indexes
+[2025-06-23 23:22:36] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-23 23:22:36] [EXECUTE] [RESULT] 0
+[2025-06-23 23:22:36] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000030_202506232322]
+[2025-06-23 23:22:36] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-23 23:22:37] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000030_202506232322/page/./MS004/index.html
+[2025-06-23 23:22:37] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000030_202506232322/page/./MS004/index.html
+[2025-06-23 23:22:39] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000030_202506232322/page/./MS004/index.html
+[2025-06-24 00:01:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 063516E9-C336-4623-8FFB-E154B209099C
+[2025-06-24 00:01:03]  Changed from [;063516E9-C336-4623-8FFB-E154B209099C;1;checksum;] to [;063516E9-C336-4623-8FFB-E154B209099C;1;pending;]
+[2025-06-24 00:01:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:03] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:03] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' E14F1651-456C-496F-ABF9-31FE1EA50AF4
+[2025-06-24 00:01:04]  Changed from [;E14F1651-456C-496F-ABF9-31FE1EA50AF4;1;checksum;] to [;E14F1651-456C-496F-ABF9-31FE1EA50AF4;1;pending;]
+[2025-06-24 00:01:04] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:04] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:04] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB
+[2025-06-24 00:01:05]  Changed from [;1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB;1;checksum;] to [;1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB;1;pending;]
+[2025-06-24 00:01:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:05] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:05] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS015S1_OME.ome.tiff' F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC
+[2025-06-24 00:01:22]  Changed from [;F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC;1;checksum;] to [;F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC;1;pending;]
+[2025-06-24 00:01:22] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:22] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:33] 063516E9-C336-4623-8FFB-E154B209099C changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:01:33] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/00538477_MS008S1_MU.png' '063516E9-C336-4623-8FFB-E154B209099C' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-24 00:01:34] 063516E9-C336-4623-8FFB-E154B209099C changes from [2;upload] to [2;uploading]
+[2025-06-24 00:01:35] 063516E9-C336-4623-8FFB-E154B209099C changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:01:35] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:35] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:35] E14F1651-456C-496F-ABF9-31FE1EA50AF4 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:01:35] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/36599869_MS011S1_MU.png' 'E14F1651-456C-496F-ABF9-31FE1EA50AF4' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-24 00:01:36] E14F1651-456C-496F-ABF9-31FE1EA50AF4 changes from [2;upload] to [2;uploading]
+[2025-06-24 00:01:39] E14F1651-456C-496F-ABF9-31FE1EA50AF4 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:01:39] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:39] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:39] 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:01:39] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/26367398_MS014S1_MU.png' '1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-24 00:01:40] 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB changes from [2;upload] to [2;uploading]
+[2025-06-24 00:01:41] 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:01:41] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:01:41] [EXECUTE] [RESULT] 0
+[2025-06-24 00:01:42] F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:01:42] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS015S1_OME.ome.tiff' '/var/www/uploads/55262542_MS015S1_OME.ome.tiff' 'F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC' '68f7f8c7a783ee4c90efbce0783f1bf6'
+[2025-06-24 00:01:52] F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC changes from [2;upload] to [2;uploading]
+[2025-06-24 00:02:09] F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:02:09] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:02:09] [EXECUTE] [RESULT] 0
+[2025-06-24 00:02:31] 063516E9-C336-4623-8FFB-E154B209099C changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:02:31] E14F1651-456C-496F-ABF9-31FE1EA50AF4 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:02:32] 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:02:32] F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:03:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/00538477_MS008S1_MU.png' 063516E9-C336-4623-8FFB-E154B209099C /var/www/jobs/jobs.log
+[2025-06-24 00:03:24] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:03:24] [EXECUTE] [RESULT] 0
+[2025-06-24 00:03:24] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/36599869_MS011S1_MU.png' E14F1651-456C-496F-ABF9-31FE1EA50AF4 /var/www/jobs/jobs.log
+[2025-06-24 00:03:28] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000031_202506240003/page/indexes
+[2025-06-24 00:03:28] [EXECUTE] [OUTPUT] [".\/MS008\/index.html"]
+[2025-06-24 00:03:28] [EXECUTE] [RESULT] 0
+[2025-06-24 00:03:28] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000031_202506240003" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:03:28] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:03:28] [EXECUTE] [RESULT] 0
+[2025-06-24 00:03:29] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:03:31] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000031_202506240003/page/./MS008/index.html
+[2025-06-24 00:03:52] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:03:52] [EXECUTE] [RESULT] 0
+[2025-06-24 00:03:52] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/26367398_MS014S1_MU.png' 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB /var/www/jobs/jobs.log
+[2025-06-24 00:03:54] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000032_202506240003/page/indexes
+[2025-06-24 00:03:54] [EXECUTE] [OUTPUT] [".\/MS011\/index.html"]
+[2025-06-24 00:03:54] [EXECUTE] [RESULT] 0
+[2025-06-24 00:03:54] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000032_202506240003" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:03:54] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:03:54] [EXECUTE] [RESULT] 0
+[2025-06-24 00:03:54] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:03:57] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000032_202506240003/page/./MS011/index.html
+[2025-06-24 00:04:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:04:05] [EXECUTE] [RESULT] 0
+[2025-06-24 00:04:05] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/55262542_MS015S1_OME.ome.tiff' F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC /var/www/jobs/jobs.log
+[2025-06-24 00:04:08] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000033_202506240003/page/indexes
+[2025-06-24 00:04:08] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-24 00:04:08] [EXECUTE] [RESULT] 0
+[2025-06-24 00:04:09] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000033_202506240003" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:04:09] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:04:09] [EXECUTE] [RESULT] 0
+[2025-06-24 00:04:09] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:04:11] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000033_202506240003/page/./MS014/index.html
+[2025-06-24 00:05:25] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:05:25] [EXECUTE] [RESULT] 0
+[2025-06-24 00:05:29] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000034_202506240004/page/indexes
+[2025-06-24 00:05:29] [EXECUTE] [OUTPUT] [".\/MS015\/index.html"]
+[2025-06-24 00:05:29] [EXECUTE] [RESULT] 0
+[2025-06-24 00:05:29] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000034_202506240004" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:05:29] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:05:29] [EXECUTE] [RESULT] 0
+[2025-06-24 00:05:30] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:05:32] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000034_202506240004/page/./MS015/index.html
+[2025-06-24 00:08:51] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000031_202506240003
+[2025-06-24 00:08:51] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:51] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:51] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000031_202506240003
+[2025-06-24 00:08:51] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:51] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:51] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000031_202506240003]
+[2025-06-24 00:08:51] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000032_202506240003
+[2025-06-24 00:08:52] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:52] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:52] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000032_202506240003
+[2025-06-24 00:08:52] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:52] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:52] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000032_202506240003]
+[2025-06-24 00:08:52] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000033_202506240003
+[2025-06-24 00:08:52] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:52] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:53] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000033_202506240003
+[2025-06-24 00:08:53] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:53] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:53] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000033_202506240003]
+[2025-06-24 00:08:53] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000030_202506232322
+[2025-06-24 00:08:53] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:53] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:53] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000030_202506232322
+[2025-06-24 00:08:53] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:08:53] [EXECUTE] [RESULT] 0
+[2025-06-24 00:08:53] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000030_202506232322]
+[2025-06-24 00:09:15] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000034_202506240004
+[2025-06-24 00:09:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:15] [EXECUTE] [RESULT] 0
+[2025-06-24 00:09:15] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000034_202506240004
+[2025-06-24 00:09:16] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:16] [EXECUTE] [RESULT] 0
+[2025-06-24 00:09:16] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000034_202506240004]
+[2025-06-24 00:09:27] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000030_202506232322
+[2025-06-24 00:09:27] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:27] [EXECUTE] [RESULT] 1
+[2025-06-24 00:09:27] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000030_202506232322
+[2025-06-24 00:09:27] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:27] [EXECUTE] [RESULT] 1
+[2025-06-24 00:09:27] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000030_202506232322]
+[2025-06-24 00:09:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 30451E29-C902-4067-A63B-E9CFD9545114
+[2025-06-24 00:09:32]  Changed from [;30451E29-C902-4067-A63B-E9CFD9545114;1;checksum;] to [;30451E29-C902-4067-A63B-E9CFD9545114;1;pending;]
+[2025-06-24 00:09:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:32] [EXECUTE] [RESULT] 0
+[2025-06-24 00:09:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2
+[2025-06-24 00:09:33]  Changed from [;4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2;1;checksum;] to [;4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2;1;pending;]
+[2025-06-24 00:09:33] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:33] [EXECUTE] [RESULT] 0
+[2025-06-24 00:09:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' A875456A-3941-4A1D-A079-17B519B00D69
+[2025-06-24 00:09:35]  Changed from [;A875456A-3941-4A1D-A079-17B519B00D69;1;checksum;] to [;A875456A-3941-4A1D-A079-17B519B00D69;1;pending;]
+[2025-06-24 00:09:35] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:35] [EXECUTE] [RESULT] 0
+[2025-06-24 00:09:35] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 79C2BD90-5C3F-487F-AF36-4A9A4051F303
+[2025-06-24 00:09:36]  Changed from [;79C2BD90-5C3F-487F-AF36-4A9A4051F303;1;checksum;] to [;79C2BD90-5C3F-487F-AF36-4A9A4051F303;1;pending;]
+[2025-06-24 00:09:36] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:36] [EXECUTE] [RESULT] 0
+[2025-06-24 00:09:37] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000030_202506232322
+[2025-06-24 00:09:37] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:37] [EXECUTE] [RESULT] 1
+[2025-06-24 00:09:37] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000030_202506232322
+[2025-06-24 00:09:37] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:09:37] [EXECUTE] [RESULT] 1
+[2025-06-24 00:09:37] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000030_202506232322]
+[2025-06-24 00:10:01] 30451E29-C902-4067-A63B-E9CFD9545114 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:10:01] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/51842792_MS004S1.png' '30451E29-C902-4067-A63B-E9CFD9545114' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-24 00:10:02] 30451E29-C902-4067-A63B-E9CFD9545114 changes from [2;upload] to [2;uploading]
+[2025-06-24 00:10:03] 30451E29-C902-4067-A63B-E9CFD9545114 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:10:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:10:03] [EXECUTE] [RESULT] 0
+[2025-06-24 00:10:03] 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:10:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/21612367_MS008S1_MU.png' '4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-24 00:10:04] 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2 changes from [2;upload] to [2;uploading]
+[2025-06-24 00:10:05] 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:10:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:10:05] [EXECUTE] [RESULT] 0
+[2025-06-24 00:10:05] A875456A-3941-4A1D-A079-17B519B00D69 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:10:05] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/47690066_MS011S1_MU.png' 'A875456A-3941-4A1D-A079-17B519B00D69' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-24 00:10:06] A875456A-3941-4A1D-A079-17B519B00D69 changes from [2;upload] to [2;uploading]
+[2025-06-24 00:10:07] A875456A-3941-4A1D-A079-17B519B00D69 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:10:07] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:10:07] [EXECUTE] [RESULT] 0
+[2025-06-24 00:10:08] 79C2BD90-5C3F-487F-AF36-4A9A4051F303 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 00:10:08] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/32127256_MS014S1_MU.png' '79C2BD90-5C3F-487F-AF36-4A9A4051F303' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-24 00:10:08] 79C2BD90-5C3F-487F-AF36-4A9A4051F303 changes from [2;upload] to [2;uploading]
+[2025-06-24 00:10:09] 79C2BD90-5C3F-487F-AF36-4A9A4051F303 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 00:10:09] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:10:09] [EXECUTE] [RESULT] 0
+[2025-06-24 00:10:31] 30451E29-C902-4067-A63B-E9CFD9545114 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:10:32] 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:10:32] A875456A-3941-4A1D-A079-17B519B00D69 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:10:32] 79C2BD90-5C3F-487F-AF36-4A9A4051F303 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 00:11:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/51842792_MS004S1.png' 30451E29-C902-4067-A63B-E9CFD9545114 /var/www/jobs/jobs.log
+[2025-06-24 00:11:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:11:15] [EXECUTE] [RESULT] 0
+[2025-06-24 00:11:15] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/21612367_MS008S1_MU.png' 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2 /var/www/jobs/jobs.log
+[2025-06-24 00:11:17] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000035_202506240011/page/indexes
+[2025-06-24 00:11:17] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-24 00:11:17] [EXECUTE] [RESULT] 0
+[2025-06-24 00:11:17] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000035_202506240011" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:11:17] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:11:17] [EXECUTE] [RESULT] 0
+[2025-06-24 00:11:17] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:11:19] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000035_202506240011/page/./MS004/index.html
+[2025-06-24 00:11:37] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:11:37] [EXECUTE] [RESULT] 0
+[2025-06-24 00:11:37] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/47690066_MS011S1_MU.png' A875456A-3941-4A1D-A079-17B519B00D69 /var/www/jobs/jobs.log
+[2025-06-24 00:11:37] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000036_202506240011/page/indexes
+[2025-06-24 00:11:37] [EXECUTE] [OUTPUT] [".\/MS008\/index.html"]
+[2025-06-24 00:11:37] [EXECUTE] [RESULT] 0
+[2025-06-24 00:11:37] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000036_202506240011" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:11:37] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:11:37] [EXECUTE] [RESULT] 0
+[2025-06-24 00:11:37] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:11:40] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000036_202506240011/page/./MS008/index.html
+[2025-06-24 00:12:04] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:12:04] [EXECUTE] [RESULT] 0
+[2025-06-24 00:12:04] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/32127256_MS014S1_MU.png' 79C2BD90-5C3F-487F-AF36-4A9A4051F303 /var/www/jobs/jobs.log
+[2025-06-24 00:12:08] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000037_202506240011/page/indexes
+[2025-06-24 00:12:08] [EXECUTE] [OUTPUT] [".\/MS011\/index.html"]
+[2025-06-24 00:12:08] [EXECUTE] [RESULT] 0
+[2025-06-24 00:12:08] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000037_202506240011" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:12:08] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:12:08] [EXECUTE] [RESULT] 0
+[2025-06-24 00:12:08] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:12:11] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000037_202506240011/page/./MS011/index.html
+[2025-06-24 00:12:19] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:12:19] [EXECUTE] [RESULT] 0
+[2025-06-24 00:12:22] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000038_202506240012/page/indexes
+[2025-06-24 00:12:22] [EXECUTE] [OUTPUT] [".\/MS014\/index.html"]
+[2025-06-24 00:12:22] [EXECUTE] [RESULT] 0
+[2025-06-24 00:12:23] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000038_202506240012" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 00:12:23] [EXECUTE] [OUTPUT] []
+[2025-06-24 00:12:23] [EXECUTE] [RESULT] 0
+[2025-06-24 00:12:23] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 00:12:25] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000038_202506240012/page/./MS014/index.html
+[2025-06-24 03:15:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' D33BFF25-92D0-4235-B04C-49B24CF55E22
+[2025-06-24 03:15:32]  Changed from [;D33BFF25-92D0-4235-B04C-49B24CF55E22;1;checksum;] to [;D33BFF25-92D0-4235-B04C-49B24CF55E22;1;pending;]
+[2025-06-24 03:15:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:15:32] [EXECUTE] [RESULT] 0
+[2025-06-24 03:16:02] D33BFF25-92D0-4235-B04C-49B24CF55E22 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 03:16:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/36187493_Adenoid_cystic_Carcinoma_image_1.jpg' 'D33BFF25-92D0-4235-B04C-49B24CF55E22' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-24 03:16:03] D33BFF25-92D0-4235-B04C-49B24CF55E22 changes from [2;upload] to [2;uploading]
+[2025-06-24 03:16:04] D33BFF25-92D0-4235-B04C-49B24CF55E22 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 03:16:04] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:16:04] [EXECUTE] [RESULT] 0
+[2025-06-24 03:16:32] D33BFF25-92D0-4235-B04C-49B24CF55E22 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 03:17:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/36187493_Adenoid_cystic_Carcinoma_image_1.jpg' D33BFF25-92D0-4235-B04C-49B24CF55E22 /var/www/jobs/jobs.log
+[2025-06-24 03:17:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:17:05] [EXECUTE] [RESULT] 0
+[2025-06-24 03:17:09] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000039_202506240317/page/indexes
+[2025-06-24 03:17:09] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-24 03:17:09] [EXECUTE] [RESULT] 0
+[2025-06-24 03:17:09] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000039_202506240317" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 03:17:09] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:17:09] [EXECUTE] [RESULT] 0
+[2025-06-24 03:17:09] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:17:12] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000039_202506240317/page/.//index.html
+[2025-06-24 03:18:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5
+[2025-06-24 03:18:03]  Changed from [;6E07AFCC-EDD6-47D7-B928-B10A1927D0D5;1;checksum;] to [;6E07AFCC-EDD6-47D7-B928-B10A1927D0D5;1;pending;]
+[2025-06-24 03:18:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:18:03] [EXECUTE] [RESULT] 0
+[2025-06-24 03:18:29] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000039_202506240317
+[2025-06-24 03:18:29] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:18:30] [EXECUTE] [RESULT] 0
+[2025-06-24 03:18:30] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000039_202506240317
+[2025-06-24 03:18:30] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:18:30] [EXECUTE] [RESULT] 0
+[2025-06-24 03:18:30] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000039_202506240317]
+[2025-06-24 03:18:32] 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 03:18:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/69643621_MS004S1.png' '6E07AFCC-EDD6-47D7-B928-B10A1927D0D5' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-24 03:18:32] 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5 changes from [2;upload] to [2;uploading]
+[2025-06-24 03:18:33] 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 03:18:33] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:18:33] [EXECUTE] [RESULT] 0
+[2025-06-24 03:19:02] 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 03:19:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/69643621_MS004S1.png' 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5 /var/www/jobs/jobs.log
+[2025-06-24 03:19:44] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:19:44] [EXECUTE] [RESULT] 0
+[2025-06-24 03:19:49] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000040_202506240319/page/indexes
+[2025-06-24 03:19:49] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/MS004\/index.html"]
+[2025-06-24 03:19:49] [EXECUTE] [RESULT] 0
+[2025-06-24 03:19:49] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000040_202506240319" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 03:19:49] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:19:49] [EXECUTE] [RESULT] 0
+[2025-06-24 03:19:49] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:19:52] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000040_202506240319/page/.//index.html
+[2025-06-24 03:27:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 2E0BC743-378D-48BE-A28B-8375763FC8FD
+[2025-06-24 03:27:33]  Changed from [;2E0BC743-378D-48BE-A28B-8375763FC8FD;1;checksum;] to [;2E0BC743-378D-48BE-A28B-8375763FC8FD;1;pending;]
+[2025-06-24 03:27:33] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:27:33] [EXECUTE] [RESULT] 0
+[2025-06-24 03:28:02] 2E0BC743-378D-48BE-A28B-8375763FC8FD changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 03:28:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/08676098_MS004S1.png' '2E0BC743-378D-48BE-A28B-8375763FC8FD' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-24 03:28:03] 2E0BC743-378D-48BE-A28B-8375763FC8FD changes from [2;upload] to [2;uploading]
+[2025-06-24 03:28:04] 2E0BC743-378D-48BE-A28B-8375763FC8FD changes from [2;uploading] to [2;uploaded]
+[2025-06-24 03:28:04] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:28:04] [EXECUTE] [RESULT] 0
+[2025-06-24 03:28:31] 2E0BC743-378D-48BE-A28B-8375763FC8FD changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 03:29:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/08676098_MS004S1.png' 2E0BC743-378D-48BE-A28B-8375763FC8FD /var/www/jobs/jobs.log
+[2025-06-24 03:29:13] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:29:13] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:15] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 03:29:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:29:15] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:15] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/multizooms/"
+[2025-06-24 03:29:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:29:15] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:15] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-24 03:29:20] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-24 03:29:22] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:29:22] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:22] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506240329/page/indexes
+[2025-06-24 03:29:22] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/MS004\/index.html"]
+[2025-06-24 03:29:22] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:22] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000041_202506240329" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 03:29:22] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:29:22] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:22] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:29:24] [USERCODE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer USER-Key is: 'K0CCJO'
+This key is required for deleting zooms on your userpage. Please keep it secret.
+[2025-06-24 03:29:25] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506240329/page/indexes
+[2025-06-24 03:29:25] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/MS004\/index.html"]
+[2025-06-24 03:29:25] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:25] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000041_202506240329]
+[2025-06-24 03:29:25] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:29:26] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:29:26] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:26] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000041_202506240329/page/indexes
+[2025-06-24 03:29:26] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/MS004\/index.html"]
+[2025-06-24 03:29:26] [EXECUTE] [RESULT] 0
+[2025-06-24 03:29:26] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000041_202506240329]
+[2025-06-24 03:29:26] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:29:26] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506240329/page/.//index.html
+[2025-06-24 03:29:28] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506240329/page/.//index.html
+[2025-06-24 03:29:28] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000041_202506240329/page/.//index.html
+[2025-06-24 03:38:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS014S1_MU.png' 845A9E00-8582-40C1-ACC3-7E7FAD800B27
+[2025-06-24 03:38:32]  Changed from [;845A9E00-8582-40C1-ACC3-7E7FAD800B27;1;checksum;] to [;845A9E00-8582-40C1-ACC3-7E7FAD800B27;1;pending;]
+[2025-06-24 03:38:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:38:32] [EXECUTE] [RESULT] 0
+[2025-06-24 03:39:01] 845A9E00-8582-40C1-ACC3-7E7FAD800B27 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 03:39:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS014S1_MU.png' '/var/www/uploads/08889199_MS014S1_MU.png' '845A9E00-8582-40C1-ACC3-7E7FAD800B27' '1ba8dfe719c99dd1b2b13fd7ab5fa9a8'
+[2025-06-24 03:39:02] 845A9E00-8582-40C1-ACC3-7E7FAD800B27 changes from [2;upload] to [2;uploading]
+[2025-06-24 03:39:03] 845A9E00-8582-40C1-ACC3-7E7FAD800B27 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 03:39:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:39:03] [EXECUTE] [RESULT] 0
+[2025-06-24 03:39:31] 845A9E00-8582-40C1-ACC3-7E7FAD800B27 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 03:40:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/08889199_MS014S1_MU.png' 845A9E00-8582-40C1-ACC3-7E7FAD800B27 /var/www/jobs/jobs.log
+[2025-06-24 03:40:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:40:15] [EXECUTE] [RESULT] 0
+[2025-06-24 03:40:15] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000042_202506240340/page/indexes
+[2025-06-24 03:40:15] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/MS014\/index.html"]
+[2025-06-24 03:40:15] [EXECUTE] [RESULT] 0
+[2025-06-24 03:40:15] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000042_202506240340" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 03:40:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:40:15] [EXECUTE] [RESULT] 0
+[2025-06-24 03:40:15] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:40:20] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000042_202506240340/page/indexes
+[2025-06-24 03:40:20] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/MS014\/index.html"]
+[2025-06-24 03:40:20] [EXECUTE] [RESULT] 0
+[2025-06-24 03:40:20] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000042_202506240340]
+[2025-06-24 03:40:20] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:40:22] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000042_202506240340/page/.//index.html
+[2025-06-24 03:40:22] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000042_202506240340/page/.//index.html
+[2025-06-24 03:44:05] [EXECUTE] [DEBUG] rm -r /var/www//customers/yshokrollahi-mdanderson-org/Path000041_202506240329
+[2025-06-24 03:44:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:44:05] [EXECUTE] [RESULT] 0
+[2025-06-24 03:44:05] [EXECUTE] [DEBUG] rm -r /var/www//polyzoomer/Path000041_202506240329
+[2025-06-24 03:44:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:44:05] [EXECUTE] [RESULT] 0
+[2025-06-24 03:44:05] [DIRECTREMOVEZOOMS] Removed [/var/www//customers/yshokrollahi-mdanderson-org/Path000041_202506240329]
+[2025-06-24 03:51:33] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 5B6E0DAB-81EA-4E93-BF08-0668FC63194F
+[2025-06-24 03:51:33]  Changed from [;5B6E0DAB-81EA-4E93-BF08-0668FC63194F;1;checksum;] to [;5B6E0DAB-81EA-4E93-BF08-0668FC63194F;1;pending;]
+[2025-06-24 03:51:33] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:51:33] [EXECUTE] [RESULT] 0
+[2025-06-24 03:52:02] 5B6E0DAB-81EA-4E93-BF08-0668FC63194F changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 03:52:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/31686382_Adenoid_cystic_Carcinoma_image_1.jpg' '5B6E0DAB-81EA-4E93-BF08-0668FC63194F' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-24 03:52:02] 5B6E0DAB-81EA-4E93-BF08-0668FC63194F changes from [2;upload] to [2;uploading]
+[2025-06-24 03:52:02] 5B6E0DAB-81EA-4E93-BF08-0668FC63194F changes from [2;uploading] to [2;uploaded]
+[2025-06-24 03:52:02] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:52:03] [EXECUTE] [RESULT] 0
+[2025-06-24 03:52:32] 5B6E0DAB-81EA-4E93-BF08-0668FC63194F changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 03:53:03] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/31686382_Adenoid_cystic_Carcinoma_image_1.jpg' 5B6E0DAB-81EA-4E93-BF08-0668FC63194F /var/www/jobs/jobs.log
+[2025-06-24 03:53:07] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:53:07] [EXECUTE] [RESULT] 0
+[2025-06-24 03:53:11] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000043_202506240353/page/indexes
+[2025-06-24 03:53:11] [EXECUTE] [OUTPUT] [".\/\/index.html",".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-24 03:53:11] [EXECUTE] [RESULT] 0
+[2025-06-24 03:53:12] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000043_202506240353" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 03:53:12] [EXECUTE] [OUTPUT] []
+[2025-06-24 03:53:12] [EXECUTE] [RESULT] 0
+[2025-06-24 03:53:12] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 03:53:14] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000043_202506240353/page/.//index.html
+[2025-06-24 04:08:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' E4EC1455-609F-4B1B-8AD8-68A597693BAC
+[2025-06-24 04:08:32]  Changed from [;E4EC1455-609F-4B1B-8AD8-68A597693BAC;1;checksum;] to [;E4EC1455-609F-4B1B-8AD8-68A597693BAC;1;pending;]
+[2025-06-24 04:08:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:08:32] [EXECUTE] [RESULT] 0
+[2025-06-24 04:09:02] E4EC1455-609F-4B1B-8AD8-68A597693BAC changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 04:09:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/05184590_MS004S1.png' 'E4EC1455-609F-4B1B-8AD8-68A597693BAC' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-24 04:09:02] E4EC1455-609F-4B1B-8AD8-68A597693BAC changes from [2;upload] to [2;uploading]
+[2025-06-24 04:09:03] E4EC1455-609F-4B1B-8AD8-68A597693BAC changes from [2;uploading] to [2;uploaded]
+[2025-06-24 04:09:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:09:03] [EXECUTE] [RESULT] 0
+[2025-06-24 04:09:32] E4EC1455-609F-4B1B-8AD8-68A597693BAC changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 04:10:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/05184590_MS004S1.png' E4EC1455-609F-4B1B-8AD8-68A597693BAC /var/www/jobs/jobs.log
+[2025-06-24 04:10:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:10:15] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:15] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:10:15] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:10:16] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:16] [EXECUTE] [SYNC] mkdir -p "/var/www/customers/yshokrollahi-mdanderson-org/multizooms/"
+[2025-06-24 04:10:16] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:10:16] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:16] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-24 04:10:20] [EXECUTE] [SYNC] cp -r /var/www/pz_scripts/userpage/* /var/www/customers/yshokrollahi-mdanderson-org/
+[2025-06-24 04:10:22] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:10:22] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:22] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000044_202506240410/page/indexes
+[2025-06-24 04:10:22] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-24 04:10:22] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:22] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000044_202506240410" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:10:22] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:10:22] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:23] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:10:25] [USERCODE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer USER-Key is: 'PD62S2'
+This key is required for deleting zooms on your userpage. Please keep it secret.
+[2025-06-24 04:10:25] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000044_202506240410/page/indexes
+[2025-06-24 04:10:25] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-24 04:10:25] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:25] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000044_202506240410]
+[2025-06-24 04:10:25] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:10:25] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:10:25] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:26] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000044_202506240410/page/indexes
+[2025-06-24 04:10:26] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-24 04:10:26] [EXECUTE] [RESULT] 0
+[2025-06-24 04:10:26] [WARNING] Path already exists [/var/www/customers/yshokrollahi-mdanderson-org//Path000044_202506240410]
+[2025-06-24 04:10:26] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:10:28] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000044_202506240410/page/./MS004/index.html
+[2025-06-24 04:10:30] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000044_202506240410/page/./MS004/index.html
+[2025-06-24 04:10:31] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000044_202506240410/page/./MS004/index.html
+[2025-06-24 04:12:31] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS008S1_MU.png' 07373B37-1C8B-42CB-B3BF-A084C2E42C3D
+[2025-06-24 04:12:32]  Changed from [;07373B37-1C8B-42CB-B3BF-A084C2E42C3D;1;checksum;] to [;07373B37-1C8B-42CB-B3BF-A084C2E42C3D;1;pending;]
+[2025-06-24 04:12:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:12:32] [EXECUTE] [RESULT] 0
+[2025-06-24 04:12:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS011S1_MU.png' C422E2FC-9260-4B32-8AB8-81D2E73AF0FC
+[2025-06-24 04:12:33]  Changed from [;C422E2FC-9260-4B32-8AB8-81D2E73AF0FC;1;checksum;] to [;C422E2FC-9260-4B32-8AB8-81D2E73AF0FC;1;pending;]
+[2025-06-24 04:12:33] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:12:33] [EXECUTE] [RESULT] 0
+[2025-06-24 04:13:01] 07373B37-1C8B-42CB-B3BF-A084C2E42C3D changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 04:13:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS008S1_MU.png' '/var/www/uploads/23632506_MS008S1_MU.png' '07373B37-1C8B-42CB-B3BF-A084C2E42C3D' '0d5f0d1415792f3b3efec5bfbb8ad1b6'
+[2025-06-24 04:13:02] 07373B37-1C8B-42CB-B3BF-A084C2E42C3D changes from [2;upload] to [2;uploading]
+[2025-06-24 04:13:03] 07373B37-1C8B-42CB-B3BF-A084C2E42C3D changes from [2;uploading] to [2;uploaded]
+[2025-06-24 04:13:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:13:03] [EXECUTE] [RESULT] 0
+[2025-06-24 04:13:03] C422E2FC-9260-4B32-8AB8-81D2E73AF0FC changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 04:13:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS011S1_MU.png' '/var/www/uploads/38460981_MS011S1_MU.png' 'C422E2FC-9260-4B32-8AB8-81D2E73AF0FC' 'ffc7e41284016ea4604aa20f1ae3e66a'
+[2025-06-24 04:13:04] C422E2FC-9260-4B32-8AB8-81D2E73AF0FC changes from [2;upload] to [2;uploading]
+[2025-06-24 04:13:06] C422E2FC-9260-4B32-8AB8-81D2E73AF0FC changes from [2;uploading] to [2;uploaded]
+[2025-06-24 04:13:06] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:13:06] [EXECUTE] [RESULT] 0
+[2025-06-24 04:13:31] 07373B37-1C8B-42CB-B3BF-A084C2E42C3D changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 04:13:32] C422E2FC-9260-4B32-8AB8-81D2E73AF0FC changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 04:14:01] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/23632506_MS008S1_MU.png' 07373B37-1C8B-42CB-B3BF-A084C2E42C3D /var/www/jobs/jobs.log
+[2025-06-24 04:14:22] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:14:22] [EXECUTE] [RESULT] 0
+[2025-06-24 04:14:22] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/38460981_MS011S1_MU.png' C422E2FC-9260-4B32-8AB8-81D2E73AF0FC /var/www/jobs/jobs.log
+[2025-06-24 04:14:24] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000045_202506240414/page/indexes
+[2025-06-24 04:14:24] [EXECUTE] [OUTPUT] [".\/MS008\/index.html"]
+[2025-06-24 04:14:24] [EXECUTE] [RESULT] 0
+[2025-06-24 04:14:24] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000045_202506240414" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:14:24] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:14:24] [EXECUTE] [RESULT] 0
+[2025-06-24 04:14:25] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:14:27] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000045_202506240414/page/./MS008/index.html
+[2025-06-24 04:14:46] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:14:46] [EXECUTE] [RESULT] 0
+[2025-06-24 04:14:50] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000046_202506240414/page/indexes
+[2025-06-24 04:14:50] [EXECUTE] [OUTPUT] [".\/MS011\/index.html"]
+[2025-06-24 04:14:50] [EXECUTE] [RESULT] 0
+[2025-06-24 04:14:50] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000046_202506240414" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:14:50] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:14:50] [EXECUTE] [RESULT] 0
+[2025-06-24 04:14:50] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:14:52] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000046_202506240414/page/./MS011/index.html
+[2025-06-24 04:22:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 2A0D09A1-571E-4037-ABD6-5424A15F0489
+[2025-06-24 04:22:33]  Changed from [;2A0D09A1-571E-4037-ABD6-5424A15F0489;1;checksum;] to [;2A0D09A1-571E-4037-ABD6-5424A15F0489;1;pending;]
+[2025-06-24 04:22:33] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:22:33] [EXECUTE] [RESULT] 0
+[2025-06-24 04:23:02] 2A0D09A1-571E-4037-ABD6-5424A15F0489 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 04:23:03] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/16984232_Adenoid_cystic_Carcinoma_image_1.jpg' '2A0D09A1-571E-4037-ABD6-5424A15F0489' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-24 04:23:03] 2A0D09A1-571E-4037-ABD6-5424A15F0489 changes from [2;upload] to [2;uploading]
+[2025-06-24 04:23:04] 2A0D09A1-571E-4037-ABD6-5424A15F0489 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 04:23:04] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:23:04] [EXECUTE] [RESULT] 0
+[2025-06-24 04:23:32] 2A0D09A1-571E-4037-ABD6-5424A15F0489 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 04:24:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/16984232_Adenoid_cystic_Carcinoma_image_1.jpg' 2A0D09A1-571E-4037-ABD6-5424A15F0489 /var/www/jobs/jobs.log
+[2025-06-24 04:24:05] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:24:05] [EXECUTE] [RESULT] 0
+[2025-06-24 04:24:06] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000047_202506240424/page/indexes
+[2025-06-24 04:24:06] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-24 04:24:06] [EXECUTE] [RESULT] 0
+[2025-06-24 04:24:06] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000047_202506240424" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:24:06] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:24:06] [EXECUTE] [RESULT] 0
+[2025-06-24 04:24:06] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:24:08] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000047_202506240424/page/./UNKNOWNPAT0001/index.html
+[2025-06-24 04:31:32] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/MS004S1.png' 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01
+[2025-06-24 04:31:32]  Changed from [;0325B9CD-7049-4EA4-A5AC-00E3D88DAC01;1;checksum;] to [;0325B9CD-7049-4EA4-A5AC-00E3D88DAC01;1;pending;]
+[2025-06-24 04:31:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:31:32] [EXECUTE] [RESULT] 0
+[2025-06-24 04:32:02] 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 04:32:02] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/MS004S1.png' '/var/www/uploads/96629226_MS004S1.png' '0325B9CD-7049-4EA4-A5AC-00E3D88DAC01' '8bb8f23a2137f7ceda5b466499513340'
+[2025-06-24 04:32:02] 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01 changes from [2;upload] to [2;uploading]
+[2025-06-24 04:32:03] 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 04:32:03] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:32:03] [EXECUTE] [RESULT] 0
+[2025-06-24 04:32:32] 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 04:33:02] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/96629226_MS004S1.png' 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01 /var/www/jobs/jobs.log
+[2025-06-24 04:33:17] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:33:17] [EXECUTE] [RESULT] 0
+[2025-06-24 04:33:21] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000048_202506240433/page/indexes
+[2025-06-24 04:33:21] [EXECUTE] [OUTPUT] [".\/MS004\/index.html"]
+[2025-06-24 04:33:21] [EXECUTE] [RESULT] 0
+[2025-06-24 04:33:21] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000048_202506240433" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:33:21] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:33:21] [EXECUTE] [RESULT] 0
+[2025-06-24 04:33:21] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:33:24] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000048_202506240433/page/./MS004/index.html
+[2025-06-24 04:38:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 5978611C-0F66-4DDB-83D6-FA7A636AA769
+[2025-06-24 04:38:02]  Changed from [;5978611C-0F66-4DDB-83D6-FA7A636AA769;1;checksum;] to [;5978611C-0F66-4DDB-83D6-FA7A636AA769;1;pending;]
+[2025-06-24 04:38:02] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:38:02] [EXECUTE] [RESULT] 0
+[2025-06-24 04:38:32] 5978611C-0F66-4DDB-83D6-FA7A636AA769 changes from [;1;pending;] to [;2;upload;]
+[2025-06-24 04:38:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/63826481_Adenoid_cystic_Carcinoma_image_1.jpg' '5978611C-0F66-4DDB-83D6-FA7A636AA769' '0f99778d132733905c9c482788c5ccc1'
+[2025-06-24 04:38:32] 5978611C-0F66-4DDB-83D6-FA7A636AA769 changes from [2;upload] to [2;uploading]
+[2025-06-24 04:38:32] 5978611C-0F66-4DDB-83D6-FA7A636AA769 changes from [2;uploading] to [2;uploaded]
+[2025-06-24 04:38:32] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:38:32] [EXECUTE] [RESULT] 0
+[2025-06-24 04:39:04] 5978611C-0F66-4DDB-83D6-FA7A636AA769 changes from [;2;uploaded;] to [;4;inQueue;]
+[2025-06-24 04:39:32] [EXECUTE] [DEBUG] php /var/www/issueDoPolyzoom.php '/var/www/uploads/63826481_Adenoid_cystic_Carcinoma_image_1.jpg' 5978611C-0F66-4DDB-83D6-FA7A636AA769 /var/www/jobs/jobs.log
+[2025-06-24 04:39:35] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:39:35] [EXECUTE] [RESULT] 0
+[2025-06-24 04:39:38] [EXECUTE] [SYNC] cat /var/www/polyzoomer/Path000049_202506240439/page/indexes
+[2025-06-24 04:39:38] [EXECUTE] [OUTPUT] [".\/UNKNOWNPAT0001\/index.html"]
+[2025-06-24 04:39:38] [EXECUTE] [RESULT] 0
+[2025-06-24 04:39:38] [EXECUTE] [SYNC] ln -s "/var/www/polyzoomer/Path000049_202506240439" "/var/www/customers/yshokrollahi-mdanderson-org/"
+[2025-06-24 04:39:38] [EXECUTE] [OUTPUT] []
+[2025-06-24 04:39:38] [EXECUTE] [RESULT] 0
+[2025-06-24 04:39:38] [yshokrollahi-mdanderson-org]: Uploadfolder does not exist! [///new///]
+[2025-06-24 04:39:41] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
+Please find your results under the following link.
+/customers/yshokrollahi-mdanderson-org/Path000049_202506240439/page/./UNKNOWNPAT0001/index.html

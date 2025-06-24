@@ -5,50 +5,34 @@
 *   LastDate: 2014.12.07 10:05:49 (+01:00)
 *   Version: 0.1.1
 *   Version Key: VERSIONKEY
+*   Updated: Medical/Scientific Application Layout
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="icon" 
-      type="image/png" 
-      href="/LogoPolyzoomer1.0fav.png">
-
     <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyscope Professional - Pathology Viewer</title>
+    <link rel="icon" type="image/png" href="/LogoPolyzoomer1.0fav.png">
 
-    <title>ImageOmics Polyzoomer</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/main.css'/>
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel='stylesheet' 
-          type='text/css'
-          media='screen'
-          href='../css/style.css'/>
-
-	<link rel='stylesheet' type='text/css' media='screen' href='../css/custom_styles.css'/>
-        <link rel='stylesheet' type='text/css' media='screen' href='../css/jquery-ui.min.css'/>
-        <link rel='stylesheet' type='text/css' media='screen' href='../css/jquery-ui.structure.min.css'/>
-        <link rel='stylesheet' type='text/css' media='screen' href='../css/jquery-ui.theme.min.css'/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-    <script type="text/javascript" src="../jquery.js"></script>
-    <script type="text/javascript" src="../jquery-ui.min.js"></script>
-    <script type="test/javascript" src="../d3.v3.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../sgbeal-colorpicker-20070712.jquery.js"></script>
-
-	<script type="text/javascript" src="../openseadragon.min.js"></script>
-    <script type="text/javascript" src="../openseadragon-svg-overlay.js"></script>
-    <!-- <script type="text/javascript" src="../polyzoomerAnnotations.js"></script> --!>
-    <script type="text/javascript" src="../openseadragon-viewerinputhook.min.js"></script>
-    <!-- <script type="text/javascript" src="../polyzoomerDrawAnnotations.js"></script> --!>
-    <script type="text/javascript" src="../polyzoomerPlugin.js"></script>
-
-    <script type="text/javascript" src="../openseadragon-scalebar.js"></script>
-    <script type="text/javascript" src="../scrollWidth.js"></script>
-
-    <!-- andreas.heindl@icr.ac.uk -->
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/jquery.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/jquery-ui.min.js"></script>
+    <script type="test/javascript" src="_PATH_TO_POLYZOOMER_/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/sgbeal-colorpicker-20070712.jquery.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/openseadragon.min.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/openseadragon-svg-overlay.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/openseadragon-viewerinputhook.min.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/polyzoomerPlugin.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/openseadragon-scalebar.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/scrollWidth.js"></script>
+	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/main.js"></script>
+	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/channel-manager.js"></script>
 
 <script>
-
-
     var viewer = null;
     var Seadragon;
     Seadragon = OpenSeadragon;
@@ -61,8 +45,7 @@ function SyncImage(viewer, viewerToSyncWith) {
 }
 
 var hFuncHandler=function myHandler(inViewer) {
-    
-        var SourceViewer = inViewer.eventSource;
+    var SourceViewer = inViewer.eventSource;
 	var viewersToSync = [];
 	
 	for (var key in ViewerHash) {
@@ -100,5 +83,4 @@ function UnLiveSync(SourceViewer) {
   SourceViewer.removeHandler("animation",hFuncHandler)
 }
 
-function SyncThemAll()
-{
+function SyncThemAll() {

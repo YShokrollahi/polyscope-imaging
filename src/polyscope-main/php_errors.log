@@ -4186,3 +4186,763 @@
 [23-Jun-2025 21:29:43 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
 [23-Jun-2025 21:38:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
 [23-Jun-2025 21:38:54 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[23-Jun-2025 22:17:03 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[23-Jun-2025 22:17:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[23-Jun-2025 22:17:22 UTC] === issueUploadProject.php started ===
+[23-Jun-2025 22:17:22 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004S1.png"]
+    [isDir] => false
+)
+
+[23-Jun-2025 23:17:22 Europe/London] Decoded isDir: 
+[23-Jun-2025 23:17:22 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004S1.png
+)
+
+[23-Jun-2025 23:17:22 Europe/London] Case: isDir=0, array - calling issueFiles
+[23-Jun-2025 23:17:22 Europe/London] Number of files: 1
+[23-Jun-2025 23:17:22 Europe/London] File 0: /media/Users/yshokrollahi/MS004S1.png - exists: YES
+[23-Jun-2025 23:17:22 Europe/London] Starting issueFiles at: 2025-06-23 23:17:22
+[23-Jun-2025 23:17:22 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[23-Jun-2025 23:17:22 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[23-Jun-2025 23:17:22 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[23-Jun-2025 23:17:22 Europe/London] Completed issueFiles at: 2025-06-23 23:17:22
+[23-Jun-2025 23:17:22 Europe/London] issueFiles took: 0 seconds
+[23-Jun-2025 23:17:22 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;803FC050-4167-4F16-BBFD-D796FF90111F;1;checksum;/media/Users/yshokrollahi/MS004S1.png;/var/www/uploads/42728311_MS004S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 803FC050-4167-4F16-BBFD-D796FF90111F
+                    [name] => /var/www/uploads/42728311_MS004S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS004S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[23-Jun-2025 23:17:22 Europe/London] === issueUploadProject.php completed ===
+[23-Jun-2025 23:22:35 Europe/London] Successfully added job 803FC050-4167-4F16-BBFD-D796FF90111F to customer page for user: yshokrollahi
+[23-Jun-2025 23:22:37 Europe/London] Successfully added job 803FC050-4167-4F16-BBFD-D796FF90111F to customer page for user: yshokrollahi
+[23-Jun-2025 23:22:37 Europe/London] Successfully added job 803FC050-4167-4F16-BBFD-D796FF90111F to customer page for user: yshokrollahi
+[23-Jun-2025 23:22:39 Europe/London] Successfully added job 803FC050-4167-4F16-BBFD-D796FF90111F to customer page for user: yshokrollahi
+[23-Jun-2025 23:00:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[23-Jun-2025 23:00:51 UTC] === issueUploadProject.php started ===
+[23-Jun-2025 23:00:51 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS008S1_MU.png","/media/Users/yshokrollahi/MS011S1_MU.png","/media/Users/yshokrollahi/MS014S1_MU.png","/media/Users/yshokrollahi/MS015S1_OME.ome.tiff"]
+    [isDir] => false
+)
+
+[24-Jun-2025 00:00:51 Europe/London] Decoded isDir: 
+[24-Jun-2025 00:00:51 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS008S1_MU.png
+    [1] => /media/Users/yshokrollahi/MS011S1_MU.png
+    [2] => /media/Users/yshokrollahi/MS014S1_MU.png
+    [3] => /media/Users/yshokrollahi/MS015S1_OME.ome.tiff
+)
+
+[24-Jun-2025 00:00:51 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 00:00:51 Europe/London] Number of files: 4
+[24-Jun-2025 00:00:51 Europe/London] File 0: /media/Users/yshokrollahi/MS008S1_MU.png - exists: YES
+[24-Jun-2025 00:00:51 Europe/London] File 1: /media/Users/yshokrollahi/MS011S1_MU.png - exists: YES
+[24-Jun-2025 00:00:51 Europe/London] File 2: /media/Users/yshokrollahi/MS014S1_MU.png - exists: YES
+[24-Jun-2025 00:00:51 Europe/London] File 3: /media/Users/yshokrollahi/MS015S1_OME.ome.tiff - exists: YES
+[24-Jun-2025 00:00:51 Europe/London] Starting issueFiles at: 2025-06-24 00:00:51
+[24-Jun-2025 00:00:51 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:00:51 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:00:51 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:00:51 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:00:51 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:00:51 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:00:52 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:00:52 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:00:52 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:00:52 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:00:52 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:00:52 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:00:52 Europe/London] Completed issueFiles at: 2025-06-24 00:00:52
+[24-Jun-2025 00:00:52 Europe/London] issueFiles took: 1 seconds
+[24-Jun-2025 00:00:52 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;063516E9-C336-4623-8FFB-E154B209099C;1;checksum;/media/Users/yshokrollahi/MS008S1_MU.png;/var/www/uploads/00538477_MS008S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 063516E9-C336-4623-8FFB-E154B209099C
+                    [name] => /var/www/uploads/00538477_MS008S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS008S1_MU.png
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;E14F1651-456C-496F-ABF9-31FE1EA50AF4;1;checksum;/media/Users/yshokrollahi/MS011S1_MU.png;/var/www/uploads/36599869_MS011S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => E14F1651-456C-496F-ABF9-31FE1EA50AF4
+                    [name] => /var/www/uploads/36599869_MS011S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS011S1_MU.png
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB;1;checksum;/media/Users/yshokrollahi/MS014S1_MU.png;/var/www/uploads/26367398_MS014S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB
+                    [name] => /var/www/uploads/26367398_MS014S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS014S1_MU.png
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC;1;checksum;/media/Users/yshokrollahi/MS015S1_OME.ome.tiff;/var/www/uploads/55262542_MS015S1_OME.ome.tiff;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC
+                    [name] => /var/www/uploads/55262542_MS015S1_OME.ome.tiff
+                    [fileId] => /media/Users/yshokrollahi/MS015S1_OME.ome.tiff
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 00:00:52 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 00:03:31 Europe/London] Successfully added job 063516E9-C336-4623-8FFB-E154B209099C to customer page for user: yshokrollahi
+[24-Jun-2025 00:03:57 Europe/London] Successfully added job E14F1651-456C-496F-ABF9-31FE1EA50AF4 to customer page for user: yshokrollahi
+[24-Jun-2025 00:04:11 Europe/London] Successfully added job 1FC70220-CE8A-4A4F-99C1-EF0EE190DCAB to customer page for user: yshokrollahi
+[24-Jun-2025 00:05:32 Europe/London] Successfully added job F5DE9E5C-C7D4-433D-A604-03C2B0AD65CC to customer page for user: yshokrollahi
+[23-Jun-2025 23:09:05 UTC] === issueUploadProject.php started ===
+[23-Jun-2025 23:09:05 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004S1.png","/media/Users/yshokrollahi/MS008S1_MU.png","/media/Users/yshokrollahi/MS011S1_MU.png","/media/Users/yshokrollahi/MS014S1_MU.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 00:09:05 Europe/London] Decoded isDir: 
+[24-Jun-2025 00:09:05 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004S1.png
+    [1] => /media/Users/yshokrollahi/MS008S1_MU.png
+    [2] => /media/Users/yshokrollahi/MS011S1_MU.png
+    [3] => /media/Users/yshokrollahi/MS014S1_MU.png
+)
+
+[24-Jun-2025 00:09:05 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 00:09:05 Europe/London] Number of files: 4
+[24-Jun-2025 00:09:05 Europe/London] File 0: /media/Users/yshokrollahi/MS004S1.png - exists: YES
+[24-Jun-2025 00:09:05 Europe/London] File 1: /media/Users/yshokrollahi/MS008S1_MU.png - exists: YES
+[24-Jun-2025 00:09:05 Europe/London] File 2: /media/Users/yshokrollahi/MS011S1_MU.png - exists: YES
+[24-Jun-2025 00:09:05 Europe/London] File 3: /media/Users/yshokrollahi/MS014S1_MU.png - exists: YES
+[24-Jun-2025 00:09:05 Europe/London] Starting issueFiles at: 2025-06-24 00:09:05
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 00:09:05 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 00:09:05 Europe/London] Completed issueFiles at: 2025-06-24 00:09:05
+[24-Jun-2025 00:09:05 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 00:09:05 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;30451E29-C902-4067-A63B-E9CFD9545114;1;checksum;/media/Users/yshokrollahi/MS004S1.png;/var/www/uploads/51842792_MS004S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 30451E29-C902-4067-A63B-E9CFD9545114
+                    [name] => /var/www/uploads/51842792_MS004S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS004S1.png
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2;1;checksum;/media/Users/yshokrollahi/MS008S1_MU.png;/var/www/uploads/21612367_MS008S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2
+                    [name] => /var/www/uploads/21612367_MS008S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS008S1_MU.png
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;A875456A-3941-4A1D-A079-17B519B00D69;1;checksum;/media/Users/yshokrollahi/MS011S1_MU.png;/var/www/uploads/47690066_MS011S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => A875456A-3941-4A1D-A079-17B519B00D69
+                    [name] => /var/www/uploads/47690066_MS011S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS011S1_MU.png
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;79C2BD90-5C3F-487F-AF36-4A9A4051F303;1;checksum;/media/Users/yshokrollahi/MS014S1_MU.png;/var/www/uploads/32127256_MS014S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 79C2BD90-5C3F-487F-AF36-4A9A4051F303
+                    [name] => /var/www/uploads/32127256_MS014S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS014S1_MU.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 00:09:05 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 00:11:20 Europe/London] Successfully added job 30451E29-C902-4067-A63B-E9CFD9545114 to customer page for user: yshokrollahi
+[24-Jun-2025 00:11:40 Europe/London] Successfully added job 4ECAF895-A73A-460F-9EA4-8A8A2A9BB3C2 to customer page for user: yshokrollahi
+[24-Jun-2025 00:12:11 Europe/London] Successfully added job A875456A-3941-4A1D-A079-17B519B00D69 to customer page for user: yshokrollahi
+[24-Jun-2025 00:12:25 Europe/London] Successfully added job 79C2BD90-5C3F-487F-AF36-4A9A4051F303 to customer page for user: yshokrollahi
+[23-Jun-2025 23:14:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 01:33:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 02:14:28 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 02:15:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 02:15:28 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 02:15:28 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg"]
+    [isDir] => false
+)
+
+[24-Jun-2025 03:15:28 Europe/London] Decoded isDir: 
+[24-Jun-2025 03:15:28 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+)
+
+[24-Jun-2025 03:15:28 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 03:15:28 Europe/London] Number of files: 1
+[24-Jun-2025 03:15:28 Europe/London] File 0: /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg - exists: YES
+[24-Jun-2025 03:15:28 Europe/London] Starting issueFiles at: 2025-06-24 03:15:28
+[24-Jun-2025 03:15:28 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 03:15:28 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 03:15:28 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 03:15:28 Europe/London] Completed issueFiles at: 2025-06-24 03:15:28
+[24-Jun-2025 03:15:28 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 03:15:28 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;D33BFF25-92D0-4235-B04C-49B24CF55E22;1;checksum;/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg;/var/www/uploads/36187493_Adenoid_cystic_Carcinoma_image_1.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => D33BFF25-92D0-4235-B04C-49B24CF55E22
+                    [name] => /var/www/uploads/36187493_Adenoid_cystic_Carcinoma_image_1.jpg
+                    [fileId] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 03:15:28 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 03:17:12 Europe/London] Successfully added job D33BFF25-92D0-4235-B04C-49B24CF55E22 to customer page for user: yshokrollahi
+[24-Jun-2025 02:17:50 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 02:17:50 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004S1.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 03:17:50 Europe/London] Decoded isDir: 
+[24-Jun-2025 03:17:50 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004S1.png
+)
+
+[24-Jun-2025 03:17:50 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 03:17:50 Europe/London] Number of files: 1
+[24-Jun-2025 03:17:50 Europe/London] File 0: /media/Users/yshokrollahi/MS004S1.png - exists: YES
+[24-Jun-2025 03:17:50 Europe/London] Starting issueFiles at: 2025-06-24 03:17:50
+[24-Jun-2025 03:17:50 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 03:17:50 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 03:17:50 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 03:17:50 Europe/London] Completed issueFiles at: 2025-06-24 03:17:50
+[24-Jun-2025 03:17:50 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 03:17:50 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;6E07AFCC-EDD6-47D7-B928-B10A1927D0D5;1;checksum;/media/Users/yshokrollahi/MS004S1.png;/var/www/uploads/69643621_MS004S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5
+                    [name] => /var/www/uploads/69643621_MS004S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS004S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 03:17:50 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 03:19:52 Europe/London] Successfully added job 6E07AFCC-EDD6-47D7-B928-B10A1927D0D5 to customer page for user: yshokrollahi
+[24-Jun-2025 02:27:08 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 02:27:08 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004S1.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 03:27:08 Europe/London] Decoded isDir: 
+[24-Jun-2025 03:27:08 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004S1.png
+)
+
+[24-Jun-2025 03:27:08 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 03:27:08 Europe/London] Number of files: 1
+[24-Jun-2025 03:27:08 Europe/London] File 0: /media/Users/yshokrollahi/MS004S1.png - exists: YES
+[24-Jun-2025 03:27:08 Europe/London] Starting issueFiles at: 2025-06-24 03:27:08
+[24-Jun-2025 03:27:08 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 03:27:08 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 03:27:08 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 03:27:08 Europe/London] Completed issueFiles at: 2025-06-24 03:27:08
+[24-Jun-2025 03:27:08 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 03:27:08 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;2E0BC743-378D-48BE-A28B-8375763FC8FD;1;checksum;/media/Users/yshokrollahi/MS004S1.png;/var/www/uploads/08676098_MS004S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 2E0BC743-378D-48BE-A28B-8375763FC8FD
+                    [name] => /var/www/uploads/08676098_MS004S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS004S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 03:27:08 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 03:29:26 Europe/London] Successfully added job 2E0BC743-378D-48BE-A28B-8375763FC8FD to customer page for user: yshokrollahi
+[24-Jun-2025 03:29:28 Europe/London] Successfully added job 2E0BC743-378D-48BE-A28B-8375763FC8FD to customer page for user: yshokrollahi
+[24-Jun-2025 03:29:28 Europe/London] Successfully added job 2E0BC743-378D-48BE-A28B-8375763FC8FD to customer page for user: yshokrollahi
+[24-Jun-2025 02:37:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 02:38:03 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 02:38:03 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS014S1_MU.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 03:38:03 Europe/London] Decoded isDir: 
+[24-Jun-2025 03:38:03 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS014S1_MU.png
+)
+
+[24-Jun-2025 03:38:03 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 03:38:03 Europe/London] Number of files: 1
+[24-Jun-2025 03:38:03 Europe/London] File 0: /media/Users/yshokrollahi/MS014S1_MU.png - exists: YES
+[24-Jun-2025 03:38:03 Europe/London] Starting issueFiles at: 2025-06-24 03:38:03
+[24-Jun-2025 03:38:03 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 03:38:03 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 03:38:03 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 03:38:03 Europe/London] Completed issueFiles at: 2025-06-24 03:38:03
+[24-Jun-2025 03:38:03 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 03:38:03 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;845A9E00-8582-40C1-ACC3-7E7FAD800B27;1;checksum;/media/Users/yshokrollahi/MS014S1_MU.png;/var/www/uploads/08889199_MS014S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 845A9E00-8582-40C1-ACC3-7E7FAD800B27
+                    [name] => /var/www/uploads/08889199_MS014S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS014S1_MU.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 03:38:03 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 03:40:23 Europe/London] Successfully added job 845A9E00-8582-40C1-ACC3-7E7FAD800B27 to customer page for user: yshokrollahi
+[24-Jun-2025 03:40:23 Europe/London] Successfully added job 845A9E00-8582-40C1-ACC3-7E7FAD800B27 to customer page for user: yshokrollahi
+[24-Jun-2025 02:50:58 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 02:51:03 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 02:51:03 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg"]
+    [isDir] => false
+)
+
+[24-Jun-2025 03:51:03 Europe/London] Decoded isDir: 
+[24-Jun-2025 03:51:03 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+)
+
+[24-Jun-2025 03:51:03 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 03:51:03 Europe/London] Number of files: 1
+[24-Jun-2025 03:51:03 Europe/London] File 0: /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg - exists: YES
+[24-Jun-2025 03:51:03 Europe/London] Starting issueFiles at: 2025-06-24 03:51:03
+[24-Jun-2025 03:51:03 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 03:51:03 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 03:51:03 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 03:51:03 Europe/London] Completed issueFiles at: 2025-06-24 03:51:03
+[24-Jun-2025 03:51:03 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 03:51:03 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;5B6E0DAB-81EA-4E93-BF08-0668FC63194F;1;checksum;/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg;/var/www/uploads/31686382_Adenoid_cystic_Carcinoma_image_1.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 5B6E0DAB-81EA-4E93-BF08-0668FC63194F
+                    [name] => /var/www/uploads/31686382_Adenoid_cystic_Carcinoma_image_1.jpg
+                    [fileId] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 03:51:03 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 03:53:14 Europe/London] Successfully added job 5B6E0DAB-81EA-4E93-BF08-0668FC63194F to customer page for user: yshokrollahi
+[24-Jun-2025 03:08:16 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[24-Jun-2025 03:08:19 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 03:08:19 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004S1.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 04:08:19 Europe/London] Decoded isDir: 
+[24-Jun-2025 04:08:19 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004S1.png
+)
+
+[24-Jun-2025 04:08:19 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 04:08:19 Europe/London] Number of files: 1
+[24-Jun-2025 04:08:19 Europe/London] File 0: /media/Users/yshokrollahi/MS004S1.png - exists: YES
+[24-Jun-2025 04:08:19 Europe/London] Starting issueFiles at: 2025-06-24 04:08:19
+[24-Jun-2025 04:08:19 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 04:08:19 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 04:08:19 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 04:08:19 Europe/London] Completed issueFiles at: 2025-06-24 04:08:19
+[24-Jun-2025 04:08:19 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 04:08:19 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;E4EC1455-609F-4B1B-8AD8-68A597693BAC;1;checksum;/media/Users/yshokrollahi/MS004S1.png;/var/www/uploads/05184590_MS004S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => E4EC1455-609F-4B1B-8AD8-68A597693BAC
+                    [name] => /var/www/uploads/05184590_MS004S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS004S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 04:08:19 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 04:10:28 Europe/London] Successfully added job E4EC1455-609F-4B1B-8AD8-68A597693BAC to customer page for user: yshokrollahi
+[24-Jun-2025 04:10:30 Europe/London] Successfully added job E4EC1455-609F-4B1B-8AD8-68A597693BAC to customer page for user: yshokrollahi
+[24-Jun-2025 04:10:31 Europe/London] Successfully added job E4EC1455-609F-4B1B-8AD8-68A597693BAC to customer page for user: yshokrollahi
+[24-Jun-2025 03:12:21 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 03:12:21 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS008S1_MU.png","/media/Users/yshokrollahi/MS011S1_MU.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 04:12:21 Europe/London] Decoded isDir: 
+[24-Jun-2025 04:12:21 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS008S1_MU.png
+    [1] => /media/Users/yshokrollahi/MS011S1_MU.png
+)
+
+[24-Jun-2025 04:12:21 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 04:12:21 Europe/London] Number of files: 2
+[24-Jun-2025 04:12:21 Europe/London] File 0: /media/Users/yshokrollahi/MS008S1_MU.png - exists: YES
+[24-Jun-2025 04:12:21 Europe/London] File 1: /media/Users/yshokrollahi/MS011S1_MU.png - exists: YES
+[24-Jun-2025 04:12:22 Europe/London] Starting issueFiles at: 2025-06-24 04:12:22
+[24-Jun-2025 04:12:22 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 04:12:22 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 04:12:22 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 04:12:22 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 04:12:22 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 04:12:22 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 04:12:22 Europe/London] Completed issueFiles at: 2025-06-24 04:12:22
+[24-Jun-2025 04:12:22 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 04:12:22 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;07373B37-1C8B-42CB-B3BF-A084C2E42C3D;1;checksum;/media/Users/yshokrollahi/MS008S1_MU.png;/var/www/uploads/23632506_MS008S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 07373B37-1C8B-42CB-B3BF-A084C2E42C3D
+                    [name] => /var/www/uploads/23632506_MS008S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS008S1_MU.png
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;C422E2FC-9260-4B32-8AB8-81D2E73AF0FC;1;checksum;/media/Users/yshokrollahi/MS011S1_MU.png;/var/www/uploads/38460981_MS011S1_MU.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => C422E2FC-9260-4B32-8AB8-81D2E73AF0FC
+                    [name] => /var/www/uploads/38460981_MS011S1_MU.png
+                    [fileId] => /media/Users/yshokrollahi/MS011S1_MU.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 04:12:22 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 04:14:27 Europe/London] Successfully added job 07373B37-1C8B-42CB-B3BF-A084C2E42C3D to customer page for user: yshokrollahi
+[24-Jun-2025 04:14:52 Europe/London] Successfully added job C422E2FC-9260-4B32-8AB8-81D2E73AF0FC to customer page for user: yshokrollahi
+[24-Jun-2025 03:22:12 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 03:22:12 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg"]
+    [isDir] => false
+)
+
+[24-Jun-2025 04:22:12 Europe/London] Decoded isDir: 
+[24-Jun-2025 04:22:12 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+)
+
+[24-Jun-2025 04:22:12 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 04:22:12 Europe/London] Number of files: 1
+[24-Jun-2025 04:22:12 Europe/London] File 0: /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg - exists: YES
+[24-Jun-2025 04:22:12 Europe/London] Starting issueFiles at: 2025-06-24 04:22:12
+[24-Jun-2025 04:22:12 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 04:22:12 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 04:22:12 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 04:22:12 Europe/London] Completed issueFiles at: 2025-06-24 04:22:12
+[24-Jun-2025 04:22:12 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 04:22:12 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;2A0D09A1-571E-4037-ABD6-5424A15F0489;1;checksum;/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg;/var/www/uploads/16984232_Adenoid_cystic_Carcinoma_image_1.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 2A0D09A1-571E-4037-ABD6-5424A15F0489
+                    [name] => /var/www/uploads/16984232_Adenoid_cystic_Carcinoma_image_1.jpg
+                    [fileId] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 04:22:12 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 04:24:08 Europe/London] Successfully added job 2A0D09A1-571E-4037-ABD6-5424A15F0489 to customer page for user: yshokrollahi
+[24-Jun-2025 03:31:02 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 03:31:02 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004S1.png"]
+    [isDir] => false
+)
+
+[24-Jun-2025 04:31:03 Europe/London] Decoded isDir: 
+[24-Jun-2025 04:31:03 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004S1.png
+)
+
+[24-Jun-2025 04:31:03 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 04:31:03 Europe/London] Number of files: 1
+[24-Jun-2025 04:31:03 Europe/London] File 0: /media/Users/yshokrollahi/MS004S1.png - exists: YES
+[24-Jun-2025 04:31:03 Europe/London] Starting issueFiles at: 2025-06-24 04:31:03
+[24-Jun-2025 04:31:03 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 04:31:03 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 04:31:03 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 04:31:03 Europe/London] Completed issueFiles at: 2025-06-24 04:31:03
+[24-Jun-2025 04:31:03 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 04:31:03 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;0325B9CD-7049-4EA4-A5AC-00E3D88DAC01;1;checksum;/media/Users/yshokrollahi/MS004S1.png;/var/www/uploads/96629226_MS004S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01
+                    [name] => /var/www/uploads/96629226_MS004S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS004S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 04:31:03 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 04:33:24 Europe/London] Successfully added job 0325B9CD-7049-4EA4-A5AC-00E3D88DAC01 to customer page for user: yshokrollahi
+[24-Jun-2025 03:38:00 UTC] === issueUploadProject.php started ===
+[24-Jun-2025 03:38:00 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg"]
+    [isDir] => false
+)
+
+[24-Jun-2025 04:38:00 Europe/London] Decoded isDir: 
+[24-Jun-2025 04:38:00 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+)
+
+[24-Jun-2025 04:38:00 Europe/London] Case: isDir=0, array - calling issueFiles
+[24-Jun-2025 04:38:00 Europe/London] Number of files: 1
+[24-Jun-2025 04:38:00 Europe/London] File 0: /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg - exists: YES
+[24-Jun-2025 04:38:00 Europe/London] Starting issueFiles at: 2025-06-24 04:38:00
+[24-Jun-2025 04:38:00 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[24-Jun-2025 04:38:00 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[24-Jun-2025 04:38:00 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[24-Jun-2025 04:38:00 Europe/London] Completed issueFiles at: 2025-06-24 04:38:00
+[24-Jun-2025 04:38:00 Europe/London] issueFiles took: 0 seconds
+[24-Jun-2025 04:38:00 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;5978611C-0F66-4DDB-83D6-FA7A636AA769;1;checksum;/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg;/var/www/uploads/63826481_Adenoid_cystic_Carcinoma_image_1.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 5978611C-0F66-4DDB-83D6-FA7A636AA769
+                    [name] => /var/www/uploads/63826481_Adenoid_cystic_Carcinoma_image_1.jpg
+                    [fileId] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[24-Jun-2025 04:38:00 Europe/London] === issueUploadProject.php completed ===
+[24-Jun-2025 04:39:41 Europe/London] Successfully added job 5978611C-0F66-4DDB-83D6-FA7A636AA769 to customer page for user: yshokrollahi
