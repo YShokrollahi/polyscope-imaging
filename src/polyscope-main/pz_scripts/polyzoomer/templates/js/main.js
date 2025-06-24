@@ -4,6 +4,13 @@ var Seadragon;
 Seadragon = OpenSeadragon;
 OpenSeadragon.Utils = OpenSeadragon;
 
+// Configuration variables that should be set by the template system
+var ANNOTATIONS_PATH = null;
+var PATIENT_ID = null;
+var CHANNEL_ID = null;
+var CONTENT_ID = null;
+var VIEWER_VARNAME = null;
+
 // Image synchronization functions
 function SyncImage(viewer, viewerToSyncWith) {
     console.log('Syncing');
@@ -66,6 +73,93 @@ function rgbStringToHex(color) {
     return "#"+b.join("");
 }
 
+// Function to detect and construct annotation path
+function getAnnotationPath() {
+    // Try to get from global variables first
+    if (ANNOTATIONS_PATH && ANNOTATIONS_PATH !== '_ANNOTATIONS_LINK_') {
+        return ANNOTATIONS_PATH;
+    }
+    
+    // Try to construct from current URL
+    var currentPath = window.location.pathname;
+    console.log('Current path:', currentPath);
+    
+    // Extract the path components
+    // Expected format: /customers/username/Path.../page/MS.../
+    var pathParts = currentPath.split('/');
+    var pageIndex = pathParts.indexOf('page');
+    
+    if (pageIndex > 0 && pageIndex < pathParts.length - 1) {
+        // Get the MS directory name
+        var msDirectory = pathParts[pageIndex + 1];
+        
+        // Look for channel directory (usually starts with _)
+        // We need to find the channel directory name from the current context
+        var channelDir = findChannelDirectory(msDirectory);
+        
+        if (channelDir) {
+            // Construct the annotation path
+            var basePath = pathParts.slice(0, pageIndex + 2).join('/'); // Up to /MS.../
+            var annotationPath = basePath + '/' + channelDir + '/' + getDeepZoomFilesDirectory(channelDir) + '/annotations.txt';
+            
+            console.log('Constructed annotation path:', annotationPath);
+            return annotationPath;
+        }
+    }
+    
+    // Fallback: try to find from the DZI path if available
+    var dziPath = getDziPath();
+    if (dziPath) {
+        var annotationPath = dziPath.replace('.dzi', '_files/annotations.txt');
+        console.log('Fallback annotation path from DZI:', annotationPath);
+        return annotationPath;
+    }
+    
+    console.error('Could not determine annotation path');
+    return null;
+}
+
+function findChannelDirectory(msDirectory) {
+    // This should be determined from your application logic
+    // For now, we'll use a common pattern or try to detect it
+    
+    // Check if we have channel info from the page context
+    if (typeof window.channelDirectory !== 'undefined') {
+        return window.channelDirectory;
+    }
+    
+    // Default pattern (you may need to adjust this)
+    return '_UNKNOWNCHANNEL0001';
+}
+
+function getDeepZoomFilesDirectory(channelDir) {
+    // Construct the deep zoom files directory name
+    // Pattern seems to be: MS###_CHANNELNAME_MS###_HE.svsdeepzoom_files
+    var msName = getCurrentMsDirectory();
+    if (msName && channelDir) {
+        var filesDir = msName + '_' + channelDir.substring(1) + '_' + msName + '_HE.svsdeepzoom_files';
+        return filesDir;
+    }
+    return null;
+}
+
+function getCurrentMsDirectory() {
+    var pathParts = window.location.pathname.split('/');
+    var pageIndex = pathParts.indexOf('page');
+    if (pageIndex > 0 && pageIndex < pathParts.length - 1) {
+        return pathParts[pageIndex + 1];
+    }
+    return null;
+}
+
+function getDziPath() {
+    // Try to get DZI path from viewer configuration
+    if (window.viewer && window.viewer.tileSources) {
+        return window.viewer.tileSources;
+    }
+    return null;
+}
+
 // UI Controls
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
@@ -95,25 +189,156 @@ function exportImage() {
 }
 
 function exportAnnotations() {
-    const link = document.createElement('a');
-    link.href = '_ANNOTATIONS_LINK_';
-    link.download = 'Annotations__PATIENT_ID__CHANNEL_ID_.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    var annotationPath = getAnnotationPath();
+    
+    if (!annotationPath) {
+        alert('Could not find annotations file path. Please check if annotations exist for this image.');
+        return;
+    }
+    
+    // Test if the annotation file exists by making a HEAD request
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', annotationPath, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // File exists, proceed with download
+                const link = document.createElement('a');
+                link.href = annotationPath;
+                
+                // Construct filename
+                var patientId = PATIENT_ID || 'Patient';
+                var channelId = CHANNEL_ID || 'Channel';
+                var filename = 'Annotations_' + patientId + '_' + channelId + '.txt';
+                
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                console.log('Downloaded annotations from:', annotationPath);
+            } else {
+                console.error('Annotations file not found at:', annotationPath);
+                alert('Annotations file not found. Status: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send();
+    
     document.getElementById('exportDropdown').style.display = 'none';
 }
 
 // Add new export functions
 function exportAnnotationsCSV() {
     console.log('Exporting annotations as CSV...');
-    exportAnnotations(); // Use existing function for now
+    
+    var annotationPath = getAnnotationPath();
+    if (!annotationPath) {
+        alert('Could not find annotations file path.');
+        return;
+    }
+    
+    // Fetch the annotations file and convert to CSV
+    fetch(annotationPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Annotations file not found');
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Convert annotations to CSV format
+            var csvData = convertAnnotationsToCSV(data);
+            downloadAsFile(csvData, 'annotations.csv', 'text/csv');
+        })
+        .catch(error => {
+            console.error('Error loading annotations:', error);
+            alert('Could not load annotations file for CSV export.');
+        });
+    
+    document.getElementById('exportDropdown').style.display = 'none';
 }
 
 function exportAnnotationsJSON() {
     console.log('Exporting annotations as JSON...');
-    // TODO: Implement JSON export
-    alert('JSON export coming soon!');
+    
+    var annotationPath = getAnnotationPath();
+    if (!annotationPath) {
+        alert('Could not find annotations file path.');
+        return;
+    }
+    
+    // Fetch the annotations file and convert to JSON
+    fetch(annotationPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Annotations file not found');
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Convert annotations to JSON format
+            var jsonData = convertAnnotationsToJSON(data);
+            downloadAsFile(JSON.stringify(jsonData, null, 2), 'annotations.json', 'application/json');
+        })
+        .catch(error => {
+            console.error('Error loading annotations:', error);
+            alert('Could not load annotations file for JSON export.');
+        });
+    
+    document.getElementById('exportDropdown').style.display = 'none';
+}
+
+function convertAnnotationsToCSV(annotationData) {
+    // Parse annotation data and convert to CSV
+    // This depends on your annotation format
+    var lines = annotationData.split('\n');
+    var csvRows = ['ID,Type,X,Y,Width,Height,Label,Color'];
+    
+    lines.forEach(function(line, index) {
+        if (line.trim()) {
+            // Parse your annotation format here
+            // This is a placeholder - adjust based on your actual format
+            csvRows.push(index + ',"annotation","0","0","0","0","' + line.trim() + '","#ff0000"');
+        }
+    });
+    
+    return csvRows.join('\n');
+}
+
+function convertAnnotationsToJSON(annotationData) {
+    // Parse annotation data and convert to JSON
+    var lines = annotationData.split('\n');
+    var annotations = [];
+    
+    lines.forEach(function(line, index) {
+        if (line.trim()) {
+            annotations.push({
+                id: index,
+                type: 'annotation',
+                coordinates: { x: 0, y: 0, width: 0, height: 0 },
+                label: line.trim(),
+                color: '#ff0000'
+            });
+        }
+    });
+    
+    return {
+        format: 'polyscope-annotations',
+        version: '1.0',
+        annotations: annotations
+    };
+}
+
+function downloadAsFile(content, filename, mimeType) {
+    var blob = new Blob([content], { type: mimeType });
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
 }
 
 function toggleSection(header) {
@@ -165,13 +390,14 @@ function applyImageFilters() {
     const filterString = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
     
     // Apply to all OpenSeadragon canvas elements
-    const canvases = document.querySelectorAll('#_CONTENTID_ canvas');
+    var contentId = CONTENT_ID || '_CONTENTID_';
+    const canvases = document.querySelectorAll('#' + contentId + ' canvas');
     canvases.forEach(canvas => {
         canvas.style.filter = filterString;
     });
     
     // Also apply to any tile images that might load later
-    const tileImages = document.querySelectorAll('#_CONTENTID_ img');
+    const tileImages = document.querySelectorAll('#' + contentId + ' img');
     tileImages.forEach(img => {
         img.style.filter = filterString;
     });
@@ -335,17 +561,24 @@ function hideAllChannels() {
 
 // OpenSeadragon initialization
 function initializeViewer() {
-    var _VIEWER_VARNAME_ = OpenSeadragon({
-        id: "_CONTENTID_",
+    var contentId = CONTENT_ID || "_CONTENTID_";
+    var viewerVarName = VIEWER_VARNAME || "viewer";
+    
+    var viewerConfig = {
+        id: contentId,
         prefixUrl: "../images/",
         tileSources: "_REL_PATH_TO_DZI_",
         preserveViewport: true,
         showRotationControl: true,
         showNavigator: true
-    });
+    };
 
-    _VIEWER_VARNAME_.Annotations();
-    _VIEWER_VARNAME_.DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
+    window[viewerVarName] = OpenSeadragon(viewerConfig);
+
+    if (window[viewerVarName].Annotations) {
+        window[viewerVarName].Annotations();
+        window[viewerVarName].DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
+    }
 
     var tileSource = "_REL_PATH_TO_DZI_";
     var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
@@ -358,24 +591,28 @@ function initializeViewer() {
     }
 
     if(isSvs || isNdpi){
-        _VIEWER_VARNAME_.scalebar({
-            minWidth: "75px",
-            pixelsPerMeter: ppm,
-            barThickness: 2
-        });
+        if (window[viewerVarName].scalebar) {
+            window[viewerVarName].scalebar({
+                minWidth: "75px",
+                pixelsPerMeter: ppm,
+                barThickness: 2
+            });
+        }
     }
 
     var handleResize = function() {
-        var height = jQuery('#_CONTENTID_').height();
+        var height = jQuery('#' + contentId).height();
         var couldHeight = jQuery('td.OSD').height() * 0.9;
 
         if(height == 0) {
-            jQuery('#_CONTENTID_').height(couldHeight + 'px');
+            jQuery('#' + contentId).height(couldHeight + 'px');
         };
     };
 
     // Store viewer globally
-    window._VIEWER_VARNAME_ = _VIEWER_VARNAME_;
+    window.viewer = window[viewerVarName];
+    
+    console.log('Viewer initialized:', viewerVarName);
 }
 
 // Initialize ViewerHash
@@ -393,11 +630,21 @@ document.addEventListener('click', function(event) {
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     SyncThemAll();
+    
+    // Initialize configuration from page context if available
+    if (typeof window.polyscopeConfig !== 'undefined') {
+        ANNOTATIONS_PATH = window.polyscopeConfig.annotationsPath;
+        PATIENT_ID = window.polyscopeConfig.patientId;
+        CHANNEL_ID = window.polyscopeConfig.channelId;
+        CONTENT_ID = window.polyscopeConfig.contentId;
+        VIEWER_VARNAME = window.polyscopeConfig.viewerVarName;
+    }
+    
     initializeViewer();
     
     // Fix annotation path for enhanced annotation manager
     if (typeof window.annotationsPath === 'undefined') {
-        window.annotationsPath = '_ANNOTATIONS_LINK_';
+        window.annotationsPath = getAnnotationPath();
     }
     
     // Add debugging function for channels
@@ -405,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('=== CHANNEL DEBUG INFO ===');
         
         // Check viewer
-        var viewer = window.viewer || window._VIEWER_VARNAME_;
+        var viewer = window.viewer || window[VIEWER_VARNAME || 'viewer'];
         console.log('Viewer found:', !!viewer);
         if (viewer) {
             console.log('Viewer ID:', viewer.id);
@@ -414,7 +661,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Check DOM elements
-        var viewerDiv = document.getElementById('_CONTENTID_');
+        var contentId = CONTENT_ID || '_CONTENTID_';
+        var viewerDiv = document.getElementById(contentId);
         console.log('Viewer div found:', !!viewerDiv);
         if (viewerDiv) {
             var canvases = viewerDiv.querySelectorAll('canvas');
@@ -432,6 +680,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.channelManager) {
             console.log('Detected channels:', window.channelManager.getChannels());
         }
+        
+        // Check annotation path
+        console.log('Annotation path:', getAnnotationPath());
         
         console.log('=== END DEBUG INFO ===');
     };

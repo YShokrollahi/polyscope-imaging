@@ -4,7 +4,7 @@
 # Date: -
 # LastAuthor: Sebastian Schmittner
 # LastDate: 2016.01.21 10:25:29 (+01:00)
-# Version: 2.0.0 - Updated for modern professional interface
+# Version: 2.0.1 - Fixed template placeholder processing
 
 # Requirements:  Directories must be labeled according to the following scheme
 #		 PATIENTIDPATIENTNUMBER_CHANNELNAME_ARBITRARYSTRING
@@ -51,6 +51,10 @@ if [ $DO_FILES -eq "1" ]; then
 	for f in $FILES
     do  
       PAT_ID=`echo ${f} | egrep -i -o '[a-z]+[0-9]+' | head -1` # e.g. P10_CyclineA_sadasdasd  #added 
+      # If PAT_ID is empty, extract it from the directory name directly
+      if [[ -z "$PAT_ID" ]]; then
+          PAT_ID=`echo ${f} | cut -d'_' -f1 | sed 's|^\./||'`
+      fi
       echo $PAT_ID
 	  #Get all image of the current patient
       ZOOMFILES=`find . -maxdepth 2 -type f -wholename "*${PAT_ID}*dzi" ${EXCLUDEFILES}`
@@ -95,6 +99,10 @@ if [ $DO_WEBSITE -eq "1" ]; then
 	
     CHANNELS=`find ${f} -maxdepth 1 -type d -and -name "_*" ${EXCLUDEFILES}`    
     PAT_ID=`echo ${f} | egrep -i -o '[a-z]+[0-9]+' | head -1` # e.g. P10
+    # If PAT_ID is empty, extract it from the directory name directly
+    if [[ -z "$PAT_ID" ]]; then
+        PAT_ID=`echo ${f} | cut -d'_' -f1 | sed 's|^\./||'`
+    fi
     PATHTOINDEX="./${PAT_ID}/index.html"
 
     echo "testing permission"
@@ -118,6 +126,11 @@ if [ $DO_WEBSITE -eq "1" ]; then
           FIRST_DZI=`basename "$TMPDZI"`
           SLIDE_INFO="${FIRST_DZI%.dzi}"
           CHANNEL_ID=`echo ${c} | egrep -i -o '*_[a-z]+[0-9]*' | head -1`  #e.g. _CyclineA
+          # If CHANNEL_ID is empty, extract it from the directory name directly  
+          if [[ -z "$CHANNEL_ID" ]]; then
+              CHANNEL_ID=`echo ${c} | cut -d'_' -f2`
+              CHANNEL_ID="_${CHANNEL_ID}"
+          fi
           CHANNEL_NAME=${CHANNEL_ID#_}  # Remove leading underscore
           # Set annotations link for the first channel
           BAREFILE=$(basename "${TMPDZI}")
@@ -136,6 +149,11 @@ if [ $DO_WEBSITE -eq "1" ]; then
 	  echo $DZINAME
 	  
 	  CHANNEL_ID=`echo ${c} | egrep -i -o '*_[a-z]+[0-9]*' | head -1`  #e.g. _CyclineA
+    # If CHANNEL_ID is empty, extract it from the directory name directly  
+    if [[ -z "$CHANNEL_ID" ]]; then
+        CHANNEL_ID=`echo ${c} | cut -d'_' -f2`
+        CHANNEL_ID="_${CHANNEL_ID}"
+    fi
       
       #check if current image has a corresponding processed one
       HASPROCESSED=$(checkIfProcessedFileAvailable ${PAT_ID}${CHANNEL_ID})
@@ -159,12 +177,20 @@ if [ $DO_WEBSITE -eq "1" ]; then
       PATHTOVIEWERIMAGE="..\/images\/"
       PATHTODZI="/${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}"
       
-      #replace tags in viewer block
+      # CRITICAL FIX: Replace all placeholders in the correct order and format
+      # First, set up the viewer variable name
+      VIEWER_VAR_NAME="${PAT_ID}${CHANNEL_ID}"
+      
+      #replace tags in viewer block - FIXED PLACEHOLDER PATTERNS
       sed "s/_CONTENTID_/${PAT_ID}${CHANNEL_ID}/g" _tmpviewer > tmp; cat tmp > _tmpviewer 
       sed "s/_REL_PATH_TO_VIEWERIMAGES_/${PATHTOVIEWERIMAGE}/g" _tmpviewer > tmp; cat tmp > _tmpviewer
       sed "s+_REL_PATH_TO_DZI_+./${CHANNEL_ID}/${DZINAME}+g" _tmpviewer > tmp; cat tmp > _tmpviewer
       sed "s/_VIEWERNAME_/${VIEWERNAME}/g" _tmpviewer > tmp; cat tmp > _tmpviewer
-      sed "s/_VIEWER_VARNAME_/${PAT_ID}${CHANNEL_ID}/g" _tmpviewer > tmp; cat tmp > _tmpviewer  
+      
+      # CRITICAL FIX: Handle both placeholder formats for viewer variable name
+      sed "s/_VIEWER_VARNAME_/${VIEWER_VAR_NAME}/g" _tmpviewer > tmp; cat tmp > _tmpviewer  
+      sed "s/\*VIEWER\*VARNAME_/${VIEWER_VAR_NAME}/g" _tmpviewer > tmp; cat tmp > _tmpviewer
+      
       let VIEWERCOUNTER=VIEWERCOUNTER+1      
       
 	  ##
@@ -182,13 +208,16 @@ if [ $DO_WEBSITE -eq "1" ]; then
 
     done
     
-    #replace tags in header/body1
+    #replace tags in header/body1 - ENSURE ALL PLACEHOLDERS ARE REPLACED
     sed "s/_PATH_TO_CSS_/..\/css/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
     sed "s/_PATH_TO_POLYZOOMER_/../g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
     sed "s/_SLIDE_INFO_/${SLIDE_INFO}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
     sed "s/_CHANNEL_NAME_/${CHANNEL_NAME}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
     sed "s/_PATIENT_ID_/${PAT_ID}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
     sed "s+_ANNOTATIONS_LINK_+${ANNOTATIONS_LINK}+g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    
+    # ADDITIONAL FIX: Replace any remaining placeholder patterns that might exist
+    sed "s/_CHANNEL_ID_/${CHANNEL_ID}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
     
     # Add body1 content
     cat ./blocks/body1.block >> "${PATHTOINDEX}"
@@ -202,6 +231,18 @@ if [ $DO_WEBSITE -eq "1" ]; then
 
   # Set the JavaScript variable with the annotations link
   echo "<script type=\"text/javascript\">var annotationsPath = '${ANNOTATIONS_LINK}';</script>" >> "${PATHTOINDEX}"
+  
+  # CRITICAL FIX: Add JavaScript configuration object for main.js
+  echo "<script type=\"text/javascript\">" >> "${PATHTOINDEX}"
+  echo "// Configuration for Enhanced Annotation Manager and main.js" >> "${PATHTOINDEX}"
+  echo "window.polyscopeConfig = {" >> "${PATHTOINDEX}"
+  echo "  annotationsPath: '${ANNOTATIONS_LINK}'," >> "${PATHTOINDEX}"
+  echo "  patientId: '${PAT_ID}'," >> "${PATHTOINDEX}"
+  echo "  channelId: '${CHANNEL_ID}'," >> "${PATHTOINDEX}"
+  echo "  contentId: '${PAT_ID}${CHANNEL_ID}'," >> "${PATHTOINDEX}"
+  echo "  viewerVarName: '${PAT_ID}${CHANNEL_ID}'" >> "${PATHTOINDEX}"
+  echo "};" >> "${PATHTOINDEX}"
+  echo "</script>" >> "${PATHTOINDEX}"
 
   # Link the JavaScript file
   echo "<script type=\"text/javascript\" src=\"../enhancedAnnotationManager.js\"></script>" >> "${PATHTOINDEX}"

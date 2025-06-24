@@ -409,7 +409,7 @@
          * Update composite channel display using CSS filters - COMPLETELY REWRITTEN
          */
         updateCompositeChannelDisplay: function() {
-            var viewerId = this.viewer.id || 'MS004_UNKNOWNCHANNEL0001';
+            var viewerId = this.viewer.id || '_CONTENTID_';
             var viewerContainer = document.getElementById(viewerId);
             
             if (!viewerContainer) {
@@ -701,7 +701,7 @@
         
         var checkViewer = setInterval(function() {
             attempts++;
-            var viewerInstance = window.viewer || window.MS004_UNKNOWNCHANNEL0001;
+            var viewerInstance = window.viewer || window._VIEWER_VARNAME_;
             
             console.log('🔍 Attempt', attempts, '- Viewer found:', !!viewerInstance);
             

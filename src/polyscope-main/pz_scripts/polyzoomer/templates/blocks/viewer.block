@@ -34,11 +34,11 @@ if(isSvs || isNdpi){
 }
 
 var handleResize = function() {
-    var height = jQuery('#_VIEWER_VARNAME_').height();
+    var height = jQuery('#_CONTENTID_').height();
     var couldHeight = jQuery('td.OSD').height() * 0.9;
 
     if(height == 0) {
-        jQuery('#_VIEWER_VARNAME_').height(couldHeight + 'px');
+        jQuery('#_CONTENTID_').height(couldHeight + 'px');
     };
 };
 

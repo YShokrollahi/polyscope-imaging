@@ -257,36 +257,69 @@
             if (downloadBtn.length) {
                 var href = downloadBtn.attr("href");
                 if (href) {
-                    this.annotationPath = href;
-                    console.log("Found annotation path:", this.annotationPath);
+                    // Check if we got a placeholder instead of a real path
+                    if (href.indexOf('*ANNOTATIONS*') !== -1 || href.indexOf('_ANNOTATIONS_') !== -1) {
+                        console.log("Download button contains placeholder:", href);
+                        console.log("Trying alternative methods...");
+                        
+                        // Try to use polyscopeConfig first
+                        if (window.polyscopeConfig && window.polyscopeConfig.annotationsPath) {
+                            this.annotationPath = window.polyscopeConfig.annotationsPath;
+                            console.log("Using polyscopeConfig annotation path:", this.annotationPath);
+                        } else {
+                            // Fallback to construction from URL
+                            this.constructAnnotationPathFromURL();
+                        }
+                    } else {
+                        // We got a real path
+                        this.annotationPath = href;
+                        console.log("Found annotation path:", this.annotationPath);
+                    }
                 } else {
                     console.error("Download button exists but href is empty");
-                    
-                    // Try to find annotation path from another source
-                    if (this.polyzoomAnnotation && this.polyzoomAnnotation.annotationFiles && 
-                        this.polyzoomAnnotation.annotationFiles.length > 0 && 
-                        this.polyzoomAnnotation.annotationFiles[0].filename) {
-                        this.annotationPath = this.polyzoomAnnotation.annotationFiles[0].filename;
-                        console.log("Using path from polyzoomAnnotation:", this.annotationPath);
-                    } else {
-                        // Extract path from URL
-                        var url = window.location.pathname;
-                        var parts = url.split('/');
-                        if (parts.length >= 3) {
-                            var channel = parts[parts.length - 1]; // channel directory
-                            var patient = parts[parts.length - 2]; // patient directory
-                            
-                            // Try to construct the path to annotations.txt
-                            var dziFile = this.findDziFileName();
-                            if (dziFile) {
-                                this.annotationPath = "./" + channel + "/" + dziFile + "_files/annotations.txt";
-                                console.log("Constructed path:", this.annotationPath);
-                            }
-                        }
-                    }
+                    this.tryAlternativeAnnotationPaths();
                 }
             } else {
                 console.error("Download button not found");
+                this.tryAlternativeAnnotationPaths();
+            }
+        },
+        
+        // Helper function to try alternative annotation path methods
+        tryAlternativeAnnotationPaths: function() {
+            // Try to find annotation path from polyzoomAnnotation
+            if (this.polyzoomAnnotation && this.polyzoomAnnotation.annotationFiles &&
+                this.polyzoomAnnotation.annotationFiles.length > 0 &&
+                this.polyzoomAnnotation.annotationFiles[0].filename) {
+                this.annotationPath = this.polyzoomAnnotation.annotationFiles[0].filename;
+                console.log("Using path from polyzoomAnnotation:", this.annotationPath);
+            } else if (window.polyscopeConfig && window.polyscopeConfig.annotationsPath) {
+                this.annotationPath = window.polyscopeConfig.annotationsPath;
+                console.log("Using polyscopeConfig annotation path:", this.annotationPath);
+            } else {
+                // Last resort: construct from URL
+                this.constructAnnotationPathFromURL();
+            }
+        },
+        
+        // Helper function to construct annotation path from URL
+        constructAnnotationPathFromURL: function() {
+            var url = window.location.pathname;
+            var parts = url.split('/');
+            if (parts.length >= 3) {
+                var channel = parts[parts.length - 1]; // channel directory
+                var patient = parts[parts.length - 2]; // patient directory
+                
+                // Try to construct the path to annotations.txt
+                var dziFile = this.findDziFileName();
+                if (dziFile) {
+                    this.annotationPath = "./" + channel + "/" + dziFile + "_files/annotations.txt";
+                    console.log("Constructed path from URL:", this.annotationPath);
+                } else {
+                    // If we can't find DZI file, try a generic pattern
+                    this.annotationPath = "./_UNKNOWNCHANNEL0001/" + patient + "_UNKNOWNCHANNEL0001_*_files/annotations.txt";
+                    console.log("Using generic pattern:", this.annotationPath);
+                }
             }
         },
         

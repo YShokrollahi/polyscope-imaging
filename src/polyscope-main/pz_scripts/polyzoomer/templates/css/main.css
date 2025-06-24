@@ -115,6 +115,7 @@
 }
 
 /* Export dropdown styles */
+/* Export dropdown styles */
 .export-btn-container {
   position: relative;
 }
@@ -128,8 +129,14 @@
   border-radius: 6px;
   box-shadow: var(--shadow-medium);
   min-width: 160px;
-  z-index: 1000;
+  z-index: 1001;
   display: none;
+  margin-top: 2px;
+}
+
+.export-dropdown.show,
+.export-dropdown[style*="block"] {
+  display: block !important;
 }
 
 .export-option {
@@ -140,10 +147,17 @@
   gap: 8px;
   transition: var(--transition-smooth);
   border-bottom: 1px solid #f0f0f0;
+  color: #333; /* Add this line for text color */
+  background: white;
+}
+
+.export-option:first-child {
+  border-radius: 6px 6px 0 0;
 }
 
 .export-option:last-child {
   border-bottom: none;
+  border-radius: 0 0 6px 6px;
 }
 
 .export-option:hover {
@@ -151,9 +165,16 @@
   color: white;
 }
 
+.export-option i {
+  color: inherit;
+  width: 16px;
+  text-align: center;
+}
+
 .export-arrow {
   margin-left: 4px;
   font-size: 12px;
+  transition: transform 0.2s ease;
 }
 
 /* Responsive Design */

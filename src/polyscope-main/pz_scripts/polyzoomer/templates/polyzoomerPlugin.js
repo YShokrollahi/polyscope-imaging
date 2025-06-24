@@ -1554,9 +1554,15 @@ $.AnnotationFile.prototype = {
 			var x = event.originalEvent.pageX;
 			var y = event.originalEvent.pageY;
 			
-			$('#' + _SELF.colorPickerName).css({position: "absolute", top: y - _SELF.pickerHeight, left: x - _SELF.pickerWidth});
-			$('#' + _SELF.colorPickerName).css("border", "#808080 1px solid");
-			$('#' + _SELF.colorPickerName).toggle();
+			// Store mouse position for positioning
+			_SELF.currentX = x;
+			_SELF.currentY = y;
+			
+			// Show the color picker
+			$('#' + _SELF.colorPickerName).show();
+			
+			// Position it properly
+			_SELF.positionColorPicker();
 		};
 
 		this.startup( this.anchor );
@@ -1911,12 +1917,21 @@ $.AnnotationFile.prototype = {
 		createColorPicker: function() {
 			var _SELF = this,
 				input = document.createElement("div");
-			
 			input.setAttribute("id", _SELF.colorPickerName);
 			input.style.height = _SELF.pickerHeight + "px";
 			input.style.width = _SELF.pickerWidth + "px";
+			
+			// Add positioning styles
+			input.style.position = "fixed";
+			input.style.zIndex = "10000";
+			input.style.background = "white";
+			input.style.border = "2px solid #333";
+			input.style.borderRadius = "6px";
+			input.style.padding = "8px";
+			input.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
+			
 			document.getElementById(_SELF.viewer.id).appendChild(input);
-		
+			
 			$(document).mousemove(function(event){
 				_SELF.currentX = event.pageX;
 				_SELF.currentY = event.pageY;
@@ -1928,7 +1943,7 @@ $.AnnotationFile.prototype = {
 					_SELF.color = c;
 					$('#' + _SELF.colorPickerName).hide();
 				},
-				colors: [ 
+				colors: [
 					// Original colors
 					'#000000', '#800000', '#ff0000', '#ff00ff',
 					'#008080', '#008000', '#00ff00', '#00ffff',
@@ -1941,13 +1956,57 @@ $.AnnotationFile.prototype = {
 					'#2F4F4F', '#DC143C', '#00BFFF', '#F4A460'
 				]
 			});
-		
-			$( ".ColorBlotch" ).css("height", _SELF.pickerBlobSide + "px")
-							   .css("width", "30px")
-							   .css("display", "inline-block")
-							   .css("border", "#FFFFFF 1px solid");
+			
+			$(".ColorBlotch").css("height", _SELF.pickerBlobSide + "px")
+				.css("width", "30px")
+				.css("display", "inline-block")
+				.css("border", "#FFFFFF 1px solid")
+				.css("cursor", "pointer")
+				.css("margin", "1px");
+			
+			// Position the color picker properly when shown
+			$('#' + _SELF.colorPickerName).on('show', function() {
+				_SELF.positionColorPicker();
+			});
 			
 			$('#' + _SELF.colorPickerName).hide();
+		},
+		
+		// Add this new function to position the color picker
+		positionColorPicker: function() {
+			var _SELF = this;
+			var $picker = $('#' + _SELF.colorPickerName);
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
+			var pickerWidth = $picker.outerWidth();
+			var pickerHeight = $picker.outerHeight();
+			
+			// Position ABOVE the mouse cursor instead of below
+			var left = _SELF.currentX - (pickerWidth / 2); // Center horizontally on mouse
+			var top = _SELF.currentY - pickerHeight - 30;  // Position above mouse with more margin
+			
+			// Adjust if it would go off screen horizontally
+			if (left + pickerWidth > windowWidth) {
+				left = windowWidth - pickerWidth - 20;
+			}
+			if (left < 20) {
+				left = 20;
+			}
+			
+			// Adjust if it would go off screen vertically
+			if (top < 20) {
+				// If there's no room above, position below but closer to mouse
+				top = _SELF.currentY + 10;
+				// But ensure it doesn't go off bottom
+				if (top + pickerHeight > windowHeight) {
+					top = windowHeight - pickerHeight - 20;
+				}
+			}
+			
+			$picker.css({
+				'left': left + 'px',
+				'top': top + 'px'
+			});
 		},
 		
 		canvasToScreen: function( point ) {
