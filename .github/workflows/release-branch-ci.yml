@@ -37,7 +37,7 @@ jobs:
           context: ./src/polyscope-main
           file: ./src/polyscope-main/Dockerfile
           push: true
-          tags: ghcr.io/${{ env.owner }}/polyscope-development-test:latest
+          tags: ghcr.io/${{ env.owner }}/polyscope-localDriveOptimized:latest
 
       - name: Post Build Cleanup
         run: docker system prune -f
