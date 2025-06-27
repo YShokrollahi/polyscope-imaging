@@ -3,10 +3,11 @@
  Desc: Tiered Storage Daemon - Automatically archives old polyzoomer files
  Author: Enhanced Polyscope System
  Date: 2025.06.23
- Version: 1.0.1 - FIXED: Permissions & Symlinks
+ Version: 1.1.0 - ENHANCED: Added Multizoom Support
  
  Purpose: Moves polyzoomer files older than 30 days from hot storage (local)
           to cold storage (research drive) while maintaining user access
+          Now includes multizoom symlink management
 */
 
 require_once __DIR__ . '/polyzoomerGlobals.php';
@@ -37,7 +38,8 @@ class TieredStorageDaemon {
             $candidatesForArchival = $this->findFilesForArchival();
             $this->archiveFiles($candidatesForArchival);
             $this->updateUserCaches($candidatesForArchival);
-            $this->updateUserSymlinks($candidatesForArchival);  // FIX: Added symlink update
+            $this->updateUserSymlinks($candidatesForArchival);  // ENHANCED: Now includes multizooms
+            $this->updateMultizoomCaches($candidatesForArchival); // NEW: Update multizoom cache files
             $this->cleanupEmptyDirectories();
             
             logTieredStorage("=== Tiered Storage Daemon Complete ===");
@@ -215,14 +217,95 @@ class TieredStorageDaemon {
     }
     
     /**
-     * FIX: Update user symlinks to point to cold storage
+     * NEW: Update multizoom cache files to reflect new file locations
+     */
+    private function updateMultizoomCaches($archivedFiles) {
+        if (empty($archivedFiles) || $this->dry_run) {
+            return;
+        }
+        
+        logTieredStorage("Updating multizoom cache files...");
+        
+        $customersDir = customersPath();
+        if (!is_dir($customersDir)) {
+            return;
+        }
+        
+        $users = scandir($customersDir);
+        foreach ($users as $user) {
+            if ($user === '.' || $user === '..') continue;
+            
+            $userDir = $customersDir . $user;
+            if (!is_dir($userDir)) continue;
+            
+            $this->updateMultizoomCacheFile($user, $archivedFiles);
+        }
+    }
+    
+    /**
+     * NEW: Update individual user multizoom cache file
+     */
+    private function updateMultizoomCacheFile($cleanEmail, $archivedFiles) {
+        $multiCacheFilePath = multiCacheFile($cleanEmail);
+        if (!file_exists($multiCacheFilePath)) {
+            return;
+        }
+        
+        try {
+            $updated = false;
+            $lines = file($multiCacheFilePath, FILE_IGNORE_NEW_LINES);
+            $newLines = array();
+            
+            foreach ($lines as $line) {
+                $project = json_decode($line, true);
+                if ($project && isset($project['name'])) {
+                    
+                    // Check if this multizoom project was archived
+                    foreach ($archivedFiles as $archived) {
+                        if (strpos($project['name'], $archived['name']) !== false) {
+                            // Update paths to point to cold storage
+                            if (isset($project['index'])) {
+                                $project['index'] = str_replace('/polyzoomer/', '/polyzoomer_cold/', $project['index']);
+                                $project['index'] = str_replace('/customers/' . $cleanEmail . '/multizooms/', '/polyzoomer_cold/', $project['index']);
+                            }
+                            if (isset($project['image'])) {
+                                $project['image'] = str_replace('/polyzoomer/', '/polyzoomer_cold/', $project['image']);
+                                $project['image'] = str_replace('/customers/' . $cleanEmail . '/multizooms/', '/polyzoomer_cold/', $project['image']);
+                            }
+                            if (isset($project['dzi'])) {
+                                $project['dzi'] = str_replace('/polyzoomer/', '/polyzoomer_cold/', $project['dzi']);
+                                $project['dzi'] = str_replace('/customers/' . $cleanEmail . '/multizooms/', '/polyzoomer_cold/', $project['dzi']);
+                            }
+                            
+                            $updated = true;
+                            logTieredStorage("Updated multizoom cache entry for user {$cleanEmail}: {$project['name']}");
+                            break;
+                        }
+                    }
+                }
+                
+                $newLines[] = json_encode($project);
+            }
+            
+            if ($updated) {
+                file_put_contents($multiCacheFilePath, implode("\n", $newLines) . "\n");
+                logTieredStorage("Multizoom cache file updated: {$multiCacheFilePath}");
+            }
+            
+        } catch (Exception $e) {
+            logTieredStorage("ERROR updating multizoom cache for user {$cleanEmail}: " . $e->getMessage());
+        }
+    }
+    
+    /**
+     * ENHANCED: Update user symlinks to point to cold storage (includes multizooms)
      */
     private function updateUserSymlinks($archivedFiles) {
         if (empty($archivedFiles) || $this->dry_run) {
             return;
         }
         
-        logTieredStorage("Updating user symlinks...");
+        logTieredStorage("Updating user symlinks (regular and multizoom)...");
         
         $customersDir = customersPath();
         if (!is_dir($customersDir)) {
@@ -237,11 +320,23 @@ class TieredStorageDaemon {
                 $userDir = $customersDir . $user;
                 if (!is_dir($userDir)) continue;
                 
+                // Update regular polyzoomer symlinks
                 $symlinkPath = $userDir . '/' . $archived['name'];
                 if (is_link($symlinkPath)) {
                     unlink($symlinkPath);
                     symlink($archived['cold_path'], $symlinkPath);
                     logTieredStorage("Updated symlink: {$user}/{$archived['name']} -> cold storage");
+                }
+                
+                // Update multizoom symlinks
+                $multizoomDir = $userDir . '/multizooms/';
+                if (is_dir($multizoomDir)) {
+                    $multizoomSymlink = $multizoomDir . $archived['name'];
+                    if (is_link($multizoomSymlink)) {
+                        unlink($multizoomSymlink);
+                        symlink($archived['cold_path'], $multizoomSymlink);
+                        logTieredStorage("Updated multizoom symlink: {$user}/multizooms/{$archived['name']} -> cold storage");
+                    }
                 }
             }
         }
