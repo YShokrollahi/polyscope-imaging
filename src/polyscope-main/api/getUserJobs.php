@@ -35,10 +35,19 @@ try {
     
     $allJobs = $statusData['jobs'] ?? [];
     $userJobs = [];
+    $activeJobs = [];
     
-    // Filter jobs for current user
+    // Filter jobs for current user and count active jobs
     foreach ($allJobs as $jobWrapper) {
         $job = $jobWrapper['data'] ?? $jobWrapper;
+        
+        // Determine if job is active (not completed)
+        $status = $job['status'] ?? 'unknown';
+        $isActive = !in_array($status, ['finished', 'completed', 'failed', 'error']);
+        
+        if ($isActive) {
+            $activeJobs[] = $jobWrapper;
+        }
         
         // Check if this job belongs to the current user
         $belongsToUser = false;
@@ -70,6 +79,7 @@ try {
             // Add user context to the job
             $job['belongsToUser'] = true;
             $job['detectedUser'] = $username;
+            $job['isActive'] = $isActive;
             $userJobs[] = ['data' => $job];
         }
     }
@@ -78,8 +88,10 @@ try {
     echo json_encode([
         'valid' => true,
         'totalJobs' => count($allJobs),
+        'activeJobs' => count($activeJobs),
         'userJobs' => count($userJobs),
         'jobs' => $userJobs,
+        'allJobs' => $activeJobs, // Only active jobs from all users
         'username' => $username,
         'success' => true
     ]);
