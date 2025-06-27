@@ -1302,3 +1302,208 @@ body {
     border-color: #4b5563;
   }
 }
+/* Add these styles to your main.css file */
+
+/* Queue position indicators */
+.queue-position-indicator {
+  background: linear-gradient(135deg, var(--warning-light), rgba(217, 119, 6, 0.1));
+  border: 1px solid var(--warning-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  animation: queuePulse 3s ease-in-out infinite;
+}
+
+.queue-processing-indicator {
+  background: linear-gradient(135deg, var(--success-light), rgba(5, 150, 105, 0.1));
+  border: 1px solid var(--success-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  animation: processingPulse 2s ease-in-out infinite;
+}
+
+@keyframes queuePulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+  }
+}
+
+@keyframes processingPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(5, 150, 105, 0);
+  }
+}
+
+/* Base Queue Stats Styles */
+.queue-stats {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  margin-left: var(--space-4);
+}
+
+.queue-stats .stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-tertiary);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.queue-stats .stat-item span:first-child {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.queue-stats .stat-item span:last-child {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Color coding for different counters */
+#myJobsCount {
+  color: var(--primary-color) !important;
+}
+
+#totalQueueCount {
+  color: var(--warning-color) !important;
+}
+
+#processingCount {
+  color: var(--success-color) !important;
+}
+
+/* Enhanced hover effects */
+.queue-stats .stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.queue-stats .stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+  border-radius: 1px;
+}
+
+/* Queue position indicators */
+.queue-position-indicator {
+  background: linear-gradient(135deg, var(--warning-light), rgba(217, 119, 6, 0.1));
+  border: 1px solid var(--warning-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  animation: queuePulse 3s ease-in-out infinite;
+}
+
+.queue-processing-indicator {
+  background: linear-gradient(135deg, var(--success-light), rgba(5, 150, 105, 0.1));
+  border: 1px solid var(--success-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  animation: processingPulse 2s ease-in-out infinite;
+}
+
+/* Queue pulse animations */
+@keyframes queuePulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+  }
+}
+
+@keyframes processingPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(5, 150, 105, 0);
+  }
+}
+
+/* Processing indicator animations */
+.status-processing .status-indicator {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Queue information tooltips */
+.queue-tooltip {
+  position: relative;
+  cursor: help;
+}
+
+.queue-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-primary);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.queue-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile responsiveness for queue features */
+@media (max-width: 768px) {
+  .queue-stats {
+    margin-left: 0;
+    margin-top: var(--space-2);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .queue-stats .stat-item {
+    flex: 1;
+    min-width: 80px;
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+  
+  .queue-position-indicator,
+  .queue-processing-indicator {
+    padding: var(--space-2);
+  }
+  
+  .queue-position-indicator div,
+  .queue-processing-indicator div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-1);
+  }
+}
