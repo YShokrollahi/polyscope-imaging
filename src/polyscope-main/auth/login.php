@@ -132,7 +132,7 @@ session_set_cookie_params([
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <title>Login - Polyscope</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -142,121 +142,626 @@ session_set_cookie_params([
     <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
     
     <style nonce="<?php echo htmlspecialchars($nonce); ?>">
+        /* Modern variables matching main app */
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #dbeafe;
+            --success-color: #059669;
+            --error-color: #dc2626;
+            --error-light: #fee2e2;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-color: #e2e8f0;
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
         }
-        .navbar {
+
+        /* Subtle animated background pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(100,116,139,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            animation: float 30s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { opacity: 0.3; transform: translateY(0px); }
+            50% { opacity: 0.5; transform: translateY(-10px); }
+        }
+
+        /* Modern header matching main app */
+        .app-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+            color: white;
+            padding: var(--space-6) 0;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header-content {
             display: flex;
             align-items: center;
-            background: linear-gradient(to right, #007bff, #6699ff);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            padding: 10px;
-            overflow: hidden;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
         }
-        .navbar img {
-            height: 50px;
-            margin-right: 20px;
-        }
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+
+        .app-title {
             display: flex;
             align-items: center;
-            margin-right: auto;
+            gap: var(--space-4);
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
         }
-        .navbar ul li {
-            margin-left: 20px;
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .navbar ul li a {
+
+        .logo-image {
+            height: 48px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .app-title-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .app-title-main {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .app-title-sub {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .header-nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.1);
         }
-        .navbar ul li a:hover {
-            text-decoration: underline;
+
+        .header-nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
         }
-        .footer {
-            position: absolute;
-            bottom: 20px;
+
+        /* Modern login container */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+            padding: var(--space-6);
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
             width: 100%;
-            text-align: center;
-            font-size: 14px;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+            position: relative;
         }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: conic-gradient(from 0deg, 
+                var(--primary-color), 
+                #7c3aed, 
+                var(--success-color), 
+                var(--primary-color));
+            border-radius: calc(var(--border-radius) + 2px);
+            z-index: -1;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .login-image {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .feature-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 400px;
+        }
+
+        .feature-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            opacity: 0;
+            animation: typeIn 1s ease-out 0.5s forwards;
+        }
+
+        .feature-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .typing-line {
+            opacity: 0;
+            border-right: 2px solid var(--primary-color);
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .typing-line.bold {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .typing-line.italic {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .typing-line:nth-child(1) { animation: typewriter 1s steps(25) 1.5s forwards, blink 0.5s step-end 2.5s forwards; }
+        .typing-line:nth-child(2) { animation: typewriter 1s steps(20) 2.8s forwards, blink 0.5s step-end 3.8s forwards; }
+        .typing-line:nth-child(3) { animation: typewriter 1s steps(18) 4.1s forwards, blink 0.5s step-end 5.1s forwards; }
+        .typing-line:nth-child(4) { animation: typewriter 1.2s steps(35) 5.4s forwards, blink 0.5s step-end 6.6s forwards; }
+
+        @keyframes typeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes typewriter {
+            to { 
+                opacity: 1;
+                width: 100%; 
+            }
+        }
+
+        @keyframes blink {
+            to { border-right: none; }
+        }
+
+        .feature-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 7s forwards;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color), #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .feature-icon:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-icon:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-icon:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+
+        .lab-credit {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 7.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .login-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-sm);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-form-container {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Error message styling */
+        .error-message {
+            background: var(--error-light);
+            color: var(--error-color);
+            padding: 0.75rem 1rem;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid #fecaca;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        /* Modern form inputs */
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .form-input:focus + .input-icon {
+            color: var(--primary-color);
+        }
+
         .password-requirements {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            padding-left: 0.25rem;
+        }
+
+        /* Modern button */
+        .login-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-hover), #1e40af);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        /* Form links */
+        .form-links {
+            text-align: center;
+        }
+
+        .form-link {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .form-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .form-link a:hover {
+            color: var(--primary-hover);
+            text-decoration: none;
+        }
+
+        .signup-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .signup-link:hover {
+            color: var(--primary-hover);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--space-4);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .header-nav {
+                gap: 1rem;
+            }
+
+            .login-card {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+            }
+
+            .login-image {
+                display: none;
+            }
+
+            .login-form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .app-title {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 1rem;
+            }
+
+            .login-form-container {
+                padding: 1.5rem 1rem;
+            }
+
+            .login-title {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <img src="images/logo.png" alt="Logo">
-        <ul>
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/docs/index.html">Documentation</a></li>
-        </ul>
-    </div>
-
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
-                <div class="login100-pic js-tilt" data-tilt>
-                    <img src="images/img-01.png" alt="IMG">
+    <!-- Modern Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="app-title">
+                <div class="app-logo">
+                    <img src="images/logo.png" alt="Polyscope Logo" class="logo-image">
                 </div>
+                <div class="app-title-text">
+                    <div class="app-title-main">Polyscope</div>
+                    <div class="app-title-sub">Pathology Image Processing Platform</div>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="/index.php">🏠 Home</a>
+                <a href="/docs/index.html">📚 Documentation</a>
+            </nav>
+        </div>
+    </header>
 
-                <form class="login100-form validate-form" method="POST" action="login.php">
-                    <span class="login100-form-title">
-                        Welcome to Polyscope
-                    </span>
+    <!-- Main Login Content -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-image">
+                <div class="feature-text">
+                    <h2>Transform Medical Research</h2>
+                    <div>
+                        <div class="typing-line bold">Advanced Image Visualization</div>
+                        <div class="typing-line">Seamless Data Sharing</div>
+                        <div class="typing-line">AI Model Deployment</div>
+                        <div class="typing-line italic">Revolutionizing Medical Image Research</div>
+                    </div>
+                    <div class="feature-icons">
+                        <div class="feature-icon">🔬</div>
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-icon">🚀</div>
+                    </div>
+                    <div class="lab-credit">
+                        Developed by Yinyin Yuan Lab © 2024
+                    </div>
+                </div>
+            </div>
 
-                    <?php if (!empty($error)): ?>
-                        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
-                    <?php endif; ?>
+            <div class="login-form-container">
+                <h1 class="login-title">Welcome Back</h1>
+                <p class="login-subtitle">Sign in to your Polyscope account</p>
 
-                    <div class="wrap-input100 validate-input" data-validate="Valid username is required: abc">
-                        <input class="input100" type="text" name="username" placeholder="Username" required>
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                        </span>
+                <?php if (!empty($error)): ?>
+                    <div class="error-message">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endif; ?>
+
+                <form method="POST" action="login.php">
+                    <div class="form-group">
+                        <input class="form-input" type="text" name="username" placeholder="Username" required>
+                        <i class="fa fa-user input-icon" aria-hidden="true"></i>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password" required 
+                    <div class="form-group">
+                        <input class="form-input" type="password" name="password" placeholder="Password" required 
                                pattern=".{8,}" title="Password must be at least 8 characters long">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>
+                        <i class="fa fa-lock input-icon" aria-hidden="true"></i>
                         <div class="password-requirements">
                             Password must be at least 8 characters long
                         </div>
                     </div>
 
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
+                    <button type="submit" class="login-button">
+                        Sign In
+                    </button>
 
-                    <div class="text-center p-t-12">
-                        <span class="txt1">
-                            Forgot
-                        </span>
-                        <a class="txt2" href="recovery.php">
-                            Username / Password?
-                        </a>
-                    </div>
-
-                    <div class="text-center p-t-136">
-                        <a class="txt2" href="signup.php">
-                            Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    <div class="form-links">
+                        <a href="signup.php" class="signup-link">
+                            Create your Account <i class="fa fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
                 </form>
@@ -264,22 +769,21 @@ session_set_cookie_params([
         </div>
     </div>
 
-    <div class="footer">
-        Developed by Yinyin Yuan Lab @ 2024
-    </div>
+    <footer class="footer">
+        Developed by Yinyin Yuan Lab © 2024
+    </footer>
 
-    <!-- External scripts with nonce -->
+    <!-- Scripts -->
     <script nonce="<?php echo htmlspecialchars($nonce); ?>" src="vendor/jquery/jquery-3.2.1.min.js"></script>
     <script nonce="<?php echo htmlspecialchars($nonce); ?>" src="vendor/bootstrap/js/popper.js"></script>
     <script nonce="<?php echo htmlspecialchars($nonce); ?>" src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script nonce="<?php echo htmlspecialchars($nonce); ?>" src="vendor/select2/select2.min.js"></script>
     <script nonce="<?php echo htmlspecialchars($nonce); ?>" src="vendor/tilt/tilt.jquery.min.js"></script>
     
-    <!-- Inline script with nonce -->
     <script nonce="<?php echo htmlspecialchars($nonce); ?>">
         $('.js-tilt').tilt({
             scale: 1.1
-        })
+        });
     </script>
     
     <script nonce="<?php echo htmlspecialchars($nonce); ?>" src="js/main.js"></script>

@@ -1,11 +1,11 @@
 <?php
 /*
-	Desc: Prepare and start the polyzooming process.
+	Desc: Prepare and start the polyzooming process - ENHANCED for Hot Storage
 	Author:	Sebastian Schmittner
 	Date: - 
-	Last Author: Sebastian Schmittner
-	Last Date: 2015.01.30 15:04:15 (+01:00)
-	Version: 0.0.3
+	Last Author: Enhanced for Tiered Storage
+	Last Date: 2025.06.23
+	Version: 0.1.0 - HOT STORAGE OPTIMIZATION
 */
 
 require_once __DIR__ . '/lockedFileAccess.php';
@@ -25,7 +25,8 @@ function doPolyzoom() {
 
 function polyzoom( $path, $filename ) {
 	
-	$rootPath = rootPath() . "polyzoomer/";
+	// ENHANCED: Use hot storage for new files
+	$rootPath = polyzoomerHotPath(); // Points to local fast storage
 
 	$output = chdir($rootPath . $path . "/");
 	
@@ -72,6 +73,9 @@ function polyzoom( $path, $filename ) {
 	$loutput = shell_exec($executestring);
 	$output = $output . " - " . $loutput;
 	
+	// ENHANCED: Log creation in hot storage
+	logTieredStorage("New polyzoomer created in HOT storage: " . $path);
+	
 	return $output . " - " . $rootPath . $path;
 }
 
@@ -113,7 +117,9 @@ function preparePolyzoom() {
 	}
 	
 	$basePathName = "Path" . number_pad($counter, 6) . "_" . date('YmdHi');
-	$pathName = $rootPath . "/polyzoomer/" . $basePathName;
+	
+	// ENHANCED: Create in hot storage for fast processing
+	$pathName = polyzoomerHotPath() . $basePathName;
 	
 	$dirCreated = mkdir( $pathName );
 	
@@ -172,4 +178,3 @@ function log_error($text) {
 }
 
 ?>
-

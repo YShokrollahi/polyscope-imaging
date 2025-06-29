@@ -1,11 +1,11 @@
 <?php
 /*
-	Desc: Functions to create and send an email.
+	Desc: Functions to create and send an email - ENHANCED for Tiered Storage
 	Author:	Sebastian Schmittner
 	Date: - 
-	Last Author: Sebastian Schmittner
-	Last Date: 2015.08.03 21:53:13 (+02:00)
-	Version: 0.2.6
+	Last Author: Enhanced for Tiered Storage
+	Last Date: 2025.06.23
+	Version: 0.3.0 - TIERED STORAGE SUPPORT
 */
 
 require_once __DIR__ . '/polyzoomerGlobals.php';
@@ -60,19 +60,39 @@ function createSymbolLink($path, $cleanmail, $email) {
 		file_put_contents($emailFile, $email);
 	}
 	
-	$indexPath = rootPath() . "polyzoomer/" . $path . "/page/indexes";
+	// ENHANCED: Smart path resolution for tiered storage
+	$resolvedPath = resolvePolyzoomerPath($path);
 	
-	if(!file_exists($indexPath)) {
+	if ($resolvedPath['path'] === null) {
 		$data = array(
-			'Msg' => 'The indexpath is missing!',
+			'Msg' => 'The polyzoomer path is missing in both hot and cold storage!',
+			'Path' => $path,
+			'HotPath' => polyzoomerHotPath() . $path,
+			'ColdPath' => polyzoomerColdPath() . $path,
 			'Stack' => getStackTrace(),
 			'Vars' => get_defined_vars()
 		);
 		
+		logTieredStorage("ERROR: Polyzoomer path not found: " . $path);
 		throw new Exception(json_encode($data));
 	}
 	
-	$referenceEmail = rootPath() . "polyzoomer/" . $path . "/email.txt";
+	$indexPath = $resolvedPath['path'] . "/page/indexes";
+	
+	if(!file_exists($indexPath)) {
+		$data = array(
+			'Msg' => 'The indexpath is missing!',
+			'IndexPath' => $indexPath,
+			'ResolvedLocation' => $resolvedPath['location'],
+			'Stack' => getStackTrace(),
+			'Vars' => get_defined_vars()
+		);
+		
+		logTieredStorage("ERROR: Index path missing: " . $indexPath . " (location: " . $resolvedPath['location'] . ")");
+		throw new Exception(json_encode($data));
+	}
+	
+	$referenceEmail = $resolvedPath['path'] . "/email.txt";
 	if(!file_exists($referenceEmail)) {
 		file_put_contents($referenceEmail, $email);
 	}
@@ -81,10 +101,13 @@ function createSymbolLink($path, $cleanmail, $email) {
 	$indexPath = executeSync($indexPath);
 	$indexPath = $indexPath[0];
 	
-	$zoomPath = '"' . rootPath() . 'polyzoomer/' . $path . '"';
+	// ENHANCED: Create symlink to the resolved path (hot or cold)
+	$zoomPath = '"' . $resolvedPath['path'] . '"';
 	if(!file_exists($emailDirectory . '/' . $path)) {
 		$symbolLinkCommand = 'ln -s ' . $zoomPath . ' "' . $emailDirectory . '"';
 		executeSync($symbolLinkCommand);
+		
+		logTieredStorage("Created symlink for user {$cleanmail}: {$path} -> {$resolvedPath['location']} storage");
 	}
 	else {
 		doLog('[WARNING] Path already exists [' . $emailDirectory . '/' . $path . ']', logfile());
@@ -92,14 +115,21 @@ function createSymbolLink($path, $cleanmail, $email) {
 	
 	$fullIndexPath = "/customers/" . $cleanmail . "/" . $path . "/page/" . $indexPath;
 
-	appendZoomToUserCache($cleanmail, $path, $fullIndexPath);
+	appendZoomToUserCache($cleanmail, $path, $fullIndexPath, $resolvedPath);
 	
 	return $externalLink . $fullIndexPath;
 	
 }
 
 function getLogfileName( $path ) {
-	return '"' . rootPath() . 'polyzoomer/' . $path . '/email.log"';
+	// ENHANCED: Smart path resolution for log files
+	$resolvedPath = resolvePolyzoomerPath($path);
+	if ($resolvedPath['path']) {
+		return '"' . $resolvedPath['path'] . '/email.log"';
+	} else {
+		// Fallback to hot storage path for new files
+		return '"' . polyzoomerHotPath() . $path . '/email.log"';
+	}
 }
 
 function createAndSendKeyEmail($email, $userkey) {
@@ -144,9 +174,21 @@ function getOrSetUserkey( $cleanmail ) {
 	);
 }
 
-function appendZoomToUserCache($cleanmail, $pathName, $fullIndexPath) {
+function appendZoomToUserCache($cleanmail, $pathName, $fullIndexPath, $resolvedPath = null) {
 	
-	$startDir = rootPath() . dirname($fullIndexPath);
+	// ENHANCED: Use resolved path for tiered storage
+	if ($resolvedPath === null) {
+		$resolvedPath = resolvePolyzoomerPath($pathName);
+	}
+	
+	if ($resolvedPath['path'] === null) {
+		logTieredStorage("WARNING: Cannot add to cache, path not found: " . $pathName);
+		return;
+	}
+	
+	$startDir = $resolvedPath['path'] . dirname($fullIndexPath);
+	// Remove the customer path prefix to get relative path
+	$startDir = str_replace('/customers/' . $cleanmail . '/' . $pathName, '', $startDir);
 	
 	$dzi = getDziFile( $startDir );
 	$thumbnail = getThumbnailImageFile( $startDir );
@@ -162,13 +204,16 @@ function appendZoomToUserCache($cleanmail, $pathName, $fullIndexPath) {
 		$date = new DateTime();
 	}
 
-	$newProject = new Project($pathName, $fullIndexPath, $thumbnail, $date, $dzi);
+	// ENHANCED: Create project with storage location metadata
+	$newProject = new ProjectTiered($pathName, $fullIndexPath, $thumbnail, $date, $dzi, $resolvedPath['location']);
 	$newLine = json_encode( $newProject ) . PHP_EOL;
 	
 	$cacheFile = new TaskFileManipulator( cacheFile($cleanmail) );
 	$cacheFile->appendLine( $newLine );
         
-        appendZoomToUserFS($cleanmail, $newProject);
+    appendZoomToUserFS($cleanmail, $newProject);
+    
+    logTieredStorage("Added to user cache: {$cleanmail} -> {$pathName} (location: {$resolvedPath['location']})");
 }
 
 function appendZoomToUserFS($cleanmail, $project) {
@@ -208,6 +253,11 @@ function projectToItem($project){
         'creationDate' => $project->fileDate->date,
         'type' => 'FILE'
     );
+    
+    // ENHANCED: Add storage location metadata
+    if (isset($project->storageLocation)) {
+        $item['storageLocation'] = $project->storageLocation;
+    }
     
     return $item;
 }
@@ -256,6 +306,19 @@ function getArguments() {
 		"email" => $email,
 		"cleanmail" => $cleanmail
 	);
+}
+
+// =============================================================================
+// ENHANCED PROJECT CLASS for Tiered Storage
+// =============================================================================
+
+class ProjectTiered extends Project {
+    public $storageLocation; // 'hot' or 'cold'
+    
+    public function __construct( $name, $indexPath, $imagePath, $date, $dzi, $storageLocation = 'hot' ) {
+        parent::__construct($name, $indexPath, $imagePath, $date, $dzi);
+        $this->storageLocation = $storageLocation;
+    }
 }
 
 ?>

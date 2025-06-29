@@ -4,33 +4,20 @@
 # Date: -
 # LastAuthor: Sebastian Schmittner
 # LastDate: 2016.01.21 10:25:29 (+01:00)
-# Version: 0.0.4
+# Version: 2.0.1 - Fixed template placeholder processing
 
 # Requirements:  Directories must be labeled according to the following scheme
 #		 PATIENTIDPATIENTNUMBER_CHANNELNAME_ARBITRARYSTRING
 #	         e.g. P02_Cycline_arbitrarytext
-#
-# Change log
-# 0.1 Initial version
-# 0.2 Visualization works (except sync)
-# 0.3 Check hashtable and livesync for presence of *processed* 
-# 0.6 Move files instead of copying (DO_FILES switch)
-# 0.7 -maxdepth 2 added to ZOOMFILES - speed increase * 100
-# 0.8 Adaption of paths to fit to the polyzoomer server
-# 0.9 Add the copying of the dependencies from /templates/*
-# 1.0 Remove tiling
-# 1.1 Remove deepzoom    
-# 1.2 Added a forced overwrite (FORCE switch)
 
 DO_FILES=1 
 DO_WEBSITE=1
 PATH_TO_INSTALL_PACKAGE="/var/www/pz_scripts/polyzoomer/"
 WEBDIRECTORY="page"
-EXCLUDEFILES='-and ! -name *blocks* -and ! -name *template* -and ! -name . -and ! -wholename *${WEBDIRECTORY}* -and ! -name css -and ! -name static -and ! -name images -and ! -name blocks'
+EXCLUDEFILES='-and ! -name *blocks* -and ! -name *template* -and ! -name . -and ! -wholename *${WEBDIRECTORY}* -and ! -name css -and ! -name static -and ! -name images -and ! -name blocks -and ! -name js'
 LINKSUFFIX="processed" # e.g. P02_HEprocessed  will be sync'ed with P02_HE
 
 ANNOTATIONS_LINK=""
-
 
 FORCEREPLACE=0
 if [[ ! -z "${1// }" ]]; then
@@ -39,6 +26,7 @@ if [[ ! -z "${1// }" ]]; then
 		echo "[WARN]: Forced update!"
 	fi
 fi
+
 ##################################################
 
 function checkIfProcessedFileAvailable {
@@ -63,6 +51,10 @@ if [ $DO_FILES -eq "1" ]; then
 	for f in $FILES
     do  
       PAT_ID=`echo ${f} | egrep -i -o '[a-z]+[0-9]+' | head -1` # e.g. P10_CyclineA_sadasdasd  #added 
+      # If PAT_ID is empty, extract it from the directory name directly
+      if [[ -z "$PAT_ID" ]]; then
+          PAT_ID=`echo ${f} | cut -d'_' -f1 | sed 's|^\./||'`
+      fi
       echo $PAT_ID
 	  #Get all image of the current patient
       ZOOMFILES=`find . -maxdepth 2 -type f -wholename "*${PAT_ID}*dzi" ${EXCLUDEFILES}`
@@ -86,8 +78,6 @@ if [ $DO_FILES -eq "1" ]; then
     ANNOTATIONS_PATH="./${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
     ANNOTATIONS_LINK="./${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
 
-
-
       done
     done
   fi
@@ -109,28 +99,61 @@ if [ $DO_WEBSITE -eq "1" ]; then
 	
     CHANNELS=`find ${f} -maxdepth 1 -type d -and -name "_*" ${EXCLUDEFILES}`    
     PAT_ID=`echo ${f} | egrep -i -o '[a-z]+[0-9]+' | head -1` # e.g. P10
+    # If PAT_ID is empty, extract it from the directory name directly
+    if [[ -z "$PAT_ID" ]]; then
+        PAT_ID=`echo ${f} | cut -d'_' -f1 | sed 's|^\./||'`
+    fi
     PATHTOINDEX="./${PAT_ID}/index.html"
 
-echo "testing permision"
-echo "${PATHTOINDEX}"
+    echo "testing permission"
+    echo "${PATHTOINDEX}"
 	echo "./${PAT_ID}/index.html" >> "./indexes"
 	
     cat ./blocks/header.block > ${PATHTOINDEX} #create index file
-    #replace tags
-    #sed -i "s/_PATH_TO_CSS_/..\/css/g" "${PATHTOINDEX}" 
-    #sed -i "s/_PATH_TO_POLYZOOMER_/../g" "${PATHTOINDEX}" 
-    sed "s/_PATH_TO_CSS_/..\/css/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
-    sed "s/_PATH_TO_POLYZOOMER_/../g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    
+    # Process each channel to get the first one for slide info
+    FIRST_CHANNEL=""
+    FIRST_DZI=""
+    SLIDE_INFO=""
+    CHANNEL_NAME=""
+    
     for c in $CHANNELS; do
-
+      if [[ -z "$FIRST_CHANNEL" ]]; then
+        FIRST_CHANNEL=$c
+        #search for DZI files (could be png or jpg)
+        TMPDZI=`find $c -name "*.dzi" -type f -print -quit` 
+        if [[ ! -z "$TMPDZI" ]]; then
+          FIRST_DZI=`basename "$TMPDZI"`
+          SLIDE_INFO="${FIRST_DZI%.dzi}"
+          CHANNEL_ID=`echo ${c} | egrep -i -o '*_[a-z]+[0-9]*' | head -1`  #e.g. _CyclineA
+          # If CHANNEL_ID is empty, extract it from the directory name directly  
+          if [[ -z "$CHANNEL_ID" ]]; then
+              CHANNEL_ID=`echo ${c} | cut -d'_' -f2`
+              CHANNEL_ID="_${CHANNEL_ID}"
+          fi
+          CHANNEL_NAME=${CHANNEL_ID#_}  # Remove leading underscore
+          # Set annotations link for the first channel
+          BAREFILE=$(basename "${TMPDZI}")
+          ANNOTATIONS_LINK="./${CHANNEL_ID}/${BAREFILE%.dzi}_files/annotations.txt"
+        fi
+        break
+      fi
+    done
+    
+    for c in $CHANNELS; do
       #search for DZI files (could be png or jpg)
-	  TMPDZI=`find . -name "*.dzi" -type f -print -quit` 
+	  TMPDZI=`find $c -name "*.dzi" -type f -print -quit` 
 	  DZINAME=`basename "$TMPDZI"`   
 		
 	  echo $TMPDZI
 	  echo $DZINAME
 	  
 	  CHANNEL_ID=`echo ${c} | egrep -i -o '*_[a-z]+[0-9]*' | head -1`  #e.g. _CyclineA
+    # If CHANNEL_ID is empty, extract it from the directory name directly  
+    if [[ -z "$CHANNEL_ID" ]]; then
+        CHANNEL_ID=`echo ${c} | cut -d'_' -f2`
+        CHANNEL_ID="_${CHANNEL_ID}"
+    fi
       
       #check if current image has a corresponding processed one
       HASPROCESSED=$(checkIfProcessedFileAvailable ${PAT_ID}${CHANNEL_ID})
@@ -147,38 +170,27 @@ echo "${PATHTOINDEX}"
 		KEYUNKNOWN="UNKNOWNPAT0001_UNKNOWNCHANNEL0001_"
 		VIEWERNAME=${VIEWERNAME/$NDPIKEY}
 		VIEWERNAME=${VIEWERNAME/$KEYUNKNOWN}
-		
-		# read: get the _ positions, get the numbers infront of the : and get the second in the list
-		#SECONDUNDERSCORE=`echo $VIEWERNAME | grep -b -o '_' | cut -d: -f1 | sed '2!d;q'`
-
-		#if [[ $VIEWERNAME == *"UNKNOWN"* ]]
-		#then
-			# get the file name part
-		#	VIEWERNAME=${VIEWERNAME:$SECONDUNDERSCORE + 1}
-		#else
-			# get the detected patient and channel id
-		#	VIEWERNAME=${VIEWERNAME:0:$SECONDUNDERSCORE}
-		#fi
 	
 	  #write to tmp html file that is concated later to the body of the file
       cat ./blocks/viewer.block >> "_tmpviewer"
-      ##
-      #not stored in header but pre-created to concat to body afterwards
-      ##
+      
       PATHTOVIEWERIMAGE="..\/images\/"
       PATHTODZI="/${WEBDIRECTORY}/${PAT_ID}/${CHANNEL_ID}"
-      #replace tags
-      #sed -i "s/_CONTENTID_/${PAT_ID}${CHANNEL_ID}/g" "_tmpviewer"     
-      #sed -i "s/_REL_PATH_TO_VIEWERIMAGES_/${PATHTOVIEWERIMAGE}/g" "_tmpviewer"
-      #sed -i "s|_REL_PATH_TO_DZI_|./${CHANNEL_ID}/${DZINAME}|g" "_tmpviewer"
-      #sed -i "s/_VIEWERNAME_/${VIEWERNAME}/g" "_tmpviewer"
-      #sed -i "s/_VIEWER_VARNAME_/${PAT_ID}${CHANNEL_ID}/g" "_tmpviewer"  #important for hash table later    
-
+      
+      # CRITICAL FIX: Replace all placeholders in the correct order and format
+      # First, set up the viewer variable name
+      VIEWER_VAR_NAME="${PAT_ID}${CHANNEL_ID}"
+      
+      #replace tags in viewer block - FIXED PLACEHOLDER PATTERNS
       sed "s/_CONTENTID_/${PAT_ID}${CHANNEL_ID}/g" _tmpviewer > tmp; cat tmp > _tmpviewer 
       sed "s/_REL_PATH_TO_VIEWERIMAGES_/${PATHTOVIEWERIMAGE}/g" _tmpviewer > tmp; cat tmp > _tmpviewer
       sed "s+_REL_PATH_TO_DZI_+./${CHANNEL_ID}/${DZINAME}+g" _tmpviewer > tmp; cat tmp > _tmpviewer
       sed "s/_VIEWERNAME_/${VIEWERNAME}/g" _tmpviewer > tmp; cat tmp > _tmpviewer
-      sed "s/_VIEWER_VARNAME_/${PAT_ID}${CHANNEL_ID}/g" _tmpviewer > tmp; cat tmp > _tmpviewer  
+      
+      # CRITICAL FIX: Handle both placeholder formats for viewer variable name
+      sed "s/_VIEWER_VARNAME_/${VIEWER_VAR_NAME}/g" _tmpviewer > tmp; cat tmp > _tmpviewer  
+      sed "s/\*VIEWER\*VARNAME_/${VIEWER_VAR_NAME}/g" _tmpviewer > tmp; cat tmp > _tmpviewer
+      
       let VIEWERCOUNTER=VIEWERCOUNTER+1      
       
 	  ##
@@ -186,62 +198,59 @@ echo "${PATHTOINDEX}"
       ##
       if [ $HASPROCESSED -eq "1" ]; then      
       	      echo "ViewerHash['_VIEWERID_'] = _VIEWERVARNAME_;" >> _tmpbody2
-      	      #replace tags
-      	      #sed -i "s/_VIEWERID_/${PAT_ID}${CHANNEL_ID}/g" "_tmpbody2"     
-      	      #sed -i "s/_VIEWERVARNAME_/${PAT_ID}${CHANNEL_ID}${LINKSUFFIX}/g" "_tmpbody2"
-              sed "s/_VIEWERID_/${PAT_ID}${CHANNEL_ID}/g" _tmpbody2 > tmp; cat tmp > _tmpbody2
+      	      sed "s/_VIEWERID_/${PAT_ID}${CHANNEL_ID}/g" _tmpbody2 > tmp; cat tmp > _tmpbody2
       	      sed "s/_VIEWERVARNAME_/${PAT_ID}${CHANNEL_ID}${LINKSUFFIX}/g" _tmpbody2 > tmp; cat tmp > _tmpbody2
       else
       	      echo "//ViewerHash['_VIEWERID_'] = _VIEWERVARNAME_;" >> _tmpbody2
-      	      #replace tags
-      	      #sed -i "s/_VIEWERID_/${PAT_ID}${CHANNEL_ID}/g" "_tmpbody2"     
-      	      #sed -i "s/_VIEWERVARNAME_/${PAT_ID}${CHANNEL_ID}${LINKSUFFIX}/g" "_tmpbody2"
               sed "s/_VIEWERID_/${PAT_ID}${CHANNEL_ID}/g" _tmpbody2 > tmp; cat tmp > _tmpbody2    
       	      sed "s/_VIEWERVARNAME_/${PAT_ID}${CHANNEL_ID}${LINKSUFFIX}/g" _tmpbody2 > tmp; cat tmp > _tmpbody2       	      
       fi
-      	      
 
     done
-  #close header
-
-  cat ./blocks/body1.block >> "${PATHTOINDEX}"
-
-  # Process the body1.block file to insert the annotations link
-  # sed "s|<!--ANNOTATIONS_LINK-->|<a id='downloadAnnotationsBtn' href='${ANNOTATIONS_LINK}' download>Download Annotations</a>|g" ./blocks/body1.block > tmp_body1.block
-
-  # Concatenate the modified body1.block to the HTML file
-  cat tmp_body1.block >> "${PATHTOINDEX}"
-
-  # Optionally, remove the temporary file after use
-  rm tmp_body1.block
-
-
+    
+    #replace tags in header/body1 - ENSURE ALL PLACEHOLDERS ARE REPLACED
+    sed "s/_PATH_TO_CSS_/..\/css/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    sed "s/_PATH_TO_POLYZOOMER_/../g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    sed "s/_SLIDE_INFO_/${SLIDE_INFO}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    sed "s/_CHANNEL_NAME_/${CHANNEL_NAME}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    sed "s/_PATIENT_ID_/${PAT_ID}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    sed "s+_ANNOTATIONS_LINK_+${ANNOTATIONS_LINK}+g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    
+    # ADDITIONAL FIX: Replace any remaining placeholder patterns that might exist
+    sed "s/_CHANNEL_ID_/${CHANNEL_ID}/g" "${PATHTOINDEX}" > tmp; cat tmp > "${PATHTOINDEX}"
+    
+    # Add body1 content
+    cat ./blocks/body1.block >> "${PATHTOINDEX}"
 
   #add viewer scripts
   cat ./_tmpviewer >> "${PATHTOINDEX}"
-
-  #add last part (hash)
-  echo "</tr>" >> "${PATHTOINDEX}"
-  echo "</table>" >> "${PATHTOINDEX}"
-  echo '<div id="annotationsSection" style="border: 2px solid;padding: 10px;margin: 1px 10px 3px 10px;">' >> "${PATHTOINDEX}"
-  echo '<h2 class="buttonStyle"> <i class="fas fa-sticky-note"></i>   Annotations</h2>' >> "${PATHTOINDEX}"
-  echo '<div id="annotationSummaryDisplay" style="margin: 20px; font-size: 16px"></div>' >> "${PATHTOINDEX}"
-  echo "<a id='downloadAnnotationsBtn' href='${ANNOTATIONS_LINK}' download='Annotations_${PAT_ID}${CHANNEL_ID}.txt'><i class='fas fa-download'></i>   Download</a>" >> "${PATHTOINDEX}"
-  echo "</div>" >> "${PATHTOINDEX}"  # This closes the annotationsSection div
-  echo "</div>" >> "${PATHTOINDEX}"  # This adds the closing div tag
-  echo "<script type="text/javascript">" >> "${PATHTOINDEX}"
-  echo "var ViewerHash = new Object();"  >> "${PATHTOINDEX}"
+  
+  #add hash table
   cat ./_tmpbody2 >> "${PATHTOINDEX}" 
   echo "</script>" >> "${PATHTOINDEX}"
 
-# Set the JavaScript variable with the annotations link
+  # Set the JavaScript variable with the annotations link
   echo "<script type=\"text/javascript\">var annotationsPath = '${ANNOTATIONS_LINK}';</script>" >> "${PATHTOINDEX}"
+  
+  # CRITICAL FIX: Add JavaScript configuration object for main.js
+  echo "<script type=\"text/javascript\">" >> "${PATHTOINDEX}"
+  echo "// Configuration for Enhanced Annotation Manager and main.js" >> "${PATHTOINDEX}"
+  echo "window.polyscopeConfig = {" >> "${PATHTOINDEX}"
+  echo "  annotationsPath: '${ANNOTATIONS_LINK}'," >> "${PATHTOINDEX}"
+  echo "  patientId: '${PAT_ID}'," >> "${PATHTOINDEX}"
+  echo "  channelId: '${CHANNEL_ID}'," >> "${PATHTOINDEX}"
+  echo "  contentId: '${PAT_ID}${CHANNEL_ID}'," >> "${PATHTOINDEX}"
+  echo "  viewerVarName: '${PAT_ID}${CHANNEL_ID}'" >> "${PATHTOINDEX}"
+  echo "};" >> "${PATHTOINDEX}"
+  echo "</script>" >> "${PATHTOINDEX}"
 
   # Link the JavaScript file
   echo "<script type=\"text/javascript\" src=\"../enhancedAnnotationManager.js\"></script>" >> "${PATHTOINDEX}"
   echo "</body>" >> "${PATHTOINDEX}"
+  echo "</html>" >> "${PATHTOINDEX}"
+  
+  # Clean up temp files
+  rm -f _tmpviewer _tmpbody2 tmp
+
   done
-
 fi
-
-# test
