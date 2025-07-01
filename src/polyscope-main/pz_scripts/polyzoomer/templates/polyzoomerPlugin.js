@@ -1929,6 +1929,7 @@ $.AnnotationFile.prototype = {
 			input.style.borderRadius = "6px";
 			input.style.padding = "8px";
 			input.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
+			input.style.display = "none"; // IMPORTANT: Hide by default
 			
 			document.getElementById(_SELF.viewer.id).appendChild(input);
 			
@@ -1937,6 +1938,7 @@ $.AnnotationFile.prototype = {
 				_SELF.currentY = event.pageY;
 			});
 			
+			// Initialize colorpicker but keep it hidden
 			$('#' + _SELF.colorPickerName).addColorPicker({
 				clickCallback: function(c) {
 					c = _SELF.rgbStringToHex(c);
@@ -1964,12 +1966,16 @@ $.AnnotationFile.prototype = {
 				.css("cursor", "pointer")
 				.css("margin", "1px");
 			
-			// Position the color picker properly when shown
-			$('#' + _SELF.colorPickerName).on('show', function() {
-				_SELF.positionColorPicker();
-			});
-			
+			// Force hide immediately after initialization to prevent auto-show
 			$('#' + _SELF.colorPickerName).hide();
+			
+			// Hide color picker when clicking outside
+			$(document).on('click', function(event) {
+				if (!$(event.target).closest('#' + _SELF.colorPickerName).length && 
+					!$(event.target).closest('.annotationColorButton').length) {
+					$('#' + _SELF.colorPickerName).hide();
+				}
+			});
 		},
 		
 		// Add this new function to position the color picker
