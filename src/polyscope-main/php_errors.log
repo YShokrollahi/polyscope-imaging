@@ -6320,3 +6320,53 @@
 [01-Jul-2025 17:09:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
 [01-Jul-2025 17:14:03 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
 [01-Jul-2025 17:14:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:35:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:35:34 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:35:45 UTC] === issueUploadProject.php started ===
+[01-Jul-2025 17:35:45 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png"]
+    [isDir] => false
+)
+
+[01-Jul-2025 18:35:45 Europe/London] Decoded isDir: 
+[01-Jul-2025 18:35:45 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png
+)
+
+[01-Jul-2025 18:35:45 Europe/London] Case: isDir=0, array - calling issueFiles
+[01-Jul-2025 18:35:45 Europe/London] Number of files: 1
+[01-Jul-2025 18:35:45 Europe/London] File 0: /media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png - exists: YES
+[01-Jul-2025 18:35:45 Europe/London] Starting issueFiles at: 2025-07-01 18:35:45
+[01-Jul-2025 18:35:45 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[01-Jul-2025 18:35:45 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[01-Jul-2025 18:35:45 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[01-Jul-2025 18:35:45 Europe/London] Completed issueFiles at: 2025-07-01 18:35:45
+[01-Jul-2025 18:35:45 Europe/London] issueFiles took: 0 seconds
+[01-Jul-2025 18:35:45 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;0984B414-B726-4EE1-9F88-9C1F4FFF97A6;1;checksum;/media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png;/var/www/uploads/79441753_Screenshot_2025-06-02_at_11.52.49___AM.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 0984B414-B726-4EE1-9F88-9C1F4FFF97A6
+                    [name] => /var/www/uploads/79441753_Screenshot_2025-06-02_at_11.52.49___AM.png
+                    [fileId] => /media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[01-Jul-2025 18:35:45 Europe/London] === issueUploadProject.php completed ===

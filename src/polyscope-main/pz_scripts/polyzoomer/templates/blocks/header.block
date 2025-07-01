@@ -12,7 +12,7 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polyscope Professional - Pathology Viewer</title>
+    <title>Polyscope - Pathology Viewer</title>
     <link rel="icon" type="image/png" href="/LogoPolyzoomer1.0fav.png">
 
 	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/main.css'/>

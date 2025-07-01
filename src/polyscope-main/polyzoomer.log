@@ -2270,3 +2270,10 @@ Please find your results under the following link.
 [2025-07-01 17:49:32] A39355E3-A0DD-4853-A7DE-875D7452C086 changes from [;1;pending;] to [;2;upload;]
 [2025-07-01 17:49:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/54728729_Adenoid_cystic_Carcinoma_image_1.jpg' 'A39355E3-A0DD-4853-A7DE-875D7452C086' '0f99778d132733905c9c482788c5ccc1'
 [2025-07-01 17:49:33] A39355E3-A0DD-4853-A7DE-875D7452C086 changes from [2;upload] to [2;uploading]
+[2025-07-01 18:36:01] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png' 0984B414-B726-4EE1-9F88-9C1F4FFF97A6
+[2025-07-01 18:36:02]  Changed from [;0984B414-B726-4EE1-9F88-9C1F4FFF97A6;1;checksum;] to [;0984B414-B726-4EE1-9F88-9C1F4FFF97A6;1;pending;]
+[2025-07-01 18:36:02] [EXECUTE] [OUTPUT] []
+[2025-07-01 18:36:02] [EXECUTE] [RESULT] 0
+[2025-07-01 18:36:32] 0984B414-B726-4EE1-9F88-9C1F4FFF97A6 changes from [;1;pending;] to [;2;upload;]
+[2025-07-01 18:36:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Screenshot_2025-06-02_at_11.52.49___AM.png' '/var/www/uploads/79441753_Screenshot_2025-06-02_at_11.52.49___AM.png' '0984B414-B726-4EE1-9F88-9C1F4FFF97A6' 'b29fbaa52fb7f451a278e86e54ba1b0b'
+[2025-07-01 18:36:32] 0984B414-B726-4EE1-9F88-9C1F4FFF97A6 changes from [2;upload] to [2;uploading]
