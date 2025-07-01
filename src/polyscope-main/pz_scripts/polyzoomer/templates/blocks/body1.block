@@ -70,6 +70,9 @@ function goBack() {
     </div>
     
     <div class="header-controls">
+        <button class="header-btn" onclick="shareSlide()">
+            <i class="fas fa-share-alt"></i> Share
+        </button>
         <button class="header-btn" onclick="toggleFullscreen()">
             <i class="fas fa-expand"></i> Fullscreen
         </button>

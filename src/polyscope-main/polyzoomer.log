@@ -2251,3 +2251,22 @@ Please find your results under the following link.
 [2025-06-24 21:35:49] [SAMPLE]: yshokrollahi@mdanderson.edu <= Your Polyzoomer analysis is ready.
 Please find your results under the following link.
 /customers/yshokrollahi-mdanderson-org/Path000073_202506242135/page/./MS004/index.html
+[2025-07-01 17:49:02] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' A39355E3-A0DD-4853-A7DE-875D7452C086
+[2025-07-01 17:49:03]  Changed from [;A39355E3-A0DD-4853-A7DE-875D7452C086;1;checksum;] to [;A39355E3-A0DD-4853-A7DE-875D7452C086;1;pending;]
+[2025-07-01 17:49:03] [EXECUTE] [OUTPUT] []
+[2025-07-01 17:49:03] [EXECUTE] [RESULT] 0
+[2025-07-01 17:49:03] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' B3D223C7-8978-43BD-B4C8-3AE358FB9C7A
+[2025-07-01 17:49:03]  Changed from [;B3D223C7-8978-43BD-B4C8-3AE358FB9C7A;1;checksum;] to [;B3D223C7-8978-43BD-B4C8-3AE358FB9C7A;1;pending;]
+[2025-07-01 17:49:03] [EXECUTE] [OUTPUT] []
+[2025-07-01 17:49:03] [EXECUTE] [RESULT] 0
+[2025-07-01 17:49:03] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' A61F2877-F100-4FE5-9EE4-F412389BA7CF
+[2025-07-01 17:49:03]  Changed from [;A61F2877-F100-4FE5-9EE4-F412389BA7CF;1;checksum;] to [;A61F2877-F100-4FE5-9EE4-F412389BA7CF;1;pending;]
+[2025-07-01 17:49:03] [EXECUTE] [OUTPUT] []
+[2025-07-01 17:49:03] [EXECUTE] [RESULT] 0
+[2025-07-01 17:49:03] [EXECUTE] [DEBUG] php /var/www/doChecksum.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' 0E2B88ED-7362-44B3-853D-DB2EE3603719
+[2025-07-01 17:49:04]  Changed from [;0E2B88ED-7362-44B3-853D-DB2EE3603719;1;checksum;] to [;0E2B88ED-7362-44B3-853D-DB2EE3603719;1;pending;]
+[2025-07-01 17:49:04] [EXECUTE] [OUTPUT] []
+[2025-07-01 17:49:04] [EXECUTE] [RESULT] 0
+[2025-07-01 17:49:32] A39355E3-A0DD-4853-A7DE-875D7452C086 changes from [;1;pending;] to [;2;upload;]
+[2025-07-01 17:49:32] [EXECUTE] [DEBUG] php /var/www/uploadProject.php '/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg' '/var/www/uploads/54728729_Adenoid_cystic_Carcinoma_image_1.jpg' 'A39355E3-A0DD-4853-A7DE-875D7452C086' '0f99778d132733905c9c482788c5ccc1'
+[2025-07-01 17:49:33] A39355E3-A0DD-4853-A7DE-875D7452C086 changes from [2;upload] to [2;uploading]

@@ -6145,3 +6145,178 @@
 
 [24-Jun-2025 21:33:45 Europe/London] === issueUploadProject.php completed ===
 [24-Jun-2025 21:35:49 Europe/London] Successfully added job BBE1C6A8-8E66-401A-B2A9-D9F0095E8D16 to customer page for user: yshokrollahi
+[01-Jul-2025 17:48:47 Europe/London] Completed issueFiles at: 2025-07-01 17:48:47
+[01-Jul-2025 17:48:47 Europe/London] issueFiles took: 2 seconds
+[01-Jul-2025 17:48:47 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;A61F2877-F100-4FE5-9EE4-F412389BA7CF;1;checksum;/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg;/var/www/uploads/94015567_Adenoid_cystic_Carcinoma_image_1.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => A61F2877-F100-4FE5-9EE4-F412389BA7CF
+                    [name] => /var/www/uploads/94015567_Adenoid_cystic_Carcinoma_image_1.jpg
+                    [fileId] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[01-Jul-2025 17:48:47 Europe/London] === issueUploadProject.php completed ===
+[01-Jul-2025 17:48:49 Europe/London] Completed issueFiles at: 2025-07-01 17:48:49
+[01-Jul-2025 17:48:49 Europe/London] issueFiles took: 20 seconds
+[01-Jul-2025 17:48:49 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;0E2B88ED-7362-44B3-853D-DB2EE3603719;1;checksum;/media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg;/var/www/uploads/70501977_Adenoid_cystic_Carcinoma_image_1.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 0E2B88ED-7362-44B3-853D-DB2EE3603719
+                    [name] => /var/www/uploads/70501977_Adenoid_cystic_Carcinoma_image_1.jpg
+                    [fileId] => /media/Users/yshokrollahi/Adenoid_cystic_Carcinoma_image_1.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[01-Jul-2025 17:48:49 Europe/London] === issueUploadProject.php completed ===
+[01-Jul-2025 16:52:03 UTC] === issueUploadProject.php started ===
+[01-Jul-2025 16:52:03 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS001S1.png"]
+    [isDir] => false
+)
+
+[01-Jul-2025 17:52:03 Europe/London] Decoded isDir: 
+[01-Jul-2025 17:52:03 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS001S1.png
+)
+
+[01-Jul-2025 17:52:03 Europe/London] Case: isDir=0, array - calling issueFiles
+[01-Jul-2025 17:52:03 Europe/London] Number of files: 1
+[01-Jul-2025 17:52:03 Europe/London] File 0: /media/Users/yshokrollahi/MS001S1.png - exists: YES
+[01-Jul-2025 17:52:03 Europe/London] Starting issueFiles at: 2025-07-01 17:52:03
+[01-Jul-2025 17:52:03 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[01-Jul-2025 17:52:03 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[01-Jul-2025 17:52:03 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[01-Jul-2025 17:52:03 Europe/London] Completed issueFiles at: 2025-07-01 17:52:03
+[01-Jul-2025 17:52:03 Europe/London] issueFiles took: 0 seconds
+[01-Jul-2025 17:52:03 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;792B4308-0464-49EF-8D18-BFB34BF663DF;1;checksum;/media/Users/yshokrollahi/MS001S1.png;/var/www/uploads/19309473_MS001S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 792B4308-0464-49EF-8D18-BFB34BF663DF
+                    [name] => /var/www/uploads/19309473_MS001S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS001S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[01-Jul-2025 17:52:03 Europe/London] === issueUploadProject.php completed ===
+[01-Jul-2025 16:52:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:55:20 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:57:13 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:57:47 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:57:55 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:58:24 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:58:31 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:58:45 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 16:59:00 UTC] === issueUploadProject.php started ===
+[01-Jul-2025 16:59:00 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS001S1.png"]
+    [isDir] => false
+)
+
+[01-Jul-2025 17:59:00 Europe/London] Decoded isDir: 
+[01-Jul-2025 17:59:00 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS001S1.png
+)
+
+[01-Jul-2025 17:59:00 Europe/London] Case: isDir=0, array - calling issueFiles
+[01-Jul-2025 17:59:00 Europe/London] Number of files: 1
+[01-Jul-2025 17:59:00 Europe/London] File 0: /media/Users/yshokrollahi/MS001S1.png - exists: YES
+[01-Jul-2025 17:59:00 Europe/London] Starting issueFiles at: 2025-07-01 17:59:00
+[01-Jul-2025 17:59:00 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[01-Jul-2025 17:59:00 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[01-Jul-2025 17:59:00 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[01-Jul-2025 17:59:00 Europe/London] Completed issueFiles at: 2025-07-01 17:59:00
+[01-Jul-2025 17:59:00 Europe/London] issueFiles took: 0 seconds
+[01-Jul-2025 17:59:00 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;2F57CC80-26CE-4772-8F85-794626902D15;1;checksum;/media/Users/yshokrollahi/MS001S1.png;/var/www/uploads/45854774_MS001S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 2F57CC80-26CE-4772-8F85-794626902D15
+                    [name] => /var/www/uploads/45854774_MS001S1.png
+                    [fileId] => /media/Users/yshokrollahi/MS001S1.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[01-Jul-2025 17:59:00 Europe/London] === issueUploadProject.php completed ===
+[01-Jul-2025 17:00:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:00:51 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:01:00 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:01:48 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:02:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:05:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:05:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:06:29 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:06:41 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:07:55 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:07:59 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:08:44 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:09:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:14:03 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[01-Jul-2025 17:14:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2

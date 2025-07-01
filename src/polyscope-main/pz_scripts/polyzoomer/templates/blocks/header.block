@@ -5,7 +5,7 @@
 *   LastDate: 2014.12.07 10:05:49 (+01:00)
 *   Version: 0.1.1
 *   Version Key: VERSIONKEY
-*   Updated: Medical/Scientific Application Layout
+*   Updated: Medical/Scientific Application Layout with Sharing Feature
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" href="/LogoPolyzoomer1.0fav.png">
 
 	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/main.css'/>
+	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/sharing.css'/>
 	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -31,6 +32,7 @@
     <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/scrollWidth.js"></script>
 	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/main.js"></script>
 	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/channel-manager.js"></script>
+	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/sharing.js"></script>
 
 <script>
     var viewer = null;

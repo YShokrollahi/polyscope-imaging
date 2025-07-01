@@ -41,44 +41,4 @@ var handleResize = function() {
         jQuery('#_CONTENTID_').height(couldHeight + 'px');
     };
 };
-
-function toggleSection(header) {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('i:last-child');
-    
-    if (content.classList.contains('expanded')) {
-        content.classList.remove('expanded');
-        header.classList.remove('active');
-        if (icon) {
-            icon.style.transform = 'rotate(0deg)';
-        }
-    } else {
-        content.classList.add('expanded');
-        header.classList.add('active');
-        if (icon) {
-            icon.style.transform = 'rotate(180deg)';
-        }
-    }
-}
-
-function toggleFullscreen() {
-    console.log('Toggle fullscreen');
-}
-
-function exportImage() {
-    console.log('Export image');
-}
-
-function takeScreenshot() {
-    console.log('Take screenshot');
-}
-
-function goBack() {
-    window.history.back();
-}
 </script>
-    </div>
-</div>
-
-<script type=text/javascript>
-var ViewerHash = new Object();
