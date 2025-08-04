@@ -1,44 +1,101 @@
-<!-- OpenSeadragon Viewer -->
-        <div id="_CONTENTID_" class="openseadragon"></div>
-
-<!-- OpenSeadragon Initialization Script -->
+<div id="_CONTENTID_" class="openseadragon" style="position: relative; width: 100%; height: 500px; overflow: visible;"></div>
 <script type="text/javascript">
+// Viewer for _VIEWERNAME_
 var _VIEWER_VARNAME_ = OpenSeadragon({
     id:              "_CONTENTID_",
     prefixUrl:       "_REL_PATH_TO_VIEWERIMAGES_",
     tileSources:     "_REL_PATH_TO_DZI_",
     preserveViewport: true,
     showRotationControl: true,
-    showNavigator: true
+    showNavigator: true,
+    showScaleControl: true
 });
 
 _VIEWER_VARNAME_.Annotations();
 _VIEWER_VARNAME_.DrawAnnotations(OpenSeadragon.ControlAnchor.BOTTOM_RIGHT);
 
-var tileSource = "_REL_PATH_TO_DZI_";
-var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
-var isNdpi = (tileSource.indexOf(".ndpideepzoom.dzi") != -1); 
+// Make viewer globally accessible immediately
+window._VIEWER_VARNAME_ = _VIEWER_VARNAME_;
 
-var ppm = 1000000 / 0.46;
+// Scale bar configuration - wait for viewer to be ready
+_VIEWER_VARNAME_.addHandler('open', function() {
+    console.log("Adding scalebar for _VIEWER_VARNAME_");
+    
+    // Scale bar configuration
+    var tileSource = "_REL_PATH_TO_DZI_";
+    var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
+    var isNdpi = (tileSource.indexOf(".ndpideepzoom.dzi") != -1); 
+    
+    console.log("File type check - isSvs:", isSvs, "isNdpi:", isNdpi);
+    
+    if(isSvs || isNdpi){
+        var ppm = isSvs ? 2000000 : (1000000 / 0.46);
+        
+        // Use setTimeout to ensure viewer is completely ready
+        setTimeout(function() {
+            try {
+                console.log("Creating scalebar with direct constructor...");
+                
+                // Use the WORKING direct constructor method instead of plugin method
+                var scalebar = new OpenSeadragon.Scalebar({
+                    viewer: _VIEWER_VARNAME_,
+                    minWidth: "100px",
+                    pixelsPerMeter: ppm,
+                    location: OpenSeadragon.ScalebarLocation.BOTTOM_LEFT,
+                    color: "black",
+                    fontColor: "black",
+                    backgroundColor: "rgba(255, 255, 255, 0.8)",
+                    barThickness: 3,
+                    fontSize: "12px"
+                });
+                
+                console.log("Scalebar created successfully:", scalebar);
+                
+                // Store reference for cleanup if needed
+                _VIEWER_VARNAME_._customScalebar = scalebar;
+                
+            } catch(error) {
+                console.error("Error creating scalebar:", error);
+            }
+        }, 300);
+    } else {
+        console.log("File type not supported for scalebar:", tileSource);
+    }
+});
 
-if(isSvs){
-    ppm = 1000000 / 0.50;
-}
-
-if(isSvs || isNdpi){
-    _VIEWER_VARNAME_.scalebar({
-        minWidth: "75px",
-        pixelsPerMeter: ppm,
-        barThickness: 2
-    });
-}
+// Also try adding scalebar on tile-loaded event as backup
+_VIEWER_VARNAME_.addHandler('tile-loaded', function() {
+    // Only add if we don't already have one and viewer is open
+    if (!_VIEWER_VARNAME_._scalebarAdded && _VIEWER_VARNAME_.isOpen()) {
+        console.log("Backup scalebar attempt on tile-loaded");
+        _VIEWER_VARNAME_._scalebarAdded = true;
+        
+        var tileSource = "_REL_PATH_TO_DZI_";
+        var isSvs = (tileSource.indexOf(".svsdeepzoom.dzi") != -1);
+        var isNdpi = (tileSource.indexOf(".ndpideepzoom.dzi") != -1);
+        
+        if(isSvs || isNdpi) {
+            var ppm = isSvs ? 2000000 : (1000000 / 0.46);
+            setTimeout(function() {
+                _VIEWER_VARNAME_.scalebar({
+                    minWidth: "100px",
+                    pixelsPerMeter: ppm,
+                    barThickness: 3,
+                    location: OpenSeadragon.ScalebarLocation.BOTTOM_LEFT,
+                    color: '#000000',
+                    fontColor: '#000000',
+                    backgroundColor: 'rgba(255, 255, 255, 0.85)'
+                });
+            }, 100);
+        }
+    }
+});
 
 var handleResize = function() {
     var height = jQuery('#_CONTENTID_').height();
     var couldHeight = jQuery('td.OSD').height() * 0.9;
-
     if(height == 0) {
         jQuery('#_CONTENTID_').height(couldHeight + 'px');
-    };
+    }
 };
 </script>

@@ -1,307 +1,46 @@
-[2025-06-23 21:26:21] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000037_202506231927 -> hot storage
-[2025-06-23 21:26:22] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000037_202506231927 (location: hot)
-[2025-06-23 21:26:24] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000037_202506231927 (location: hot)
-[2025-06-23 21:26:24] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000037_202506231927 (location: hot)
-[2025-06-23 21:26:26] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000038_202506231929 -> hot storage
-[2025-06-23 21:26:26] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000038_202506231929 (location: hot)
-[2025-06-23 21:26:27] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000038_202506231929 (location: hot)
-[2025-06-23 21:26:28] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000038_202506231929 (location: hot)
-[2025-06-23 21:26:29] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000039_202506231944 -> hot storage
-[2025-06-23 21:26:29] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000039_202506231944 (location: hot)
-[2025-06-23 21:26:30] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000039_202506231944 (location: hot)
-[2025-06-23 21:26:30] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000039_202506231944 (location: hot)
-[2025-06-23 21:26:31] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000039_202506231944 (location: hot)
-[2025-06-23 21:26:31] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000041_202506232003 -> hot storage
-[2025-06-23 21:26:31] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506232003 (location: hot)
-[2025-06-23 21:26:32] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506232003 (location: hot)
-[2025-06-23 21:26:34] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506232003 (location: hot)
-[2025-06-23 21:26:35] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506232003 (location: hot)
-[2025-06-23 21:35:56] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000044_202506232135 -> hot storage
-[2025-06-23 21:35:57] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000044_202506232135 (location: hot)
-[2025-06-23 21:38:44] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000046_202506232138 -> hot storage
-[2025-06-23 21:38:45] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000046_202506232138 (location: hot)
-[2025-06-23 21:39:29] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000047_202506232139 -> hot storage
-[2025-06-23 21:39:30] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000047_202506232139 (location: hot)
-[2025-06-23 20:41:42] TIERED_STORAGE: === Tiered Storage Daemon Starting ===
-[2025-06-23 20:41:42] TIERED_STORAGE: Hot path: /var/www/polyzoomer/
-[2025-06-23 20:41:42] TIERED_STORAGE: Cold path: /var/www/polyzoomer_cold/
-[2025-06-23 20:41:42] TIERED_STORAGE: Archive age: 0.00347 days
-[2025-06-23 20:41:42] TIERED_STORAGE: Dry run: NO
-[2025-06-23 20:41:42] TIERED_STORAGE: Looking for files older than 2025-06-23 20:36:42
-[2025-06-23 20:41:42] TIERED_STORAGE: ERROR: SplFileInfo::getSize(): stat failed for /var/www/polyzoomer/Path000031_202506231846/Path000031_202506231846
-[2025-06-23 20:43:03] TIERED_STORAGE: === Tiered Storage Daemon Starting ===
-[2025-06-23 20:43:03] TIERED_STORAGE: Hot path: /var/www/polyzoomer/
-[2025-06-23 20:43:03] TIERED_STORAGE: Cold path: /var/www/polyzoomer_cold/
-[2025-06-23 20:43:03] TIERED_STORAGE: Archive age: 0.00347 days
-[2025-06-23 20:43:03] TIERED_STORAGE: Dry run: YES
-[2025-06-23 20:43:03] TIERED_STORAGE: Looking for files older than 2025-06-23 20:38:03
-[2025-06-23 20:43:03] TIERED_STORAGE: Found candidate: Path000033_202506231848 (age: 0 days)
-[2025-06-23 20:43:03] TIERED_STORAGE: Found candidate: Path000034_202506231854 (age: 0 days)
-[2025-06-23 20:43:03] TIERED_STORAGE: Found candidate: Path000037_202506231927 (age: 0 days)
-[2025-06-23 20:43:03] TIERED_STORAGE: Found candidate: Path000038_202506231929 (age: 0 days)
-[2025-06-23 20:43:04] TIERED_STORAGE: Found candidate: Path000039_202506231944 (age: 0 days)
-[2025-06-23 20:43:04] TIERED_STORAGE: Found candidate: Path000041_202506232003 (age: 0 days)
-[2025-06-23 20:43:04] TIERED_STORAGE: Found candidate: Path000044_202506232135 (age: 0 days)
-[2025-06-23 20:43:04] TIERED_STORAGE: Found 7 directories for archival
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000033_202506231848 (206249679 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000033_202506231848 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000034_202506231854 (2808551402 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000034_202506231854 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000037_202506231927 (144044285 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000037_202506231927 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000038_202506231929 (144044285 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000038_202506231929 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000039_202506231944 (206250322 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000039_202506231944 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000041_202506232003 (8700892 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000041_202506232003 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archiving: Path000044_202506232135 (231516371 bytes)
-[2025-06-23 20:43:04] TIERED_STORAGE: DRY RUN: Would move Path000044_202506232135 to cold storage
-[2025-06-23 20:43:04] TIERED_STORAGE: Archival complete: 7/7 files moved
-[2025-06-23 20:43:04] TIERED_STORAGE: Total size archived: 3.49 GB
-[2025-06-23 20:43:04] TIERED_STORAGE: === Tiered Storage Daemon Complete ===
-[2025-06-23 20:43:43] TIERED_STORAGE: === Tiered Storage Daemon Starting ===
-[2025-06-23 20:43:43] TIERED_STORAGE: Hot path: /var/www/polyzoomer/
-[2025-06-23 20:43:43] TIERED_STORAGE: Cold path: /var/www/polyzoomer_cold/
-[2025-06-23 20:43:43] TIERED_STORAGE: Archive age: 0.00347 days
-[2025-06-23 20:43:43] TIERED_STORAGE: Dry run: NO
-[2025-06-23 20:43:43] TIERED_STORAGE: Looking for files older than 2025-06-23 20:38:43
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000033_202506231848 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000034_202506231854 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000037_202506231927 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000038_202506231929 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000039_202506231944 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000041_202506232003 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found candidate: Path000044_202506232135 (age: 0 days)
-[2025-06-23 20:43:43] TIERED_STORAGE: Found 7 directories for archival
-[2025-06-23 20:43:43] TIERED_STORAGE: Archiving: Path000033_202506231848 (206249679 bytes)
-[2025-06-23 20:43:43] TIERED_STORAGE: ERROR: Failed to move Path000033_202506231848
-[2025-06-23 20:44:38] TIERED_STORAGE: SUCCESS: Copied Path000033_202506231848 to cold storage (fallback method)
-[2025-06-23 20:44:38] TIERED_STORAGE: Archiving: Path000034_202506231854 (2808551402 bytes)
-[2025-06-23 20:44:38] TIERED_STORAGE: ERROR: Failed to move Path000034_202506231854
-[2025-06-23 20:47:33] TIERED_STORAGE: === Tiered Storage Daemon Starting ===
-[2025-06-23 20:47:33] TIERED_STORAGE: Hot path: /var/www/polyzoomer/
-[2025-06-23 20:47:33] TIERED_STORAGE: Cold path: /var/www/polyzoomer_cold/
-[2025-06-23 20:47:33] TIERED_STORAGE: Archive age: 0.00347 days
-[2025-06-23 20:47:33] TIERED_STORAGE: Dry run: NO
-[2025-06-23 20:47:33] TIERED_STORAGE: Looking for files older than 2025-06-23 20:42:33
-[2025-06-23 20:47:33] TIERED_STORAGE: Found candidate: Path000034_202506231854 (age: 0 days)
-[2025-06-23 20:47:33] TIERED_STORAGE: Found candidate: Path000037_202506231927 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found candidate: Path000038_202506231929 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found candidate: Path000039_202506231944 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found candidate: Path000041_202506232003 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found candidate: Path000044_202506232135 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found candidate: Path000046_202506232138 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found candidate: Path000047_202506232139 (age: 0 days)
-[2025-06-23 20:47:34] TIERED_STORAGE: Found 8 directories for archival
-[2025-06-23 20:47:34] TIERED_STORAGE: Archiving: Path000034_202506231854 (2808551402 bytes)
-[2025-06-23 20:47:34] TIERED_STORAGE: ERROR: Failed to move Path000034_202506231854
-[2025-06-23 20:47:34] TIERED_STORAGE: ERROR: Copy fallback also failed for Path000034_202506231854
-[2025-06-23 20:47:34] TIERED_STORAGE: Archiving: Path000037_202506231927 (144044285 bytes)
-[2025-06-23 20:47:34] TIERED_STORAGE: ERROR: Failed to move Path000037_202506231927
-[2025-06-23 20:48:30] TIERED_STORAGE: SUCCESS: Copied Path000037_202506231927 to cold storage (fallback method)
-[2025-06-23 20:48:30] TIERED_STORAGE: Archiving: Path000038_202506231929 (144044285 bytes)
-[2025-06-23 20:48:30] TIERED_STORAGE: ERROR: Failed to move Path000038_202506231929
-[2025-06-23 20:48:36] TIERED_STORAGE: === Tiered Storage Daemon Starting ===
-[2025-06-23 20:48:36] TIERED_STORAGE: Hot path: /var/www/polyzoomer/
-[2025-06-23 20:48:36] TIERED_STORAGE: Cold path: /var/www/polyzoomer_cold/
-[2025-06-23 20:48:36] TIERED_STORAGE: Archive age: 0.00347 days
-[2025-06-23 20:48:36] TIERED_STORAGE: Dry run: NO
-[2025-06-23 20:48:36] TIERED_STORAGE: Looking for files older than 2025-06-23 20:43:36
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000031_202506231846 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000034_202506231854 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000038_202506231929 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000039_202506231944 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000041_202506232003 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000044_202506232135 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000046_202506232138 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found candidate: Path000047_202506232139 (age: 0 days)
-[2025-06-23 20:48:36] TIERED_STORAGE: Found 8 directories for archival
-[2025-06-23 20:48:36] TIERED_STORAGE: Archiving: Path000031_202506231846 (231515163 bytes)
-[2025-06-23 20:50:17] TIERED_STORAGE: SUCCESS: Moved Path000031_202506231846 to cold storage
-[2025-06-23 20:50:17] TIERED_STORAGE: Archiving: Path000034_202506231854 (2808551402 bytes)
-[2025-06-23 20:50:17] TIERED_STORAGE: ERROR: Failed to move Path000034_202506231854
-[2025-06-23 20:50:17] TIERED_STORAGE: Archiving: Path000038_202506231929 (144044285 bytes)
-[2025-06-23 20:50:17] TIERED_STORAGE: ERROR: Failed to move Path000038_202506231929
-[2025-06-23 20:50:17] TIERED_STORAGE: Archiving: Path000039_202506231944 (206250322 bytes)
-[2025-06-23 20:51:06] TIERED_STORAGE: SUCCESS: Moved Path000039_202506231944 to cold storage
-[2025-06-23 20:51:06] TIERED_STORAGE: Archiving: Path000041_202506232003 (8700892 bytes)
-[2025-06-23 20:51:10] TIERED_STORAGE: SUCCESS: Moved Path000041_202506232003 to cold storage
-[2025-06-23 20:51:10] TIERED_STORAGE: Archiving: Path000044_202506232135 (231516371 bytes)
-[2025-06-23 20:52:41] TIERED_STORAGE: SUCCESS: Moved Path000044_202506232135 to cold storage
-[2025-06-23 20:52:41] TIERED_STORAGE: Archiving: Path000046_202506232138 (144045346 bytes)
-[2025-06-23 20:53:25] TIERED_STORAGE: SUCCESS: Moved Path000046_202506232138 to cold storage
-[2025-06-23 20:53:25] TIERED_STORAGE: Archiving: Path000047_202506232139 (330815077 bytes)
-[2025-06-23 20:55:12] TIERED_STORAGE: SUCCESS: Moved Path000047_202506232139 to cold storage
-[2025-06-23 20:55:12] TIERED_STORAGE: Archival complete: 6/8 files moved
-[2025-06-23 20:55:12] TIERED_STORAGE: Total size archived: 1.07 GB
-[2025-06-23 20:55:12] TIERED_STORAGE: Updating user cache files...
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000038_202506231929
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000038_202506231929
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000038_202506231929
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000039_202506231944
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000039_202506231944
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000039_202506231944
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000039_202506231944
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000041_202506232003
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000041_202506232003
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000041_202506232003
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000041_202506232003
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000044_202506232135
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000046_202506232138
-[2025-06-23 20:55:12] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000047_202506232139
-[2025-06-23 20:55:12] TIERED_STORAGE: Cache file updated: /var/www/customers/yshokrollahi-mdanderson-org/cache.lst
-[2025-06-23 20:55:12] TIERED_STORAGE: === Tiered Storage Daemon Complete ===
-[2025-06-23 22:04:45] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000050_202506232204 -> hot storage
-[2025-06-23 22:04:46] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000050_202506232204 (location: hot)
-[2025-06-23 22:05:25] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000052_202506232205 -> hot storage
-[2025-06-23 22:05:26] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000052_202506232205 (location: hot)
-[2025-06-23 22:05:35] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000053_202506232205 -> hot storage
-[2025-06-23 22:05:36] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000053_202506232205 (location: hot)
-[2025-06-23 22:06:06] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000054_202506232206 -> hot storage
-[2025-06-23 22:06:06] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000054_202506232206 (location: hot)
-[2025-06-23 21:18:55] TIERED_STORAGE: === Tiered Storage Daemon Starting ===
-[2025-06-23 21:18:55] TIERED_STORAGE: Hot path: /var/www/polyzoomer/
-[2025-06-23 21:18:55] TIERED_STORAGE: Cold path: /var/www/polyzoomer_cold/
-[2025-06-23 21:18:55] TIERED_STORAGE: Archive age: 0.00347 days
-[2025-06-23 21:18:55] TIERED_STORAGE: Dry run: NO
-[2025-06-23 21:18:55] TIERED_STORAGE: Looking for files older than 2025-06-23 21:13:55
-[2025-06-23 21:18:55] TIERED_STORAGE: Found candidate: Path000034_202506231854 (age: 0 days)
-[2025-06-23 21:18:55] TIERED_STORAGE: Found candidate: Path000038_202506231929 (age: 0 days)
-[2025-06-23 21:18:55] TIERED_STORAGE: Found candidate: Path000050_202506232204 (age: 0 days)
-[2025-06-23 21:18:55] TIERED_STORAGE: Found candidate: Path000052_202506232205 (age: 0 days)
-[2025-06-23 21:18:55] TIERED_STORAGE: Found candidate: Path000053_202506232205 (age: 0 days)
-[2025-06-23 21:18:55] TIERED_STORAGE: Found candidate: Path000054_202506232206 (age: 0 days)
-[2025-06-23 21:18:55] TIERED_STORAGE: Found 6 directories for archival
-[2025-06-23 21:18:55] TIERED_STORAGE: Archiving: Path000034_202506231854 (2808547498 bytes)
-[2025-06-23 21:18:55] TIERED_STORAGE: ERROR: Failed to move Path000034_202506231854
-[2025-06-23 21:18:55] TIERED_STORAGE: Archiving: Path000038_202506231929 (144040381 bytes)
-[2025-06-23 21:18:55] TIERED_STORAGE: ERROR: Failed to move Path000038_202506231929
-[2025-06-23 21:18:55] TIERED_STORAGE: Archiving: Path000050_202506232204 (206246983 bytes)
-[2025-06-23 21:20:21] TIERED_STORAGE: SUCCESS: Moved Path000050_202506232204 to cold storage
-[2025-06-23 21:20:21] TIERED_STORAGE: Archiving: Path000052_202506232205 (231512805 bytes)
-[2025-06-23 21:22:57] TIERED_STORAGE: SUCCESS: Moved Path000052_202506232205 to cold storage
-[2025-06-23 21:22:57] TIERED_STORAGE: Archiving: Path000053_202506232205 (144041442 bytes)
-[2025-06-23 21:24:20] TIERED_STORAGE: SUCCESS: Moved Path000053_202506232205 to cold storage
-[2025-06-23 21:24:20] TIERED_STORAGE: Archiving: Path000054_202506232206 (8697997 bytes)
-[2025-06-23 21:24:28] TIERED_STORAGE: SUCCESS: Moved Path000054_202506232206 to cold storage
-[2025-06-23 21:24:28] TIERED_STORAGE: Archival complete: 4/6 files moved
-[2025-06-23 21:24:28] TIERED_STORAGE: Total size archived: 563.14 MB
-[2025-06-23 21:24:28] TIERED_STORAGE: Updating user cache files...
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000038_202506231929
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000038_202506231929
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000038_202506231929
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000050_202506232204
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000052_202506232205
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000053_202506232205
-[2025-06-23 21:24:28] TIERED_STORAGE: Updated cache entry for user yshokrollahi-mdanderson-org: Path000054_202506232206
-[2025-06-23 21:24:28] TIERED_STORAGE: Cache file updated: /var/www/customers/yshokrollahi-mdanderson-org/cache.lst
-[2025-06-23 21:24:29] TIERED_STORAGE: Updating user symlinks...
-[2025-06-23 21:24:29] TIERED_STORAGE: Updated symlink: yshokrollahi-mdanderson-org/Path000038_202506231929 -> cold storage
-[2025-06-23 21:24:29] TIERED_STORAGE: Updated symlink: yshokrollahi-mdanderson-org/Path000050_202506232204 -> cold storage
-[2025-06-23 21:24:29] TIERED_STORAGE: Updated symlink: yshokrollahi-mdanderson-org/Path000052_202506232205 -> cold storage
-[2025-06-23 21:24:29] TIERED_STORAGE: Updated symlink: yshokrollahi-mdanderson-org/Path000053_202506232205 -> cold storage
-[2025-06-23 21:24:29] TIERED_STORAGE: Updated symlink: yshokrollahi-mdanderson-org/Path000054_202506232206 -> cold storage
-[2025-06-23 21:24:29] TIERED_STORAGE: === Tiered Storage Daemon Complete ===
-[2025-06-23 23:22:32] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000030_202506232322 (location: hot)
-[2025-06-23 23:22:33] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000030_202506232322 -> hot storage
-[2025-06-23 23:22:33] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000030_202506232322 (location: hot)
-[2025-06-23 23:22:35] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000030_202506232322 (location: hot)
-[2025-06-23 23:22:37] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000030_202506232322 (location: hot)
-[2025-06-24 00:03:28] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000031_202506240003 -> hot storage
-[2025-06-24 00:03:29] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000031_202506240003 (location: hot)
-[2025-06-24 00:03:54] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000032_202506240003 -> hot storage
-[2025-06-24 00:03:55] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000032_202506240003 (location: hot)
-[2025-06-24 00:04:09] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000033_202506240003 -> hot storage
-[2025-06-24 00:04:09] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000033_202506240003 (location: hot)
-[2025-06-24 00:05:29] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000034_202506240004 -> hot storage
-[2025-06-24 00:05:30] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000034_202506240004 (location: hot)
-[2025-06-24 00:11:17] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000035_202506240011 -> hot storage
-[2025-06-24 00:11:17] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000035_202506240011 (location: hot)
-[2025-06-24 00:11:37] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000036_202506240011 -> hot storage
-[2025-06-24 00:11:38] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000036_202506240011 (location: hot)
-[2025-06-24 00:12:08] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000037_202506240011 -> hot storage
-[2025-06-24 00:12:09] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000037_202506240011 (location: hot)
-[2025-06-24 00:12:23] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000038_202506240012 -> hot storage
-[2025-06-24 00:12:23] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000038_202506240012 (location: hot)
-[2025-06-24 03:17:09] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000039_202506240317 -> hot storage
-[2025-06-24 03:17:09] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000039_202506240317 (location: hot)
-[2025-06-24 03:19:49] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000040_202506240319 -> hot storage
-[2025-06-24 03:19:49] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000040_202506240319 (location: hot)
-[2025-06-24 03:29:22] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000041_202506240329 -> hot storage
-[2025-06-24 03:29:22] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506240329 (location: hot)
-[2025-06-24 03:29:25] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506240329 (location: hot)
-[2025-06-24 03:29:26] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000041_202506240329 (location: hot)
-[2025-06-24 03:40:15] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000042_202506240340 -> hot storage
-[2025-06-24 03:40:15] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000042_202506240340 (location: hot)
-[2025-06-24 03:40:20] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000042_202506240340 (location: hot)
-[2025-06-24 03:53:12] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000043_202506240353 -> hot storage
-[2025-06-24 03:53:12] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000043_202506240353 (location: hot)
-[2025-06-24 04:10:22] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000044_202506240410 -> hot storage
-[2025-06-24 04:10:23] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000044_202506240410 (location: hot)
-[2025-06-24 04:10:26] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000044_202506240410 (location: hot)
-[2025-06-24 04:10:26] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000044_202506240410 (location: hot)
-[2025-06-24 04:14:24] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000045_202506240414 -> hot storage
-[2025-06-24 04:14:25] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000045_202506240414 (location: hot)
-[2025-06-24 04:14:50] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000046_202506240414 -> hot storage
-[2025-06-24 04:14:50] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000046_202506240414 (location: hot)
-[2025-06-24 04:24:06] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000047_202506240424 -> hot storage
-[2025-06-24 04:24:06] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000047_202506240424 (location: hot)
-[2025-06-24 04:33:21] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000048_202506240433 -> hot storage
-[2025-06-24 04:33:22] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000048_202506240433 (location: hot)
-[2025-06-24 04:39:38] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000049_202506240439 -> hot storage
-[2025-06-24 04:39:38] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000049_202506240439 (location: hot)
-[2025-06-24 16:05:29] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000050_202506241605 -> hot storage
-[2025-06-24 16:05:29] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000050_202506241605 (location: hot)
-[2025-06-24 16:13:01] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000051_202506241612 -> hot storage
-[2025-06-24 16:13:01] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000051_202506241612 (location: hot)
-[2025-06-24 16:18:54] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000052_202506241618 -> hot storage
-[2025-06-24 16:18:55] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000052_202506241618 (location: hot)
-[2025-06-24 16:22:56] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000053_202506241622 -> hot storage
-[2025-06-24 16:22:57] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000053_202506241622 (location: hot)
-[2025-06-24 18:11:05] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000054_202506241810 -> hot storage
-[2025-06-24 18:11:05] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000054_202506241810 (location: hot)
-[2025-06-24 18:28:58] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000055_202506241828 -> hot storage
-[2025-06-24 18:28:59] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000055_202506241828 (location: hot)
-[2025-06-24 18:35:02] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000056_202506241834 -> hot storage
-[2025-06-24 18:35:03] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000056_202506241834 (location: hot)
-[2025-06-24 18:36:38] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000057_202506241836 -> hot storage
-[2025-06-24 18:36:39] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000057_202506241836 (location: hot)
-[2025-06-24 18:41:36] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000058_202506241841 -> hot storage
-[2025-06-24 18:41:36] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000058_202506241841 (location: hot)
-[2025-06-24 18:44:14] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000059_202506241844 -> hot storage
-[2025-06-24 18:44:15] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000059_202506241844 (location: hot)
-[2025-06-24 18:47:47] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000060_202506241847 -> hot storage
-[2025-06-24 18:47:47] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000060_202506241847 (location: hot)
-[2025-06-24 18:50:08] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000061_202506241850 -> hot storage
-[2025-06-24 18:50:09] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000061_202506241850 (location: hot)
-[2025-06-24 20:06:16] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000062_202506242006 -> hot storage
-[2025-06-24 20:06:17] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000062_202506242006 (location: hot)
-[2025-06-24 20:06:19] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000062_202506242006 (location: hot)
-[2025-06-24 20:06:23] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000062_202506242006 (location: hot)
-[2025-06-24 20:10:07] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000063_202506242010 -> hot storage
-[2025-06-24 20:10:08] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000063_202506242010 (location: hot)
-[2025-06-24 20:13:17] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000064_202506242013 -> hot storage
-[2025-06-24 20:13:17] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000064_202506242013 (location: hot)
-[2025-06-24 20:13:19] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000064_202506242013 (location: hot)
-[2025-06-24 20:13:21] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000064_202506242013 (location: hot)
-[2025-06-24 20:23:09] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000065_202506242023 -> hot storage
-[2025-06-24 20:23:09] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000065_202506242023 (location: hot)
-[2025-06-24 20:37:25] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000066_202506242037 -> hot storage
-[2025-06-24 20:37:25] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000066_202506242037 (location: hot)
-[2025-06-24 20:48:13] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000067_202506242048 -> hot storage
-[2025-06-24 20:48:13] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000067_202506242048 (location: hot)
-[2025-06-24 20:48:18] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000067_202506242048 (location: hot)
-[2025-06-24 20:48:19] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000067_202506242048 (location: hot)
-[2025-06-24 21:01:39] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000068_202506242101 -> hot storage
-[2025-06-24 21:01:39] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000068_202506242101 (location: hot)
-[2025-06-24 21:09:07] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000069_202506242109 -> hot storage
-[2025-06-24 21:09:07] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000069_202506242109 (location: hot)
-[2025-06-24 21:18:09] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000070_202506242118 -> hot storage
-[2025-06-24 21:18:09] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000070_202506242118 (location: hot)
-[2025-06-24 21:29:06] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000071_202506242129 -> hot storage
-[2025-06-24 21:29:06] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000071_202506242129 (location: hot)
-[2025-06-24 21:32:37] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000072_202506242132 -> hot storage
-[2025-06-24 21:32:37] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000072_202506242132 (location: hot)
-[2025-06-24 21:35:47] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000073_202506242135 -> hot storage
-[2025-06-24 21:35:47] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000073_202506242135 (location: hot)
+[2025-08-04 17:05:50] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000080_202508041705 -> hot storage
+[2025-08-04 17:05:50] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000080_202508041705 (location: hot)
+[2025-08-04 17:09:17] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000081_202508041709 -> hot storage
+[2025-08-04 17:09:17] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000081_202508041709 (location: hot)
+[2025-08-04 17:12:47] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000082_202508041712 -> hot storage
+[2025-08-04 17:12:48] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000082_202508041712 (location: hot)
+[2025-08-04 17:12:52] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000082_202508041712 (location: hot)
+[2025-08-04 18:39:45] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000083_202508041839 -> hot storage
+[2025-08-04 18:39:45] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000083_202508041839 (location: hot)
+[2025-08-04 18:39:46] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000083_202508041839 (location: hot)
+[2025-08-04 18:51:48] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000084_202508041851 -> hot storage
+[2025-08-04 18:51:49] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000084_202508041851 (location: hot)
+[2025-08-04 19:01:19] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000085_202508041900 -> hot storage
+[2025-08-04 19:01:19] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000085_202508041900 (location: hot)
+[2025-08-04 19:04:39] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000086_202508041904 -> hot storage
+[2025-08-04 19:04:39] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000086_202508041904 (location: hot)
+[2025-08-04 19:12:36] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000087_202508041912 -> hot storage
+[2025-08-04 19:12:36] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000087_202508041912 (location: hot)
+[2025-08-04 19:30:06] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000088_202508041930 -> hot storage
+[2025-08-04 19:30:06] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000088_202508041930 (location: hot)
+[2025-08-04 19:39:16] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000089_202508041938 -> hot storage
+[2025-08-04 19:39:16] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000089_202508041938 (location: hot)
+[2025-08-04 19:49:04] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000090_202508041949 -> hot storage
+[2025-08-04 19:49:04] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000090_202508041949 (location: hot)
+[2025-08-04 19:52:18] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000091_202508041951 -> hot storage
+[2025-08-04 19:52:18] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000091_202508041951 (location: hot)
+[2025-08-04 19:55:20] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000092_202508041954 -> hot storage
+[2025-08-04 19:55:20] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000092_202508041954 (location: hot)
+[2025-08-04 20:01:17] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000093_202508042000 -> hot storage
+[2025-08-04 20:01:17] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000093_202508042000 (location: hot)
+[2025-08-04 20:12:48] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000094_202508042012 -> hot storage
+[2025-08-04 20:12:48] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000094_202508042012 (location: hot)
+[2025-08-04 20:23:45] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000095_202508042023 -> hot storage
+[2025-08-04 20:23:46] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000095_202508042023 (location: hot)
+[2025-08-04 20:41:37] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000096_202508042041 -> hot storage
+[2025-08-04 20:41:38] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000096_202508042041 (location: hot)
+[2025-08-04 20:52:18] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000097_202508042051 -> hot storage
+[2025-08-04 20:52:19] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000097_202508042051 (location: hot)
+[2025-08-04 21:01:46] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000098_202508042101 -> hot storage
+[2025-08-04 21:01:46] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000098_202508042101 (location: hot)
+[2025-08-04 21:19:47] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000099_202508042119 -> hot storage
+[2025-08-04 21:19:47] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000099_202508042119 (location: hot)
+[2025-08-04 21:30:36] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000100_202508042130 -> hot storage
+[2025-08-04 21:30:36] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000100_202508042130 (location: hot)
+[2025-08-04 21:39:48] TIERED_STORAGE: Created symlink for user yshokrollahi-mdanderson-org: Path000101_202508042139 -> hot storage
+[2025-08-04 21:39:48] TIERED_STORAGE: Added to user cache: yshokrollahi-mdanderson-org -> Path000101_202508042139 (location: hot)

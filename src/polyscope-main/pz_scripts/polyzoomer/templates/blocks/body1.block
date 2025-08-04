@@ -76,26 +76,30 @@ function goBack() {
         <button class="header-btn" onclick="toggleFullscreen()">
             <i class="fas fa-expand"></i> Fullscreen
         </button>
-		<div class="export-btn-container">
-			<button class="header-btn" onclick="toggleExportDropdown()">
-				<i class="fas fa-download"></i> Export
-				<i class="fas fa-chevron-down export-arrow"></i>
-			</button>
-			<div class="export-dropdown" id="exportDropdown">
-				<div class="export-option" onclick="exportImage()">
-					<i class="fas fa-image"></i>
-					<span>Export Image</span>
-				</div>
-				<div class="export-option" onclick="exportAnnotationsCSV()">
-					<i class="fas fa-file-csv"></i>
-					<span>Annotations CSV</span>
-				</div>
-				<div class="export-option" onclick="exportAnnotationsJSON()">
-					<i class="fas fa-file-code"></i>
-					<span>Annotations JSON</span>
-				</div>
-			</div>
-		</div>
+        <div class="export-btn-container">
+            <button class="header-btn" onclick="toggleExportDropdown()">
+                <i class="fas fa-download"></i> Export
+                <i class="fas fa-chevron-down export-arrow"></i>
+            </button>
+            <div class="export-dropdown" id="exportDropdown">
+                <div class="export-option" onclick="exportImage()">
+                    <i class="fas fa-image"></i>
+                    <span>Export Image</span>
+                </div>
+                <div class="export-option" onclick="exportAnnotationsTXT()">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Annotations TXT</span>
+                </div>
+                <div class="export-option" onclick="exportAnnotationsCSV()">
+                    <i class="fas fa-file-csv"></i>
+                    <span>Annotations CSV</span>
+                </div>
+                <div class="export-option" onclick="exportAnnotationsJSON()">
+                    <i class="fas fa-file-code"></i>
+                    <span>Annotations JSON</span>
+                </div>
+            </div>
+        </div>
         <button class="header-btn" onclick="takeScreenshot()">
             <i class="fas fa-camera"></i> Screenshot
         </button>
