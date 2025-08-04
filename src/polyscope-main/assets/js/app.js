@@ -42,65 +42,104 @@ window.PolyscopeApp = {
   },
 
   // Calculate file statistics from the file manager
+  // Replace the calculateFileStats method in your PolyscopeApp with this enhanced version
+
+  // Calculate file statistics from the file manager
   async calculateFileStats() {
     try {
-      // Get current directory listing to count files
+      console.log('📊 === Starting File Stats Calculation ===');
+      console.log('📊 Current path:', window.fileManager?.currentPath);
+      console.log('📊 File manager available:', !!window.fileManager);
+      
+      // Get current directory listing (for fallback counting if needed)
       const response = await window.fileManager.apiCall('listDirectory', { 
         path: window.fileManager.currentPath || '' 
       });
       
+      console.log('📊 listDirectory response:', response);
+      
       if (response.success && response.files) {
-        // Count all files (not directories) recursively
+        console.log('📊 Files in current directory:', response.files.length);
+        
+        // Count all files recursively using the API (this is the correct approach)
         await this.countAllFiles();
         
-        // Calculate storage used
-        this.calculateStorageUsed(response.files);
-      }
-    } catch (error) {
-      console.warn('Error calculating file stats:', error);
-    }
-  },
-
-  // Recursively count all files in user directory
-  async countAllFiles() {
-    try {
-      const response = await window.fileManager.apiCall('getStats', {});
-      
-      if (response.success) {
-        this.stats.totalFiles = response.totalFiles || 0;
-        this.stats.storageUsed = response.storageUsed || 0;
+        // ❌ REMOVED: Don't call calculateStorageUsed here!
+        // This was overwriting the correct recursive size from the API
+        // this.calculateStorageUsed(response.files);
         
-        // Count processed files (files with .dzi counterparts)
-        this.stats.processedFiles = response.processedFiles || 0;
       } else {
-        // Fallback: count files in current view
+        console.warn('📊 listDirectory failed or no files returned');
+        // Only use fallback if API completely fails
         this.countVisibleFiles();
       }
     } catch (error) {
-      console.warn('Stats API not available, using fallback counting');
+      console.error('📊 Error calculating file stats:', error);
+      // Only use fallback if there's an error
       this.countVisibleFiles();
     }
   },
 
-  // Fallback method to count visible files
+  // Enhanced countAllFiles with better debugging
+  async countAllFiles() {
+    try {
+      console.log('📊 === Calling getStats API ===');
+      
+      const response = await window.fileManager.apiCall('getStats', {});
+      
+      console.log('📊 getStats full response:', response);
+      
+      if (response.success) {
+        console.log('📊 ✅ API call successful, updating stats:');
+        
+        this.stats.totalFiles = response.totalFiles || 0;
+        this.stats.storageUsed = response.storageUsed || 0;
+        this.stats.processedFiles = response.processedFiles || 0;
+        
+        console.log('📊 Updated stats object:', this.stats);
+        
+      } else {
+        console.warn('📊 ❌ API call failed, using fallback counting');
+        console.warn('📊 Error from API:', response.error);
+        
+        // Fallback: count files in current view
+        this.countVisibleFiles();
+      }
+    } catch (error) {
+      console.error('📊 ❌ Stats API not available, using fallback counting:', error);
+      this.countVisibleFiles();
+    }
+  },
+
+  // Enhanced fallback method with debugging
   countVisibleFiles() {
+    console.log('📊 === Using Fallback File Counting ===');
+    
     const fileItems = document.querySelectorAll('.file-item[data-type="file"]');
     this.stats.totalFiles = fileItems.length;
     
+    console.log('📊 Visible files found:', fileItems.length);
+    
     // Estimate storage from visible files
     let totalSize = 0;
-    fileItems.forEach(item => {
+    fileItems.forEach((item, index) => {
       const sizeText = item.querySelector('.file-details')?.textContent || '';
       const sizeMatch = sizeText.match(/(\d+(?:\.\d+)?)\s*(KB|MB|GB)/i);
       if (sizeMatch) {
         const size = parseFloat(sizeMatch[1]);
         const unit = sizeMatch[2].toUpperCase();
         const multiplier = { KB: 1024, MB: 1024*1024, GB: 1024*1024*1024 }[unit] || 1;
-        totalSize += size * multiplier;
+        const fileSize = size * multiplier;
+        totalSize += fileSize;
+        
+        if (index < 5) { // Log first 5 files for debugging
+          console.log(`📊 File ${index + 1}: ${sizeText} = ${fileSize} bytes`);
+        }
       }
     });
     
     this.stats.storageUsed = totalSize;
+    console.log('📊 Fallback calculation complete - Total size:', totalSize, '(', this.formatFileSize(totalSize), ')');
   },
 
   // Calculate storage used from file list

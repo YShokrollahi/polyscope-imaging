@@ -1,4 +1,0 @@
-sudo apt-get install php5-sqlite
-
-pzadmin
-poly567$!

@@ -23,7 +23,21 @@ function debug_log($message, $data = null) {
         error_log("UPLOAD DATA: " . print_r($data, true));
     }
 }
-
+function getUniqueFilename($directory, $filename) {
+    $pathinfo = pathinfo($filename);
+    $basename = $pathinfo['filename'];
+    $extension = isset($pathinfo['extension']) ? '.' . $pathinfo['extension'] : '';
+    
+    $counter = 1;
+    $newFilename = $filename;
+    
+    while (file_exists($directory . '/' . $newFilename)) {
+        $newFilename = $basename . '_' . $counter . $extension;
+        $counter++;
+    }
+    
+    return $newFilename;
+}
 try {
     debug_log("=== UPLOAD PROCESS STARTED ===");
     debug_log("POST data", $_POST);
@@ -135,7 +149,17 @@ try {
 
             // Create safe filename
             $safe_filename = preg_replace("/[^a-zA-Z0-9._-]/", "_", $filename);
-            $destination = $uploadDir . '/' . $safe_filename;
+
+            // Make filename unique if it already exists
+            $unique_filename = getUniqueFilename($uploadDir, $safe_filename);
+            $destination = $uploadDir . '/' . $unique_filename;
+
+            debug_log("Filename processing", array(
+                'original' => $filename,
+                'safe' => $safe_filename,
+                'unique' => $unique_filename,
+                'destination' => $destination
+            ));
 
             debug_log("Moving file", array(
                 'from' => $tmp_name,
@@ -171,7 +195,7 @@ try {
             ));
 
             $response['uploaded'][] = array(
-                'name' => $safe_filename,
+                'name' => $unique_filename,
                 'originalName' => $filename,
                 'size' => $filesize,
                 'destination' => $destination

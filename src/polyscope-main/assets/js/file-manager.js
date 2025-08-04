@@ -222,15 +222,15 @@ class EnhancedPolyscopeFileManager {
       deleteBtn.textContent = '🗑️ Delete (' + selectedCount + ')';
       renameBtn.textContent = selectedCount === 1 ? '✏️ Rename' : '✏️ Rename (select 1)';
       if (dziCompatibleFiles.length > 0) {
-        processBtn.textContent = '⚙️ Process to DZI (' + dziCompatibleFiles.length + ')';
+        processBtn.textContent = '⚙️ Process (' + dziCompatibleFiles.length + ')';
         processBtn.disabled = false;
       } else {
-        processBtn.textContent = '⚙️ Process to DZI (no images)';
+        processBtn.textContent = '⚙️ Process (no images)';
         processBtn.disabled = true;
       }
     } else {
       deleteBtn.textContent = '🗑️ Delete';
-      processBtn.textContent = '⚙️ Process to DZI';
+      processBtn.textContent = '⚙️ Process';
       renameBtn.textContent = '✏️ Rename';
     }
   }
@@ -372,13 +372,16 @@ class EnhancedPolyscopeFileManager {
       this.showError('Upload already in progress');
       return;
     }
-
+  
     this.isUploading = true;
-
+  
+    // Show warning notification about not refreshing
+    PolyscopeUI.warning('Upload in progress - Please do not refresh or close the page', 'Upload Warning');
+  
     try {
       // Show non-blocking upload progress bar
       this.showUploadProgressBar(files);
-
+  
       const formData = new FormData();
       let targetDirectory = '/media/Users/' + PolyscopeConfig.user.username;
       
@@ -392,7 +395,7 @@ class EnhancedPolyscopeFileManager {
       });
       
       formData.append('directory', targetDirectory.replace(/\//g, '___SLASH___'));
-
+  
       // Create XMLHttpRequest for progress tracking
       const xhr = new XMLHttpRequest();
       
@@ -403,7 +406,7 @@ class EnhancedPolyscopeFileManager {
           this.updateUploadProgress(percentComplete, e.loaded, e.total);
         }
       });
-
+  
       // Set up completion handling
       xhr.addEventListener('load', () => {
         try {
@@ -413,24 +416,24 @@ class EnhancedPolyscopeFileManager {
           this.handleUploadError('Invalid response from server');
         }
       });
-
+  
       // Set up error handling
       xhr.addEventListener('error', () => {
         this.handleUploadError('Upload failed due to network error');
       });
-
+  
       // Set up abort handling
       xhr.addEventListener('abort', () => {
         this.handleUploadError('Upload was cancelled');
       });
-
+  
       // Start the upload
       xhr.open('POST', '/api/upload.php');
       xhr.send(formData);
-
+  
       // Store xhr reference for potential cancellation
       this.currentUploadXHR = xhr;
-
+  
     } catch (error) {
       this.handleUploadError('Upload error: ' + error.message);
     }
@@ -714,7 +717,11 @@ class EnhancedPolyscopeFileManager {
     const confirmed = await PolyscopeUI.confirm(
       'Delete Files',
       `Are you sure you want to delete ${fileCount} ${fileText}? This action cannot be undone.`,
-      'danger'
+      'danger',
+      {
+        confirmText: 'Delete',
+        cancelText: 'Cancel'
+      }
     );
     
     if (!confirmed) return;
@@ -740,6 +747,12 @@ class EnhancedPolyscopeFileManager {
   
   async processSelectedFiles() {
     if (this.dziProcessor) {
+      // Add these 4 lines to update header tabs
+      document.querySelectorAll('.view-indicator').forEach(indicator => {
+        indicator.classList.remove('active');
+      });
+      document.querySelector('[data-view="processingView"]').classList.add('active');
+      
       await this.dziProcessor.processSelectedFiles();
     } else {
       this.showError('DZI processor not ready yet. Please try again in a moment.');
@@ -951,6 +964,8 @@ class EnhancedPolyscopeFileManager {
     // Handle special API calls
     if (action === 'getStats') {
       try {
+        console.log('📊 Calling getStats API...');
+        
         const response = await fetch('/api/getStats.php', {
           method: 'GET',
           headers: {
@@ -958,19 +973,36 @@ class EnhancedPolyscopeFileManager {
           }
         });
         
+        console.log('📊 Response status:', response.status);
+        console.log('📊 Response ok:', response.ok);
+        
         if (!response.ok) {
-          throw new Error('HTTP error! status: ' + response.status);
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        return await response.json();
+        const result = await response.json();
+        console.log('📊 getStats API response:', result);
+        
+        // Validate the response structure
+        if (result && typeof result === 'object') {
+          console.log('📊 Stats breakdown:');
+          console.log('  - Total files:', result.totalFiles);
+          console.log('  - Processed files:', result.processedFiles);
+          console.log('  - Storage used:', result.storageUsed, '(', this.formatFileSize(result.storageUsed), ')');
+          console.log('  - Success:', result.success);
+        }
+        
+        return result;
         
       } catch (error) {
-        console.warn('Stats API call failed:', error);
+        console.error('📊 Stats API call failed:', error);
         return { success: false, error: error.message };
       }
     }
     
     // Handle regular file manager API calls
+    console.log(`🔧 API Call: ${action}`, data);
+    
     const response = await fetch('/api/fileManager.php', {
       method: 'POST',
       headers: {
@@ -982,10 +1014,13 @@ class EnhancedPolyscopeFileManager {
     });
     
     if (!response.ok) {
-      throw new Error('HTTP error! status: ' + response.status);
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    return await response.json();
+    const result = await response.json();
+    console.log(`🔧 API Response for ${action}:`, result);
+    
+    return result;
   }
   
   showLoading(message) {

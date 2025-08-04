@@ -38,7 +38,7 @@ $isAdmin = ($username === 'yshokrollahi');
                 </div>
                 <div class="app-title-text">
                     <div class="app-title-main">Polyscope</div>
-                    <div class="app-title-sub">Pathology Image Processing Platform</div>
+                    <div class="app-title-sub">Pathology Image Processing Platform(Aug 4)</div>
                 </div>
             </div>
             
@@ -147,7 +147,7 @@ $isAdmin = ($username === 'yshokrollahi');
                         </div>
                         <div class="toolbar-section">
                             <button id="processBtn" class="btn btn-success" disabled>
-                                ⚙️ Process to DZI
+                                ⚙️ Process
                             </button>
                         </div>
                     </div>

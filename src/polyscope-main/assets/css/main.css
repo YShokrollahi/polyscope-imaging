@@ -408,7 +408,23 @@ body {
   color: white;
   box-shadow: var(--shadow-sm);
 }
+/* Modal-specific button overrides */
+.modal .btn-outline,
+.modal-footer .btn-outline,
+#confirmCancel {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  backdrop-filter: none !important;
+}
 
+.modal .btn-outline:hover,
+.modal-footer .btn-outline:hover,
+#confirmCancel:hover {
+  background: var(--bg-tertiary) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
 .btn-outline { 
   background: rgba(255, 255, 255, 0.1); 
   color: white; 
