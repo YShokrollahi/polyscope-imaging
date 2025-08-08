@@ -24,7 +24,10 @@ $isAdmin = ($username === 'yshokrollahi');
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/notifications.css">
-    
+    <link rel="stylesheet" href="assets/css/results-checker.css">
+    <link rel="stylesheet" href="assets/css/folder-drag-drop.css">
+
+        
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
 </head>
@@ -38,7 +41,7 @@ $isAdmin = ($username === 'yshokrollahi');
                 </div>
                 <div class="app-title-text">
                     <div class="app-title-main">Polyscope</div>
-                    <div class="app-title-sub">Pathology Image Processing Platform(Aug 4)</div>
+                    <div class="app-title-sub">Pathology Image Processing Platform(v3.0.0)</div>
                 </div>
             </div>
             
@@ -246,5 +249,6 @@ $isAdmin = ($username === 'yshokrollahi');
     <script src="assets/js/dzi-processor.js"></script>
     <script src="assets/js/file-manager.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/results-checker.js"></script>
 </body>
 </html>

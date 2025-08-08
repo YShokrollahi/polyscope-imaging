@@ -1156,3 +1156,1890 @@
 [04-Aug-2025 21:39:50 Europe/London] Successfully added job EE84CBB4-C77D-47AA-A013-8C4B06E9ABEC to customer page for user: yshokrollahi
 [04-Aug-2025 20:48:23 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
 [04-Aug-2025 20:51:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[04-Aug-2025 20:55:21 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 15:58:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 16:01:25 UTC] === issueUploadProject.php started ===
+[05-Aug-2025 16:01:25 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[05-Aug-2025 17:01:25 Europe/London] Decoded isDir: 
+[05-Aug-2025 17:01:25 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[05-Aug-2025 17:01:25 Europe/London] Case: isDir=0, array - calling issueFiles
+[05-Aug-2025 17:01:25 Europe/London] Number of files: 1
+[05-Aug-2025 17:01:25 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[05-Aug-2025 17:01:25 Europe/London] Starting issueFiles at: 2025-08-05 17:01:25
+[05-Aug-2025 17:01:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[05-Aug-2025 17:01:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[05-Aug-2025 17:01:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[05-Aug-2025 17:01:25 Europe/London] Completed issueFiles at: 2025-08-05 17:01:25
+[05-Aug-2025 17:01:25 Europe/London] issueFiles took: 0 seconds
+[05-Aug-2025 17:01:25 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;E9A93E18-62C7-4801-9DDC-CD38750A10C3;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/77972471_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => E9A93E18-62C7-4801-9DDC-CD38750A10C3
+                    [name] => /var/www/uploads/77972471_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[05-Aug-2025 17:01:25 Europe/London] === issueUploadProject.php completed ===
+[05-Aug-2025 17:03:50 Europe/London] Successfully added job E9A93E18-62C7-4801-9DDC-CD38750A10C3 to customer page for user: yshokrollahi
+[05-Aug-2025 18:04:00 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:04:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:04:21 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:04:24 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:04:28 UTC] === issueUploadProject.php started ===
+[05-Aug-2025 18:04:28 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[05-Aug-2025 19:04:28 Europe/London] Decoded isDir: 
+[05-Aug-2025 19:04:28 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[05-Aug-2025 19:04:28 Europe/London] Case: isDir=0, array - calling issueFiles
+[05-Aug-2025 19:04:28 Europe/London] Number of files: 1
+[05-Aug-2025 19:04:28 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[05-Aug-2025 19:04:28 Europe/London] Starting issueFiles at: 2025-08-05 19:04:28
+[05-Aug-2025 19:04:28 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[05-Aug-2025 19:04:28 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[05-Aug-2025 19:04:28 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[05-Aug-2025 19:04:28 Europe/London] Completed issueFiles at: 2025-08-05 19:04:28
+[05-Aug-2025 19:04:28 Europe/London] issueFiles took: 0 seconds
+[05-Aug-2025 19:04:28 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;B1E8645F-75B5-416F-B87C-320338EDCF64;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/23754532_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => B1E8645F-75B5-416F-B87C-320338EDCF64
+                    [name] => /var/www/uploads/23754532_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[05-Aug-2025 19:04:28 Europe/London] === issueUploadProject.php completed ===
+[05-Aug-2025 19:06:50 Europe/London] Successfully added job B1E8645F-75B5-416F-B87C-320338EDCF64 to customer page for user: yshokrollahi
+[05-Aug-2025 18:07:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:09:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:09:59 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:22:13 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:22:40 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:23:15 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 18:23:38 UTC] === issueUploadProject.php started ===
+[05-Aug-2025 18:23:38 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[05-Aug-2025 19:23:38 Europe/London] Decoded isDir: 
+[05-Aug-2025 19:23:38 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[05-Aug-2025 19:23:38 Europe/London] Case: isDir=0, array - calling issueFiles
+[05-Aug-2025 19:23:38 Europe/London] Number of files: 1
+[05-Aug-2025 19:23:38 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[05-Aug-2025 19:23:38 Europe/London] Starting issueFiles at: 2025-08-05 19:23:38
+[05-Aug-2025 19:23:38 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[05-Aug-2025 19:23:38 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[05-Aug-2025 19:23:38 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[05-Aug-2025 19:23:38 Europe/London] Completed issueFiles at: 2025-08-05 19:23:38
+[05-Aug-2025 19:23:38 Europe/London] issueFiles took: 0 seconds
+[05-Aug-2025 19:23:38 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;6D4DD760-9C73-48B6-BBDA-DE444D70AF54;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/79588943_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 6D4DD760-9C73-48B6-BBDA-DE444D70AF54
+                    [name] => /var/www/uploads/79588943_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[05-Aug-2025 19:23:38 Europe/London] === issueUploadProject.php completed ===
+[05-Aug-2025 19:26:30 Europe/London] Successfully added job 6D4DD760-9C73-48B6-BBDA-DE444D70AF54 to customer page for user: yshokrollahi
+[05-Aug-2025 18:50:14 UTC] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Aug-2025 18:50:14 UTC] PHP Fatal error:  Unknown: Failed opening required '/var/www/ai_proxy.php' (include_path='.:/usr/share/php') in Unknown on line 0
+[05-Aug-2025 18:50:21 UTC] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Aug-2025 18:50:21 UTC] PHP Fatal error:  Unknown: Failed opening required '/var/www/ai_proxy.php' (include_path='.:/usr/share/php') in Unknown on line 0
+[05-Aug-2025 18:50:29 UTC] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Aug-2025 18:50:29 UTC] PHP Fatal error:  Unknown: Failed opening required '/var/www/ai_proxy.php' (include_path='.:/usr/share/php') in Unknown on line 0
+[05-Aug-2025 18:50:49 UTC] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Aug-2025 18:50:49 UTC] PHP Fatal error:  Unknown: Failed opening required '/var/www/ai_proxy.php' (include_path='.:/usr/share/php') in Unknown on line 0
+[05-Aug-2025 18:52:26 UTC] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Aug-2025 18:52:26 UTC] PHP Fatal error:  Unknown: Failed opening required '/var/www/ai_proxy.php' (include_path='.:/usr/share/php') in Unknown on line 0
+[05-Aug-2025 19:08:10 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 19:08:19 UTC] === issueUploadProject.php started ===
+[05-Aug-2025 19:08:19 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[05-Aug-2025 20:08:19 Europe/London] Decoded isDir: 
+[05-Aug-2025 20:08:19 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[05-Aug-2025 20:08:19 Europe/London] Case: isDir=0, array - calling issueFiles
+[05-Aug-2025 20:08:19 Europe/London] Number of files: 1
+[05-Aug-2025 20:08:19 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[05-Aug-2025 20:08:19 Europe/London] Starting issueFiles at: 2025-08-05 20:08:19
+[05-Aug-2025 20:08:19 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[05-Aug-2025 20:08:19 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[05-Aug-2025 20:08:19 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[05-Aug-2025 20:08:19 Europe/London] Completed issueFiles at: 2025-08-05 20:08:19
+[05-Aug-2025 20:08:19 Europe/London] issueFiles took: 0 seconds
+[05-Aug-2025 20:08:19 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;48B6722D-5531-4B54-992D-1DAE5026B2F9;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/01781190_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 48B6722D-5531-4B54-992D-1DAE5026B2F9
+                    [name] => /var/www/uploads/01781190_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[05-Aug-2025 20:08:19 Europe/London] === issueUploadProject.php completed ===
+[05-Aug-2025 20:10:54 Europe/London] Successfully added job 48B6722D-5531-4B54-992D-1DAE5026B2F9 to customer page for user: yshokrollahi
+[05-Aug-2025 19:16:47 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 19:16:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 19:16:56 UTC] === issueUploadProject.php started ===
+[05-Aug-2025 19:16:56 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[05-Aug-2025 20:16:56 Europe/London] Decoded isDir: 
+[05-Aug-2025 20:16:56 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[05-Aug-2025 20:16:56 Europe/London] Case: isDir=0, array - calling issueFiles
+[05-Aug-2025 20:16:56 Europe/London] Number of files: 1
+[05-Aug-2025 20:16:56 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[05-Aug-2025 20:16:56 Europe/London] Starting issueFiles at: 2025-08-05 20:16:56
+[05-Aug-2025 20:16:56 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[05-Aug-2025 20:16:56 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[05-Aug-2025 20:16:56 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[05-Aug-2025 20:16:56 Europe/London] Completed issueFiles at: 2025-08-05 20:16:56
+[05-Aug-2025 20:16:56 Europe/London] issueFiles took: 0 seconds
+[05-Aug-2025 20:16:56 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;831845D7-41AD-4AA5-BDB4-D46E95916ED5;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/36763376_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 831845D7-41AD-4AA5-BDB4-D46E95916ED5
+                    [name] => /var/www/uploads/36763376_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[05-Aug-2025 20:16:56 Europe/London] === issueUploadProject.php completed ===
+[05-Aug-2025 20:19:23 Europe/London] Successfully added job 831845D7-41AD-4AA5-BDB4-D46E95916ED5 to customer page for user: yshokrollahi
+[05-Aug-2025 19:41:34 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 21:09:57 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 21:10:00 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 21:10:43 UTC] === issueUploadProject.php started ===
+[05-Aug-2025 21:10:43 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[05-Aug-2025 22:10:43 Europe/London] Decoded isDir: 
+[05-Aug-2025 22:10:43 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[05-Aug-2025 22:10:43 Europe/London] Case: isDir=0, array - calling issueFiles
+[05-Aug-2025 22:10:43 Europe/London] Number of files: 1
+[05-Aug-2025 22:10:43 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[05-Aug-2025 22:10:43 Europe/London] Starting issueFiles at: 2025-08-05 22:10:43
+[05-Aug-2025 22:10:43 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[05-Aug-2025 22:10:43 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[05-Aug-2025 22:10:43 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[05-Aug-2025 22:10:43 Europe/London] Completed issueFiles at: 2025-08-05 22:10:43
+[05-Aug-2025 22:10:43 Europe/London] issueFiles took: 0 seconds
+[05-Aug-2025 22:10:43 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;7DB47A09-C4F8-4BD7-806E-B474FDA267D2;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/18035271_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 7DB47A09-C4F8-4BD7-806E-B474FDA267D2
+                    [name] => /var/www/uploads/18035271_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[05-Aug-2025 22:10:43 Europe/London] === issueUploadProject.php completed ===
+[05-Aug-2025 22:15:27 Europe/London] Successfully added job 7DB47A09-C4F8-4BD7-806E-B474FDA267D2 to customer page for user: yshokrollahi
+[05-Aug-2025 22:15:28 Europe/London] Successfully added job 7DB47A09-C4F8-4BD7-806E-B474FDA267D2 to customer page for user: yshokrollahi
+[05-Aug-2025 22:12:30 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 22:15:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 22:29:42 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[05-Aug-2025 22:29:57 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 02:49:23 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 14:38:14 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 14:38:24 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:15:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:15:25 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:15:29 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 17:15:29 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 18:15:29 Europe/London] Decoded isDir: 
+[06-Aug-2025 18:15:29 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[06-Aug-2025 18:15:29 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 18:15:29 Europe/London] Number of files: 1
+[06-Aug-2025 18:15:29 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[06-Aug-2025 18:15:29 Europe/London] Starting issueFiles at: 2025-08-06 18:15:29
+[06-Aug-2025 18:15:29 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 18:15:29 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 18:15:29 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 18:15:29 Europe/London] Completed issueFiles at: 2025-08-06 18:15:29
+[06-Aug-2025 18:15:29 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 18:15:29 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;B8E678A5-7E18-4FC3-A358-307C45EF5001;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/26209124_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => B8E678A5-7E18-4FC3-A358-307C45EF5001
+                    [name] => /var/www/uploads/26209124_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 18:15:29 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 17:20:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 18:20:33 Europe/London] Successfully added job B8E678A5-7E18-4FC3-A358-307C45EF5001 to customer page for user: yshokrollahi
+[06-Aug-2025 18:20:34 Europe/London] Successfully added job B8E678A5-7E18-4FC3-A358-307C45EF5001 to customer page for user: yshokrollahi
+[06-Aug-2025 17:33:29 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:33:40 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:33:48 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 17:33:48 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/newHE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 18:33:49 Europe/London] Decoded isDir: 
+[06-Aug-2025 18:33:49 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/newHE.svs
+)
+
+[06-Aug-2025 18:33:49 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 18:33:49 Europe/London] Number of files: 1
+[06-Aug-2025 18:33:49 Europe/London] File 0: /media/Users/yshokrollahi/newHE.svs - exists: YES
+[06-Aug-2025 18:33:49 Europe/London] Starting issueFiles at: 2025-08-06 18:33:49
+[06-Aug-2025 18:33:49 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 18:33:49 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 18:33:49 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 18:33:49 Europe/London] Completed issueFiles at: 2025-08-06 18:33:49
+[06-Aug-2025 18:33:49 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 18:33:49 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;19D3260E-AE7A-41A1-A292-4FB976D7084A;1;checksum;/media/Users/yshokrollahi/newHE.svs;/var/www/uploads/83400855_newHE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 19D3260E-AE7A-41A1-A292-4FB976D7084A
+                    [name] => /var/www/uploads/83400855_newHE.svs
+                    [fileId] => /media/Users/yshokrollahi/newHE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 18:33:49 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 18:39:05 Europe/London] Successfully added job 19D3260E-AE7A-41A1-A292-4FB976D7084A to customer page for user: yshokrollahi
+[06-Aug-2025 18:39:05 Europe/London] Successfully added job 19D3260E-AE7A-41A1-A292-4FB976D7084A to customer page for user: yshokrollahi
+[06-Aug-2025 17:43:51 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:43:55 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:44:04 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 17:44:05 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS001_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 18:44:05 Europe/London] Decoded isDir: 
+[06-Aug-2025 18:44:05 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS001_HE.svs
+)
+
+[06-Aug-2025 18:44:05 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 18:44:05 Europe/London] Number of files: 1
+[06-Aug-2025 18:44:05 Europe/London] File 0: /media/Users/yshokrollahi/MS001_HE.svs - exists: YES
+[06-Aug-2025 18:44:05 Europe/London] Starting issueFiles at: 2025-08-06 18:44:05
+[06-Aug-2025 18:44:05 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 18:44:05 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 18:44:05 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 18:44:05 Europe/London] Completed issueFiles at: 2025-08-06 18:44:05
+[06-Aug-2025 18:44:05 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 18:44:05 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;3D76369D-3CAC-450A-9865-47BEFCCB7CAB;1;checksum;/media/Users/yshokrollahi/MS001_HE.svs;/var/www/uploads/97300440_MS001_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 3D76369D-3CAC-450A-9865-47BEFCCB7CAB
+                    [name] => /var/www/uploads/97300440_MS001_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS001_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 18:44:05 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 18:47:11 Europe/London] Successfully added job 3D76369D-3CAC-450A-9865-47BEFCCB7CAB to customer page for user: yshokrollahi
+[06-Aug-2025 17:51:04 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:51:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 17:51:11 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 17:51:11 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS001_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 18:51:11 Europe/London] Decoded isDir: 
+[06-Aug-2025 18:51:11 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS001_HE.svs
+)
+
+[06-Aug-2025 18:51:11 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 18:51:11 Europe/London] Number of files: 1
+[06-Aug-2025 18:51:11 Europe/London] File 0: /media/Users/yshokrollahi/MS001_HE.svs - exists: YES
+[06-Aug-2025 18:51:11 Europe/London] Starting issueFiles at: 2025-08-06 18:51:11
+[06-Aug-2025 18:51:11 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 18:51:11 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 18:51:11 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 18:51:11 Europe/London] Completed issueFiles at: 2025-08-06 18:51:11
+[06-Aug-2025 18:51:11 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 18:51:11 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;8F9EE03D-A8EE-47AB-90C1-4ABECF88F9E5;1;checksum;/media/Users/yshokrollahi/MS001_HE.svs;/var/www/uploads/50623544_MS001_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 8F9EE03D-A8EE-47AB-90C1-4ABECF88F9E5
+                    [name] => /var/www/uploads/50623544_MS001_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS001_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 18:51:11 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 17:57:26 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 17:57:26 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/pathology.jpg"]
+    [isDir] => false
+)
+
+[06-Aug-2025 18:57:26 Europe/London] Decoded isDir: 
+[06-Aug-2025 18:57:27 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/pathology.jpg
+)
+
+[06-Aug-2025 18:57:27 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 18:57:27 Europe/London] Number of files: 1
+[06-Aug-2025 18:57:27 Europe/London] File 0: /media/Users/yshokrollahi/pathology.jpg - exists: YES
+[06-Aug-2025 18:57:27 Europe/London] Starting issueFiles at: 2025-08-06 18:57:27
+[06-Aug-2025 18:57:27 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 18:57:27 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 18:57:27 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 18:57:27 Europe/London] Completed issueFiles at: 2025-08-06 18:57:27
+[06-Aug-2025 18:57:27 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 18:57:27 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;D2162CC7-9FFD-4750-A853-82EC6A933912;1;checksum;/media/Users/yshokrollahi/pathology.jpg;/var/www/uploads/77757178_pathology.jpg;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => D2162CC7-9FFD-4750-A853-82EC6A933912
+                    [name] => /var/www/uploads/77757178_pathology.jpg
+                    [fileId] => /media/Users/yshokrollahi/pathology.jpg
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 18:57:27 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 18:57:52 Europe/London] Successfully added job 8F9EE03D-A8EE-47AB-90C1-4ABECF88F9E5 to customer page for user: yshokrollahi
+[06-Aug-2025 18:57:52 Europe/London] Successfully added job 8F9EE03D-A8EE-47AB-90C1-4ABECF88F9E5 to customer page for user: yshokrollahi
+[06-Aug-2025 18:59:40 Europe/London] Successfully added job D2162CC7-9FFD-4750-A853-82EC6A933912 to customer page for user: yshokrollahi
+[06-Aug-2025 18:58:27 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 18:58:27 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS020_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 19:58:27 Europe/London] Decoded isDir: 
+[06-Aug-2025 19:58:27 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS020_HE.svs
+)
+
+[06-Aug-2025 19:58:27 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 19:58:27 Europe/London] Number of files: 1
+[06-Aug-2025 19:58:27 Europe/London] File 0: /media/Users/yshokrollahi/MS020_HE.svs - exists: YES
+[06-Aug-2025 19:58:27 Europe/London] Starting issueFiles at: 2025-08-06 19:58:27
+[06-Aug-2025 19:58:27 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 19:58:27 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 19:58:27 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 19:58:27 Europe/London] Completed issueFiles at: 2025-08-06 19:58:27
+[06-Aug-2025 19:58:27 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 19:58:27 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;6395E1C8-B68B-4E7F-B6F2-67B88F6B6CAA;1;checksum;/media/Users/yshokrollahi/MS020_HE.svs;/var/www/uploads/18324492_MS020_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 6395E1C8-B68B-4E7F-B6F2-67B88F6B6CAA
+                    [name] => /var/www/uploads/18324492_MS020_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS020_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 19:58:27 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 20:01:13 Europe/London] Successfully added job 6395E1C8-B68B-4E7F-B6F2-67B88F6B6CAA to customer page for user: yshokrollahi
+[06-Aug-2025 19:20:22 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 19:20:26 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 19:21:41 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 19:21:41 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS003_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 20:21:41 Europe/London] Decoded isDir: 
+[06-Aug-2025 20:21:41 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS003_HE.svs
+)
+
+[06-Aug-2025 20:21:41 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 20:21:41 Europe/London] Number of files: 1
+[06-Aug-2025 20:21:41 Europe/London] File 0: /media/Users/yshokrollahi/MS003_HE.svs - exists: YES
+[06-Aug-2025 20:21:41 Europe/London] Starting issueFiles at: 2025-08-06 20:21:41
+[06-Aug-2025 20:21:41 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:21:41 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:21:42 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:21:42 Europe/London] Completed issueFiles at: 2025-08-06 20:21:42
+[06-Aug-2025 20:21:42 Europe/London] issueFiles took: 1 seconds
+[06-Aug-2025 20:21:42 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;B2CAFB2C-4538-4931-BA4E-33AB301C014B;1;checksum;/media/Users/yshokrollahi/MS003_HE.svs;/var/www/uploads/43953566_MS003_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => B2CAFB2C-4538-4931-BA4E-33AB301C014B
+                    [name] => /var/www/uploads/43953566_MS003_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS003_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 20:21:42 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 20:23:57 Europe/London] Successfully added job B2CAFB2C-4538-4931-BA4E-33AB301C014B to customer page for user: yshokrollahi
+[06-Aug-2025 19:26:12 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 19:26:12 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS004_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 20:26:12 Europe/London] Decoded isDir: 
+[06-Aug-2025 20:26:12 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS004_HE.svs
+)
+
+[06-Aug-2025 20:26:12 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 20:26:12 Europe/London] Number of files: 1
+[06-Aug-2025 20:26:12 Europe/London] File 0: /media/Users/yshokrollahi/MS004_HE.svs - exists: YES
+[06-Aug-2025 20:26:12 Europe/London] Starting issueFiles at: 2025-08-06 20:26:12
+[06-Aug-2025 20:26:12 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:26:13 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:26:13 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:26:13 Europe/London] Completed issueFiles at: 2025-08-06 20:26:13
+[06-Aug-2025 20:26:13 Europe/London] issueFiles took: 1 seconds
+[06-Aug-2025 20:26:13 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;17B46741-0846-4B06-A1CF-7689B6E2F660;1;checksum;/media/Users/yshokrollahi/MS004_HE.svs;/var/www/uploads/69076681_MS004_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 17B46741-0846-4B06-A1CF-7689B6E2F660
+                    [name] => /var/www/uploads/69076681_MS004_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS004_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 20:26:13 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 20:28:25 Europe/London] Successfully added job 17B46741-0846-4B06-A1CF-7689B6E2F660 to customer page for user: yshokrollahi
+[06-Aug-2025 19:30:39 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 19:30:39 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS008_HE.svs","/media/Users/yshokrollahi/MS009_HE.svs","/media/Users/yshokrollahi/MS010_HE.svs","/media/Users/yshokrollahi/MS011_HE.svs","/media/Users/yshokrollahi/MS014_HE.svs","/media/Users/yshokrollahi/MS012_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 20:30:39 Europe/London] Decoded isDir: 
+[06-Aug-2025 20:30:39 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS008_HE.svs
+    [1] => /media/Users/yshokrollahi/MS009_HE.svs
+    [2] => /media/Users/yshokrollahi/MS010_HE.svs
+    [3] => /media/Users/yshokrollahi/MS011_HE.svs
+    [4] => /media/Users/yshokrollahi/MS014_HE.svs
+    [5] => /media/Users/yshokrollahi/MS012_HE.svs
+)
+
+[06-Aug-2025 20:30:39 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 20:30:39 Europe/London] Number of files: 6
+[06-Aug-2025 20:30:39 Europe/London] File 0: /media/Users/yshokrollahi/MS008_HE.svs - exists: YES
+[06-Aug-2025 20:30:39 Europe/London] File 1: /media/Users/yshokrollahi/MS009_HE.svs - exists: YES
+[06-Aug-2025 20:30:39 Europe/London] File 2: /media/Users/yshokrollahi/MS010_HE.svs - exists: YES
+[06-Aug-2025 20:30:39 Europe/London] File 3: /media/Users/yshokrollahi/MS011_HE.svs - exists: YES
+[06-Aug-2025 20:30:39 Europe/London] File 4: /media/Users/yshokrollahi/MS014_HE.svs - exists: YES
+[06-Aug-2025 20:30:39 Europe/London] File 5: /media/Users/yshokrollahi/MS012_HE.svs - exists: YES
+[06-Aug-2025 20:30:39 Europe/London] Starting issueFiles at: 2025-08-06 20:30:39
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 20:30:39 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 20:30:39 Europe/London] Completed issueFiles at: 2025-08-06 20:30:39
+[06-Aug-2025 20:30:39 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 20:30:39 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;D7C2D59D-60DC-4F28-9CF4-B7BCE9E8C303;1;checksum;/media/Users/yshokrollahi/MS008_HE.svs;/var/www/uploads/63389994_MS008_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => D7C2D59D-60DC-4F28-9CF4-B7BCE9E8C303
+                    [name] => /var/www/uploads/63389994_MS008_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS008_HE.svs
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;E904C7BF-A096-473F-AF19-76D68331E603;1;checksum;/media/Users/yshokrollahi/MS009_HE.svs;/var/www/uploads/61260113_MS009_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => E904C7BF-A096-473F-AF19-76D68331E603
+                    [name] => /var/www/uploads/61260113_MS009_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS009_HE.svs
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;196EC750-A999-463C-82D2-0D3EBC5FB94C;1;checksum;/media/Users/yshokrollahi/MS010_HE.svs;/var/www/uploads/77846849_MS010_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 196EC750-A999-463C-82D2-0D3EBC5FB94C
+                    [name] => /var/www/uploads/77846849_MS010_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS010_HE.svs
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;DF378898-DFCC-4282-A3DC-F27EE40A4497;1;checksum;/media/Users/yshokrollahi/MS011_HE.svs;/var/www/uploads/78146504_MS011_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => DF378898-DFCC-4282-A3DC-F27EE40A4497
+                    [name] => /var/www/uploads/78146504_MS011_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS011_HE.svs
+                )
+
+            [4] => Array
+                (
+                    [entry] => -1;ACB9CE25-47DB-4785-ADBE-537DA62449B1;1;checksum;/media/Users/yshokrollahi/MS014_HE.svs;/var/www/uploads/89799346_MS014_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => ACB9CE25-47DB-4785-ADBE-537DA62449B1
+                    [name] => /var/www/uploads/89799346_MS014_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS014_HE.svs
+                )
+
+            [5] => Array
+                (
+                    [entry] => -1;CB824384-7AE3-4416-BC2E-52A372F1396A;1;checksum;/media/Users/yshokrollahi/MS012_HE.svs;/var/www/uploads/96649389_MS012_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => CB824384-7AE3-4416-BC2E-52A372F1396A
+                    [name] => /var/www/uploads/96649389_MS012_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS012_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 20:30:39 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 20:33:28 Europe/London] Successfully added job D7C2D59D-60DC-4F28-9CF4-B7BCE9E8C303 to customer page for user: yshokrollahi
+[06-Aug-2025 20:33:43 Europe/London] Successfully added job E904C7BF-A096-473F-AF19-76D68331E603 to customer page for user: yshokrollahi
+[06-Aug-2025 20:34:05 Europe/London] Successfully added job 196EC750-A999-463C-82D2-0D3EBC5FB94C to customer page for user: yshokrollahi
+[06-Aug-2025 20:35:17 Europe/London] Successfully added job DF378898-DFCC-4282-A3DC-F27EE40A4497 to customer page for user: yshokrollahi
+[06-Aug-2025 20:36:11 Europe/London] Successfully added job ACB9CE25-47DB-4785-ADBE-537DA62449B1 to customer page for user: yshokrollahi
+[06-Aug-2025 20:37:21 Europe/London] Successfully added job CB824384-7AE3-4416-BC2E-52A372F1396A to customer page for user: yshokrollahi
+[06-Aug-2025 19:38:53 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 19:38:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 20:10:51 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 20:10:55 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 20:11:13 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 20:11:13 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS014_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 21:11:13 Europe/London] Decoded isDir: 
+[06-Aug-2025 21:11:13 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS014_HE.svs
+)
+
+[06-Aug-2025 21:11:13 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 21:11:13 Europe/London] Number of files: 1
+[06-Aug-2025 21:11:13 Europe/London] File 0: /media/Users/yshokrollahi/MS014_HE.svs - exists: YES
+[06-Aug-2025 21:11:13 Europe/London] Starting issueFiles at: 2025-08-06 21:11:13
+[06-Aug-2025 21:11:13 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:11:13 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:11:13 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:11:13 Europe/London] Completed issueFiles at: 2025-08-06 21:11:13
+[06-Aug-2025 21:11:13 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 21:11:13 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;863AF8E0-CC6F-4FDF-86BC-81F67AB50559;1;checksum;/media/Users/yshokrollahi/MS014_HE.svs;/var/www/uploads/60248136_MS014_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 863AF8E0-CC6F-4FDF-86BC-81F67AB50559
+                    [name] => /var/www/uploads/60248136_MS014_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS014_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 21:11:13 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 21:13:39 Europe/London] Successfully added job 863AF8E0-CC6F-4FDF-86BC-81F67AB50559 to customer page for user: yshokrollahi
+[06-Aug-2025 20:20:53 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 20:21:12 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 20:21:26 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 20:21:26 UTC] POST data: Array
+(
+    [path] => ["/media/Users/zliu18/test001.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 21:21:26 Europe/London] Decoded isDir: 
+[06-Aug-2025 21:21:26 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/zliu18/test001.svs
+)
+
+[06-Aug-2025 21:21:26 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 21:21:26 Europe/London] Number of files: 1
+[06-Aug-2025 21:21:26 Europe/London] File 0: /media/Users/zliu18/test001.svs - exists: YES
+[06-Aug-2025 21:21:26 Europe/London] Starting issueFiles at: 2025-08-06 21:21:26
+[06-Aug-2025 21:21:26 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:21:26 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:21:26 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:21:27 Europe/London] Completed issueFiles at: 2025-08-06 21:21:27
+[06-Aug-2025 21:21:27 Europe/London] issueFiles took: 1 seconds
+[06-Aug-2025 21:21:27 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;851EFA1B-82F5-4E51-A8CA-68A3D7785615;1;checksum;/media/Users/zliu18/test001.svs;/var/www/uploads/68907974_test001.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 851EFA1B-82F5-4E51-A8CA-68A3D7785615
+                    [name] => /var/www/uploads/68907974_test001.svs
+                    [fileId] => /media/Users/zliu18/test001.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 21:21:27 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 21:23:37 Europe/London] Successfully added job 851EFA1B-82F5-4E51-A8CA-68A3D7785615 to customer page for user: zliu18
+[06-Aug-2025 20:26:25 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 20:26:25 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS006_HE.svs","/media/Users/yshokrollahi/MS007_HE.svs","/media/Users/yshokrollahi/MS008_HE.svs","/media/Users/yshokrollahi/MS001_HE.svs","/media/Users/yshokrollahi/MS002_HE.svs","/media/Users/yshokrollahi/MS003_HE.svs","/media/Users/yshokrollahi/MS005_HE.svs","/media/Users/yshokrollahi/MS004_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 21:26:25 Europe/London] Decoded isDir: 
+[06-Aug-2025 21:26:25 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS006_HE.svs
+    [1] => /media/Users/yshokrollahi/MS007_HE.svs
+    [2] => /media/Users/yshokrollahi/MS008_HE.svs
+    [3] => /media/Users/yshokrollahi/MS001_HE.svs
+    [4] => /media/Users/yshokrollahi/MS002_HE.svs
+    [5] => /media/Users/yshokrollahi/MS003_HE.svs
+    [6] => /media/Users/yshokrollahi/MS005_HE.svs
+    [7] => /media/Users/yshokrollahi/MS004_HE.svs
+)
+
+[06-Aug-2025 21:26:25 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 21:26:25 Europe/London] Number of files: 8
+[06-Aug-2025 21:26:25 Europe/London] File 0: /media/Users/yshokrollahi/MS006_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 1: /media/Users/yshokrollahi/MS007_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 2: /media/Users/yshokrollahi/MS008_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 3: /media/Users/yshokrollahi/MS001_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 4: /media/Users/yshokrollahi/MS002_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 5: /media/Users/yshokrollahi/MS003_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 6: /media/Users/yshokrollahi/MS005_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] File 7: /media/Users/yshokrollahi/MS004_HE.svs - exists: YES
+[06-Aug-2025 21:26:25 Europe/London] Starting issueFiles at: 2025-08-06 21:26:25
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:26:25 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:26:26 Europe/London] Completed issueFiles at: 2025-08-06 21:26:26
+[06-Aug-2025 21:26:26 Europe/London] issueFiles took: 1 seconds
+[06-Aug-2025 21:26:26 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;76E57358-3357-4F99-B7B0-7DA92DDECEEC;1;checksum;/media/Users/yshokrollahi/MS006_HE.svs;/var/www/uploads/36662821_MS006_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 76E57358-3357-4F99-B7B0-7DA92DDECEEC
+                    [name] => /var/www/uploads/36662821_MS006_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS006_HE.svs
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;4E364F9E-87DE-456F-91B6-27CF36B25D3A;1;checksum;/media/Users/yshokrollahi/MS007_HE.svs;/var/www/uploads/48473594_MS007_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 4E364F9E-87DE-456F-91B6-27CF36B25D3A
+                    [name] => /var/www/uploads/48473594_MS007_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS007_HE.svs
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;12A1C8D3-5B4F-4AA2-8BA8-A3EF753A19E2;1;checksum;/media/Users/yshokrollahi/MS008_HE.svs;/var/www/uploads/23954539_MS008_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 12A1C8D3-5B4F-4AA2-8BA8-A3EF753A19E2
+                    [name] => /var/www/uploads/23954539_MS008_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS008_HE.svs
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;A739105F-866B-4C39-AD34-67A7924899D4;1;checksum;/media/Users/yshokrollahi/MS001_HE.svs;/var/www/uploads/90189780_MS001_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => A739105F-866B-4C39-AD34-67A7924899D4
+                    [name] => /var/www/uploads/90189780_MS001_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS001_HE.svs
+                )
+
+            [4] => Array
+                (
+                    [entry] => -1;6469C4B0-4C67-42A2-99A7-DD1D4D0A936B;1;checksum;/media/Users/yshokrollahi/MS002_HE.svs;/var/www/uploads/95532500_MS002_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 6469C4B0-4C67-42A2-99A7-DD1D4D0A936B
+                    [name] => /var/www/uploads/95532500_MS002_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS002_HE.svs
+                )
+
+            [5] => Array
+                (
+                    [entry] => -1;DD23BD6D-F9ED-43A4-B91F-CF31AC5766FB;1;checksum;/media/Users/yshokrollahi/MS003_HE.svs;/var/www/uploads/28203729_MS003_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => DD23BD6D-F9ED-43A4-B91F-CF31AC5766FB
+                    [name] => /var/www/uploads/28203729_MS003_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS003_HE.svs
+                )
+
+            [6] => Array
+                (
+                    [entry] => -1;498D1407-31D7-4647-A8F4-84503B87E1CF;1;checksum;/media/Users/yshokrollahi/MS005_HE.svs;/var/www/uploads/83132156_MS005_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 498D1407-31D7-4647-A8F4-84503B87E1CF
+                    [name] => /var/www/uploads/83132156_MS005_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS005_HE.svs
+                )
+
+            [7] => Array
+                (
+                    [entry] => -1;27C4EE49-D941-4211-83F1-4C9820469264;1;checksum;/media/Users/yshokrollahi/MS004_HE.svs;/var/www/uploads/57727045_MS004_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 27C4EE49-D941-4211-83F1-4C9820469264
+                    [name] => /var/www/uploads/57727045_MS004_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS004_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 21:26:26 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 21:28:31 Europe/London] Successfully added job 76E57358-3357-4F99-B7B0-7DA92DDECEEC to customer page for user: yshokrollahi
+[06-Aug-2025 21:29:27 Europe/London] Successfully added job 4E364F9E-87DE-456F-91B6-27CF36B25D3A to customer page for user: yshokrollahi
+[06-Aug-2025 21:30:12 Europe/London] Successfully added job 12A1C8D3-5B4F-4AA2-8BA8-A3EF753A19E2 to customer page for user: yshokrollahi
+[06-Aug-2025 21:31:17 Europe/London] Successfully added job A739105F-866B-4C39-AD34-67A7924899D4 to customer page for user: yshokrollahi
+[06-Aug-2025 21:32:38 Europe/London] Successfully added job 6469C4B0-4C67-42A2-99A7-DD1D4D0A936B to customer page for user: yshokrollahi
+[06-Aug-2025 21:32:57 Europe/London] Successfully added job DD23BD6D-F9ED-43A4-B91F-CF31AC5766FB to customer page for user: yshokrollahi
+[06-Aug-2025 21:33:44 Europe/London] Successfully added job 498D1407-31D7-4647-A8F4-84503B87E1CF to customer page for user: yshokrollahi
+[06-Aug-2025 21:33:59 Europe/London] Successfully added job 27C4EE49-D941-4211-83F1-4C9820469264 to customer page for user: yshokrollahi
+[06-Aug-2025 20:43:33 UTC] === issueUploadProject.php started ===
+[06-Aug-2025 20:43:33 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS005_HE.svs"]
+    [isDir] => false
+)
+
+[06-Aug-2025 21:43:33 Europe/London] Decoded isDir: 
+[06-Aug-2025 21:43:33 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS005_HE.svs
+)
+
+[06-Aug-2025 21:43:33 Europe/London] Case: isDir=0, array - calling issueFiles
+[06-Aug-2025 21:43:33 Europe/London] Number of files: 1
+[06-Aug-2025 21:43:33 Europe/London] File 0: /media/Users/yshokrollahi/MS005_HE.svs - exists: YES
+[06-Aug-2025 21:43:33 Europe/London] Starting issueFiles at: 2025-08-06 21:43:33
+[06-Aug-2025 21:43:33 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[06-Aug-2025 21:43:33 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[06-Aug-2025 21:43:33 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[06-Aug-2025 21:43:34 Europe/London] Completed issueFiles at: 2025-08-06 21:43:33
+[06-Aug-2025 21:43:34 Europe/London] issueFiles took: 0 seconds
+[06-Aug-2025 21:43:34 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;9EB16732-BF69-44A2-AD55-E1C7BDC09345;1;checksum;/media/Users/yshokrollahi/MS005_HE.svs;/var/www/uploads/47642463_MS005_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 9EB16732-BF69-44A2-AD55-E1C7BDC09345
+                    [name] => /var/www/uploads/47642463_MS005_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS005_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[06-Aug-2025 21:43:34 Europe/London] === issueUploadProject.php completed ===
+[06-Aug-2025 21:46:27 Europe/London] Successfully added job 9EB16732-BF69-44A2-AD55-E1C7BDC09345 to customer page for user: yshokrollahi
+[06-Aug-2025 21:22:36 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 21:48:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 21:49:05 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 21:52:21 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 21:53:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 22:10:02 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[06-Aug-2025 22:10:05 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 00:26:19 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 13:56:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 13:56:36 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 15:32:57 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 15:37:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 15:37:45 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 15:38:17 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 15:38:25 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 15:39:04 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 15:39:04 UTC] POST data: Array
+(
+    [path] => ["/media/Users/yshokrollahi/MS010_HE.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 16:39:05 Europe/London] Decoded isDir: 
+[07-Aug-2025 16:39:05 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/yshokrollahi/MS010_HE.svs
+)
+
+[07-Aug-2025 16:39:05 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 16:39:05 Europe/London] Number of files: 1
+[07-Aug-2025 16:39:05 Europe/London] File 0: /media/Users/yshokrollahi/MS010_HE.svs - exists: YES
+[07-Aug-2025 16:39:05 Europe/London] Starting issueFiles at: 2025-08-07 16:39:05
+[07-Aug-2025 16:39:05 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 16:39:05 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 16:39:05 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 16:39:05 Europe/London] Completed issueFiles at: 2025-08-07 16:39:05
+[07-Aug-2025 16:39:05 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 16:39:05 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;39290780-65AF-41C3-968F-965EA26A4F6F;1;checksum;/media/Users/yshokrollahi/MS010_HE.svs;/var/www/uploads/42785923_MS010_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 39290780-65AF-41C3-968F-965EA26A4F6F
+                    [name] => /var/www/uploads/42785923_MS010_HE.svs
+                    [fileId] => /media/Users/yshokrollahi/MS010_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 16:39:05 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 15:42:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 16:43:07 Europe/London] Successfully added job 39290780-65AF-41C3-968F-965EA26A4F6F to customer page for user: yshokrollahi
+[07-Aug-2025 16:37:21 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 16:37:37 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:45:54 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:45:58 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:48:36 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:48:51 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:50:09 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:52:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:52:17 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:54:00 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 17:55:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:07:14 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:07:30 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:09:04 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:11:01 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:13:26 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:14:49 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:15:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:16:25 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:18:40 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:26:26 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:28:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:40:33 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 18:46:24 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 18:46:24 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/MS001_HE.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 19:46:24 Europe/London] Decoded isDir: 
+[07-Aug-2025 19:46:24 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/MS001_HE.svs
+)
+
+[07-Aug-2025 19:46:24 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 19:46:24 Europe/London] Number of files: 1
+[07-Aug-2025 19:46:24 Europe/London] File 0: /media/Users/admin_22/MS001_HE.svs - exists: YES
+[07-Aug-2025 19:46:24 Europe/London] Starting issueFiles at: 2025-08-07 19:46:24
+[07-Aug-2025 19:46:24 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 19:46:24 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 19:46:24 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 19:46:24 Europe/London] Completed issueFiles at: 2025-08-07 19:46:24
+[07-Aug-2025 19:46:24 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 19:46:24 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;FA8F45AE-FF22-4FE5-8D90-0052097F70F9;1;checksum;/media/Users/admin_22/MS001_HE.svs;/var/www/uploads/01915440_MS001_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => FA8F45AE-FF22-4FE5-8D90-0052097F70F9
+                    [name] => /var/www/uploads/01915440_MS001_HE.svs
+                    [fileId] => /media/Users/admin_22/MS001_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 19:46:24 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 19:49:46 Europe/London] Successfully added job FA8F45AE-FF22-4FE5-8D90-0052097F70F9 to customer page for user: admin_22
+[07-Aug-2025 19:49:49 Europe/London] Successfully added job FA8F45AE-FF22-4FE5-8D90-0052097F70F9 to customer page for user: admin_22
+[07-Aug-2025 19:49:53 Europe/London] Successfully added job FA8F45AE-FF22-4FE5-8D90-0052097F70F9 to customer page for user: admin_22
+[07-Aug-2025 19:49:55 Europe/London] Successfully added job FA8F45AE-FF22-4FE5-8D90-0052097F70F9 to customer page for user: admin_22
+[07-Aug-2025 19:50:00 Europe/London] Successfully added job FA8F45AE-FF22-4FE5-8D90-0052097F70F9 to customer page for user: admin_22
+[07-Aug-2025 19:50:06 Europe/London] Successfully added job FA8F45AE-FF22-4FE5-8D90-0052097F70F9 to customer page for user: admin_22
+[07-Aug-2025 18:59:31 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 19:07:49 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 19:07:49 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/MS001_HE.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 20:07:49 Europe/London] Decoded isDir: 
+[07-Aug-2025 20:07:49 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/MS001_HE.svs
+)
+
+[07-Aug-2025 20:07:50 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 20:07:50 Europe/London] Number of files: 1
+[07-Aug-2025 20:07:50 Europe/London] File 0: /media/Users/admin_22/MS001_HE.svs - exists: YES
+[07-Aug-2025 20:07:50 Europe/London] Starting issueFiles at: 2025-08-07 20:07:50
+[07-Aug-2025 20:07:50 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 20:07:50 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 20:07:50 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 20:07:50 Europe/London] Completed issueFiles at: 2025-08-07 20:07:50
+[07-Aug-2025 20:07:50 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 20:07:50 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;00F3240E-698E-43CB-859E-EC640C089A8E;1;checksum;/media/Users/admin_22/MS001_HE.svs;/var/www/uploads/59305717_MS001_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 00F3240E-698E-43CB-859E-EC640C089A8E
+                    [name] => /var/www/uploads/59305717_MS001_HE.svs
+                    [fileId] => /media/Users/admin_22/MS001_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 20:07:50 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 20:10:42 Europe/London] Successfully added job 00F3240E-698E-43CB-859E-EC640C089A8E to customer page for user: admin_22
+[07-Aug-2025 19:28:34 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 19:50:28 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 19:56:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 19:56:37 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 19:56:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 19:56:48 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 19:56:48 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/MS008_HE.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 20:56:48 Europe/London] Decoded isDir: 
+[07-Aug-2025 20:56:48 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/MS008_HE.svs
+)
+
+[07-Aug-2025 20:56:48 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 20:56:48 Europe/London] Number of files: 1
+[07-Aug-2025 20:56:48 Europe/London] File 0: /media/Users/admin_22/MS008_HE.svs - exists: YES
+[07-Aug-2025 20:56:48 Europe/London] Starting issueFiles at: 2025-08-07 20:56:48
+[07-Aug-2025 20:56:48 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 20:56:48 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 20:56:48 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 20:56:48 Europe/London] Completed issueFiles at: 2025-08-07 20:56:48
+[07-Aug-2025 20:56:48 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 20:56:48 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;AFAAE931-C2E2-4489-BABF-2EDC3A6E8D55;1;checksum;/media/Users/admin_22/MS008_HE.svs;/var/www/uploads/68229981_MS008_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => AFAAE931-C2E2-4489-BABF-2EDC3A6E8D55
+                    [name] => /var/www/uploads/68229981_MS008_HE.svs
+                    [fileId] => /media/Users/admin_22/MS008_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 20:56:48 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 20:59:32 Europe/London] Successfully added job AFAAE931-C2E2-4489-BABF-2EDC3A6E8D55 to customer page for user: admin_22
+[07-Aug-2025 20:04:53 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 20:04:53 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/MS022_HE.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 21:04:53 Europe/London] Decoded isDir: 
+[07-Aug-2025 21:04:53 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/MS022_HE.svs
+)
+
+[07-Aug-2025 21:04:53 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 21:04:53 Europe/London] Number of files: 1
+[07-Aug-2025 21:04:53 Europe/London] File 0: /media/Users/admin_22/MS022_HE.svs - exists: YES
+[07-Aug-2025 21:04:53 Europe/London] Starting issueFiles at: 2025-08-07 21:04:53
+[07-Aug-2025 21:04:53 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:04:53 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:04:53 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:04:53 Europe/London] Completed issueFiles at: 2025-08-07 21:04:53
+[07-Aug-2025 21:04:53 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 21:04:53 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;E37436C4-52BE-4C84-8265-DFE7AF8521DD;1;checksum;/media/Users/admin_22/MS022_HE.svs;/var/www/uploads/31997304_MS022_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => E37436C4-52BE-4C84-8265-DFE7AF8521DD
+                    [name] => /var/www/uploads/31997304_MS022_HE.svs
+                    [fileId] => /media/Users/admin_22/MS022_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 21:04:53 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 21:07:01 Europe/London] Successfully added job E37436C4-52BE-4C84-8265-DFE7AF8521DD to customer page for user: admin_22
+[07-Aug-2025 21:07:02 Europe/London] Successfully added job E37436C4-52BE-4C84-8265-DFE7AF8521DD to customer page for user: admin_22
+[07-Aug-2025 20:26:01 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 20:26:02 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/MOS153_HE.svs","/media/Users/admin_22/MS001_HE.svs","/media/Users/admin_22/MS008_HE.svs","/media/Users/admin_22/MS022_HE.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 21:26:02 Europe/London] Decoded isDir: 
+[07-Aug-2025 21:26:02 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/MOS153_HE.svs
+    [1] => /media/Users/admin_22/MS001_HE.svs
+    [2] => /media/Users/admin_22/MS008_HE.svs
+    [3] => /media/Users/admin_22/MS022_HE.svs
+)
+
+[07-Aug-2025 21:26:02 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 21:26:02 Europe/London] Number of files: 4
+[07-Aug-2025 21:26:02 Europe/London] File 0: /media/Users/admin_22/MOS153_HE.svs - exists: YES
+[07-Aug-2025 21:26:02 Europe/London] File 1: /media/Users/admin_22/MS001_HE.svs - exists: YES
+[07-Aug-2025 21:26:02 Europe/London] File 2: /media/Users/admin_22/MS008_HE.svs - exists: YES
+[07-Aug-2025 21:26:02 Europe/London] File 3: /media/Users/admin_22/MS022_HE.svs - exists: YES
+[07-Aug-2025 21:26:02 Europe/London] Starting issueFiles at: 2025-08-07 21:26:02
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:02 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:02 Europe/London] Completed issueFiles at: 2025-08-07 21:26:02
+[07-Aug-2025 21:26:02 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 21:26:02 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;9F5EF8DE-0B40-431D-A5AB-0845596B1A6F;1;checksum;/media/Users/admin_22/MOS153_HE.svs;/var/www/uploads/71614609_MOS153_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 9F5EF8DE-0B40-431D-A5AB-0845596B1A6F
+                    [name] => /var/www/uploads/71614609_MOS153_HE.svs
+                    [fileId] => /media/Users/admin_22/MOS153_HE.svs
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;45FAE7F5-D391-44DA-A9D9-31A1DD7A43C8;1;checksum;/media/Users/admin_22/MS001_HE.svs;/var/www/uploads/93455239_MS001_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 45FAE7F5-D391-44DA-A9D9-31A1DD7A43C8
+                    [name] => /var/www/uploads/93455239_MS001_HE.svs
+                    [fileId] => /media/Users/admin_22/MS001_HE.svs
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;E0FDA602-139A-48B3-B55A-C1EBDFD5CFBD;1;checksum;/media/Users/admin_22/MS008_HE.svs;/var/www/uploads/48761705_MS008_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => E0FDA602-139A-48B3-B55A-C1EBDFD5CFBD
+                    [name] => /var/www/uploads/48761705_MS008_HE.svs
+                    [fileId] => /media/Users/admin_22/MS008_HE.svs
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;8ED014A7-107D-43A5-9A59-ECAD592AD286;1;checksum;/media/Users/admin_22/MS022_HE.svs;/var/www/uploads/36268019_MS022_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 8ED014A7-107D-43A5-9A59-ECAD592AD286
+                    [name] => /var/www/uploads/36268019_MS022_HE.svs
+                    [fileId] => /media/Users/admin_22/MS022_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 21:26:02 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 20:26:20 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 20:26:20 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/test/dfdsf/MS011_HE.svs","/media/Users/admin_22/test/dfdsf/MS011S1.png","/media/Users/admin_22/test/dfdsf/MS012_HE.svs","/media/Users/admin_22/test/dfdsf/MS012S1.png","/media/Users/admin_22/test/dfdsf/polyscope-screenshot-region-2025-08-07T16-43-16.png"]
+    [isDir] => false
+)
+
+[07-Aug-2025 21:26:20 Europe/London] Decoded isDir: 
+[07-Aug-2025 21:26:20 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/test/dfdsf/MS011_HE.svs
+    [1] => /media/Users/admin_22/test/dfdsf/MS011S1.png
+    [2] => /media/Users/admin_22/test/dfdsf/MS012_HE.svs
+    [3] => /media/Users/admin_22/test/dfdsf/MS012S1.png
+    [4] => /media/Users/admin_22/test/dfdsf/polyscope-screenshot-region-2025-08-07T16-43-16.png
+)
+
+[07-Aug-2025 21:26:20 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 21:26:20 Europe/London] Number of files: 5
+[07-Aug-2025 21:26:20 Europe/London] File 0: /media/Users/admin_22/test/dfdsf/MS011_HE.svs - exists: YES
+[07-Aug-2025 21:26:20 Europe/London] File 1: /media/Users/admin_22/test/dfdsf/MS011S1.png - exists: YES
+[07-Aug-2025 21:26:20 Europe/London] File 2: /media/Users/admin_22/test/dfdsf/MS012_HE.svs - exists: YES
+[07-Aug-2025 21:26:20 Europe/London] File 3: /media/Users/admin_22/test/dfdsf/MS012S1.png - exists: YES
+[07-Aug-2025 21:26:20 Europe/London] File 4: /media/Users/admin_22/test/dfdsf/polyscope-screenshot-region-2025-08-07T16-43-16.png - exists: YES
+[07-Aug-2025 21:26:20 Europe/London] Starting issueFiles at: 2025-08-07 21:26:20
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:20 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:20 Europe/London] Completed issueFiles at: 2025-08-07 21:26:20
+[07-Aug-2025 21:26:20 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 21:26:20 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;1B1915AC-FA94-4EBE-92D4-1ECAC0336AF9;1;checksum;/media/Users/admin_22/test/dfdsf/MS011_HE.svs;/var/www/uploads/26739967_MS011_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 1B1915AC-FA94-4EBE-92D4-1ECAC0336AF9
+                    [name] => /var/www/uploads/26739967_MS011_HE.svs
+                    [fileId] => /media/Users/admin_22/test/dfdsf/MS011_HE.svs
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;B260EB5C-FEE3-49A8-B6DD-57889DFAEA0E;1;checksum;/media/Users/admin_22/test/dfdsf/MS011S1.png;/var/www/uploads/89595349_MS011S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => B260EB5C-FEE3-49A8-B6DD-57889DFAEA0E
+                    [name] => /var/www/uploads/89595349_MS011S1.png
+                    [fileId] => /media/Users/admin_22/test/dfdsf/MS011S1.png
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;C8757603-F05D-4379-B1C9-97E1E5DA75CE;1;checksum;/media/Users/admin_22/test/dfdsf/MS012_HE.svs;/var/www/uploads/88608511_MS012_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => C8757603-F05D-4379-B1C9-97E1E5DA75CE
+                    [name] => /var/www/uploads/88608511_MS012_HE.svs
+                    [fileId] => /media/Users/admin_22/test/dfdsf/MS012_HE.svs
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;D16DA88E-8695-4082-859B-D808FCD10F68;1;checksum;/media/Users/admin_22/test/dfdsf/MS012S1.png;/var/www/uploads/16309887_MS012S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => D16DA88E-8695-4082-859B-D808FCD10F68
+                    [name] => /var/www/uploads/16309887_MS012S1.png
+                    [fileId] => /media/Users/admin_22/test/dfdsf/MS012S1.png
+                )
+
+            [4] => Array
+                (
+                    [entry] => -1;0E34062F-C98C-4126-BD70-5D9FBE94F4B9;1;checksum;/media/Users/admin_22/test/dfdsf/polyscope-screenshot-region-2025-08-07T16-43-16.png;/var/www/uploads/42606233_polyscope-screenshot-region-2025-08-07T16-43-16.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 0E34062F-C98C-4126-BD70-5D9FBE94F4B9
+                    [name] => /var/www/uploads/42606233_polyscope-screenshot-region-2025-08-07T16-43-16.png
+                    [fileId] => /media/Users/admin_22/test/dfdsf/polyscope-screenshot-region-2025-08-07T16-43-16.png
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 21:26:20 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 20:26:34 UTC] === issueUploadProject.php started ===
+[07-Aug-2025 20:26:34 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/sub/MS014_HE_test.svs","/media/Users/admin_22/sub/MS014S1_OME.ome.tiff","/media/Users/admin_22/sub/MS014S1.png","/media/Users/admin_22/sub/UCY-016-Annotated.svs"]
+    [isDir] => false
+)
+
+[07-Aug-2025 21:26:34 Europe/London] Decoded isDir: 
+[07-Aug-2025 21:26:34 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/sub/MS014_HE_test.svs
+    [1] => /media/Users/admin_22/sub/MS014S1_OME.ome.tiff
+    [2] => /media/Users/admin_22/sub/MS014S1.png
+    [3] => /media/Users/admin_22/sub/UCY-016-Annotated.svs
+)
+
+[07-Aug-2025 21:26:34 Europe/London] Case: isDir=0, array - calling issueFiles
+[07-Aug-2025 21:26:34 Europe/London] Number of files: 4
+[07-Aug-2025 21:26:34 Europe/London] File 0: /media/Users/admin_22/sub/MS014_HE_test.svs - exists: YES
+[07-Aug-2025 21:26:34 Europe/London] File 1: /media/Users/admin_22/sub/MS014S1_OME.ome.tiff - exists: YES
+[07-Aug-2025 21:26:34 Europe/London] File 2: /media/Users/admin_22/sub/MS014S1.png - exists: YES
+[07-Aug-2025 21:26:34 Europe/London] File 3: /media/Users/admin_22/sub/UCY-016-Annotated.svs - exists: YES
+[07-Aug-2025 21:26:34 Europe/London] Starting issueFiles at: 2025-08-07 21:26:34
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[07-Aug-2025 21:26:34 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[07-Aug-2025 21:26:34 Europe/London] Completed issueFiles at: 2025-08-07 21:26:34
+[07-Aug-2025 21:26:34 Europe/London] issueFiles took: 0 seconds
+[07-Aug-2025 21:26:34 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;9506902A-9D0A-49C1-8979-30FB143F530B;1;checksum;/media/Users/admin_22/sub/MS014_HE_test.svs;/var/www/uploads/73436582_MS014_HE_test.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 9506902A-9D0A-49C1-8979-30FB143F530B
+                    [name] => /var/www/uploads/73436582_MS014_HE_test.svs
+                    [fileId] => /media/Users/admin_22/sub/MS014_HE_test.svs
+                )
+
+            [1] => Array
+                (
+                    [entry] => -1;FE06F3C0-F70D-4F8A-AF7A-7E842073685B;1;checksum;/media/Users/admin_22/sub/MS014S1_OME.ome.tiff;/var/www/uploads/65689212_MS014S1_OME.ome.tiff;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => FE06F3C0-F70D-4F8A-AF7A-7E842073685B
+                    [name] => /var/www/uploads/65689212_MS014S1_OME.ome.tiff
+                    [fileId] => /media/Users/admin_22/sub/MS014S1_OME.ome.tiff
+                )
+
+            [2] => Array
+                (
+                    [entry] => -1;3D191C39-FBCD-4477-9566-6E9D2D241776;1;checksum;/media/Users/admin_22/sub/MS014S1.png;/var/www/uploads/74216138_MS014S1.png;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 3D191C39-FBCD-4477-9566-6E9D2D241776
+                    [name] => /var/www/uploads/74216138_MS014S1.png
+                    [fileId] => /media/Users/admin_22/sub/MS014S1.png
+                )
+
+            [3] => Array
+                (
+                    [entry] => -1;A501FF57-8B58-4E1D-AB76-001BB4829FD0;1;checksum;/media/Users/admin_22/sub/UCY-016-Annotated.svs;/var/www/uploads/70509032_UCY-016-Annotated.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => A501FF57-8B58-4E1D-AB76-001BB4829FD0
+                    [name] => /var/www/uploads/70509032_UCY-016-Annotated.svs
+                    [fileId] => /media/Users/admin_22/sub/UCY-016-Annotated.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[07-Aug-2025 21:26:34 Europe/London] === issueUploadProject.php completed ===
+[07-Aug-2025 21:30:06 Europe/London] Successfully added job 9F5EF8DE-0B40-431D-A5AB-0845596B1A6F to customer page for user: admin_22
+[07-Aug-2025 21:31:08 Europe/London] Successfully added job 45FAE7F5-D391-44DA-A9D9-31A1DD7A43C8 to customer page for user: admin_22
+[07-Aug-2025 21:31:52 Europe/London] Successfully added job E0FDA602-139A-48B3-B55A-C1EBDFD5CFBD to customer page for user: admin_22
+[07-Aug-2025 21:32:07 Europe/London] Successfully added job 8ED014A7-107D-43A5-9A59-ECAD592AD286 to customer page for user: admin_22
+[07-Aug-2025 21:34:27 Europe/London] Successfully added job 1B1915AC-FA94-4EBE-92D4-1ECAC0336AF9 to customer page for user: admin_22
+[07-Aug-2025 21:34:53 Europe/London] Successfully added job B260EB5C-FEE3-49A8-B6DD-57889DFAEA0E to customer page for user: admin_22
+[07-Aug-2025 20:35:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 21:36:20 Europe/London] Successfully added job C8757603-F05D-4379-B1C9-97E1E5DA75CE to customer page for user: admin_22
+[07-Aug-2025 20:46:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 20:46:58 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 21:54:11 Europe/London] Successfully added job D16DA88E-8695-4082-859B-D808FCD10F68 to customer page for user: admin_22
+[07-Aug-2025 21:54:12 Europe/London] Successfully added job D16DA88E-8695-4082-859B-D808FCD10F68 to customer page for user: admin_22
+[07-Aug-2025 21:54:13 Europe/London] Successfully added job D16DA88E-8695-4082-859B-D808FCD10F68 to customer page for user: admin_22
+[07-Aug-2025 21:54:14 Europe/London] Successfully added job 0E34062F-C98C-4126-BD70-5D9FBE94F4B9 to customer page for user: admin_22
+[07-Aug-2025 21:54:15 Europe/London] Successfully added job 0E34062F-C98C-4126-BD70-5D9FBE94F4B9 to customer page for user: admin_22
+[07-Aug-2025 21:54:17 Europe/London] Successfully added job 0E34062F-C98C-4126-BD70-5D9FBE94F4B9 to customer page for user: admin_22
+[07-Aug-2025 21:54:17 Europe/London] Successfully added job 9506902A-9D0A-49C1-8979-30FB143F530B to customer page for user: admin_22
+[07-Aug-2025 21:54:18 Europe/London] Successfully added job 9506902A-9D0A-49C1-8979-30FB143F530B to customer page for user: admin_22
+[07-Aug-2025 21:54:20 Europe/London] Successfully added job 9506902A-9D0A-49C1-8979-30FB143F530B to customer page for user: admin_22
+[07-Aug-2025 21:54:21 Europe/London] Successfully added job FE06F3C0-F70D-4F8A-AF7A-7E842073685B to customer page for user: admin_22
+[07-Aug-2025 21:54:21 Europe/London] Successfully added job FE06F3C0-F70D-4F8A-AF7A-7E842073685B to customer page for user: admin_22
+[07-Aug-2025 21:54:22 Europe/London] Successfully added job FE06F3C0-F70D-4F8A-AF7A-7E842073685B to customer page for user: admin_22
+[07-Aug-2025 21:54:24 Europe/London] Successfully added job 3D191C39-FBCD-4477-9566-6E9D2D241776 to customer page for user: admin_22
+[07-Aug-2025 21:54:25 Europe/London] Successfully added job 3D191C39-FBCD-4477-9566-6E9D2D241776 to customer page for user: admin_22
+[07-Aug-2025 21:54:26 Europe/London] Successfully added job 3D191C39-FBCD-4477-9566-6E9D2D241776 to customer page for user: admin_22
+[07-Aug-2025 21:54:29 Europe/London] Successfully added job A501FF57-8B58-4E1D-AB76-001BB4829FD0 to customer page for user: admin_22
+[07-Aug-2025 21:54:30 Europe/London] Successfully added job A501FF57-8B58-4E1D-AB76-001BB4829FD0 to customer page for user: admin_22
+[07-Aug-2025 21:54:31 Europe/London] Successfully added job A501FF57-8B58-4E1D-AB76-001BB4829FD0 to customer page for user: admin_22
+[07-Aug-2025 20:59:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:12:17 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:22:58 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:28:00 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:28:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:28:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:28:26 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[07-Aug-2025 22:33:38 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 02:26:52 UTC] === issueUploadProject.php started ===
+[08-Aug-2025 02:26:52 UTC] POST data: Array
+(
+    [path] => ["/media/Users/zliu18/test001.svs"]
+    [isDir] => false
+)
+
+[08-Aug-2025 03:26:52 Europe/London] Decoded isDir: 
+[08-Aug-2025 03:26:52 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/zliu18/test001.svs
+)
+
+[08-Aug-2025 03:26:52 Europe/London] Case: isDir=0, array - calling issueFiles
+[08-Aug-2025 03:26:52 Europe/London] Number of files: 1
+[08-Aug-2025 03:26:52 Europe/London] File 0: /media/Users/zliu18/test001.svs - exists: YES
+[08-Aug-2025 03:26:52 Europe/London] Starting issueFiles at: 2025-08-08 03:26:52
+[08-Aug-2025 03:26:52 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[08-Aug-2025 03:26:52 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[08-Aug-2025 03:26:52 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[08-Aug-2025 03:26:52 Europe/London] Completed issueFiles at: 2025-08-08 03:26:52
+[08-Aug-2025 03:26:52 Europe/London] issueFiles took: 0 seconds
+[08-Aug-2025 03:26:52 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;86147390-E155-4C9F-85E0-7E4BD54A15D2;1;checksum;/media/Users/zliu18/test001.svs;/var/www/uploads/21847092_test001.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 86147390-E155-4C9F-85E0-7E4BD54A15D2
+                    [name] => /var/www/uploads/21847092_test001.svs
+                    [fileId] => /media/Users/zliu18/test001.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[08-Aug-2025 03:26:52 Europe/London] === issueUploadProject.php completed ===
+[08-Aug-2025 03:29:45 Europe/London] Successfully added job 86147390-E155-4C9F-85E0-7E4BD54A15D2 to customer page for user: zliu18
+[08-Aug-2025 02:43:43 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 02:44:58 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 02:48:46 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 02:48:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 02:49:09 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 14:06:45 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/auth/session_timeout.php on line 2
+[08-Aug-2025 14:11:12 UTC] === issueUploadProject.php started ===
+[08-Aug-2025 14:11:12 UTC] POST data: Array
+(
+    [path] => ["/media/Users/admin_22/MS008_HE.svs"]
+    [isDir] => false
+)
+
+[08-Aug-2025 15:11:12 Europe/London] Decoded isDir: 
+[08-Aug-2025 15:11:12 Europe/London] Decoded pathToIssue: Array
+(
+    [0] => /media/Users/admin_22/MS008_HE.svs
+)
+
+[08-Aug-2025 15:11:12 Europe/London] Case: isDir=0, array - calling issueFiles
+[08-Aug-2025 15:11:12 Europe/London] Number of files: 1
+[08-Aug-2025 15:11:12 Europe/London] File 0: /media/Users/admin_22/MS008_HE.svs - exists: YES
+[08-Aug-2025 15:11:12 Europe/London] Starting issueFiles at: 2025-08-08 15:11:12
+[08-Aug-2025 15:11:12 Europe/London] PHP Warning:  fopen(/var/www/jobCounter.log): failed to open stream: No such file or directory in /var/www/lockedFileAccess.php on line 185
+[08-Aug-2025 15:11:12 Europe/London] PHP Warning:  flock() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 189
+[08-Aug-2025 15:11:12 Europe/London] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/lockedFileAccess.php on line 204
+[08-Aug-2025 15:11:12 Europe/London] Completed issueFiles at: 2025-08-08 15:11:12
+[08-Aug-2025 15:11:12 Europe/London] issueFiles took: 0 seconds
+[08-Aug-2025 15:11:12 Europe/London] issueFiles result: Array
+(
+    [typ] => multiple
+    [jobs] => Array
+        (
+            [0] => Array
+                (
+                    [entry] => -1;81EE5D04-A933-4692-8979-485C4F3B9021;1;checksum;/media/Users/admin_22/MS008_HE.svs;/var/www/uploads/62286878_MS008_HE.svs;MD5CHECKSUM;EMAIL_PLACE_HOLDER;FINAL_FILENAME_PLACEHOLDER;FINAL_PATH_PLACEHOLDER;;                                                                                                                                                            
+                    [id] => -1
+                    [guid] => 81EE5D04-A933-4692-8979-485C4F3B9021
+                    [name] => /var/www/uploads/62286878_MS008_HE.svs
+                    [fileId] => /media/Users/admin_22/MS008_HE.svs
+                )
+
+        )
+
+    [fullStatus] => Array
+        (
+            [id] => 0
+            [status] => ok
+            [comment] => 
+        )
+
+)
+
+[08-Aug-2025 15:11:12 Europe/London] === issueUploadProject.php completed ===
+[08-Aug-2025 15:13:59 Europe/London] Successfully added job 81EE5D04-A933-4692-8979-485C4F3B9021 to customer page for user: admin_22

@@ -144,6 +144,41 @@ class EnhancedPolyscopeFileManager {
       }
     });
     
+    // Add drag and drop functionality
+    if (file.type === 'directory') {
+      // Make folders droppable
+      item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        item.classList.add('drag-over-folder');
+      });
+      
+      item.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        item.classList.remove('drag-over-folder');
+      });
+      
+      item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        item.classList.remove('drag-over-folder');
+        self.handleDropOnFolder(file.path, e);
+      });
+    } else {
+      // Make files draggable
+      item.draggable = true;
+      item.addEventListener('dragstart', function(e) {
+        e.dataTransfer.setData('text/plain', file.path);
+        e.dataTransfer.effectAllowed = 'move';
+        item.classList.add('dragging');
+      });
+      
+      item.addEventListener('dragend', function(e) {
+        item.classList.remove('dragging');
+      });
+    }
+    
     return item;
   }
   
@@ -293,6 +328,37 @@ class EnhancedPolyscopeFileManager {
   
   // Replace your showNewFolderDialog method with this debug version
   // Add this to your file-manager.js
+
+  async handleDropOnFolder(targetFolderPath, event) {
+    const draggedFilePath = event.dataTransfer.getData('text/plain');
+    
+    if (!draggedFilePath || draggedFilePath === targetFolderPath) {
+      return; // Can't drop on itself
+    }
+    
+    const fileName = draggedFilePath.split('/').pop();
+    
+    try {
+      this.showLoading(`Moving ${fileName} to folder...`);
+      
+      const response = await this.apiCall('moveFile', {
+        sourcePath: draggedFilePath,
+        targetPath: targetFolderPath
+      });
+      
+      if (response.success) {
+        PolyscopeUI.success(`${fileName} moved successfully`);
+        this.refreshCurrentDirectory();
+      } else {
+        PolyscopeUI.error(response.error || 'Failed to move file');
+      }
+    } catch (error) {
+      PolyscopeUI.error('Error moving file: ' + error.message);
+    } finally {
+      this.hideLoading();
+    }
+  }
+
 
   async showNewFolderDialog() {
     console.log('showNewFolderDialog called');
