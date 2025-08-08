@@ -14,12 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polyscope - Pathology Viewer</title>
     <link rel="icon" type="image/png" href="/LogoPolyzoomer1.0fav.png">
-
 	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/main.css'/>
 	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/sharing.css'/>
-	
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/cell-segmentation.css'/>
+	<link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/navigation.css'/>
+    <link rel='stylesheet' type='text/css' media='screen' href='_PATH_TO_CSS_/screenshot.css'/>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/jquery.js"></script>
     <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/jquery-ui.min.js"></script>
     <script type="test/javascript" src="_PATH_TO_POLYZOOMER_/d3.v3.min.js" charset="utf-8"></script>
@@ -33,7 +34,12 @@
 	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/main.js"></script>
 	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/channel-manager.js"></script>
 	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/sharing.js"></script>
-
+	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/cell-segmentation.js"></script>
+	<script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/simple-region-selector.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/navigation.js"></script>
+    <script type="text/javascript" src="_PATH_TO_POLYZOOMER_/js/screenshot.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
     var viewer = null;
     var Seadragon;
@@ -45,7 +51,6 @@ function SyncImage(viewer, viewerToSyncWith) {
 	viewer.viewport.panTo(viewerToSyncWith.viewport.getCenter());
 	viewer.viewport.zoomTo(viewerToSyncWith.viewport.getZoom());
 }
-
 var hFuncHandler=function myHandler(inViewer) {
     var SourceViewer = inViewer.eventSource;
 	var viewersToSync = [];
@@ -68,7 +73,6 @@ var hFuncHandler=function myHandler(inViewer) {
 		if (!TargetViewer.isOpen()) {
 			console.log('TargetViewer is not open');
 		}
-
 		console.log('Starting live sync...', SourceViewer.id, ' with ', TargetViewer.id);
 		SyncImage(TargetViewer,SourceViewer)      
 		console.log('done');
@@ -79,10 +83,8 @@ function LiveSync(SourceViewer) {
   console.log('Attaching live sync handler to ',SourceViewer.id);
   SourceViewer.addHandler("animation",hFuncHandler);
 }
-
 function UnLiveSync(SourceViewer) {
   console.log('Removing handler from ',SourceViewer.id);
   SourceViewer.removeHandler("animation",hFuncHandler)
 }
-
 function SyncThemAll() {

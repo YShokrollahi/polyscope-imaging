@@ -120,6 +120,59 @@ class FileManagerAPI {
         debug_log("Directory structure verified");
     }
     
+    private function moveFile($sourcePath, $targetPath) {
+        debug_log("=== moveFile: " . $sourcePath . " to " . $targetPath . " ===");
+        
+        if (empty($sourcePath) || empty($targetPath)) {
+            $this->sendError('Source and target paths are required', 400);
+        }
+        
+        try {
+            $sourceAbsolutePath = $this->validateAndResolvePath($sourcePath);
+            $targetAbsolutePath = $this->validateAndResolvePath($targetPath);
+            
+            // Check if source file exists
+            if (!file_exists($sourceAbsolutePath)) {
+                $this->sendError('Source file not found: ' . $sourcePath, 404);
+            }
+            
+            // Check if target is a directory
+            if (!is_dir($targetAbsolutePath)) {
+                $this->sendError('Target must be a directory: ' . $targetPath, 400);
+            }
+            
+            // Get the filename from source
+            $fileName = basename($sourceAbsolutePath);
+            $newFilePath = $targetAbsolutePath . '/' . $fileName;
+            
+            // Check if file already exists in target directory
+            if (file_exists($newFilePath)) {
+                $this->sendError('A file with that name already exists in the target directory', 409);
+            }
+            
+            // Move the file
+            if (!rename($sourceAbsolutePath, $newFilePath)) {
+                $this->sendError('Failed to move file', 500);
+            }
+            
+            debug_log("File moved successfully from " . $sourceAbsolutePath . " to " . $newFilePath);
+            
+            $response = array(
+                'message' => 'File moved successfully',
+                'sourcePath' => $sourcePath,
+                'targetPath' => $targetPath,
+                'newPath' => $this->getRelativePath($newFilePath),
+                'fileName' => $fileName
+            );
+            
+            $this->sendSuccess($response);
+            
+        } catch (Exception $e) {
+            debug_log("Exception in moveFile: " . $e->getMessage());
+            $this->sendError('Error moving file: ' . $e->getMessage(), 500);
+        }
+    }
+    
     public function handleRequest() {
         try {
             debug_log("=== Handling Request ===");
@@ -179,6 +232,11 @@ class FileManagerAPI {
                 case 'getFileInfo':
                     $path = isset($input['path']) ? $input['path'] : '';
                     $this->getFileInfo($path);
+                    break;
+                case 'moveFile':
+                    $sourcePath = isset($input['sourcePath']) ? $input['sourcePath'] : '';
+                    $targetPath = isset($input['targetPath']) ? $input['targetPath'] : '';
+                    $this->moveFile($sourcePath, $targetPath);
                     break;
                     
                 default:

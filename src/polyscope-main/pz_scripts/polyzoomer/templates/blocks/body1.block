@@ -44,13 +44,6 @@ function exportImage() {
     console.log('Export image');
 }
 
-function takeScreenshot() {
-    console.log('Take screenshot');
-}
-
-function goBack() {
-    window.history.back();
-}
 
 </script>
 </head>
@@ -103,7 +96,7 @@ function goBack() {
         <button class="header-btn" onclick="takeScreenshot()">
             <i class="fas fa-camera"></i> Screenshot
         </button>
-        <button class="header-btn" onclick="goBack()">
+        <button class="header-btn back-btn" onclick="goBack()">
             <i class="fas fa-arrow-left"></i> Back
         </button>
     </div>
@@ -176,6 +169,90 @@ function goBack() {
 						<i class='fas fa-download'></i> Download
 					</a>
 				</div>
+            </div>
+
+            <!-- Cell Segmentation Section -->
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span><i class="fas fa-brain"></i> AI-Powered Region Analysis</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="section-content">
+                    <!-- Zoom Level Warning -->
+                    <div class="zoom-warning" id="zoomWarning" style="display: none;">
+                        <div class="warning-content">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Zoom to maximum level for accurate AI analysis</span>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Service Status -->
+                    <div class="ai-status-container">
+                        <div id="simple-region-status" class="ai-status ai-status-warning">Checking AI service...</div>
+                    </div>
+                    
+                    <!-- Simplified Model Selection -->
+                    <div class="control-item" style="margin-top: 12px;">
+                        <label class="control-label">AI Model:</label>
+                        <select id="aiModelSelect" class="control-select" style="width: 100%; margin-top: 4px;">
+                            <option value="vitaminp-resnet34-he">✅ VitaminP-ResNet34 (H&E)</option>
+                            <option value="vitaminp-dino-base-he-mif" disabled>🔒 VitaminP-DiNO-Base - Coming Soon</option>
+                            <option value="vitaminp-resnet50-he" disabled>🔒 VitaminP-ResNet50 - Coming Soon</option>
+                        </select>
+                        
+                        <div id="currentModelStatus" class="model-status available" style="margin-top: 8px;">
+                            <i class="fas fa-check-circle"></i> Available
+                        </div>
+                    </div>
+                    
+                    <!-- Control Buttons -->
+                    <div class="control-item">
+                        <button class="action-btn primary" onclick="startRegionSelection()" 
+                                style="width: 48%; margin-right: 4%;">
+                            <i class="fas fa-play"></i> Start Analysis
+                        </button>
+                        <button class="action-btn secondary" onclick="stopRegionSelection()" style="width: 48%;">
+                            <i class="fas fa-stop"></i> Stop
+                        </button>
+                    </div>
+                    
+                    <div class="control-item" style="margin-top: 8px;">
+                        <button class="action-btn danger" onclick="clearResults()" style="width: 100%;">
+                            <i class="fas fa-trash"></i> Clear Results
+                        </button>
+                    </div>
+                    
+                    <!-- Zoom Level Indicator -->
+                    <div class="zoom-indicator" id="zoomIndicator">
+                        <div class="zoom-label">Current Zoom Level:</div>
+                        <div class="zoom-bar">
+                            <div class="zoom-progress" id="zoomProgress"></div>
+                        </div>
+                        <div class="zoom-text" id="zoomText">0% of maximum</div>
+                    </div>
+                    
+                    <!-- Simplified Instructions -->
+                    <div class="analysis-instructions">
+                        <h5><i class="fas fa-info-circle"></i> Quick Guide:</h5>
+                        <ol>
+                            <li><strong>Zoom to maximum</strong> on region of interest</li>
+                            <li>Click "Start Analysis" when ready</li>
+                            <li>Draw rectangle around cells</li>
+                            <li>AI will detect and count cells</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- Results Display -->
+                    <div id="simple-region-image" style="margin: 12px 0;">
+                        <div class="no-selection-message">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <p>Zoom to maximum and select a region to begin AI analysis</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden info container for coordinate display -->
+                    <div id="simple-region-info" style="display: none;"></div>
+                </div>
             </div>
 
             <!-- Image Information Section -->

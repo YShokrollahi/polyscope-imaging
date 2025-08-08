@@ -12,11 +12,13 @@
 @import url('sidebar.css');
 @import url('viewer.css');
 @import url('image-controls.css');
-
+@import url('cell-segmentation.css');
 /* Vendor/External libraries */
 @import url('jquery-ui.min.css');
 @import url('jquery-ui.structure.min.css');
 @import url('jquery-ui.theme.min.css');
+@import url('navigation.css');        /* Add this line */
+@import url('screenshot.css');        /* Add this line */
 
 /* Annotations and remaining styles from original style.css */
 .annotation-summary:empty::before {
