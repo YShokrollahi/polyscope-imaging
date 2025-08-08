@@ -1,10 +1,71 @@
-site_name: Polyscope Doc
+site_name: Polyscope Documentation
 theme: 
-  name: readthedocs
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.top
+    - navigation.sections
+    - header.autohide
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
 docs_dir: docs
+site_dir: src/polyscope-main/docs
 nav:
-  - Home: index.md
-  - Pages: pages.md
-  - Tutorial 1 (Basics): tutorial_basics.md
-  - Tutorial 2 (Annotating): tutorial_polyzoomer.md
-  - Tutorial 3 (Multizoomer): tutorial_multizoomer.md
+  - Back to Polyscope: https://polyscope.mdanderson.org/
+  - Introduction: index.md
+  - Pages:
+    - Login: pages_login.md
+    - Index: pages_index.md
+    - My Results: pages_results.md
+    - Image: pages_image.md
+  - Tutorials:
+    - Tutorial 1 (Basics): tutorial_basics.md
+    - Tutorial 2 (Annotating): tutorial_polyzoomer.md
+    - Tutorial 3 (Multizoomer): tutorial_multizoomer.md
+  - About: about.md
+extra:
+  social:
+    - icon: material/home
+      link: https://polyscope.mdanderson.org/
+      name: Back to Polyscope
+    - icon: material/email
+      link: mailto:polyscope_support@mdanderson.org
+      name: Contact Support
+  generator: true
+copyright: © 2025 Yinyin Yuan Lab | MD Anderson Cancer Center
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.keys
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  
